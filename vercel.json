@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/audit.html", "destination": "/audit", "permanent": true }
+  ],
+  "rewrites": [{ "source": "/audit", "destination": "/audit.html" }]
+}
