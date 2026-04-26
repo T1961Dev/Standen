@@ -1,88 +1,435 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/png" href="pics/logo.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="pics/logo.png" sizes="192x192">
-    <link rel="apple-touch-icon" href="pics/logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <title>Case Study | Standen -  Web Development & SaaS Agency Hampshire UK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Geist', 'system-ui', 'sans-serif'] },
+                    colors: { ink: '#050505', cloud: '#f7f7f2' }
+                }
+            }
+        };
+    </script>
+    <title>Case Study | Standen</title>
+    <style>
+        :root {
+            --ink: #050505;
+            --paper: #f7f7f2;
+            --white: #ffffff;
+            --muted: rgba(5,5,5,.58);
+            --dark-muted: rgba(255,255,255,.64);
+            --line: rgba(5,5,5,.10);
+            --dark-line: rgba(255,255,255,.13);
+            --ease: cubic-bezier(.22, 1, .36, 1);
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: "Geist", system-ui, sans-serif;
+            font-weight: 400;
+            letter-spacing: -0.05em;
+            background: var(--paper);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: geometricPrecision;
+            overflow-x: hidden;
+        }
+        a, button { font: inherit; letter-spacing: inherit; }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; }
+        ::selection { background: var(--ink); color: var(--white); }
+        .wordmark { font-weight: 500; letter-spacing: -0.05em; line-height: 1; }
+        .nav-shell {
+            position: relative;
+            width: min(100%, 1160px);
+            min-height: 64px;
+            margin: 0 auto;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 999px;
+            background: rgba(5,5,5,.74);
+        }
+        .nav-brand { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); }
+        .nav-centre { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+        .nav-cta {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            display: inline-flex;
+            min-height: 2.55rem;
+            padding: .72rem 1rem;
+            font-size: .84rem;
+            transform: translateY(-50%);
+        }
+        .nav-shell .nav-cta:hover { transform: translateY(calc(-50% - 2px)); }
+        .title-xl { font-size: clamp(2.75rem, 5.25vw, 4.95rem); line-height: .94; letter-spacing: -0.075em; }
+        .title-lg { font-size: clamp(2.1rem, 4.15vw, 3.85rem); line-height: .96; letter-spacing: -0.075em; }
+        .section-label { font-size: .76rem; font-weight: 600; text-transform: uppercase; letter-spacing: -0.02em; opacity: .58; }
+        .body-copy { color: var(--muted); line-height: 1.7; letter-spacing: -0.045em; }
+        .body-copy-dark { color: var(--dark-muted); line-height: 1.7; letter-spacing: -0.045em; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .65rem;
+            border-radius: 999px;
+            min-height: 3.1rem;
+            padding: .92rem 1.35rem;
+            font-size: .92rem;
+            font-weight: 450;
+            transition: transform .35s var(--ease), border-color .35s var(--ease), background .35s var(--ease), color .35s var(--ease);
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-light { background: #fff; color: #050505; border: 1px solid rgba(255,255,255,.92); }
+        .btn-dark { background: #050505; color: #fff; border: 1px solid #050505; }
+        .btn-ghost-light { color: #fff; border: 1px solid var(--dark-line); background: rgba(255,255,255,.045); }
+        .grid-lines {
+            background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+            background-size: 68px 68px;
+        }
+        .mesh-light {
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.72) 0%, transparent 22%),
+                linear-gradient(180deg, #fff 0%, #f7f7f2 100%);
+        }
+        .detail-hero {
+            position: relative;
+            min-height: 100svh;
+            overflow: hidden;
+            padding: 9rem 1.25rem 6rem;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.055) 0%, transparent 34%),
+                linear-gradient(180deg, #050505 0%, #0d0d0b 58%, #050505 100%);
+        }
+        .detail-hero--missing { display: flex; align-items: center; justify-content: center; min-height: 100svh; }
+        .detail-hero-inner {
+            position: relative;
+            width: min(100%, 1160px);
+            margin: 0 auto;
+            text-align: center;
+        }
+        .detail-hero-copy {
+            max-width: 58rem;
+            margin: 0 auto;
+        }
+        .detail-back {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 999px;
+            background: rgba(255,255,255,.045);
+            padding: .72rem .95rem;
+            color: rgba(255,255,255,.68);
+            font-size: .88rem;
+            transition: color .25s var(--ease), background .25s var(--ease);
+        }
+        .detail-back:hover { color: #fff; background: rgba(255,255,255,.07); }
+        .detail-visual {
+            position: relative;
+            width: min(100%, 980px);
+            margin: 4rem auto 0;
+            border-radius: 1.8rem;
+            isolation: isolate;
+        }
+        .detail-visual::before {
+            content: "";
+            position: absolute;
+            inset: 10% 7% -12%;
+            z-index: -1;
+            border-radius: 2rem;
+            background: radial-gradient(circle at 50% 50%, var(--case-glow, rgba(89,39,255,.34)), transparent 68%);
+            filter: blur(42px);
+            opacity: .95;
+        }
+        .detail-image {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: contain;
+            object-position: center;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 1.8rem;
+            background: rgba(255,255,255,.94);
+            box-shadow: 0 24px 80px rgba(0,0,0,.26);
+        }
+        .detail-image--logo {
+            aspect-ratio: 1 / 1;
+            width: min(100%, 26rem);
+            margin: 0 auto;
+            object-fit: contain;
+            padding: clamp(3rem, 7vw, 5.5rem);
+            background: linear-gradient(135deg, rgba(89,39,255,.92), rgba(77,34,238,.86));
+        }
+        .detail-content {
+            padding: 5rem 1.25rem 7rem;
+        }
+        .detail-content-inner {
+            width: min(100%, 1160px);
+            margin: 0 auto;
+        }
+        .bento-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 1.65rem;
+            background: rgba(255,255,255,.68);
+        }
+        .bento-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.52), transparent 42%),
+                linear-gradient(90deg, rgba(5,5,5,.045) 1px, transparent 1px);
+            background-size: auto, 38px 38px;
+            opacity: .62;
+            pointer-events: none;
+        }
+        .card-content { position: relative; z-index: 1; }
+        .proof-card {
+            border-color: rgba(5,5,5,.14);
+            background: linear-gradient(135deg, rgba(5,5,5,.92), rgba(18,18,16,.86));
+            color: #fff;
+        }
+        .proof-card::before {
+            background:
+                radial-gradient(circle at 20% 0%, rgba(255,255,255,.16), transparent 32%),
+                linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+            background-size: auto, 34px 34px;
+        }
+        .detail-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: .75rem;
+        }
+        .detail-stats div {
+            border: 1px solid rgba(5,5,5,.09);
+            border-radius: 1.25rem;
+            background: rgba(255,255,255,.62);
+            padding: 1rem;
+        }
+        .detail-stats span {
+            display: block;
+            color: rgba(5,5,5,.42);
+            font-size: .78rem;
+        }
+        .detail-stats strong {
+            display: block;
+            margin-top: .35rem;
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: -0.055em;
+        }
+        .detail-list {
+            display: grid;
+            gap: .85rem;
+            padding-left: 1.1rem;
+            color: rgba(5,5,5,.58);
+            line-height: 1.55;
+        }
+        .detail-list--light { color: rgba(255,255,255,.66); }
+        .detail-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .65rem;
+        }
+        .detail-pills span {
+            border: 1px solid rgba(5,5,5,.10);
+            border-radius: 999px;
+            background: rgba(255,255,255,.48);
+            padding: .68rem .82rem;
+            color: rgba(5,5,5,.58);
+            font-size: .88rem;
+        }
+        .detail-quote {
+            margin-top: 1.25rem;
+            padding: 2rem;
+            text-align: left;
+        }
+        .detail-quote p {
+            position: relative;
+            z-index: 1;
+            max-width: 54rem;
+            color: rgba(5,5,5,.72);
+            font-size: clamp(1.2rem, 2vw, 1.55rem);
+            line-height: 1.45;
+        }
+        .detail-quote span {
+            position: relative;
+            z-index: 1;
+            display: block;
+            margin-top: 1rem;
+            color: rgba(5,5,5,.46);
+            font-size: .95rem;
+        }
+        .detail-cta {
+            border: 1px solid rgba(5,5,5,.10);
+            border-radius: 1.8rem;
+            background:
+                radial-gradient(circle at 18% 0%, rgba(255,255,255,.16), transparent 30%),
+                linear-gradient(135deg, rgba(5,5,5,.96), rgba(18,18,16,.9));
+            padding: clamp(2rem, 5vw, 4rem);
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+        .detail-cta::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.075), transparent 48%),
+                linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+            background-size: auto, 38px 38px;
+            pointer-events: none;
+        }
+        .detail-cta > * {
+            position: relative;
+            z-index: 1;
+        }
+        .mobile-nav-panel {
+            display: none;
+            width: min(100%, 1160px);
+            margin: .55rem auto 0;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 1.35rem;
+            background: rgba(5,5,5,.96);
+            padding: .6rem;
+            color: #fff;
+        }
+        .mobile-nav-panel[data-open="true"] { display: block; }
+        .mobile-nav-panel a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 999px;
+            padding: .9rem 1rem;
+            color: rgba(255,255,255,.72);
+            font-size: .95rem;
+        }
+        .mobile-nav-panel a:hover { color: #fff; background: rgba(255,255,255,.055); }
+        .nav-menu-toggle {
+            display: none;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2.55rem;
+            height: 2.55rem;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: .28rem;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 999px;
+            background: rgba(255,255,255,.06);
+            color: #fff;
+            cursor: pointer;
+        }
+        .nav-menu-toggle span,
+        .nav-menu-toggle::before,
+        .nav-menu-toggle::after {
+            content: "";
+            display: block;
+            width: 1rem;
+            height: 1px;
+            background: currentColor;
+            transition: transform .25s var(--ease), opacity .25s var(--ease);
+        }
+        .nav-menu-toggle[aria-expanded="true"] span { opacity: 0; }
+        .nav-menu-toggle[aria-expanded="true"]::before { transform: translateY(.29rem) rotate(45deg); }
+        .nav-menu-toggle[aria-expanded="true"]::after { transform: translateY(-.29rem) rotate(-45deg); }
+        @media (max-width: 900px) {
+            .nav-centre, .nav-cta { display: none; }
+            .nav-shell { width: 100%; min-height: 58px; }
+            .nav-brand { left: 14px; }
+            .nav-menu-toggle { display: inline-flex; }
+            .mobile-nav-panel { width: 100%; }
+            .detail-stats { grid-template-columns: 1fr; }
+            .detail-hero { padding-top: 8rem; }
+        }
+        @media (max-width: 760px) {
+            .title-xl { font-size: clamp(2.45rem, 11vw, 3.5rem); }
+            .title-lg { font-size: clamp(2.25rem, 10vw, 3.25rem); }
+            .btn { width: 100%; min-height: 3rem; }
+            .detail-image { border-radius: 1.25rem; }
+            .detail-image--logo { width: min(100%, 18rem); padding: 3rem; }
+            .detail-visual { margin-top: 2.75rem; }
+            .detail-content { padding-top: 4rem; }
+        }
+    </style>
+    <script src="/js/vercel-analytics.js"></script>
 </head>
 <body>
-    <header class="nav-shell">
-        <div class="nav-inner">
-            <a href="index.html" class="brand" aria-label="Standen -  Home"><img src="pics/logo.png" alt="" width="40" height="40" fetchpriority="high"></a>
-            <nav class="nav-links" aria-label="Primary">
-                <a href="index.html#work" class="nav-link">Our work</a>
-                <a href="index.html#pricing" class="nav-link">Pricing</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
+    <header class="fixed inset-x-0 top-0 z-50 px-5 pt-4 sm:px-8">
+        <div class="nav-shell text-white">
+            <a href="index.html" class="nav-brand wordmark text-[1.08rem]" aria-label="Standen home">Standen</a>
+            <nav class="nav-centre hidden items-center gap-7 text-[0.86rem] font-normal text-white/68 md:flex" aria-label="Primary">
+                <a class="transition hover:text-white" href="index.html#work">Work</a>
+                <a class="transition hover:text-white" href="index.html#process">Process</a>
+                <a class="transition hover:text-white" href="index.html#pricing">Pricing</a>
+                <a class="transition hover:text-white" href="audit.html">Audit</a>
+                <a class="transition hover:text-white" href="index.html#contact">Contact</a>
             </nav>
-            <div class="nav-cta">
-                <a href="index.html#contact" class="btn btn-primary">Book a demo</a>
-            </div>
+            <a href="https://calendly.com/standen/discovery-call" class="nav-cta btn btn-light" target="_blank" rel="noopener">Book a software audit call</a>
+            <button class="nav-menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
         </div>
+        <nav id="mobile-menu" class="mobile-nav-panel" data-open="false" aria-label="Mobile">
+            <a href="index.html#work">Work</a>
+            <a href="index.html#process">Process</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="audit.html">Audit</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="https://calendly.com/standen/discovery-call">Book a software audit call</a>
+        </nav>
     </header>
 
-    <main id="case-study-root" class="case-study-page section" aria-label="Case study">
-        <div class="section-inner section-inner--narrow"><p class="section-body section-body--center">Loading…</p></div>
+    <main id="case-study-root" aria-label="Case study">
+        <section class="detail-hero detail-hero--missing">
+            <div class="mx-auto max-w-3xl px-5 text-center sm:px-8">
+                <p class="section-label mx-auto mb-6 text-white/58">Case study</p>
+                <h1 class="title-lg font-semibold text-white">Loading...</h1>
+            </div>
+        </section>
     </main>
 
-        <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-top">
-                <div class="footer-col footer-col--services">
-                    <h3 class="footer-heading">Services</h3>
-                    <div class="footer-services-grid">
-                        <div class="footer-category">
-                            <span class="footer-category__title">What we build</span>
-                            <a href="index.html#services">SaaS Development</a>
-                            <a href="index.html#services">Custom Software</a>
-                        </div>
-                        <div class="footer-category">
-                            <span class="footer-category__title">Pages</span>
-                            <a href="index.html#work">Case studies</a>
-                            <a href="index.html#about">About</a>
-                            <a href="index.html#contact">Contact</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-col footer-col--nav">
-                    <div class="footer-nav-group">
-                        <h3 class="footer-heading">Main</h3>
-                        <a href="index.html#services">SaaS Development</a>
-                        <a href="index.html#services">Custom Software</a>
-                        <a href="index.html#work">Case studies</a>
-                        <a href="index.html#contact">Contact</a>
-                    </div>
-                    <div class="footer-nav-group">
-                        <h3 class="footer-heading">Learn</h3>
-                        <a href="index.html#blog">Blog</a>
-                        <a href="resources.html">Resources</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-brand-row">
-                    <span class="footer-copy">Â© 2026 Standen. All rights reserved.</span>
-                </div>
-                <nav class="footer-links" aria-label="Legal and policies">
-                    <a href="privacy.html">Privacy policy</a>
-                    <span class="footer-sep" aria-hidden="true">Â·</span>
-                    <a href="terms.html">Terms of use</a>
-                </nav>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/tomas-jones1/" class="footer-social__link" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <img src="pics/logo.png" alt="Standen" width="40" height="40">
-                </div>
-            </div>
+    <footer class="bg-ink px-5 pb-12 text-white sm:px-8">
+        <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 border-t border-white/12 pt-8 text-center sm:flex-row sm:text-left">
+            <p class="wordmark text-xl">Standen</p>
+            <p class="text-sm font-normal text-white/38">&copy; 2026 Standen. Custom internal tools, portals and dashboards for UK B2B agencies.</p>
+            <nav class="flex flex-wrap justify-center gap-5 text-sm text-white/50" aria-label="Footer"><a href="index.html#work" class="hover:text-white">Work</a><a href="index.html#process" class="hover:text-white">Process</a><a href="index.html#pricing" class="hover:text-white">Pricing</a><a href="audit.html" class="hover:text-white">Audit</a><a href="index.html#contact" class="hover:text-white">Contact</a></nav>
         </div>
     </footer>
     <script src="case-study-data.js"></script>
     <script src="case-study.js"></script>
+    <script>
+        (function () {
+            var menuButton = document.querySelector('.nav-menu-toggle');
+            var mobileMenu = document.getElementById('mobile-menu');
+            if (!menuButton || !mobileMenu) return;
+            menuButton.addEventListener('click', function () {
+                var isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', String(!isOpen));
+                mobileMenu.setAttribute('data-open', String(!isOpen));
+            });
+            mobileMenu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('data-open', 'false');
+                });
+            });
+        })();
+    </script>
 </body>
 </html>

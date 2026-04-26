@@ -3,531 +3,739 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SaaS and custom software development agency in the UK. We build production-ready SaaS products and bespoke software for UK founders and businesses. Hampshire-based, remote delivery.">
-    <meta name="keywords" content="SaaS development UK, custom software UK, SaaS agency Hampshire, bespoke software UK, MVP development UK, Standen">
-    <meta name="author" content="Standen">
-    <meta name="geo.region" content="GB-HAM">
+    <meta name="description" content="Standen builds custom internal tools, client portals, dashboards and workflow software for UK B2B agencies.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://standen.co.uk/">
-    <link rel="icon" type="image/png" href="pics/logo.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="pics/logo.png" sizes="192x192">
-    <link rel="apple-touch-icon" href="pics/logo.png">
+    <link rel="canonical" href="https://standen.io/">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Standen | SaaS & Custom Software Development Agency UK">
-    <meta property="og:description" content="We build production-ready SaaS products and bespoke software for UK founders and businesses. Hampshire-based, remote delivery.">
-    <meta property="og:image" content="https://standen.co.uk/og-image.jpg">
-    <meta property="og:url" content="https://standen.co.uk/">
+    <meta property="og:title" content="Standen | Custom software for UK B2B agencies">
+    <meta property="og:description" content="Owned software systems for UK B2B agencies: internal tools, client portals, dashboards and workflow software.">
+    <meta property="og:url" content="https://standen.io/">
     <meta property="og:locale" content="en_GB">
-    <link rel="stylesheet" href="style.css">
+    <title>Standen | Custom software for UK B2B agencies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <title>Standen | SaaS & Custom Software Development Agency UK</title>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Standen",
-      "description": "SaaS and custom software development agency in the UK. We build production-ready SaaS products and bespoke software for UK founders and businesses. Hampshire-based, remote delivery.",
-      "url": "https://standen.co.uk",
-      "areaServed": { "@type": "GeoCircle", "geo": { "@type": "GeoCoordinates", "latitude": "51.05", "longitude": "-1.31" }, "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.05", "longitude": "-1.31" } },
-      "serviceType": ["SaaS Development", "Custom Software Development"],
-      "priceRange": "££"
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Geist', 'system-ui', 'sans-serif'] },
+                    colors: { ink: '#050505', cloud: '#f7f7f2' }
+                }
+            }
+        };
     </script>
+    <style>
+        :root {
+            --ink: #050505;
+            --paper: #f7f7f2;
+            --white: #ffffff;
+            --sand: #efece2;
+            --muted: rgba(5, 5, 5, .58);
+            --muted-2: rgba(5, 5, 5, .42);
+            --dark-muted: rgba(255, 255, 255, .64);
+            --line: rgba(5, 5, 5, .10);
+            --dark-line: rgba(255, 255, 255, .13);
+            --ease: cubic-bezier(.22, 1, .36, 1);
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: "Geist", system-ui, sans-serif;
+            font-weight: 400;
+            letter-spacing: -0.05em;
+            background: var(--paper);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: geometricPrecision;
+            overflow-x: hidden;
+        }
+        img, svg { max-width: 100%; }
+        p { font-weight: 400; }
+        a, button, input, textarea { font: inherit; letter-spacing: inherit; }
+        a { color: inherit; text-decoration: none; }
+        ::selection { background: var(--ink); color: var(--white); }
+        .wordmark { font-weight: 500; letter-spacing: -0.05em; line-height: 1; }
+        .nav-shell {
+            position: relative;
+            width: min(100%, 1160px);
+            min-height: 64px;
+            margin: 0 auto;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 999px;
+            background: rgba(5,5,5,.74);
+        }
+        .nav-brand { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); }
+        .nav-centre { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+        .nav-cta {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            display: inline-flex;
+            min-height: 2.55rem;
+            padding: .72rem 1rem;
+            font-size: .84rem;
+            transform: translateY(-50%);
+        }
+        .nav-shell .nav-cta:hover { transform: translateY(calc(-50% - 2px)); }
+        .nav-menu-toggle {
+            display: none;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2.55rem;
+            height: 2.55rem;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: .28rem;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 999px;
+            background: rgba(255,255,255,.06);
+            color: #fff;
+            cursor: pointer;
+        }
+        .nav-menu-toggle span,
+        .nav-menu-toggle::before,
+        .nav-menu-toggle::after {
+            content: "";
+            display: block;
+            width: 1rem;
+            height: 1px;
+            background: currentColor;
+            transition: transform .25s var(--ease), opacity .25s var(--ease);
+        }
+        .nav-menu-toggle[aria-expanded="true"] span { opacity: 0; }
+        .nav-menu-toggle[aria-expanded="true"]::before { transform: translateY(.29rem) rotate(45deg); }
+        .nav-menu-toggle[aria-expanded="true"]::after { transform: translateY(-.29rem) rotate(-45deg); }
+        .mobile-nav-panel {
+            display: none;
+            width: min(100%, 1160px);
+            margin: .55rem auto 0;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 1.35rem;
+            background: rgba(5,5,5,.96);
+            padding: .6rem;
+            color: #fff;
+        }
+        .mobile-nav-panel[data-open="true"] { display: block; }
+        .mobile-nav-panel a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 999px;
+            padding: .9rem 1rem;
+            color: rgba(255,255,255,.72);
+            font-size: .95rem;
+        }
+        .mobile-nav-panel a:hover { color: #fff; background: rgba(255,255,255,.055); }
+        .mobile-nav-panel .mobile-nav-cta {
+            margin-top: .35rem;
+            background: #fff;
+            color: #050505;
+            justify-content: center;
+            gap: .55rem;
+            font-weight: 450;
+        }
+        .meet-img { width: 1.18rem; height: 1.18rem; flex: 0 0 auto; display: block; }
+        .hero-bg {
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.055) 0%, transparent 34%),
+                linear-gradient(180deg, #050505 0%, #0d0d0b 58%, #050505 100%);
+        }
+        .mesh-light {
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.72) 0%, transparent 22%),
+                linear-gradient(180deg, #fff 0%, #f7f7f2 100%);
+        }
+        .grid-lines {
+            background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+            background-size: 68px 68px;
+            opacity: .46;
+        }
+        .title-xl { font-size: clamp(2.75rem, 5.25vw, 4.95rem); line-height: .94; letter-spacing: -0.075em; }
+        .title-lg { font-size: clamp(2.1rem, 4.15vw, 3.85rem); line-height: .96; letter-spacing: -0.075em; }
+        .section-label { font-size: .76rem; font-weight: 600; text-transform: uppercase; letter-spacing: -0.02em; opacity: .58; }
+        .body-copy { color: var(--muted); line-height: 1.7; letter-spacing: -0.045em; }
+        .body-copy-dark { color: var(--dark-muted); line-height: 1.7; letter-spacing: -0.045em; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .65rem;
+            border-radius: 999px;
+            min-height: 3.1rem;
+            padding: .92rem 1.35rem;
+            font-size: .92rem;
+            font-weight: 450;
+            transition: transform .35s var(--ease), border-color .35s var(--ease), background .35s var(--ease), color .35s var(--ease);
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-light { background: #fff; color: #050505; border: 1px solid rgba(255,255,255,.92); }
+        .btn-dark { background: #050505; color: #fff; border: 1px solid #050505; }
+        .btn-ghost-light { color: #fff; border: 1px solid var(--dark-line); background: rgba(255,255,255,.045); }
+        .btn-ghost-dark { color: #050505; border: 1px solid var(--line); background: rgba(255,255,255,.42); }
+        .bento-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 1.65rem;
+            background: rgba(255,255,255,.68);
+            transition: transform .45s var(--ease), border-color .45s var(--ease), background .45s var(--ease);
+        }
+        .bento-card:hover { transform: translateY(-5px); border-color: rgba(5,5,5,.24); }
+        .bento-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.52), transparent 42%),
+                linear-gradient(90deg, rgba(5,5,5,.045) 1px, transparent 1px);
+            background-size: auto, 38px 38px;
+            opacity: .62;
+            pointer-events: none;
+        }
+        .case-link {
+            display: block;
+            color: inherit;
+        }
+        .case-link:focus-visible {
+            outline: 2px solid rgba(5,5,5,.42);
+            outline-offset: 4px;
+        }
+        .dark-card { border-color: var(--dark-line); background: rgba(255,255,255,.05); color: #fff; }
+        .dark-card::before {
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.075), transparent 48%),
+                linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+            background-size: auto, 38px 38px;
+            opacity: .58;
+        }
+        .dark-card:hover { border-color: rgba(255,255,255,.28); }
+        .card-content { position: relative; z-index: 1; }
+        .icon-tile { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border-radius: 1rem; border: 1px solid currentColor; color: inherit; opacity: .72; }
+        .mini-browser { border: 1px solid rgba(5,5,5,.10); border-radius: 1.1rem; background: rgba(255,255,255,.72); overflow: hidden; }
+        .mini-top { display: flex; gap: .35rem; padding: .75rem; border-bottom: 1px solid rgba(5,5,5,.08); }
+        .dot { width: .45rem; height: .45rem; border-radius: 999px; background: rgba(5,5,5,.22); }
+        .mini-line { height: .55rem; border-radius: 999px; background: rgba(5,5,5,.11); }
+        .stat-pill { border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.045); border-radius: 999px; padding: .8rem 1rem; color: rgba(255,255,255,.55); }
+        .case-study-card {
+            border-color: rgba(89, 39, 255, .24);
+            background:
+                radial-gradient(circle at 85% 12%, rgba(255, 79, 229, .18), transparent 32%),
+                linear-gradient(135deg, rgba(255,255,255,.86), rgba(246,242,255,.78));
+        }
+        .case-study-card::before {
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.58), transparent 44%),
+                linear-gradient(90deg, rgba(89,39,255,.065) 1px, transparent 1px);
+            background-size: auto, 34px 34px;
+        }
+        .case-logo {
+            width: 3.4rem;
+            height: 3.4rem;
+            border-radius: 1.05rem;
+            box-shadow: 0 18px 48px rgba(89,39,255,.22);
+        }
+        .case-visual {
+            position: relative;
+            margin: -.25rem -.25rem 1.35rem;
+            border-radius: 1.25rem;
+            isolation: isolate;
+        }
+        .case-visual::before {
+            content: "";
+            position: absolute;
+            inset: 12% 7% -9%;
+            z-index: -1;
+            border-radius: 1.35rem;
+            background: radial-gradient(circle at 50% 50%, var(--case-glow, rgba(89,39,255,.28)), transparent 68%);
+            filter: blur(28px);
+            opacity: .95;
+            transform: translateY(.35rem);
+            transition: opacity .45s var(--ease), transform .45s var(--ease);
+        }
+        .case-visual img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            object-position: top left;
+            border: 1px solid rgba(5,5,5,.09);
+            border-radius: 1.25rem;
+            box-shadow: 0 18px 52px rgba(5,5,5,.12);
+        }
+        .bento-card:hover .case-visual::before {
+            opacity: 1;
+            transform: translateY(.1rem) scale(1.04);
+        }
+        .case-visual--dark img { border-color: rgba(255,255,255,.11); }
+        .case-pill {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid rgba(89,39,255,.18);
+            border-radius: 999px;
+            background: rgba(89,39,255,.07);
+            padding: .48rem .7rem;
+            color: rgba(5,5,5,.58);
+            font-size: .78rem;
+        }
+        .case-quote {
+            border-left: 1px solid rgba(89,39,255,.26);
+            padding-left: 1rem;
+            color: rgba(5,5,5,.58);
+            line-height: 1.55;
+        }
+        .case-meta {
+            display: inline-flex;
+            width: fit-content;
+            border: 1px solid rgba(5,5,5,.10);
+            border-radius: 999px;
+            background: rgba(255,255,255,.48);
+            padding: .46rem .68rem;
+            color: rgba(5,5,5,.50);
+            font-size: .78rem;
+        }
+        .case-list {
+            display: grid;
+            gap: .72rem;
+            color: rgba(5,5,5,.56);
+            line-height: 1.5;
+        }
+        .case-list li::marker { color: rgba(5,5,5,.28); }
+        .proof-card {
+            border-color: rgba(5,5,5,.14);
+            background:
+                linear-gradient(135deg, rgba(5,5,5,.92), rgba(18,18,16,.86));
+            color: #fff;
+        }
+        .proof-card::before {
+            background:
+                radial-gradient(circle at 20% 0%, rgba(255,255,255,.16), transparent 32%),
+                linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+            background-size: auto, 34px 34px;
+        }
+        .process-step { position: relative; min-height: 15rem; }
+        .process-step::after { content: ""; position: absolute; left: 2rem; right: 2rem; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(5,5,5,.16), transparent); }
+        .price-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .85fr); gap: 1rem; align-items: stretch; }
+        .price-left { grid-row: span 2; }
+        .price-primary {
+            border-color: rgba(5,5,5,.16);
+            background:
+                linear-gradient(135deg, #f4efe3 0%, #fffaf0 48%, #ece7da 100%);
+        }
+        .price-primary::before {
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.58), transparent 38%),
+                linear-gradient(90deg, rgba(5,5,5,.055) 1px, transparent 1px),
+                linear-gradient(180deg, rgba(5,5,5,.04) 1px, transparent 1px);
+            background-size: auto, 40px 40px, 40px 40px;
+            opacity: .52;
+        }
+        .price-primary:hover {
+            border-color: rgba(5,5,5,.26);
+            background:
+                linear-gradient(135deg, #f4efe3 0%, #fffaf0 48%, #ece7da 100%);
+        }
+        .price-hero { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
+        .price-badge {
+            border: 1px solid rgba(5,5,5,.11);
+            border-radius: 999px;
+            background: rgba(255,255,255,.38);
+            padding: .7rem 1rem;
+            color: rgba(5,5,5,.54);
+            font-size: .9rem;
+            white-space: nowrap;
+        }
+        .price-list {
+            display: grid;
+            gap: 1rem;
+            max-width: 42rem;
+            padding-left: 1.15rem;
+            color: rgba(5,5,5,.58);
+            line-height: 1.55;
+            list-style: disc;
+        }
+        .reveal-on-scroll { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+        .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 1024px) {
+            .nav-shell,
+            .mobile-nav-panel { width: min(100%, 960px); }
+            .nav-centre { gap: 1.35rem; }
+            .title-xl { font-size: clamp(2.9rem, 8vw, 4.35rem); }
+            .title-lg { font-size: clamp(2.45rem, 6.6vw, 3.45rem); }
+            .price-grid { grid-template-columns: 1fr; }
+            .price-left { grid-row: auto; }
+        }
+        @media (max-width: 900px) {
+            .nav-shell {
+                width: 100%;
+                min-height: 58px;
+            }
+            .nav-brand { left: 14px; }
+            .nav-centre { display: none; }
+            .nav-cta { display: none; }
+            .nav-menu-toggle { display: inline-flex; }
+            .mobile-nav-panel { width: 100%; }
+        }
+        @media (max-width: 760px) {
+            .title-xl {
+                font-size: clamp(2.45rem, 11vw, 3.5rem);
+                line-height: .94;
+            }
+            .title-lg {
+                font-size: clamp(2.25rem, 10vw, 3.25rem);
+                line-height: .96;
+            }
+            .section-label { font-size: .68rem; }
+            .body-copy,
+            .body-copy-dark { line-height: 1.58; }
+            .bento-card {
+                border-radius: 1.25rem;
+                padding: 1.5rem;
+            }
+            .icon-tile {
+                width: 2.35rem;
+                height: 2.35rem;
+                border-radius: .8rem;
+            }
+            .price-hero {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            .price-badge {
+                width: fit-content;
+            }
+            .price-list {
+                max-width: none;
+                gap: .85rem;
+            }
+            .btn {
+                width: 100%;
+                min-height: 3rem;
+            }
+        }
+        @media (max-width: 420px) {
+            .title-xl { font-size: clamp(2.25rem, 11.5vw, 3rem); }
+            .title-lg { font-size: clamp(2rem, 9.5vw, 2.7rem); }
+            .nav-shell { min-height: 54px; }
+            .wordmark { font-size: .94rem; }
+            .meet-img {
+                width: 1rem;
+                height: 1rem;
+            }
+            .bento-card { padding: 1.25rem; }
+            .price-badge { font-size: .8rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal-on-scroll { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .btn, .bento-card { transition: none; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"ProfessionalService","name":"Standen","description":"Custom internal tools, client portals, dashboards, workflow software, and web systems for UK agencies.","url":"https://standen.io","areaServed":"GB","serviceType":["Custom software development","Internal tool development","Client portal development","Dashboard development","Workflow software development","Agency operations software"]}
+    </script>
+    <script src="/js/vercel-analytics.js"></script>
 </head>
 <body>
-    <div class="page-wrap">
-    <header class="nav-shell">
-        <div class="nav-inner">
-            <a href="index.html" class="brand" aria-label="Standen -  Home"><img src="pics/logo.png" alt="" width="40" height="40" fetchpriority="high"></a>
-            <nav class="nav-links" aria-label="Primary">
-                <a href="index.html#services" class="nav-link">Services</a>
-                <a href="index.html#work" class="nav-link">Case studies</a>
-                <a href="index.html#about" class="nav-link">About</a>
-                <a href="index.html#blog" class="nav-link">Blog</a>
-                <a href="index.html#faq" class="nav-link">FAQ</a>
+    <header class="fixed inset-x-0 top-0 z-50 px-5 pt-4 sm:px-8">
+        <div class="nav-shell text-white">
+            <a href="#" class="nav-brand wordmark text-[1.08rem]" aria-label="Standen home">Standen</a>
+            <nav class="nav-centre hidden items-center gap-7 text-[0.86rem] font-normal text-white/68 md:flex" aria-label="Primary">
+                <a class="transition hover:text-white" href="#work">Work</a>
+                <a class="transition hover:text-white" href="#process">Process</a>
+                <a class="transition hover:text-white" href="#pricing">Pricing</a>
+                <a class="transition hover:text-white" href="audit.html">Audit</a>
+                <a class="transition hover:text-white" href="#contact">Contact</a>
             </nav>
-            <div class="nav-cta">
-                <a href="index.html#contact" class="btn btn-primary"><span class="btn__inner">Get in touch</span></a>
-            </div>
-            <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"></button>
+            <a href="https://calendly.com/standen/discovery-call" class="nav-cta btn btn-light" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
+            <button class="nav-menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
         </div>
-    </header>
-    <div class="nav-overlay" aria-hidden="true"></div>
-    <div class="nav-drawer" aria-hidden="true">
-        <nav class="nav-drawer__links" aria-label="Mobile menu">
-            <a href="index.html#services">Services</a>
-            <a href="index.html#work">Case studies</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#blog">Blog</a>
-            <a href="index.html#faq">FAQ</a>
-            <a href="index.html#contact" class="btn btn-primary"><span class="btn__inner">Get in touch</span></a>
+        <nav id="mobile-menu" class="mobile-nav-panel" data-open="false" aria-label="Mobile">
+            <a href="#work">Work</a>
+            <a href="#process">Process</a>
+            <a href="#pricing">Pricing</a>
+            <a href="audit.html">Audit</a>
+            <a href="#contact">Contact</a>
+            <a href="https://calendly.com/standen/discovery-call" class="mobile-nav-cta" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
         </nav>
-    </div>
+    </header>
 
-    <section class="hero">
-        <div class="hero-inner">
-            <p class="hero-tag">SaaS • Custom Software • MVPs</p>
-            <h1 class="hero-title"><span class="highlight">SaaS </span>and <span class="highlight">Custom Software</span><br/>Built fast.</span> Led by a founder.</h1>
-            <p class="hero-subheading">Standen is a UK software company run by a SaaS founder. We build production ready MVPs and internal software for founders and operators who want clarity, speed, and direct ownership from day one.</p>
-            <div class="slider" aria-hidden="true">
-                <div class="slide-track">
-                    <div class="slide-group">
-                        <div class="slide"><img src="pics/peeker.png" alt="Peeker AI" width="120" height="32" draggable="false" loading="lazy"></div>
-                        <div class="slide"><img src="pics/terrapin.png" alt="Terrapin Stucco" width="120" height="32" draggable="false" loading="lazy"></div>
-                        <div class="slide"><img src="pics/synapse.png" alt="Synapse" width="120" height="32" draggable="false" loading="lazy"></div>
-                        <div class="slide"><img src="pics/OptimAlze.png" alt="OptimAlze" width="120" height="32" draggable="false" loading="lazy"></div>
-                        <div class="slide"><img src="pics/tom.png" alt="Tom" width="120" height="32" draggable="false" loading="lazy"></div>
-                        <div class="slide"><img src="pics/golf.png" alt="Golf" width="120" height="32" draggable="false" loading="lazy"></div>
-                        <div class="slide"><img src="pics/rethink.png" alt="Golf" width="120" height="32" draggable="false" loading="lazy"></div>
-                    </div>
-                    <div class="slide-group" aria-hidden="true">
-                        <div class="slide"><img src="pics/peeker.png" alt="Peeker AI" width="120" height="32" draggable="false" loading="lazy"></div>
-                        <div class="slide"><img src="pics/terrapin.png" alt="Terrapin Stucco" width="120" height="32" draggable="false" loading="lazy"></div>
-                        <div class="slide"><img src="pics/synapse.png" alt="Synapse" width="120" height="32" draggable="false" loading="lazy"></div>
-                        <div class="slide"><img src="pics/OptimAlze.png" alt="OptimAlze" width="120" height="32" draggable="false" loading="lazy"></div>
-                        <div class="slide"><img src="pics/tom.png" alt="Tom" width="120" height="32" draggable="false" loading="lazy"></div>
-                        <div class="slide"><img src="pics/golf.png" alt="Golf" width="120" height="32" draggable="false" loading="lazy"></div>
-                        <div class="slide"><img src="pics/rethink.png" alt="Golf" width="120" height="32" draggable="false" loading="lazy"></div>
-                    </div>
+    <main>
+        <section class="hero-bg relative flex min-h-[100svh] items-center overflow-hidden px-5 pb-20 pt-36 text-center text-white sm:px-8">
+            <div class="grid-lines absolute inset-0 opacity-90" aria-hidden="true"></div>
+            <div class="relative mx-auto max-w-5xl">
+                <p class="section-label mx-auto mb-7 text-white/58">Custom software for UK B2B agencies</p>
+                <h1 class="title-xl mx-auto max-w-6xl font-semibold text-balance">Custom software systems that make your agency easier to run.</h1>
+                <p class="body-copy-dark mx-auto mt-8 max-w-2xl text-base sm:text-xl">Standen designs and builds owned internal tools, client portals, dashboards, automations, and web platforms for agencies that have outgrown spreadsheets, scattered tools, and manual delivery workflows.</p>
+                <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                    <a href="https://calendly.com/standen/discovery-call" class="btn btn-light w-full sm:w-auto" target="_blank" rel="noopener" aria-label="Book a discovery call"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
+                    <a href="audit.html" class="btn btn-ghost-light w-full sm:w-auto">Read the Agency Ops Audit</a>
+                </div>
+                <div class="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-3 text-sm sm:grid-cols-3">
+                    <p class="stat-pill">Internal tools from &pound;5K</p>
+                    <p class="stat-pill">Full code ownership</p>
+                    <p class="stat-pill">Built around your workflow</p>
                 </div>
             </div>
-            <div class="hero-ctas">
-                <a href="index.html#contact" class="btn btn-cta-pill"><span class="btn__inner">Get in touch <span aria-hidden="true">→</span></span></a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="founder" class="section section--two-col" aria-label="Founder">
-        <div class="section-inner">
-            <div class="section-content">
-                <p class="section-label reveal">FOUNDER</p>
-                <div class="section-line" aria-hidden="true"></div>
-                <h2 class="section-title reveal reveal-delay-1">Built by someone who actually ships</h2>
-                <p class="section-body reveal reveal-delay-2">Standen is run by Tomas Jones, a teenage SaaS founder based in Hampshire, UK.</p>
-                <p class="section-body reveal reveal-delay-3">Tomas built and launched his first SaaS products while still in school, taking ideas from zero to live customers in weeks. He has since exited a SaaS business and now focuses on building fast, reliable software for other founders.</p>
-                <p class="section-body reveal reveal-delay-4">Standen exists to remove the usual friction of working with developers. No layers. No account managers. No handovers. You work directly with the person responsible for the outcome.</p>
-                <p class="section-body section-body--small reveal reveal-delay-5">You trust us because you are trusting him.</p>
-            </div>
-            <div class="section-visual">
-                <img src="pics/tomas.png" alt="Tomas Jones, founder of Standen" width="560" height="560" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    <section id="compare" class="section section--compare" aria-label="Why Standen">
-        <div class="section-inner section-inner--narrow">
-            <p class="section-label section-label--center reveal">THE DIFFERENCE</p>
-            <h2 class="section-title section-title--center reveal reveal-delay-1">Not a freelancer. <span class="highlight">A proper partner.</span></h2>
-            <p class="section-body section-body--center compare-intro reveal reveal-delay-2">We built Standen so founders do not have to gamble on a single freelancer or get lost inside a large agency. You get one accountable team, clear scope, and software that actually ships.</p>
-            <div class="compare-grid reveal reveal-delay-3" role="table" aria-label="Comparison: typical freelancer vs Standen">
-                <div class="compare-row compare-row--head" role="row">
-                    <div class="compare-cell compare-cell--criteria" role="columnheader">What you get</div>
-                    <div class="compare-cell compare-cell--other" role="columnheader">Typical freelancer</div>
-                    <div class="compare-cell compare-cell--us" role="columnheader">Standen</div>
-                </div>
-                <div class="compare-row" role="row">
-                    <div class="compare-cell compare-cell--criteria" role="cell">Fixed scope agreed upfront</div>
-                    <div class="compare-cell compare-cell--other" role="cell"><span class="compare-icon compare-icon--cross" aria-hidden="true"></span></div>
-                    <div class="compare-cell compare-cell--us" role="cell"><span class="compare-icon compare-icon--tick" aria-hidden="true"></span></div>
-                </div>
-                <div class="compare-row" role="row">
-                    <div class="compare-cell compare-cell--criteria" role="cell">One team from start to finish</div>
-                    <div class="compare-cell compare-cell--other" role="cell"><span class="compare-icon compare-icon--cross" aria-hidden="true"></span></div>
-                    <div class="compare-cell compare-cell--us" role="cell"><span class="compare-icon compare-icon--tick" aria-hidden="true"></span></div>
-                </div>
-                <div class="compare-row" role="row">
-                    <div class="compare-cell compare-cell--criteria" role="cell">Production ready code</div>
-                    <div class="compare-cell compare-cell--other" role="cell"><span class="compare-icon compare-icon--cross" aria-hidden="true"></span></div>
-                    <div class="compare-cell compare-cell--us" role="cell"><span class="compare-icon compare-icon--tick" aria-hidden="true"></span></div>
-                </div>
-                <div class="compare-row" role="row">
-                    <div class="compare-cell compare-cell--criteria" role="cell">Clear pricing agreed upfront</div>
-                    <div class="compare-cell compare-cell--other" role="cell"><span class="compare-icon compare-icon--cross" aria-hidden="true"></span></div>
-                    <div class="compare-cell compare-cell--us" role="cell"><span class="compare-icon compare-icon--tick" aria-hidden="true"></span></div>
-                </div>
-                <div class="compare-row" role="row">
-                    <div class="compare-cell compare-cell--criteria" role="cell">No disappearing developers</div>
-                    <div class="compare-cell compare-cell--other" role="cell"><span class="compare-icon compare-icon--cross" aria-hidden="true"></span></div>
-                    <div class="compare-cell compare-cell--us" role="cell"><span class="compare-icon compare-icon--tick" aria-hidden="true"></span></div>
-                </div>
-                <div class="compare-row" role="row">
-                    <div class="compare-cell compare-cell--criteria" role="cell">Weeks, not months</div>
-                    <div class="compare-cell compare-cell--other" role="cell"><span class="compare-icon compare-icon--cross" aria-hidden="true"></span></div>
-                    <div class="compare-cell compare-cell--us" role="cell"><span class="compare-icon compare-icon--tick" aria-hidden="true"></span></div>
-                </div>
-            </div>
-            <p class="section-body section-body--center compare-outro reveal reveal-delay-4">One accountable team, clear scope, and software that actually ships.</p>
-            <p class="section-body section-body--center" style="margin-top: 24px;"><a href="index.html#contact" class="btn btn-primary"><span class="btn__inner">Get in touch</span></a></p>
-        </div>
-    </section>
-
-    <section id="about" class="section section--about" aria-label="About">
-        <div class="section-inner section-inner--narrow section-inner--about-centre">
-            <p class="section-label section-label--center reveal">ABOUT</p>
-            <h2 class="section-title section-title--center reveal reveal-delay-1">How we’re <span class="highlight">different</span></h2>
-            <p class="section-body section-body--center reveal reveal-delay-2">Standen is a UK based software company delivering SaaS products and custom software for founders and businesses across the UK.</p>
-            <p class="section-body section-body--center reveal reveal-delay-3">We specialise in SaaS MVPs, subscription platforms, and internal tools that replace spreadsheets and legacy systems. We own the full delivery, from discovery to launch, with clear scope, fixed timelines where possible, and direct communication throughout.</p>
-            <p class="section-body section-body--center reveal reveal-delay-4">We are not a marketplace. We are not offshore. We are a small, focused team led by a founder who has built and shipped his own products.</p>
-            <p class="section-body section-body--center" style="margin-top: 24px;"><a href="index.html#contact" class="btn btn-primary"><span class="btn__inner">Get in touch</span></a></p>
-        </div>
-    </section>
-
-    <section class="section section--why" aria-label="Why us">
-        <div class="section-inner section-inner--narrow">
-            <p class="section-label section-label--center reveal">WHY STANDEN</p>
-            <h2 class="section-title section-title--center reveal reveal-delay-1">Built for <span class="highlight">fast-moving</span> teams</h2>
-            <div class="why-grid">
-                <div class="why-card reveal reveal-delay-2">
-                    <div class="why-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"/></svg>
-                    </div>
-                    <h3 class="why-title">Production-ready delivery</h3>
-                    <p class="why-body">We ship SaaS platforms and internal systems that are ready for real users. Clean code, clear architecture, and no shortcuts.</p>
-                </div>
-                <div class="why-card reveal reveal-delay-3">
-                    <div class="why-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
-                    </div>
-                    <h3 class="why-title">Fixed scope and timeline</h3>
-                    <p class="why-body">You know what you are getting before we start. Scope and timeline are agreed upfront. No surprise invoices.</p>
-                </div>
-                <div class="why-card reveal reveal-delay-4">
-                    <div class="why-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h3 class="why-title">One team, start to finish</h3>
-                    <p class="why-body">You work with the same people from kickoff to launch. No handovers. No vanishing developers.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--two-col" aria-label="Who we are">
-        <div class="section-inner">
-            <div class="section-content">
-                <p class="section-label reveal">WHO WE ARE</p>
-                <div class="section-line" aria-hidden="true"></div>
-                <h2 class="section-title reveal reveal-delay-1">
-                    The support your product team <span class="highlight">has been asking for</span>
-                </h2>
-                <p class="section-body">Standen is your dedicated SaaS and custom software development partner -  we expand your capacity and deliver from concept to launch. We specialise in SaaS products, MVPs and bespoke software for UK founders and businesses that need fast, reliable delivery.</p>
-                <p class="section-body section-body--small">See us as an extension of your team, so you can focus on your product and customers.</p>
-                <a href="index.html#contact" class="btn btn-primary"><span class="btn__inner">Get in touch</span></a>
-            </div>
-            <div class="section-visual">
-                <div class="visual-placeholder visual-placeholder--faces" style="display: flex; align-items: center; justify-content: center; min-height: 280px; background: rgba(26, 45, 42, 0.06); border-radius: 16px;">
-                    <span class="visual-tag" style="font-size: var(--text-caption); opacity: 0.8;">Hampshire-based · Remote delivery across the UK</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="section section--services" aria-label="Services">
-        <div class="section-inner section-inner--narrow">
-            <p class="section-label section-label--center reveal">SERVICES</p>
-            <h2 class="section-title section-title--center reveal reveal-delay-1">What we <span class="highlight">build</span> for you</h2>
-            <p class="section-body section-body--center">Two services only: SaaS development and custom software. Clear scope, fixed timeline, one team.</p>
-            <div class="services-grid">
-                <a href="saas-development-uk.html" class="service-card">
-                    <span class="service-card__icon" aria-hidden="true">◆</span>
-                    <h3 class="service-card__title">SaaS Development</h3>
-                    <p class="service-card__desc">For SaaS founders and product teams. We build MVPs and subscription products from idea to launch.</p>
-                </a>
-                <a href="custom-software-development-uk.html" class="service-card reveal reveal-delay-3">
-                    <span class="service-card__icon" aria-hidden="true">◈</span>
-                    <h3 class="service-card__title">Custom Software Development</h3>
-                    <p class="service-card__desc">For UK businesses needing bespoke internal tools, integrations and platforms. We replace spreadsheets and legacy systems.</p>
-                </a>
-            </div>
-            <div class="section-cta-row section-cta-row--center">
-                <a href="case-studies.html" class="btn btn-outline"><span class="btn__inner">View case studies</span></a>
-            </div>
-        </div>
-    </section>
-
-    <section id="work" class="section section--work" aria-label="Our work">
-        <div class="section-inner">
-            <div class="section-work-header">
-                <div>
-                    <p class="section-label reveal">CASE STUDIES</p>
-                    <h2 class="section-title reveal reveal-delay-1">See how we deliver <span class="highlight">SaaS</span> and <span class="highlight">Custom Software</span> for clients</h2>
-                </div>
-                <a href="index.html#contact" class="btn btn-outline">Get in touch</a>
-            </div>
-            <div class="work-grid">
-                <a href="case-studies/fx-quant-research-platform.html" class="work-card reveal reveal-delay-2">
-                    <img draggable="false" class="work-image" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop" alt="FX Quant Research Platform -  forex research and backtesting dashboard" width="640" height="480" loading="lazy">
-                    <span class="work-brand">FX Quant Research Platform</span>
-                    <span class="work-services">SaaS platform built in 12 days for financial research</span>
-                </a>
-                <a href="case-studies/real-estate-property-prediction.html" class="work-card">
-                    <img draggable="false" class="work-image" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop" alt="Real Estate Property Prediction App -  portfolio and AI prediction platform" width="640" height="480" loading="lazy">
-                    <span class="work-brand">Real Estate Property Prediction App</span>
-                    <span class="work-services">SaaS MVP built in 14 days for a UK client</span>
-                </a>
-                <a href="case-studies/scrapr-io.html" class="work-card reveal reveal-delay-4">
-                    <img draggable="false" class="work-image" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="Scrapr.io -  lead generation SaaS" width="640" height="480" loading="lazy">
-                    <span class="work-brand">Scrapr.io</span>
-                    <span class="work-services">SaaS MVP built, launched, and exited</span>
-                </a>
-            </div>
-            <p class="section-body section-body--center" style="margin-top: 24px;"><a href="case-studies.html" class="btn btn-outline"><span class="btn__inner">View all case studies</span></a></p>
-        </div>
-    </section>
-
-    <section class="section section--testimonials" aria-label="Client stories">
-        <div class="section-inner section-inner--testimonials">
-            <p class="section-label section-label--center reveal">CLIENT STORIES</p>
-            <h2 class="section-title section-title--center reveal reveal-delay-1">What clients <span class="highlight">say about</span> working with us</h2>
-            <div class="testimonial-layout">
-                <div class="testimonial-main" style="max-width: 640px; margin: 0 auto;">
-                    <div class="testimonial-content testimonial-content--active">
-                        <p class="testimonial-company">Peeker AI</p>
-                        <blockquote class="testimonial-quote">"Standen delivered our entire automation system in 10 days -  faster than anyone else could even start. The quality was exceptional and they hit every deadline."</blockquote>
-                        <p class="testimonial-attribution">Conrad Niedzielski, CEO @ Peeker AI</p>
-                    </div>
-                    <div class="testimonial-content testimonial-content--active" style="margin-top: 32px;">
-                        <p class="testimonial-company">Terrapin Stucco</p>
-                        <blockquote class="testimonial-quote">"We went from concept to live platform in exactly 14 days. Standen delivered everything on time. The speed and quality were incredible."</blockquote>
-                        <p class="testimonial-attribution">Justin, CEO @ Terrapin Stucco</p>
-                    </div>
-                    <a href="case-studies.html" class="testimonial-case-study" style="margin-top: 24px; display: inline-block;">
-                        <span class="testimonial-case-study__text"><span class="testimonial-case-study__company">CASE STUDIES</span> See how we deliver SaaS and custom software … <span aria-hidden="true">↗</span></span>
+        <section id="work" class="mesh-light px-5 py-24 text-center sm:px-8 sm:py-32">
+            <div class="mx-auto max-w-6xl">
+                <p class="section-label mb-7">Case studies</p>
+                <h2 class="title-lg reveal-on-scroll mx-auto max-w-5xl font-semibold text-balance">Real products shipped in days, not quarters.</h2>
+                <p class="body-copy reveal-on-scroll mx-auto mt-6 max-w-2xl text-lg">A selection of previous software builds, dashboards, internal systems and workflow tools delivered with tight scope, fast feedback and clean handover.</p>
+                <div class="mt-14 grid gap-5 md:grid-cols-12">
+                    <a href="case-study.html?id=ohmypod" class="case-link case-study-card bento-card reveal-on-scroll p-7 text-left md:col-span-8 md:p-9" aria-label="Read the OhMyPod case study">
+                        <div class="card-content grid h-full gap-8 lg:grid-cols-[1fr_.72fr] lg:items-start">
+                            <div>
+                                <div class="flex items-start justify-between gap-4">
+                                    <img src="assets/ohmypod-logo.png" class="case-logo" alt="OhMyPod logo" width="64" height="64">
+                                    <span class="case-pill">21-day SaaS MVP</span>
+                                </div>
+                                <p class="mt-9 text-sm text-black/42">OhMyPod / Built for Tom Sargent</p>
+                                <h3 class="mt-3 max-w-xl text-4xl font-semibold tracking-[-0.075em]">From notes app idea to live, owned SaaS in 21 days.</h3>
+                                <p class="body-copy mt-5 max-w-2xl text-lg">Tom came with an idea for a custom podcast SaaS. We turned it into workflow, features, and fixed scope, then built the product behind a private live link so he could test the platform from day one.</p>
+                                <p class="case-quote mt-7 text-sm">"Huge credit to Tomas Jones for moving fast, keeping scope tight, and building properly from day one. No fluff. Just execution."</p>
+                            </div>
+                            <div class="grid gap-3 text-sm">
+                                <p class="case-meta">Custom SaaS / live product</p>
+                                <ul class="case-list pl-5">
+                                    <li>Mapped MVP around what the product actually needed to do.</li>
+                                    <li>Sent a fixed quote with clear feature list and contract.</li>
+                                    <li>Shared daily screenshots, live demos, and quick feature reviews.</li>
+                                    <li>Transferred hosting, database, and source code on completion.</li>
+                                </ul>
+                                <span class="btn btn-dark mt-3 w-full">Read case study</span>
+                            </div>
+                        </div>
+                    </a>
+                    <article class="proof-card bento-card reveal-on-scroll p-7 text-left md:col-span-4 md:p-8">
+                        <div class="card-content flex h-full flex-col">
+                            <p class="text-sm text-white/48">Delivery pattern</p>
+                            <h3 class="mt-5 text-3xl font-semibold tracking-[-0.075em]">Scope first. Build visibly. Transfer fully.</h3>
+                            <div class="mt-8 grid gap-4 text-sm text-white/58">
+                                <p>Private live links from day one.</p>
+                                <p>Daily progress screenshots and demos.</p>
+                                <p>Source code, hosting, and database handed over.</p>
+                                <p>Clients own every part of the software.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <a href="case-study.html?id=fx-quant-research-platform" class="case-link bento-card reveal-on-scroll p-7 text-left md:col-span-6 lg:col-span-4 md:p-8" aria-label="Read the FX Quant Research Platform case study">
+                        <div class="card-content flex h-full flex-col">
+                            <div class="case-visual" style="--case-glow: rgba(58, 139, 255, .34);">
+                                <img src="assets/quant.png" alt="FX Quant Research Platform dashboard" width="1024" height="576" loading="lazy">
+                            </div>
+                            <span class="case-meta">Delivered in 12 days</span>
+                            <h3 class="mt-6 text-2xl font-semibold tracking-[-0.065em]">FX Quant Research Platform</h3>
+                            <p class="body-copy mt-4">A complete forex research platform with real-time data feeds, automated backtesting, and predictive analytics for turning complex market data into trading insight.</p>
+                            <div class="mt-auto pt-8 text-sm text-black/46">Real-time data / backtesting / analytics</div>
+                        </div>
+                    </a>
+                    <a href="case-study.html?id=real-estate-property-prediction" class="case-link bento-card reveal-on-scroll p-7 text-left md:col-span-6 lg:col-span-4 md:p-8" aria-label="Read the Real Estate Property Prediction App case study">
+                        <div class="card-content flex h-full flex-col">
+                            <div class="case-visual" style="--case-glow: rgba(64, 211, 133, .34);">
+                                <img src="assets/realestatedash.png" alt="Real Estate Property Prediction App dashboard" width="1024" height="576" loading="lazy">
+                            </div>
+                            <span class="case-meta">Delivered in 14 days</span>
+                            <h3 class="mt-6 text-2xl font-semibold tracking-[-0.065em]">Real Estate Property Prediction App</h3>
+                            <p class="body-copy mt-4">A full-stack property platform with AI-powered predictions, interactive mapping, portfolio management, and staff coordination in one operational system.</p>
+                            <div class="mt-auto pt-8 text-sm text-black/46">AI predictions / maps / portfolio ops</div>
+                        </div>
+                    </a>
+                    <a href="case-study.html?id=scrapr-io" class="case-link bento-card reveal-on-scroll p-7 text-left md:col-span-6 lg:col-span-4 md:p-8" aria-label="Read the Scrapr.io case study">
+                        <div class="card-content flex h-full flex-col">
+                            <div class="case-visual case-visual--dark" style="--case-glow: rgba(245, 164, 73, .34);">
+                                <img src="assets/scrapr.png" alt="Scrapr.io dashboard" width="1024" height="576" loading="lazy">
+                            </div>
+                            <span class="case-meta">Owned SaaS product</span>
+                            <h3 class="mt-6 text-2xl font-semibold tracking-[-0.065em]">Scrapr.io</h3>
+                            <p class="body-copy mt-4">A lead generation SaaS that returns 1,000+ verified leads in around 30 seconds, including real email addresses and phone numbers for decision-makers.</p>
+                            <div class="mt-auto pt-8 text-sm text-black/46">Lead data / enrichment / speed</div>
+                        </div>
+                    </a>
+                    <a href="case-study.html?id=instagram-lead-scraper" class="case-link bento-card reveal-on-scroll p-7 text-left md:col-span-6 lg:col-span-4 md:p-8" aria-label="Read the Instagram Lead Scraper case study">
+                        <div class="card-content flex h-full flex-col">
+                            <div class="case-visual case-visual--dark" style="--case-glow: rgba(220, 45, 218, .36);">
+                                <img src="assets/ig.png" alt="Instagram Lead Scraper dashboard" width="1024" height="768" loading="lazy">
+                            </div>
+                            <span class="case-meta">Built in 8 days</span>
+                            <h3 class="mt-6 text-2xl font-semibold tracking-[-0.065em]">Instagram Lead Scraper</h3>
+                            <p class="body-copy mt-4">An automated lead generation tool that processes thousands of Instagram profiles, identifies high-value prospects, and sends qualified leads into a CRM.</p>
+                            <div class="mt-auto pt-8 text-sm text-black/46">Profile scraping / prospect scoring / CRM delivery</div>
+                        </div>
+                    </a>
+                    <a href="case-study.html?id=crypto-news-scraper" class="case-link bento-card reveal-on-scroll p-7 text-left md:col-span-6 lg:col-span-4 md:p-8" aria-label="Read the Crypto News Scraper case study">
+                        <div class="card-content flex h-full flex-col">
+                            <div class="case-visual" style="--case-glow: rgba(239, 95, 12, .35);">
+                                <img src="assets/automation.png" alt="Crypto News Scraper automation workflow" width="1024" height="177" loading="lazy">
+                            </div>
+                            <span class="case-meta">Completed in 6 days</span>
+                            <h3 class="mt-6 text-2xl font-semibold tracking-[-0.065em]">Crypto News Scraper</h3>
+                            <p class="body-copy mt-4">A real-time crypto news aggregator monitoring 50+ sources, filtering noise, and surfacing market-moving updates directly to the user.</p>
+                            <div class="mt-auto pt-8 text-sm text-black/46">50+ sources / filtering / alerts</div>
+                        </div>
+                    </a>
+                    <a href="case-study.html?id=lead-magnet-generator" class="case-link bento-card reveal-on-scroll p-7 text-left md:col-span-6 lg:col-span-4 md:p-8" aria-label="Read the Lead Magnet Generator case study">
+                        <div class="card-content flex h-full flex-col">
+                            <div class="case-visual" style="--case-glow: rgba(55, 119, 255, .34);">
+                                <img src="assets/magnet.png" alt="Lead Magnet Generator interface" width="1024" height="576" loading="lazy">
+                            </div>
+                            <span class="case-meta">Built in 9 days</span>
+                            <h3 class="mt-6 text-2xl font-semibold tracking-[-0.065em]">Lead Magnet Generator</h3>
+                            <p class="body-copy mt-4">An AI-powered content generator for creating high-converting LinkedIn lead magnets, saving outputs to Notion, and tracking performance from one dashboard.</p>
+                            <div class="mt-auto pt-8 text-sm text-black/46">AI content / Notion workflow / performance tracking</div>
+                        </div>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="process" class="section section--process" aria-label="Process">
-        <div class="section-inner section-inner--narrow">
-            <p class="section-label section-label--center">PROCESS</p>
-            <h2 class="section-title section-title--center reveal reveal-delay-1">How we deliver <span class="highlight">from brief to launch</span></h2>
-            <p class="section-body section-body--center">A clear process, led by the same team from brief to launch. No surprises.</p>
-            <div class="process-grid">
-                <div class="process-step reveal reveal-delay-2">
-                    <span class="process-step__num" aria-hidden="true">1</span>
-                    <h3 class="process-step__title">Discovery & scope</h3>
-                    <p class="process-step__body">We discuss your idea, requirements and goals. We align on vision and deliver a fixed scope and timeline.</p>
-                </div>
-                <div class="process-step">
-                    <span class="process-step__num" aria-hidden="true">2</span>
-                    <h3 class="process-step__title">Plan & spec</h3>
-                    <p class="process-step__body">We outline requirements, create specs and set up the project. Clear communication channels from day one.</p>
-                </div>
-                <div class="process-step reveal reveal-delay-4">
-                    <span class="process-step__num" aria-hidden="true">3</span>
-                    <h3 class="process-step__title">Build</h3>
-                    <p class="process-step__body">Development starts immediately with regular updates. You have full visibility into progress.</p>
-                </div>
-                <div class="process-step">
-                    <span class="process-step__num" aria-hidden="true">4</span>
-                    <h3 class="process-step__title">Launch & handover</h3>
-                    <p class="process-step__body">Your product is delivered with revisions included. We walk you through everything and ensure you're ready to go live.</p>
-                </div>
-            </div>
-            <div class="section-cta-row section-cta-row--center">
-                <a href="index.html#contact" class="btn btn-primary"><span class="btn__inner">Get in touch</span></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--cta" aria-label="CTA">
-        <div class="section-inner section-inner--narrow">
-            <h2 class="section-title section-title--center section-title--large reveal">Ready to <span class="highlight">build</span>?</h2>
-            <p class="section-body section-body--center">Tell us about your SaaS or custom software project. We deliver remotely across the UK and respond within 24 hours.</p>
-            <div class="section-cta-row" style="justify-content: center; gap: 16px;">
-                <a href="index.html#contact" class="btn btn-primary"><span class="btn__inner">Build a SaaS product</span></a>
-                <a href="index.html#contact" class="btn btn-outline"><span class="btn__inner">Discuss custom software</span></a>
-            </div>
-        </div>
-    </section>
-
-    <section id="blog" class="section section--blog" aria-label="Blog">
-        <div class="section-inner">
-            <p class="section-label section-label--center reveal">BLOG</p>
-            <h2 class="section-title section-title--center reveal reveal-delay-1">Thoughts from building and shipping SaaS</h2>
-            <p class="section-body section-body--center">Short, practical writing on scoping, building, and launching software, written by someone who does the work.</p>
-            <div class="blog-list">
-                <div class="blog-grid">
-                    <article class="blog-card reveal reveal-delay-2">
-                        <a href="blog/how-to-scope-a-saas-mvp.html" class="blog-card__link">
-                            <img draggable="false" class="blog-card__image" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop" alt="Scoping a SaaS MVP" width="800" height="500" loading="lazy">
-                            <div class="blog-card__content">
-                                <time class="blog-card__date" datetime="2025-01-15">15 January 2025</time>
-                                <h3 class="blog-card__title">How to scope a SaaS MVP that actually ships</h3>
-                                <p class="blog-card__excerpt">Practical steps to define scope, avoid creep, and get from idea to launch in weeks -  not months.</p>
-                                <span class="blog-card__meta">5 min read · Standen</span>
-                            </div>
-                        </a>
+        <section id="process" class="mesh-light px-5 py-24 text-center sm:px-8 sm:py-32">
+            <div class="mx-auto max-w-6xl">
+                <p class="section-label mb-7">Process</p>
+                <h2 class="title-lg reveal-on-scroll mx-auto max-w-5xl font-semibold text-balance">A clear build process from messy workflow to working software.</h2>
+                <div class="mt-14 grid gap-5 md:grid-cols-12">
+                    <article class="bento-card process-step reveal-on-scroll p-8 text-left md:col-span-6 lg:col-span-3">
+                        <div class="card-content"><p class="text-sm text-black/42">01 / Discovery</p><h3 class="mt-9 text-2xl font-semibold tracking-[-0.065em]">Map the workflow</h3><p class="body-copy mt-4">We look at the manual process, the users involved, the data moving through it, and where time or margin is being lost.</p></div>
                     </article>
-                    <article class="blog-card reveal reveal-delay-3">
-                        <a href="blog/web-development-hampshire-what-to-expect.html" class="blog-card__link">
-                            <img draggable="false" class="blog-card__image" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop" alt="Web development in Hampshire" width="800" height="500" loading="lazy">
-                            <div class="blog-card__content">
-                                <time class="blog-card__date" datetime="2025-01-08">8 January 2025</time>
-                                <h3 class="blog-card__title">Web development in Hampshire: what to expect from a local agency</h3>
-                                <p class="blog-card__excerpt">What it's like working with a Hampshire-based web and SaaS agency -  timelines, communication, and how we deliver.</p>
-                                <span class="blog-card__meta">4 min read · Standen</span>
-                            </div>
-                        </a>
+                    <article class="bento-card process-step reveal-on-scroll p-8 text-left md:col-span-6 lg:col-span-3">
+                        <div class="card-content"><p class="text-sm text-black/42">02 / Prototype</p><h3 class="mt-9 text-2xl font-semibold tracking-[-0.065em]">Design the system</h3><p class="body-copy mt-4">We turn the workflow into screens, user journeys, permissions, data structure, and a clear build scope before development starts.</p></div>
                     </article>
-                    <article class="blog-card reveal reveal-delay-4">
-                        <a href="blog/when-to-build-custom-software-vs-saas.html" class="blog-card__link">
-                            <img draggable="false" class="blog-card__image" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop" alt="Custom software vs SaaS" width="800" height="500" loading="lazy">
-                            <div class="blog-card__content">
-                                <time class="blog-card__date" datetime="2024-12-18">18 December 2024</time>
-                                <h3 class="blog-card__title">When to build custom software vs use existing SaaS</h3>
-                                <p class="blog-card__excerpt">Deciding between bespoke build and off-the-shelf tools? We break down the trade-offs so you can choose with confidence.</p>
-                                <span class="blog-card__meta">6 min read · Standen</span>
-                            </div>
-                        </a>
+                    <article class="bento-card process-step reveal-on-scroll p-8 text-left md:col-span-6 lg:col-span-3">
+                        <div class="card-content"><p class="text-sm text-black/42">03 / Build</p><h3 class="mt-9 text-2xl font-semibold tracking-[-0.065em]">Build with visibility</h3><p class="body-copy mt-4">You get staging links, progress updates, QA, and clear decisions throughout the build, so the project never disappears into a black box.</p></div>
                     </article>
-                    <article class="blog-card reveal reveal-delay-5">
-                        <a href="blog/rapid-delivery-without-cutting-corners.html" class="blog-card__link">
-                            <img draggable="false" class="blog-card__image" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop" alt="Rapid delivery" width="800" height="500" loading="lazy">
-                            <div class="blog-card__content">
-                                <time class="blog-card__date" datetime="2024-12-05">5 December 2024</time>
-                                <h3 class="blog-card__title">Rapid delivery without cutting corners</h3>
-                                <p class="blog-card__excerpt">How we ship MVPs and web apps in weeks while keeping quality high and tech debt low.</p>
-                                <span class="blog-card__meta">5 min read · Standen</span>
-                            </div>
-                        </a>
+                    <article class="bento-card process-step reveal-on-scroll p-8 text-left md:col-span-6 lg:col-span-3">
+                        <div class="card-content"><p class="text-sm text-black/42">04 / Handover</p><h3 class="mt-9 text-2xl font-semibold tracking-[-0.065em]">Hand over ownership</h3><p class="body-copy mt-4">You receive the codebase, deployment notes, training, documentation, and a clean post-launch fix window.</p></div>
                     </article>
                 </div>
+                <div class="bento-card reveal-on-scroll mt-5 p-6 text-left md:p-8">
+                    <div class="card-content grid gap-6 md:grid-cols-[1fr_1.2fr] md:items-center">
+                        <h3 class="text-3xl font-semibold tracking-[-0.07em]">No vague retainers. No mystery build process.</h3>
+                        <p class="body-copy">You see what has been built, what is next, what needs a decision, and what is already locked. The scope stays clear from start to finish.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="faq" class="section section--faq" aria-label="FAQ">
-        <div class="section-inner section-inner--narrow">
-            <p class="section-label section-label--center reveal">FAQ</p>
-            <h2 class="section-title section-title--center reveal reveal-delay-1">Frequently asked questions</h2>
-            <div class="faq-list">
-                <details class="faq-item reveal reveal-delay-2">
-                    <summary class="faq-item__question">Do you work internationally?</summary>
-                    <div class="faq-item__answer"><p>Yes. We’re based in the UK (Hampshire) and deliver remotely for clients across the UK and internationally. Most of our work is remote-first, so we work with founders and businesses wherever they’re based.</p></div>
-                </details>
-                <details class="faq-item reveal reveal-delay-3">
-                    <summary class="faq-item__question">What’s the typical timeline for an MVP or custom project?</summary>
-                    <div class="faq-item__answer"><p>MVPs and custom projects often ship in 2–6 weeks depending on scope. We agree a fixed scope and timeline at the start so you know what to expect and when.</p></div>
-                </details>
-                <details class="faq-item reveal reveal-delay-4">
-                    <summary class="faq-item__question">How do you charge -  fixed price or hourly?</summary>
-                    <div class="faq-item__answer"><p>We prefer fixed scope and fixed price where possible, so you don’t get surprise invoices. We’ll outline what’s in scope and the cost before we start.</p></div>
-                </details>
-                <details class="faq-item">
-                    <summary class="faq-item__question">Do you work with early-stage startups?</summary>
-                    <div class="faq-item__answer"><p>Yes. We work with early-stage founders, scaling startups, and established businesses. If you have a clear idea and are ready to build, we can help.</p></div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section section--contact" aria-label="Contact">
-        <div class="section-inner section-inner--narrow">
-            <p class="section-label section-label--center reveal">CONTACT</p>
-            <h2 class="section-title section-title--center reveal reveal-delay-1">Start a project</h2>
-            <p class="section-body section-body--center">Tell us about your idea. We deliver remotely across the UK and will respond within 24 hours.</p>
-            <form class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="post" aria-label="Contact form">
-                <input type="hidden" name="_next" value="contact-thank-you.html">
-                <input type="hidden" name="_subject" value="Standen contact form submission">
-                <div class="form-row">
-                    <label for="contact-name">Name</label>
-                    <input type="text" id="contact-name" name="name" required placeholder="Your name" autocomplete="name">
-                </div>
-                <div class="form-row">
-                    <label for="contact-email">Email</label>
-                    <input type="email" id="contact-email" name="email" required placeholder="you@company.com" autocomplete="email">
-                </div>
-                <div class="form-row">
-                    <label for="contact-company">Company</label>
-                    <input type="text" id="contact-company" name="company" placeholder="Your company" autocomplete="organization">
-                </div>
-                <div class="form-row">
-                    <label for="contact-project-type">Project type</label>
-                    <select id="contact-project-type" name="project_type" required aria-required="true">
-                        <option value="" disabled selected>Select project type</option>
-                        <option value="saas">SaaS product / MVP</option>
-                        <option value="custom">Custom software / internal tools</option>
-                        <option value="not-sure">Not sure yet</option>
-                    </select>
-                </div>
-                <div class="form-row">
-                    <label for="contact-budget">Budget</label>
-                    <select id="contact-budget" name="budget" aria-describedby="contact-budget-hint">
-                        <option value="" disabled selected>Select budget range</option>
-                        <option value="4k-7k">£4K – £7K</option>
-                        <option value="7k-10k">£7K – £10K</option>
-                        <option value="10k-15k">£10K – £15K</option>
-                        <option value="15k-25k">£15K – £25K</option>
-                        <option value="25k-plus">£25K+</option>
-                        <option value="not-sure">Prefer not to say / Not sure</option>
-                    </select>
-                    <span id="contact-budget-hint" class="form-hint">Projects start from £4K. Helps us tailor our response.</span>
-                </div>
-                <div class="form-row">
-                    <label for="contact-message">Message</label>
-                    <textarea id="contact-message" name="message" required placeholder="What do you want to build? (e.g. SaaS MVP, internal tool, integration)" rows="5"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary"><span class="btn__inner">Send message</span></button>
-            </form>
-        </div>
-    </section>
-
-    </div><!-- .page-wrap -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-top">
-                <div class="footer-col footer-col--services">
-                    <h3 class="footer-heading">Services</h3>
-                    <div class="footer-services-grid">
-                        <div class="footer-category">
-                            <span class="footer-category__title">What we build</span>
-                            <a href="index.html#services">SaaS Development</a>
-                            <a href="index.html#services">Custom Software</a>
+        <section id="pricing" class="bg-ink px-5 py-24 text-center text-white sm:px-8 sm:py-32">
+            <div class="mx-auto max-w-6xl">
+                <p class="section-label mb-7 text-white/58">Pricing</p>
+                <h2 class="title-lg reveal-on-scroll mx-auto max-w-5xl font-semibold text-balance">Simple pricing for serious custom software projects.</h2>
+                <p class="body-copy-dark reveal-on-scroll mx-auto mt-6 max-w-2xl text-lg">Projects start from &pound;5,000. After a short audit call, we define the workflow, write the scope in plain English, and confirm exactly what will be delivered.</p>
+                <div class="price-grid mt-14 text-left">
+                    <article class="price-left price-primary bento-card reveal-on-scroll p-8 text-ink md:p-10">
+                        <div class="card-content flex h-full flex-col">
+                            <div class="price-hero">
+                                <div>
+                                    <p class="text-sm text-black/46">Custom software project</p>
+                                    <h3 class="mt-5 text-5xl font-semibold tracking-[-0.08em]">From &pound;5,000</h3>
+                                </div>
+                                <p class="price-badge">Scoped first release</p>
+                            </div>
+                            <p class="body-copy mt-7 max-w-2xl text-lg">For a client portal, internal tool, reporting dashboard, workflow system or operational software build with a clear business use case.</p>
+                            <ul class="price-list mt-9 text-sm">
+                                <li>Workflow audit, UX direction, and clear acceptance criteria</li>
+                                <li>Interface build, backend logic, integrations, testing, and staging link</li>
+                                <li>Full code ownership, repo transfer, deployment notes, and no lock-in</li>
+                                <li>Optional post-launch support once the first release is live</li>
+                                <li>Best for agencies with a repeated workflow, reporting process, client experience, or internal operation that should no longer run manually</li>
+                            </ul>
+                            <div class="mt-auto flex flex-col gap-3 pt-10 sm:flex-row sm:items-center">
+                                <a href="https://calendly.com/standen/discovery-call" class="btn btn-dark" target="_blank" rel="noopener">Scope my system</a>
+                                <p class="text-sm text-black/45">50% deposit, 50% on delivery.</p>
+                            </div>
                         </div>
-                        <div class="footer-category">
-                            <span class="footer-category__title">Pages</span>
-                            <a href="index.html#work">Case studies</a>
-                            <a href="index.html#about">About</a>
-                            <a href="index.html#contact">Contact</a>
+                    </article>
+                    <article class="bento-card dark-card reveal-on-scroll p-8 md:p-9">
+                        <div class="card-content">
+                            <p class="text-sm text-white/46">Consultation call</p>
+                            <h3 class="mt-4 text-4xl font-semibold tracking-[-0.08em]">&pound;120/hr</h3>
+                            <p class="body-copy-dark mt-4">Use this for software strategy, workflow mapping, technical scoping, UX review, system architecture, or deciding what to build first.</p>
+                            <a href="https://calendly.com/standen/discovery-call" class="btn btn-light mt-8" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a consultation</a>
                         </div>
-                    </div>
+                    </article>
+                    <article class="bento-card dark-card reveal-on-scroll p-8 md:p-9">
+                        <div class="card-content">
+                            <p class="text-sm text-white/46">Not sure yet?</p>
+                            <h3 class="mt-4 text-3xl font-semibold tracking-[-0.075em]">Start with the messy version.</h3>
+                            <p class="body-copy-dark mt-4">Send a Loom, notes doc, rough brief, broken spreadsheet, messy workflow, or half-built tool. We will turn it into a clear build plan.</p>
+                            <a href="mailto:tomas@standen.io?subject=Project%20enquiry" class="btn btn-ghost-light mt-8">Email tomas@standen.io</a>
+                        </div>
+                    </article>
                 </div>
-                <div class="footer-col footer-col--nav">
-                    <div class="footer-nav-group">
-                        <h3 class="footer-heading">Main</h3>
-                        <a href="index.html#services">SaaS Development</a>
-                        <a href="index.html#services">Custom Software</a>
-                        <a href="index.html#work">Case studies</a>
-                        <a href="index.html#contact">Contact</a>
+                <a href="audit.html" class="bento-card reveal-on-scroll mt-5 block p-6 text-left text-white md:p-8">
+                    <div class="card-content grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
+                        <div>
+                            <p class="text-sm text-white/46">Not ready to book yet?</p>
+                            <h3 class="mt-3 text-2xl font-semibold tracking-[-0.065em]">Read the 14 Day Agency Ops Audit.</h3>
+                        </div>
+                        <span class="btn btn-light">Read the audit</span>
                     </div>
-                    <div class="footer-nav-group">
-                        <h3 class="footer-heading">Learn</h3>
-                        <a href="index.html#blog">Blog</a>
-                        <a href="resources.html">Resources</a>
-                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="contact" class="mesh-light px-5 py-24 text-center sm:px-8 sm:py-32">
+            <div class="mx-auto max-w-3xl">
+                <p class="wordmark mx-auto text-2xl">Standen</p>
+                <h2 class="title-lg reveal-on-scroll mx-auto mt-8 max-w-5xl font-semibold text-balance">Have a workflow your agency has outgrown?</h2>
+                <p class="body-copy mx-auto mt-7 max-w-xl text-lg">Book a short call. We will look at the workflow, identify what should be automated or centralised, and map the simplest first version worth building.</p>
+                <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                    <a href="https://calendly.com/standen/discovery-call" class="btn btn-dark w-full sm:w-auto" target="_blank" rel="noopener" aria-label="Book a discovery call"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
+                    <a href="mailto:tomas@standen.io?subject=Project%20enquiry" class="btn btn-ghost-dark w-full sm:w-auto">Email tomas@standen.io</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-brand-row">
-                    <span class="footer-copy">© 2026 Standen. All rights reserved.</span>
-                </div>
-                <nav class="footer-links" aria-label="Legal and policies">
-                    <a href="privacy.html">Privacy policy</a>
-                    <span class="footer-sep" aria-hidden="true">·</span>
-                    <a href="terms.html">Terms of use</a>
-                </nav>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/tomas-jones1/" class="footer-social__link" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <img src="pics/logo.png" alt="Standen" width="40" height="40">
-                </div>
-            </div>
+        </section>
+    </main>
+
+    <footer class="bg-ink px-5 pb-12 text-white sm:px-8">
+        <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 border-t border-white/12 pt-8 text-center sm:flex-row sm:text-left">
+            <p class="wordmark text-xl">Standen</p>
+            <p class="text-sm font-normal text-white/38">&copy; 2026 Standen. Custom internal tools, portals and dashboards for UK B2B agencies.</p>
+            <nav class="flex flex-wrap justify-center gap-5 text-sm text-white/50" aria-label="Footer"><a href="#work" class="hover:text-white">Work</a><a href="#process" class="hover:text-white">Process</a><a href="#pricing" class="hover:text-white">Pricing</a><a href="audit.html" class="hover:text-white">Audit</a><a href="#contact" class="hover:text-white">Contact</a></nav>
         </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script>
+        (function () {
+            var els = document.querySelectorAll('.reveal-on-scroll');
+            var menuButton = document.querySelector('.nav-menu-toggle');
+            var mobileMenu = document.getElementById('mobile-menu');
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', function () {
+                    var isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+                    menuButton.setAttribute('aria-expanded', String(!isOpen));
+                    mobileMenu.setAttribute('data-open', String(!isOpen));
+                });
+                mobileMenu.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        menuButton.setAttribute('aria-expanded', 'false');
+                        mobileMenu.setAttribute('data-open', 'false');
+                    });
+                });
+            }
+            if (!els.length || !('IntersectionObserver' in window)) {
+                els.forEach(function (el) { el.classList.add('is-visible'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
+            els.forEach(function (el) { io.observe(el); });
+        })();
+    </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://standen.co.uk/sitemap.xml
+Sitemap: https://standen.io/sitemap.xml

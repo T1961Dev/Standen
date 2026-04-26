@@ -1,4 +1,4 @@
-# SEO corrective rebuild — implementation summary
+﻿# SEO corrective rebuild — implementation summary
 
 **Date:** 31 January 2026  
 **Scope:** Structural, SEO and conversion fix for Standen (UK software development agency). No aesthetic redesign; focus on structure, clarity, SEO and conversion.
@@ -88,7 +88,7 @@
 ## Assumptions
 
 - **Form handling:** Form submissions go to Formspree. You must replace `YOUR_FORMSPREE_ID` in `contact.html` with your real Formspree form ID.
-- **og:image:** All og:image tags use `https://standen.co.uk/og-image.jpg`. You need to add a real image at that path (e.g. 1200×630) or update the meta tags.
+- **og:image:** All og:image tags use `https://standen.io/og-image.jpg`. You need to add a real image at that path (e.g. 1200×630) or update the meta tags.
 - **Static hosting:** No server-side redirects. Old URLs (`case-study.html?id=slug`, `blog-post.html?slug=slug`) are not redirected. If you want 301s, configure them in your host (e.g. Netlify, Vercel, Apache, Nginx).
 - **Case study images:** Case study and blog images still use Unsplash URLs with descriptive alt text. The audit suggested replacing proof imagery with self-hosted or neutral assets; you can swap the `src` and keep the same alt text.
 - **Case study filter:** The "Filter: SaaS / Custom Software / All" links on `case-studies.html` are present but do not run JavaScript; the list is static and each card is already labeled. Filtering can be added later with JS if desired.
@@ -97,7 +97,7 @@
 
 ## Remaining blockers / manual steps
 
-1. **Formspree:** In `contact.html`, set `action="https://formspree.io/f/YOUR_FORMSPREE_ID"` to your actual Formspree form ID. Optionally set `_next` to your live domain if different from `https://standen.co.uk`.
+1. **Formspree:** In `contact.html`, set `action="https://formspree.io/f/YOUR_FORMSPREE_ID"` to your actual Formspree form ID. Optionally set `_next` to your live domain if different from `https://standen.io`.
 2. **og-image.jpg:** Create and upload `og-image.jpg` (recommended 1200×630) to the site root, or change all `og:image` meta tags to the URL you use.
 3. **Optional redirects:** To avoid duplicate signals, add 301 redirects: `case-study.html?id=*` → `case-studies/*.html`, `blog-post.html?slug=*` → `blog/*.html`.
 4. **Calendly (optional):** If you want a booking link, add a Calendly embed or button on `contact.html` alongside the form.

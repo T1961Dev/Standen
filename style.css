@@ -1,4 +1,4 @@
-/* Superside styles — copied from their design system */
+/* Standen shared brand system */
 
 * {
     margin: 0;
@@ -7,19 +7,18 @@
 }
 
 :root {
-    /* Reference: cream bg, charcoal text, lime highlight #9AE62D */
-    --cloud-50: 248 249 245;
-    --bg-cream: #F5F6F0;
-    --charcoal: #1A2D2A;
-    --charcoal-rgb: 31, 31, 31;
-    --dark-green: #1A2D2A;
-    --accent-green: #C3FF66;
-    --lime-highlight: #C3FF66;
+    --cloud-50: 247 247 242;
+    --bg-cream: #F7F7F2;
+    --charcoal: #050505;
+    --charcoal-rgb: 5, 5, 5;
+    --dark-green: #050505;
+    --accent-green: #FFFFFF;
+    --lime-highlight: #FFFFFF;
     --white: #FFFFFF;
     /* Nav = light bg, charcoal text */
     --nav-bg: var(--bg-cream);
     --nav-text: var(--charcoal);
-    --nav-border: rgba(31, 31, 31, 0.12);
+    --nav-border: rgba(5, 5, 5, 0.10);
     --nav-height: 60px;
     /* Sections: cream bg, charcoal text */
     --section-bg: var(--bg-cream);
@@ -46,11 +45,11 @@
     --fade-up-offset: min(28px, 5vw);
 }
 
-/* Instrument Serif for cursive/emphasis — 0% letter-spacing (not -5%) */
+/* Legacy emphasis now stays in the Geist wordmark system. */
 .serif {
-    font-family: "Instrument Serif", Georgia, serif;
-    font-style: italic;
-    letter-spacing: 0;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-style: normal;
+    letter-spacing: -0.05em;
     font-weight: 400;
 }
 
@@ -60,7 +59,8 @@ html {
 }
 
 body {
-    font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.05em;
     background-color: var(--bg-cream);
     color: var(--charcoal);
     -webkit-font-smoothing: antialiased;
@@ -70,6 +70,14 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+body a,
+body button,
+body input,
+body textarea {
+    font-family: inherit;
+    letter-spacing: inherit;
 }
 
 .page-wrap {
@@ -95,10 +103,10 @@ body::before {
     z-index: 0;
     pointer-events: none;
     background-image:
-        linear-gradient(rgba(31, 31, 31, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(31, 31, 31, 0.08) 1px, transparent 1px);
+        linear-gradient(rgba(5, 5, 5, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(5, 5, 5, 0.045) 1px, transparent 1px);
     background-size: 36px 36px;
-    opacity: 0.88;
+    opacity: 0.72;
 }
 
 /* —— Global animations —— */
@@ -159,12 +167,11 @@ body::before {
     }
 }
 
-/* Key title highlighting: lime green behind text — Instrument Serif italic, no glitch on multi-word */
 .highlight {
-    font-family: "Instrument Serif", Georgia, serif;
-    font-style: italic;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-style: normal;
     font-weight: 400;
-    letter-spacing: 0;
+    letter-spacing: -0.05em;
     color: var(--charcoal);
     background: var(--lime-highlight);
     padding: 0.08em 0.12em;
@@ -174,13 +181,13 @@ body::before {
 }
 
 ::selection {
-    background: var(--accent-green);
-    color: var(--charcoal);
+    background: var(--charcoal);
+    color: var(--white);
 }
 
 ::-moz-selection {
-    background: var(--accent-green);
-    color: var(--charcoal);
+    background: var(--charcoal);
+    color: var(--white);
 }
 
 /* —— Nav (dark green bg, white text — Superside) —— */
@@ -238,7 +245,7 @@ body::before {
 .brand {
     display: inline-block;
     text-decoration: none;
-    line-height: 0;
+    line-height: 1;
 }
 
 .brand img {
@@ -247,6 +254,20 @@ body::before {
     width: auto;
     max-width: 140px;
     object-fit: contain;
+}
+
+.wordmark {
+    display: inline-block;
+    color: var(--charcoal);
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.wordmark--footer {
+    font-size: 1.125rem;
 }
 
 a.brand:hover {
@@ -514,9 +535,10 @@ a.brand:hover {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 15px;
     font-weight: 500;
+    letter-spacing: -0.05em;
     border-radius: 999px;
     padding: 12px 24px;
     cursor: pointer;
@@ -651,7 +673,7 @@ a.brand:hover {
 }
 
 .hero-title {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: clamp(2.5rem, 5.5vw, 4rem);
     font-weight: 500;
     line-height: 1.28;
@@ -696,7 +718,7 @@ a.brand:hover {
     width: 200px;
     height: 100%;
     z-index: 2;
-    background: linear-gradient(to right, var(--bg-cream) 0%, rgba(245, 246, 240, 0) 100%);
+    background: linear-gradient(to right, var(--bg-cream) 0%, rgba(255, 255, 255, 0) 100%);
     pointer-events: none;
 }
 
@@ -762,7 +784,7 @@ a.brand:hover {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 15px;
     font-weight: 500;
     padding: 14px 28px;
@@ -964,7 +986,7 @@ a.brand:hover {
 }
 
 .section-title {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-h2);
     font-weight: 600;
     line-height: 1.15;
@@ -1071,7 +1093,7 @@ a.brand:hover {
 }
 
 .service-hero__title {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 500;
     line-height: 1.2;
@@ -1475,7 +1497,7 @@ a.brand:hover {
 
 .stat-value {
     display: block;
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1636,7 +1658,7 @@ a.brand:hover {
 
 .compare-cell--us {
     text-align: center;
-    background: rgba(195, 255, 102, 0.15);
+    background: rgba(245, 194, 138, 0.15);
     color: var(--charcoal);
     font-weight: 500;
 }
@@ -1734,7 +1756,7 @@ a.brand:hover {
 }
 
 .why-title {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-h3);
     font-weight: 600;
     color: var(--dark-green);
@@ -1796,7 +1818,7 @@ a.brand:hover {
 }
 
 .service-card__title {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-h3);
     font-weight: 600;
     margin-bottom: 10px;
@@ -1863,7 +1885,7 @@ a.brand:hover {
 .work-brand {
     display: block;
     padding: 24px 24px 4px;
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-h3);
     font-weight: 600;
     line-height: 1.3;
@@ -1962,14 +1984,14 @@ a.brand:hover {
     border-radius: 10px;
     background: var(--lime-highlight);
     color: var(--charcoal);
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-body);
     font-weight: 700;
     margin-bottom: 20px;
 }
 
 .process-step__title {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-h3);
     font-weight: 600;
     color: var(--charcoal);
@@ -2471,7 +2493,7 @@ a.footer-logo:hover img {
 }
 
 .blog-card__title {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-h3);
     font-weight: 600;
     line-height: 1.3;
@@ -2526,7 +2548,7 @@ a.footer-logo:hover img {
 }
 
 .blog-post__title {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-h2);
     font-weight: 600;
     line-height: 1.2;
@@ -2583,7 +2605,7 @@ a.footer-logo:hover img {
 }
 
 .resources-heading {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-h3);
     font-weight: 600;
     color: var(--dark-green);
@@ -2623,7 +2645,7 @@ a.footer-logo:hover img {
 }
 
 .resource-card__title {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-h3);
     font-weight: 600;
     margin-bottom: 10px;
@@ -2668,7 +2690,7 @@ a.footer-logo:hover img {
 }
 
 .faq-item__question {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-body);
     font-weight: 600;
     color: var(--charcoal);
@@ -2708,7 +2730,7 @@ a.footer-logo:hover img {
 }
 
 .faq-question {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-body);
     font-weight: 600;
     color: var(--dark-green);
@@ -2759,7 +2781,7 @@ a.footer-logo:hover img {
 }
 
 .case-study-title {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-h2);
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -2788,7 +2810,7 @@ a.footer-logo:hover img {
 }
 
 .case-study-heading {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-h3);
     font-weight: 600;
     color: var(--dark-green);
@@ -2851,7 +2873,7 @@ a.footer-logo:hover img {
 }
 
 .pricing-amount {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -2900,7 +2922,7 @@ a.footer-logo:hover img {
 .contact-form select,
 .contact-form textarea {
     width: 100%;
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-body-sm);
     padding: 14px 16px;
     border: 1px solid rgba(var(--charcoal-rgb), 0.25);
@@ -2955,7 +2977,7 @@ a.footer-logo:hover img {
 }
 
 .legal-body h2 {
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-h3);
     font-weight: 600;
     color: var(--dark-green);

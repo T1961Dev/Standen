@@ -1,102 +1,122 @@
-/** Case studies — from past work, elevated to company level. Used by case-study.html and index work grid. */
+/** Case studies used by the dynamic case-study page. */
 window.CASE_STUDIES = {
+  ohmypod: {
+    slug: "ohmypod",
+    title: "OhMyPod",
+    eyebrow: "Custom SaaS MVP",
+    client: "Tom Sargent",
+    image: "assets/ohmypod-logo.png",
+    imageAlt: "OhMyPod logo",
+    imageMode: "logo",
+    liveUrl: "https://ohmypod.ai/",
+    glow: "rgba(89, 39, 255, .34)",
+    services: ["SaaS MVP", "Product strategy", "Full-stack build", "Ownership transfer"],
+    timeline: "21 days",
+    summary: "A podcast SaaS went from an idea in Tom's notes app to a live, owned product in 21 days.",
+    problem: "Tom had a clear idea for a custom SaaS, but it needed to become a buildable product without drifting into unnecessary complexity. The important work was deciding what the software actually needed to do, what counted as MVP, and what could wait until the next phase.",
+    solution: "We started with a simple call, mapped workflow to features, agreed a fixed scope, and began building behind a private live link from day one. Tom could log in, test features while they were being built, and review progress through daily screenshots, demos, and quick calls. Once complete, hosting, database, and source code were transferred so he owned every part of the software.",
+    results: ["Live SaaS product in 21 days", "Fixed quote and clear feature list before build", "Private live link available from day one", "Hosting, database, and source code fully transferred"],
+    stack: ["Product scoping", "Full-stack web app", "Authentication", "Database", "Deployment", "Source-code handover"],
+    testimonial: {
+      quote: "Huge credit to Tomas Jones for moving fast, keeping scope tight, and building properly from day one. No fluff. Just execution.",
+      author: "Tom Sargent",
+      role: "Founder, OhMyPod"
+    }
+  },
   "fx-quant-research-platform": {
     slug: "fx-quant-research-platform",
     title: "FX Quant Research Platform",
-    client: "Quantitative Research Client",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop",
-    services: ["SaaS", "Web Development", "Financial Tech"],
+    eyebrow: "Financial research platform",
+    client: "Custom project",
+    image: "assets/quant.png",
+    imageAlt: "FX Quant Research Platform dashboard",
+    glow: "rgba(58, 139, 255, .34)",
+    services: ["Financial tech", "Research dashboard", "Predictive analytics"],
     timeline: "12 days",
-    problem: "The client needed a complete forex research platform to turn complex financial data into actionable trading insights. They had real-time data feeds but no unified system for backtesting, predictive analytics, or visualisation.",
-    solution: "We delivered a full-stack research platform with real-time data ingestion, automated backtesting engines, and predictive analytics dashboards. The system processes live forex data, runs historical simulations, and surfaces actionable insights through a clean, secure interface.",
-    stack: ["React", "Node.js", "Python", "PostgreSQL", "Real-time data pipelines", "REST & WebSocket APIs"],
-    testimonial: {
-      quote: "Standen delivered our entire research platform in 12 days — faster than anyone else could even start. The quality was exceptional and they hit every deadline.",
-      author: "Quantitative Research Lead",
-      role: "Client"
-    }
+    summary: "A complete forex research platform for exploring price data, testing strategies, and turning market information into usable insight.",
+    problem: "The client needed a unified research environment for forex analysis. Market data, backtesting, and predictive signals were scattered, making it difficult to move from raw information to confident decisions.",
+    solution: "We built a full-stack platform with market data views, automated backtesting, predictive analytics, and clean dashboard interfaces. The system made complex financial datasets easier to inspect, compare, and act on.",
+    results: ["Delivered in 12 days", "Real-time data feeds centralised", "Backtesting and analytics in one interface", "Designed for fast research workflows"],
+    stack: ["Dashboard UI", "Data visualisation", "Backtesting logic", "Predictive analytics", "Market data pipeline"]
   },
   "real-estate-property-prediction": {
     slug: "real-estate-property-prediction",
     title: "Real Estate Property Prediction App",
-    client: "Property Investment Firm",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=630&fit=crop",
-    services: ["Web Development", "SaaS", "AI"],
+    eyebrow: "AI property platform",
+    client: "Custom project",
+    image: "assets/realestatedash.png",
+    imageAlt: "Real Estate Property Prediction App dashboard",
+    glow: "rgba(64, 211, 133, .34)",
+    services: ["AI predictions", "Interactive mapping", "Portfolio operations"],
     timeline: "14 days",
-    problem: "A property investment team needed one platform to manage portfolios, coordinate staff, and predict property values — without juggling multiple tools and spreadsheets.",
-    solution: "We built a full-stack platform with AI-powered property predictions, interactive mapping, portfolio management, and team coordination. Stakeholders get a single place to view predictions, manage assets, and collaborate.",
-    stack: ["React", "Node.js", "Mapbox", "Machine learning APIs", "PostgreSQL"],
-    testimonial: {
-      quote: "We went from concept to live platform in exactly 14 days. Standen delivered everything on time. The speed and quality were incredible.",
-      author: "Justin",
-      role: "CEO @ Terrapin Stucco"
-    }
+    summary: "A full-stack property platform combining predictions, portfolio management, staff coordination, and mapping.",
+    problem: "The client needed to manage property opportunities, portfolio data, staff activity, and AI-assisted investment decisions without relying on disconnected spreadsheets and tools.",
+    solution: "We delivered a single dashboard for property tracking, AI predictions, portfolio performance, staff management, and map-based exploration. The interface made the system usable for both operational and strategic decisions.",
+    results: ["Delivered in 14 days", "AI-powered property predictions", "Portfolio and staff management in one platform", "Interactive map workflow"],
+    stack: ["Full-stack web app", "AI prediction workflow", "Mapping UI", "Portfolio dashboard", "Role-based operations"]
   },
   "scrapr-io": {
     slug: "scrapr-io",
     title: "Scrapr.io",
-    client: "Standen (Product)",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop",
-    services: ["SaaS", "MVP", "Lead Generation"],
+    eyebrow: "Owned SaaS product",
+    client: "Internal SaaS",
+    image: "assets/scrapr.png",
+    imageAlt: "Scrapr.io dashboard",
+    glow: "rgba(245, 164, 73, .34)",
+    services: ["Lead generation", "SaaS", "Data enrichment"],
     timeline: "Ongoing product",
-    problem: "Sales and marketing teams need verified leads fast — without manual research or unreliable data sources.",
-    solution: "We built a lead generation SaaS that delivers over 1,000 verified leads in seconds, with real email addresses and phone numbers for decision-makers. The product scales for teams and integrates with existing workflows.",
-    stack: ["React", "Node.js", "PostgreSQL", "Background workers", "Stripe"],
-    testimonial: {
-      quote: "Standen delivered our entire automation system in 10 days — faster than anyone else could even start. The quality was exceptional and they hit every deadline.",
-      author: "Conrad Niedzielski",
-      role: "CEO @ Peeker AI"
-    }
+    summary: "A lead generation SaaS that returns 1,000+ verified leads in around 30 seconds.",
+    problem: "Sales teams need qualified lead data quickly, but manual prospecting is slow and generic databases are often stale or incomplete.",
+    solution: "Scrapr.io packages lead scraping, enrichment, storage, and export workflows into a fast SaaS dashboard. It gives users real email addresses and phone numbers for decision-makers without forcing them through manual research.",
+    results: ["1,000+ verified leads in around 30 seconds", "Lead database and export workflow", "Decision-maker contact data", "Built as an owned SaaS product"],
+    stack: ["SaaS dashboard", "Lead scraping", "Data enrichment", "Background jobs", "Exports"]
   },
   "instagram-lead-scraper": {
     slug: "instagram-lead-scraper",
     title: "Instagram Lead Scraper",
-    client: "Marketing Agency",
-    image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=1200&h=630&fit=crop",
-    services: ["Custom Software", "Automation", "Lead Generation"],
+    eyebrow: "Automation tool",
+    client: "Custom project",
+    image: "assets/ig.png",
+    imageAlt: "Instagram Lead Scraper dashboard",
+    glow: "rgba(220, 45, 218, .36)",
+    services: ["Automation", "Lead generation", "CRM workflow"],
     timeline: "8 days",
-    problem: "The agency needed to identify and qualify high-value prospects from Instagram at scale, then push them into their CRM without manual work.",
-    solution: "We built an automated Instagram lead generation tool that processes thousands of profiles, scores prospects, and delivers qualified leads straight into their CRM — running in the background so the team can focus on closing.",
-    stack: ["Node.js", "Automation pipelines", "CRM API integration", "Queue workers"],
-    testimonial: {
-      quote: "This is exactly what you need for rapid development. Standen understood our workflow and delivered a solution that just works.",
-      author: "Agency Director",
-      role: "Client"
-    }
+    summary: "An automated Instagram prospecting system that processes profiles, identifies high-value leads, and moves them into a CRM.",
+    problem: "The client needed to turn Instagram research into a repeatable prospecting workflow without manually checking profiles, collecting details, and copying leads into their CRM.",
+    solution: "We built a dashboard and scraping workflow for importing, filtering, and managing leads. The system could process large profile lists, surface useful prospects, and support manual lead entry where needed.",
+    results: ["Built in 8 days", "Processes thousands of profiles", "Lead dashboard for review and upload", "CRM-ready prospect workflow"],
+    stack: ["Scraping workflow", "Dashboard UI", "CSV upload", "Lead filtering", "CRM handoff"]
   },
   "crypto-news-scraper": {
     slug: "crypto-news-scraper",
     title: "Crypto News Scraper",
-    client: "Trading Desk",
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&h=630&fit=crop",
-    services: ["Web Development", "Data Aggregation", "Real-time"],
+    eyebrow: "Real-time aggregation",
+    client: "Custom project",
+    image: "assets/automation.png",
+    imageAlt: "Crypto News Scraper automation workflow",
+    glow: "rgba(239, 95, 12, .35)",
+    services: ["Automation", "News aggregation", "Filtering pipeline"],
     timeline: "6 days",
-    problem: "The desk needed to monitor 50+ crypto news sources and surface only market-moving stories — without noise or delay.",
-    solution: "We built a real-time crypto news aggregator that monitors dozens of sources, filters by impact and relevance, and delivers the most important stories directly to the team’s inbox and dashboard.",
-    stack: ["Node.js", "RSS & API ingestion", "Filtering pipeline", "Email & dashboard"],
-    testimonial: {
-      quote: "Completed in 6 days. We now see the news that matters first.",
-      author: "Trading Desk",
-      role: "Client"
-    }
+    summary: "A real-time crypto news system that monitors 50+ sources and filters market-moving updates.",
+    problem: "Crypto moves quickly, and the client needed a way to monitor many sources without drowning in low-value updates or checking sites manually.",
+    solution: "We built an automated scraping and filtering pipeline that pulls from dozens of sources, filters out noise, and routes important market-moving stories to the right place.",
+    results: ["Completed in 6 days", "50+ sources monitored", "Noise-filtering pipeline", "Important updates delivered quickly"],
+    stack: ["Automation pipeline", "Firecrawl", "OpenAI filtering", "JSON parsing", "Notification workflow"]
   },
   "lead-magnet-generator": {
     slug: "lead-magnet-generator",
     title: "Lead Magnet Generator",
-    client: "B2B Marketing Team",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop",
-    services: ["SaaS", "AI", "Marketing Automation"],
+    eyebrow: "AI content tool",
+    client: "Custom project",
+    image: "assets/magnet.png",
+    imageAlt: "Lead Magnet Generator interface",
+    glow: "rgba(55, 119, 255, .34)",
+    services: ["AI generation", "LinkedIn content", "Notion workflow"],
     timeline: "9 days",
-    problem: "The team wanted to create high-converting LinkedIn lead magnets at scale, save them to Notion, and track performance — all from one place.",
-    solution: "We delivered an AI-powered lead magnet generator that creates LinkedIn-ready content, syncs to Notion, and tracks performance in a single dashboard — reducing production time and improving conversion tracking.",
-    stack: ["React", "Node.js", "OpenAI API", "Notion API", "Analytics"],
-    testimonial: {
-      quote: "From brief to live tool in 9 days. Standen got our stack and our goals from day one.",
-      author: "Head of Demand Gen",
-      role: "Client"
-    }
-  },
-  "coming-soon-1": { slug: "coming-soon-1", title: "Case study coming soon", client: "", image: "", services: [], timeline: "", problem: "", solution: "", stack: [], testimonial: null, empty: true },
-  "coming-soon-2": { slug: "coming-soon-2", title: "Case study coming soon", client: "", image: "", services: [], timeline: "", problem: "", solution: "", stack: [], testimonial: null, empty: true },
-  "coming-soon-3": { slug: "coming-soon-3", title: "Case study coming soon", client: "", image: "", services: [], timeline: "", problem: "", solution: "", stack: [], testimonial: null, empty: true }
+    summary: "An AI-powered generator for creating LinkedIn lead magnets, saving them to Notion, and tracking performance from one dashboard.",
+    problem: "The client wanted to create high-converting lead magnets consistently, but the workflow across ideation, writing, saving, and performance tracking was too manual.",
+    solution: "We built a focused generator with setup controls, AI output, Notion saving, and a simple dashboard so the team could generate, store, and review lead magnets from one place.",
+    results: ["Built in 9 days", "AI-generated lead magnet content", "Notion save workflow", "Performance tracking dashboard"],
+    stack: ["AI generation", "Notion integration", "Dashboard UI", "Content workflow", "Analytics"]
+  }
 };

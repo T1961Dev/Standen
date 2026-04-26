@@ -1,4 +1,4 @@
-# SEO Audit — Standen (UK Software Development Agency)
+﻿# SEO Audit — Standen (UK Software Development Agency)
 
 **Auditor:** Senior SEO  
 **Scope:** Full codebase and content for UK market  
@@ -54,7 +54,7 @@ The site is structurally and strategically underbuilt for UK inbound. There are 
 
 ### 1.6 Canonicals
 
-- index: `https://standen.co.uk/`. blog: `https://standen.co.uk/blog.html`. resources: `https://standen.co.uk/resources.html`.  
+- index: `https://standen.io/`. blog: `https://standen.io/blog.html`. resources: `https://standen.io/resources.html`.  
 - **case-study.html:** No canonical. **Impact:** Query-string URLs (e.g. `?id=fx-quant-research-platform`) can duplicate or fragment signals if other URL forms exist.
 - **blog-post.html:** No canonical. **Impact:** Same for `?slug=...`.
 - **privacy/terms:** No canonicals; low risk.
