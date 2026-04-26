@@ -3,5 +3,11 @@
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/audit.html", "destination": "/audit", "permanent": true }
   ],
-  "rewrites": [{ "source": "/audit", "destination": "/audit.html" }]
+  "rewrites": [
+    { "source": "/audit", "destination": "/audit.html" },
+    { "source": "/work", "destination": "/index.html" },
+    { "source": "/process", "destination": "/index.html" },
+    { "source": "/pricing", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" }
+  ]
 }

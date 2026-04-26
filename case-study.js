@@ -43,7 +43,7 @@
             "    <p class=\"section-label mx-auto mb-6 text-white/58\">Case study</p>" +
             "    <h1 class=\"title-lg font-semibold text-white\">Case study not found.</h1>" +
             "    <p class=\"body-copy-dark mx-auto mt-6 max-w-xl text-lg\">This case study does not exist yet. Head back to the work grid to choose another project.</p>" +
-            "    <a href=\"/#work\" class=\"btn btn-light mt-9\">View all case studies</a>" +
+            "    <a href=\"/work\" class=\"btn btn-light mt-9\">View all case studies</a>" +
             "  </div>" +
             "</section>";
         document.title = "Case Study Not Found | Standen";
@@ -69,7 +69,7 @@
         "  <div class=\"grid-lines absolute inset-0 opacity-90\" aria-hidden=\"true\"></div>" +
         "  <div class=\"detail-hero-inner\">" +
         "    <div class=\"detail-hero-copy\">" +
-        "      <a href=\"/#work\" class=\"detail-back\">Back to case studies</a>" +
+        "      <a href=\"/work\" class=\"detail-back\">Back to case studies</a>" +
         "      <p class=\"section-label mt-10 text-white/58\">Case study / " + escapeHtml(study.eyebrow || "Custom software") + "</p>" +
         "      <h1 class=\"title-xl mx-auto mt-7 max-w-5xl font-semibold text-white\">" + escapeHtml(study.title) + "</h1>" +
         "      <p class=\"body-copy-dark mx-auto mt-7 max-w-3xl text-lg\">" + escapeHtml(study.summary || "") + "</p>" +

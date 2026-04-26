@@ -446,23 +446,23 @@
 <body>
     <header class="fixed inset-x-0 top-0 z-50 px-5 pt-4 sm:px-8">
         <div class="nav-shell text-white">
-            <a href="#" class="nav-brand wordmark text-[1.08rem]" aria-label="Standen home">Standen</a>
+            <a href="/" class="nav-brand wordmark text-[1.08rem]" aria-label="Standen home">Standen</a>
             <nav class="nav-centre hidden items-center gap-7 text-[0.86rem] font-normal text-white/68 md:flex" aria-label="Primary">
-                <a class="transition hover:text-white" href="#work">Work</a>
-                <a class="transition hover:text-white" href="#process">Process</a>
-                <a class="transition hover:text-white" href="#pricing">Pricing</a>
+                <a class="transition hover:text-white" href="/work">Work</a>
+                <a class="transition hover:text-white" href="/process">Process</a>
+                <a class="transition hover:text-white" href="/pricing">Pricing</a>
                 <a class="transition hover:text-white" href="/audit">Audit</a>
-                <a class="transition hover:text-white" href="#contact">Contact</a>
+                <a class="transition hover:text-white" href="/contact">Contact</a>
             </nav>
             <a href="https://calendly.com/standen/discovery-call" class="nav-cta btn btn-light" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
             <button class="nav-menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
         </div>
         <nav id="mobile-menu" class="mobile-nav-panel" data-open="false" aria-label="Mobile">
-            <a href="#work">Work</a>
-            <a href="#process">Process</a>
-            <a href="#pricing">Pricing</a>
+            <a href="/work">Work</a>
+            <a href="/process">Process</a>
+            <a href="/pricing">Pricing</a>
             <a href="/audit">Audit</a>
-            <a href="#contact">Contact</a>
+            <a href="/contact">Contact</a>
             <a href="https://calendly.com/standen/discovery-call" class="mobile-nav-cta" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
         </nav>
     </header>
@@ -700,10 +700,43 @@
         <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 border-t border-white/12 pt-8 text-center sm:flex-row sm:text-left">
             <p class="wordmark text-xl">Standen</p>
             <p class="text-sm font-normal text-white/38">&copy; 2026 Standen. Custom internal tools, portals and dashboards for UK B2B agencies.</p>
-            <nav class="flex flex-wrap justify-center gap-5 text-sm text-white/50" aria-label="Footer"><a href="#work" class="hover:text-white">Work</a><a href="#process" class="hover:text-white">Process</a><a href="#pricing" class="hover:text-white">Pricing</a><a href="/audit" class="hover:text-white">Audit</a><a href="#contact" class="hover:text-white">Contact</a></nav>
+            <nav class="flex flex-wrap justify-center gap-5 text-sm text-white/50" aria-label="Footer"><a href="/work" class="hover:text-white">Work</a><a href="/process" class="hover:text-white">Process</a><a href="/pricing" class="hover:text-white">Pricing</a><a href="/audit" class="hover:text-white">Audit</a><a href="/contact" class="hover:text-white">Contact</a></nav>
         </div>
     </footer>
 
+    <script>
+        (function () {
+            var SECTIONS = { work: true, process: true, pricing: true, contact: true };
+            function sectionIdFromPath() {
+                var p = (window.location.pathname || '/').replace(/\/+$/, '') || '/';
+                var map = { '/work': 'work', '/process': 'process', '/pricing': 'pricing', '/contact': 'contact' };
+                if (map[p]) return map[p];
+                if (p === '/' && window.location.hash) {
+                    var h = window.location.hash.replace(/^#/, '');
+                    if (SECTIONS[h] && window.history && window.history.replaceState) {
+                        window.history.replaceState(null, '', '/' + h);
+                        return h;
+                    }
+                }
+                return null;
+            }
+            var sectionId = sectionIdFromPath();
+            if (sectionId) {
+                function scrollToSection() {
+                    var el = document.getElementById(sectionId);
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    var menuButton = document.querySelector('.nav-menu-toggle');
+                    var mobileMenu = document.getElementById('mobile-menu');
+                    if (menuButton && mobileMenu) {
+                        menuButton.setAttribute('aria-expanded', 'false');
+                        mobileMenu.setAttribute('data-open', 'false');
+                    }
+                }
+                if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', scrollToSection);
+                else scrollToSection();
+            }
+        })();
+    </script>
     <script>
         (function () {
             var els = document.querySelectorAll('.reveal-on-scroll');
