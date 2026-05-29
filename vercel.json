@@ -13,6 +13,12 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "standen.io" }],
+      "destination": "https://www.standen.io/:path*",
+      "permanent": true
+    },
+    {
       "source": "/case-study.html",
       "has": [{ "type": "query", "key": "id", "value": "ohmypod" }],
       "destination": "/case-studies/ohmypod",

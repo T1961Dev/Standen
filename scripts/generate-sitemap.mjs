@@ -1,68 +1,76 @@
 import fs from "fs";
 import path from "path";
-import vm from "vm";
 import { fileURLToPath } from "url";
-
 import { SITE } from "./partials.mjs";
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const LASTMOD = "2026-05-29";
+const LASTMOD = new Date().toISOString().slice(0, 10);
 
-function loadWindowArray(file, globalName) {
-    const sandbox = { window: {} };
-    vm.runInNewContext(fs.readFileSync(path.join(ROOT, file), "utf8"), sandbox);
-    return sandbox.window[globalName] || [];
+const SKIP_DIRS = new Set(["scripts", "content", "public", "node_modules", ".git", "assets", "pics", "js"]);
+const SKIP_FILES = new Set([
+    "case-study.html",
+    "guide.html",
+    "blog-post.html",
+    "case-studies.html",
+    "custom-build-vs-off-the-shelf.html",
+    "saas-development-uk.html",
+    "custom-software-development-uk.html",
+]);
+
+function walkHtml(dir, files = []) {
+    for (const name of fs.readdirSync(dir)) {
+        if (SKIP_DIRS.has(name)) continue;
+        const full = path.join(dir, name);
+        const stat = fs.statSync(full);
+        if (stat.isDirectory()) {
+            walkHtml(full, files);
+            continue;
+        }
+        if (!name.endsWith(".html")) continue;
+        const rel = path.relative(ROOT, full).replace(/\\/g, "/");
+        if (SKIP_FILES.has(rel)) continue;
+        if (rel.startsWith("services/")) continue;
+        files.push(rel);
+    }
+    return files;
 }
 
-function loadCaseStudies() {
-    const sandbox = { window: {} };
-    vm.runInNewContext(fs.readFileSync(path.join(ROOT, "case-study-data.js"), "utf8"), sandbox);
-    return Object.values(sandbox.window.CASE_STUDIES || {});
+function toUrlPath(rel) {
+    if (rel === "index.html") return "/";
+    if (rel.endsWith("/index.html")) return `/${rel.slice(0, -"/index.html".length)}`;
+    return `/${rel.replace(/\.html$/, "")}`;
 }
 
-const coreUrls = [
-    { loc: "/", priority: "1.0", changefreq: "weekly" },
-    { loc: "/audit", priority: "0.9", changefreq: "monthly" },
-    { loc: "/compare", priority: "0.85", changefreq: "monthly" },
-    { loc: "/compare/custom-build-vs-off-the-shelf", priority: "0.85", changefreq: "monthly" },
-    { loc: "/compare/agency-build-vs-hiring-operations", priority: "0.8", changefreq: "monthly" },
-    { loc: "/compare/custom-crm-vs-spreadsheet", priority: "0.8", changefreq: "monthly" },
-    { loc: "/work", priority: "0.9", changefreq: "monthly" },
-    { loc: "/about", priority: "0.75", changefreq: "monthly" },
-    { loc: "/resources", priority: "0.65", changefreq: "monthly" },
-    { loc: "/guides", priority: "0.8", changefreq: "weekly" },
-    { loc: "/blog", priority: "0.7", changefreq: "weekly" },
-    { loc: "/privacy", priority: "0.3", changefreq: "yearly" },
-    { loc: "/terms", priority: "0.3", changefreq: "yearly" },
-];
+function priorityFor(loc) {
+    if (loc === "/") return "1.0";
+    if (loc === "/work" || loc === "/audit" || loc === "/guides") return "0.9";
+    if (loc.startsWith("/compare")) return "0.85";
+    if (loc.startsWith("/guides/")) return loc.endsWith("/a2a-protocol") ? "0.8" : "0.65";
+    if (loc.startsWith("/case-studies/")) return loc.endsWith("/ohmypod") ? "0.7" : "0.6";
+    if (loc.startsWith("/blog/")) return "0.6";
+    if (loc === "/about") return "0.75";
+    if (loc === "/blog") return "0.7";
+    if (loc === "/resources") return "0.65";
+    return "0.5";
+}
 
-const guideUrls = loadWindowArray("guides-data.js", "GUIDES").map((guide) => ({
-    loc: `/guides/${guide.slug}`,
-    priority: guide.slug === "a2a-protocol" ? "0.8" : "0.65",
-    changefreq: "monthly",
-}));
+function changefreqFor(loc) {
+    if (loc === "/" || loc === "/guides" || loc === "/blog") return "weekly";
+    if (loc === "/privacy" || loc === "/terms") return "yearly";
+    if (loc.startsWith("/case-studies/") || loc.startsWith("/blog/")) return "yearly";
+    return "monthly";
+}
 
-const blogUrls = loadWindowArray("blog-data.js", "BLOG_POSTS").map((post) => ({
-    loc: `/blog/${post.slug}`,
-    priority: "0.6",
-    changefreq: "yearly",
-}));
+const htmlFiles = walkHtml(ROOT);
+const urlPaths = [...new Set(htmlFiles.map(toUrlPath))].sort((a, b) => a.localeCompare(b));
 
-const caseStudyUrls = loadCaseStudies().map((study) => ({
-    loc: `/case-studies/${study.slug}`,
-    priority: study.slug === "ohmypod" ? "0.7" : "0.6",
-    changefreq: "yearly",
-}));
-
-const urls = [...coreUrls, ...guideUrls, ...caseStudyUrls, ...blogUrls];
-
-const body = urls
+const body = urlPaths
     .map(
-        (u) => `    <url>
-        <loc>${SITE}${u.loc}</loc>
+        (loc) => `    <url>
+        <loc>${SITE}${loc}</loc>
         <lastmod>${LASTMOD}</lastmod>
-        <changefreq>${u.changefreq}</changefreq>
-        <priority>${u.priority}</priority>
+        <changefreq>${changefreqFor(loc)}</changefreq>
+        <priority>${priorityFor(loc)}</priority>
     </url>`
     )
     .join("\n");
@@ -74,4 +82,4 @@ ${body}
 `;
 
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), xml, "utf8");
-console.log("sitemap.xml updated,", urls.length, "URLs");
+console.log("sitemap.xml updated,", urlPaths.length, "URLs from", htmlFiles.length, "HTML files");
