@@ -12,6 +12,7 @@
     }
   ],
   "redirects": [
+    {
       "source": "/case-study.html",
       "has": [{ "type": "query", "key": "id", "value": "ohmypod" }],
       "destination": "/case-studies/ohmypod",
