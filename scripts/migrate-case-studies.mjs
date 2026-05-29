@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import vm from "vm";
 import { fileURLToPath } from "url";
-import { pageShell, breadcrumbs, finalCta, CALENDLY, CTA_LABEL } from "./partials.mjs";
+import { pageShell, breadcrumbs, finalCta, CALENDLY, CTA_LABEL, SITE } from "./partials.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -80,7 +80,7 @@ for (const [id, study] of Object.entries(studies)) {
     const html = pageShell({
         title: `${study.title} | Case Study | Standen`,
         description: `${study.summary || study.title} Case study by Standen. Custom software and SaaS delivery.`,
-        canonical: `https://standen.io/case-studies/${slug}`,
+        canonical: `${SITE}/case-studies/${slug}`,
         activeNav: "work",
         schema: {
             "@context": "https://schema.org",
@@ -88,7 +88,7 @@ for (const [id, study] of Object.entries(studies)) {
             headline: study.title,
             description: study.summary,
             dateModified: "2026-05-26",
-            mainEntityOfPage: `https://standen.io/case-studies/${slug}`,
+            mainEntityOfPage: `${SITE}/case-studies/${slug}`,
         },
         ogType: "article",
         body,

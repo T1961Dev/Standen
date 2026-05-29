@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { pageShell, breadcrumbs, finalCta, CALENDLY, CTA_LABEL } from "./partials.mjs";
+import { pageShell, breadcrumbs, finalCta, CALENDLY, CTA_LABEL, SITE } from "./partials.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -110,7 +110,7 @@ const html = pageShell({
     title: "Agency Ops Audit | 5 Workflow Leaks | Standen",
     description:
         "Free agency ops audit: 5 workflows where B2B agencies lose hours and margin. See what to fix before hiring another ops person.",
-    canonical: "https://standen.io/audit",
+    canonical: `${SITE}/audit`,
     activeNav: "audit",
     body: `
         <div class="audit-page">

@@ -24,4 +24,4 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-Sitemap: https://standen.io/sitemap.xml
+Sitemap: https://www.standen.io/sitemap.xml

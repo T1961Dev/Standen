@@ -25,7 +25,7 @@ export function redirectPage(dest, title = "Services") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
-    <link rel="canonical" href="https://standen.io${safeDest}">
+    <link rel="canonical" href="https://www.standen.io${safeDest}">
     <title>${safeTitle} | Standen</title>
     <script>location.replace("${safeDest}");</script>
 </head>

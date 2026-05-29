@@ -1,9 +1,10 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { SITE } from "./partials.mjs";
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const SKIP_DIRS = new Set([".git", "node_modules", "content"]);
+const SKIP_DIRS = new Set([".git", "node_modules", "content", "public", "scripts"]);
 const LEGACY_NO_INDEX = new Set(["blog-post.html", "case-study.html", "guide.html"]);
 
 function walk(dir, files = []) {
@@ -95,7 +96,11 @@ for (const file of files) {
     if (textLength(/<meta\s+name=["']description["'][^>]*content=["']([^"']+)["']/i, html) < 50) {
         errors.push(`${r} is missing a useful meta description`);
     }
-    if (!/<link\s+rel=["']canonical["'][^>]*href=["']https:\/\/standen\.io\/[^"']*["']/i.test(html)) {
+    const canonicalRe = new RegExp(
+        `<link\\s+rel=["']canonical["'][^>]*href=["']${SITE.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/[^"']*["']`,
+        "i"
+    );
+    if (!canonicalRe.test(html)) {
         errors.push(`${r} is missing a canonical URL`);
     }
     const h1s = html.match(/<h1\b/gi) || [];

@@ -1,6 +1,6 @@
 import { serviceHref, servicesHubHref } from "./service-anchors.mjs";
 
-const SITE = "https://standen.io";
+const SITE = "https://www.standen.io";
 const CALENDLY = "https://calendly.com/standen/discovery-call";
 const CTA_LABEL = "Book a Free Consultation";
 const CONTACT_EMAIL = "hello@standen.io";

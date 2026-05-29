@@ -3,8 +3,9 @@ import path from "path";
 import vm from "vm";
 import { fileURLToPath } from "url";
 
+import { SITE } from "./partials.mjs";
+
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const SITE = "https://standen.io";
 const LASTMOD = "2026-05-29";
 
 function loadWindowArray(file, globalName) {

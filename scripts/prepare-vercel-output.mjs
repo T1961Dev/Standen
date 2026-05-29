@@ -10,6 +10,7 @@ const EXCLUDE_FILES = new Set([
     "dev-server.js",
     "package.json",
     "package-lock.json",
+    "vercel.json",
 ]);
 
 function shouldCopyFile(name) {

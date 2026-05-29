@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { pageShell, breadcrumbs, finalCta } from "./partials.mjs";
+import { pageShell, breadcrumbs, finalCta, SITE } from "./partials.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -36,7 +36,7 @@ write(
     pageShell({
         title: "Case Studies | Custom Software & SaaS | Standen",
         description: "Standen case studies: SaaS MVPs, reporting dashboards, automation and internal tools for agencies and founders. Delivered in 6–21 days.",
-        canonical: "https://standen.io/work",
+        canonical: `${SITE}/work`,
         activeNav: "work",
         body: `
         <section class="work work--page">
@@ -58,7 +58,7 @@ write(
     pageShell({
         title: "About Standen | Custom Software for Agencies",
         description: "Standen builds custom software and SaaS for B2B agencies. Founder-led, 14-day delivery, full code ownership. UK-based studio.",
-        canonical: "https://standen.io/about",
+        canonical: `${SITE}/about`,
         activeNav: "",
         body: `
         <article class="guide-article">
@@ -145,7 +145,7 @@ write(
         title: "Blog | Standen. SaaS & Custom Software",
         description:
             "Insights on SaaS development, custom software and delivery from Standen. Scoping, building and launching software for agencies.",
-        canonical: "https://standen.io/blog",
+        canonical: `${SITE}/blog`,
         activeNav: "",
         body: `
         <section class="blog-page">
