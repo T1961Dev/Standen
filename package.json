@@ -3,8 +3,9 @@
   "private": true,
   "scripts": {
     "dev": "node dev-server.js",
-    "build": "npm run build:pages && npm run audit",
+    "build": "npm run build:pages && npm run vercel:output && npm run audit",
     "build:pages": "node scripts/remove-em-dashes.mjs && node scripts/generate-enterprise.mjs && node scripts/generate-core-pages.mjs && node scripts/generate-remaining-pages.mjs && node scripts/generate-audit-page.mjs && node scripts/migrate-case-studies.mjs && node scripts/generate-guides.mjs && node scripts/generate-homepage-services.mjs && node scripts/generate-sitemap.mjs",
+    "vercel:output": "node scripts/prepare-vercel-output.mjs",
     "audit": "node scripts/audit-site.mjs"
   }
 }
