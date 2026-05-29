@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Google&#39;s A2A protocol lets any AI agent talk to any other AI agent. What it does, how it works, and why it changes everything for businesses.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://standen.io/guides/a2a-protocol">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="A2A Protocol Explained | Standen Guides">
+    <meta property="og:description" content="Google&#39;s A2A protocol lets any AI agent talk to any other AI agent. What it does, how it works, and why it changes everything for businesses.">
+    <meta property="og:url" content="https://standen.io/guides/a2a-protocol">
+    <meta property="og:image" content="https://standen.io/logo.png">
+    <meta property="og:image:alt" content="Standen">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Standen">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A2A Protocol Explained | Standen Guides">
+    <meta name="twitter:description" content="Google&#39;s A2A protocol lets any AI agent talk to any other AI agent. What it does, how it works, and why it changes everything for businesses.">
+    <title>A2A Protocol Explained | Standen Guides</title>
+    <link rel="preload" href="/assets/fonts/gt-america-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/gt-america-medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/home.css">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"A2A Protocol Explained","description":"Google's A2A protocol lets any AI agent talk to any other AI agent. What it does, how it works, and why it changes everything for businesses.","author":{"@type":"Organization","name":"Standen"},"publisher":{"@type":"Organization","name":"Standen"},"dateModified":"2026-05-29","mainEntityOfPage":"https://standen.io/guides/a2a-protocol"}
+    </script>
+    <script src="/js/vercel-analytics.js" defer></script>
+    <script src="/js/ga4.js" defer></script>
+</head>
+<body class="page-home">
+    <header class="site-nav" id="top">
+        <div class="nav-inner">
+            <a class="brand" href="/" aria-label="Standen home">
+                <span class="brand-name">Standen</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="/#services">Services</a>
+                <a href="/work.html">Work</a>
+                <a href="/#process">Process</a>
+                <a href="/guides.html" aria-current="page">Guides</a>
+            </nav>
+            <a href="https://calendly.com/standen/discovery-call" class="btn btn--accent nav-cta" target="_blank" rel="noopener"><span class="btn__text">Book a Free Consultation</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
+        </div>
+        <nav id="mobile-menu" class="mobile-menu" data-open="false" aria-label="Mobile">
+            <a href="/#services">Services</a>
+            <a href="/work.html">Work</a>
+            <a href="/#process">Process</a>
+            <a href="/guides.html">Guides</a>
+            <a href="https://calendly.com/standen/discovery-call" class="btn btn--accent" target="_blank" rel="noopener"><span class="btn__text">Book a Free Consultation</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        </nav>
+    </header>
+<main>
+
+        <article class="guide-article" aria-labelledby="guide-title">
+            <div class="wrap">
+                <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/guides.html">Guides</a></li><li aria-current="page">A2A Protocol Explained</li></ol></nav>
+                <header class="guide-article__head">
+                    <a href="/guides.html" class="guide-article__back text-link">All guides <span aria-hidden="true">&gt;</span></a>
+                    <p class="notes-meta guide-article__meta">AI <span>&middot;</span> 7 min read</p>
+                    <h1 id="guide-title">A2A Protocol Explained</h1>
+                    <div class="guide-article__hero guide-article__hero--contain"><img src="/pics/a2a.png" alt="A2A Protocol Explained" width="800" height="520" loading="eager" decoding="async"></div>
+                </header>
+
+                <div class="guide-article__body">
+                    <p class="guide-article__lead">AI agents can now talk and work together. Most people overlooked it.</p>
+
+                    <p>In April 2025, Google quietly shipped an open protocol called A2A. It does for AI agents what HTTP did for browsers. Any agent can now communicate with any other agent. Different builder. Different framework. Different cloud. It does not matter.</p>
+
+                    <p>This guide breaks down what A2A is, how it works in plain language, what changed when Google extended it with AP2 in September 2025, and what it means for anyone running a business.</p>
+
+                    <p>No code. No JSON. No jargon.</p>
+
+                    <h2>The Problem A2A Solves</h2>
+
+                    <p>Before A2A, AI agents were strangers in separate rooms.</p>
+
+                    <p>Your Salesforce agent could not delegate a sub-task to your ServiceNow agent without custom integration code. Your Google Vertex agent could not coordinate with an AWS Bedrock agent without a hand-rolled bridge. Every new agent pair needed a new bespoke connector.</p>
+
+                    <p>The result: AI agents were powerful in isolation, but useless as a team.</p>
+
+                    <p>A2A fixes this. It gives every agent a shared language. Once agents speak A2A, they can find each other, send each other tasks, and return results, without anyone writing custom glue code.</p>
+
+                    <h2>How A2A Actually Works</h2>
+
+                    <p>There are four ideas. That is the whole protocol.</p>
+
+                    <h3>1. The Agent Card</h3>
+
+                    <p>Every agent publishes an Agent Card. Think of it as a business card with a skills list. It says who the agent is, what it can do, and how to reach it.</p>
+
+                    <p>When one agent wants help, it reads another agent's card and decides if it is a fit. No registry. No middleman. The cards do the matchmaking.</p>
+
+                    <h3>2. The Task</h3>
+
+                    <p>Communication happens through tasks. One agent sends another a structured request. The receiving agent confirms, works on it, and returns a result.</p>
+
+                    <p>Each task has a clear lifecycle: submitted, working, completed. Both agents stay in sync on status, even if the work takes hours.</p>
+
+                    <h3>3. The Artifact</h3>
+
+                    <p>The result of a task is called an artifact. It could be a document, a list of leads, a written email, a booking confirmation, anything.</p>
+
+                    <p>The artifact is the deliverable. Once it lands, the task is done.</p>
+
+                    <h3>4. The Negotiation</h3>
+
+                    <p>This is the part most people miss.</p>
+
+                    <p>Agents can clarify with each other mid-task. If Agent A asks Agent B for "the latest post" and Agent B finds no recent post, Agent B can ask back: "would a recent comment count instead?" Agent A decides, Agent B continues.</p>
+
+                    <p>No human in the loop. The protocol carries the conversation.</p>
+
+                    <h2>AP2: When Agents Started Paying Each Other</h2>
+
+                    <p>In September 2025, Google extended A2A with the Agent Payments Protocol. AP2.</p>
+
+                    <p>A2A handles talking. AP2 handles paying. Together they let agents transact with each other autonomously, with cryptographic proof that the user actually authorised the spend.</p>
+
+                    <p>The mechanism is called a Mandate. It is a signed digital contract with three layers:</p>
+
+                    <p>→ Intent Mandate. The user's instructions and limits. For example: "book a trip, budget £700."<br>
+                    → Cart Mandate. The specific items the agent wants to buy.<br>
+                    → Payment Mandate. The authorisation against a specific card or account.</p>
+
+                    <p>Together, the three mandates form an audit trail from "I want this" to "money moved."</p>
+
+                    <h2>The Palm Springs Demo</h2>
+
+                    <p>Google's own demo shows what this looks like in practice.</p>
+
+                    <p>A user tells their agent: "Book me a round-trip flight and a hotel in Palm Springs for the first weekend of November. Budget £700."</p>
+
+                    <p>What happens next:</p>
+
+                    <p>→ The user's agent reads Agent Cards from multiple airline agents and hotel agents<br>
+                    → It sends task requests to the most relevant ones<br>
+                    → Airline agents return flight options as artifacts<br>
+                    → Hotel agents return room options<br>
+                    → The user's agent finds a combination under £700<br>
+                    → It executes both bookings simultaneously, each signed by the mandate stack</p>
+
+                    <p>Two agents. Two merchants. One budget. One transaction. Zero human clicks after the initial instruction.</p>
+
+                    <h2>Who Is Backing This</h2>
+
+                    <p>This is the part that should make you pay attention.</p>
+
+                    <p>A2A is governed by the Linux Foundation under an Apache 2.0 licence, with over 50 technology partners.</p>
+
+                    <p>AP2 has over 60 organisations supporting it. The list includes:</p>
+
+                    <p>→ Mastercard<br>
+                    → American Express<br>
+                    → PayPal<br>
+                    → Coinbase<br>
+                    → Revolut<br>
+                    → Adyen<br>
+                    → Worldpay<br>
+                    → Etsy<br>
+                    → Intuit<br>
+                    → Salesforce<br>
+                    → ServiceNow</p>
+
+                    <p>When that many payment networks, marketplaces, and enterprise platforms back the same protocol, it is not a science project. It is the next standard.</p>
+
+                    <h2>A2A vs MCP: The Difference</h2>
+
+                    <p>You may have heard of MCP, Anthropic's Model Context Protocol. Founders often confuse the two.</p>
+
+                    <p>The simple difference:</p>
+
+                    <p>→ MCP connects agents to tools and data. It points downward. An agent uses MCP to query a database, read a file, or call an API.<br>
+                    → A2A connects agents to other agents. It points sideways. An agent uses A2A to delegate work to a peer.</p>
+
+                    <p>You will likely use both. MCP gives your agent hands. A2A gives it colleagues.</p>
+
+                    <h2>What This Means for Your Business</h2>
+
+                    <p>Right now your customer types your URL into a browser.</p>
+
+                    <p>Soon their agent reads your Agent Card.</p>
+
+                    <p>If your product cannot be discovered, queried, and transacted with by an agent, you are invisible to a chunk of the future market.</p>
+
+                    <p>Here is what to think about this quarter:</p>
+
+                    <p>→ Discoverability. How would an agent find your service? Do you have anything resembling an Agent Card?<br>
+                    → Machine-readable pricing. Can your offers be parsed without a human reading your homepage?<br>
+                    → Programmatic checkout. Can an agent complete a purchase on your site without filling out a 12-field form designed for humans?<br>
+                    → Trust signals. What proves to a buying agent that you are legitimate, fast, and won't refund-trap them?</p>
+
+                    <p>The websites that win in 2027 are not the ones with the best design.</p>
+
+                    <p>They are the ones agents can talk to.</p>
+
+                    <h2>Where to Go Next</h2>
+
+                    <p>If you want to read the official specs:</p>
+
+                    <p>→ <a href="https://github.com/google/A2A" target="_blank" rel="noopener">A2A Protocol on GitHub</a><br>
+                    → <a href="https://developers.googleblog.com/en/a2a-extending-interoperability-to-agent-payments/" target="_blank" rel="noopener">AP2 announcement on the Google Developers Blog</a><br>
+                    → <a href="https://lfaidata.foundation/projects/a2a/" target="_blank" rel="noopener">Linux Foundation A2A project page</a></p>
+
+                    <p>If you want help building agent-ready infrastructure into your business, that is what Standen does. We build internal tools and customer-facing systems for agencies in 14 days, with a delivery guarantee.</p>
+
+                    <p>→ <a href="https://calendly.com/standen/discovery-call" target="_blank" rel="noopener">Book a Free Consultation</a></p>
+
+                    <p class="guide-article__close">The protocol is here. The companies backing it are not waiting. The only question is whether your business is ready to be talked to.</p>
+                </div>
+            </div>
+        </article>
+        <section class="final-cta" aria-labelledby="page-cta"><div class="wrap"><h2 id="page-cta">Want this workflow rebuilt properly?</h2><p>Book a short call. We&rsquo;ll map the simplest system worth building first.</p><a href="https://calendly.com/standen/discovery-call" class="btn btn--accent btn--lg" target="_blank" rel="noopener"><span class="btn__text">Book a Free Consultation</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div></section>
+</main>
+    <footer class="site-footer">
+        <div class="wrap footer-grid footer-grid--enterprise">
+            <div class="footer-brand">
+                <a class="brand" href="/">
+                    <span class="brand-name">Standen</span>
+                </a>
+                <p class="footer-tagline">Custom software and SaaS for agencies. Built in 14 days. You own everything.</p>
+                <div class="footer-contact">
+                    <a href="mailto:hello@standen.io" class="footer-contact__email">hello@standen.io</a>
+                    <a href="https://www.linkedin.com/in/tomas-jones1/" class="footer-contact__linkedin" target="_blank" rel="noopener noreferrer" aria-label="Tomas Jones on LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <nav aria-label="Services">
+                <h2>Services</h2>
+                <a href="/#services">All services</a>
+                <a href="/#service-proposals">Proposal systems</a>
+                <a href="/#service-reporting">Reporting dashboards</a>
+                <a href="/#service-portals">Client portals</a>
+                <a href="/#service-crm">Internal CRM</a>
+                <a href="/#service-saas">SaaS MVP</a>
+                <a href="/#service-internal">Internal tools</a>
+            </nav>
+            <nav aria-label="Company">
+                <h2>Company</h2>
+                <a href="/work.html">Work</a>
+                <a href="/about.html">About</a>
+                <a href="/#process">Process</a>
+                <a href="/#pricing">Pricing</a>
+            </nav>
+            <nav aria-label="Resources">
+                <h2>Resources</h2>
+                <a href="/guides.html">Guides</a>
+                <a href="/audit.html">Ops audit</a>
+                <a href="/compare/index.html">Compare</a>
+                <a href="/blog.html">Blog</a>
+            </nav>
+        </div>
+        <div class="wrap footer-bottom footer-bottom--enterprise">
+            <p>&copy; Standen</p>
+            <nav aria-label="Legal">
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+            </nav>
+        </div>
+    </footer>
+    <script src="/home.js"></script>
+</body>
+</html>

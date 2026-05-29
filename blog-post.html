@@ -3,87 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/png" href="/logo.png">
-    <link rel="apple-touch-icon" href="/logo.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;600;700&display=swap" rel="stylesheet">
-    <title>Blog post | Standen -  Web Development & SaaS Agency Hampshire UK</title>
-    <script src="/js/vercel-analytics.js"></script>
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://standen.io/blog">
+    <title>Blog | Standen</title>
+    <script src="/blog-data.js"></script>
+    <script>
+        (function () {
+            var slug = new URLSearchParams(location.search).get("slug");
+            var posts = window.BLOG_POSTS || [];
+            var post = posts.find(function (p) { return p.slug === slug; });
+            location.replace(post ? "/blog/" + post.slug + ".html" : "/blog.html");
+        })();
+    </script>
 </head>
-<body>
-    <header class="nav-shell">
-        <div class="nav-inner">
-            <a href="/" class="brand" aria-label="Standen - Home"><span class="wordmark">Standen</span></a>
-            <nav class="nav-links" aria-label="Primary">
-                <a href="/work" class="nav-link">Our work</a>
-                <a href="/process" class="nav-link">Process</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="resources.html" class="nav-link">Resources</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="nav-cta">
-                <a href="/contact" class="btn btn-primary">Start a project</a>
-            </div>
-        </div>
-    </header>
-
-    <main id="blog-post-root" class="section blog-post-page" aria-label="Blog post"></main>
-
-        <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-top">
-                <div class="footer-col footer-col--services">
-                    <h3 class="footer-heading">Services</h3>
-                    <div class="footer-services-grid">
-                        <div class="footer-category">
-                            <span class="footer-category__title">What we build</span>
-                            <a href="/saas-development-uk.html">SaaS Development</a>
-                            <a href="/custom-software-development-uk.html">Custom Software</a>
-                        </div>
-                        <div class="footer-category">
-                            <span class="footer-category__title">Pages</span>
-                            <a href="/work">Case studies</a>
-                            <a href="/about.html">About</a>
-                            <a href="/contact">Contact</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-col footer-col--nav">
-                    <div class="footer-nav-group">
-                        <h3 class="footer-heading">Main</h3>
-                        <a href="/saas-development-uk.html">SaaS Development</a>
-                        <a href="/custom-software-development-uk.html">Custom Software</a>
-                        <a href="/work">Case studies</a>
-                        <a href="/contact">Contact</a>
-                    </div>
-                    <div class="footer-nav-group">
-                        <h3 class="footer-heading">Learn</h3>
-                        <a href="/blog.html">Blog</a>
-                        <a href="resources.html">Resources</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-brand-row">
-                    <span class="footer-copy">Â© 2026 Standen. All rights reserved.</span>
-                </div>
-                <nav class="footer-links" aria-label="Legal and policies">
-                    <a href="privacy.html">Privacy policy</a>
-                    <span class="footer-sep" aria-hidden="true">Â·</span>
-                    <a href="terms.html">Terms of use</a>
-                </nav>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/tomas-jones1/" class="footer-social__link" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <span class="wordmark wordmark--footer">Standen</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="script.js"></script>
-    <script src="blog-data.js"></script>
-    <script src="blog.js"></script>
-</body>
+<body><p><a href="/blog.html">Blog</a></p></body>
 </html>

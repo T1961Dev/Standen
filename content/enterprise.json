@@ -1,0 +1,165 @@
+{
+  "services": [
+    {
+      "slug": "agency-proposal-systems",
+      "tag": "Proposals",
+      "title": "Agency Proposal Systems | Standen",
+      "h1": "Proposal systems for agencies",
+      "meta": "Custom agency proposal systems with pricing, approvals and version history. Built in 14 days. You own 100% of the code. Remote delivery by Standen.",
+      "lead": "Send proposals while the buyer still remembers the call, with scope, pricing and approvals in one owned system, not another Google Doc.",
+      "answer": "Standen builds custom proposal systems for agencies: scoped pricing, approval chains, version history and buyer-ready PDFs in one workflow. Typical first build ships in 14 days from £5,000 with full code ownership.",
+      "sections": [
+        { "h2": "Why proposals should not live in Google Docs", "p": "Docs duplicate, drift and hide margin. A proposal system ties scope, rate cards, optional modules and sign-off to how your agency actually sells, so founders stop rewriting the same deck every week." },
+        { "h2": "What we build in the first 14 days", "p": "One sales workflow end to end: template logic, pricing rules, internal approval, client-facing view and export. No CRM replacement: the system sits where proposals actually get made." },
+        { "h2": "Proof from recent builds", "p": "OhMyPod went from notes to a live owned SaaS in <strong>21 days</strong>. Agencies using Standen builds typically cut proposal turnaround from days to under an hour when the template and pricing logic are in place." }
+      ],
+      "faqs": [
+        { "q": "How much does a proposal system cost?", "a": "From <strong>£5,000</strong> for a fixed-scope first build. 50% upfront, 50% on handover." },
+        { "q": "Do we own the code?", "a": "Yes: repository, deployment and documentation are transferred on handover." },
+        { "q": "Can this connect to our CRM?", "a": "Yes. We integrate with HubSpot, Pipedrive, spreadsheets or your existing stack where it saves manual copy-paste." }
+      ],
+      "related": ["agency-reporting-dashboard", "agency-client-portal"]
+    },
+    {
+      "slug": "agency-reporting-dashboard",
+      "tag": "Reporting",
+      "title": "Agency Reporting Dashboard | Standen",
+      "h1": "Client reporting dashboards for agencies",
+      "meta": "Replace monthly reporting PDFs with live client dashboards. Agency reporting dashboard builds in 14 days. Full code ownership.",
+      "lead": "Pull GA4, ad platforms and CRM pipeline into one live view, and stop rebuilding the same PDF every month.",
+      "answer": "Standen builds agency reporting dashboards that replace manual PDFs with live, client-ready views. Data from ads, analytics and CRM in one place. First builds typically ship in 14 days with full ownership.",
+      "sections": [
+        { "h2": "The cost of manual reporting", "p": "Most agencies lose <strong>15 to 40 hours a month</strong> pulling screenshots into decks. Clients still ask for numbers that are already stale by the time the PDF lands." },
+        { "h2": "What a useful dashboard includes", "p": "Clear KPIs per client, period comparison, commentary slots and export when procurement still wants a file. Built around how your team and clients already read performance." },
+        { "h2": "Recent delivery", "p": "FX Quant Research Platform, a full research and analytics environment, shipped in <strong>12 days</strong>. Reporting builds reuse the same disciplined scoping and weekly delivery rhythm." }
+      ],
+      "faqs": [
+        { "q": "Can clients log in securely?", "a": "Yes. Role-based access, per-client views and optional white-label branding." },
+        { "q": "Which data sources can you connect?", "a": "Common stacks include GA4, Google Ads, Meta, LinkedIn, HubSpot and custom APIs." },
+        { "q": "How is this different from Looker Studio?", "a": "You own the product logic and UX, not a template that breaks every time a connector changes." }
+      ],
+      "related": ["agency-client-portal", "agency-proposal-systems"]
+    },
+    {
+      "slug": "agency-client-portal",
+      "tag": "Portals",
+      "title": "Agency Client Portal Development | Standen",
+      "h1": "Client portals for agency delivery",
+      "meta": "Custom client portals for agencies: status, files, approvals and messaging in one owned place. Built in 14 days by Standen.",
+      "lead": "Move delivery out of Slack threads and email, one secure portal your clients actually open.",
+      "answer": "Standen builds client portals for agencies: project status, file sharing, approvals and in-portal messaging in a single owned product. Typical delivery in 14 days with full source-code handover.",
+      "sections": [
+        { "h2": "When Slack and email stop scaling", "p": "Clients lose track of requests. Your team chases updates. A portal gives one auditable place for status, assets and sign-off: branded as your agency." },
+        { "h2": "What goes in version one", "p": "Project timeline, deliverable upload, approval buttons and a simple message thread. Integrations with Drive or Notion only if they remove real work." },
+        { "h2": "Onboarding speed", "p": "Portals reduce repetitive client questions and make handover predictable: especially when you run multiple retainers with different stakeholders." }
+      ],
+      "faqs": [
+        { "q": "Is this a white-label client portal?", "a": "Yes. Your brand, your domain, your data model." },
+        { "q": "Can we add approvals and e-sign later?", "a": "Yes. We scope phases so v1 ships fast and v2 extends without rebuilding." },
+        { "q": "Who hosts it?", "a": "We deploy on modern infrastructure and hand over access: you are not locked to our hosting." }
+      ],
+      "related": ["agency-reporting-dashboard", "agency-internal-crm"]
+    },
+    {
+      "slug": "agency-internal-crm",
+      "tag": "Operations",
+      "title": "Custom CRM for Agencies | Standen",
+      "h1": "Internal CRM and delivery queues for agencies",
+      "meta": "Custom internal CRM for agencies: lead routing, delivery queues and team dashboards. Built in 14 days. You own the codebase.",
+      "lead": "Route leads, track delivery and surface blockers in one workspace your team actually opens.",
+      "answer": "Standen builds internal CRMs and ops dashboards for agencies: lead routing, delivery queues and founder views in one tool shaped to your process. First version in 14 days, full ownership on handover.",
+      "sections": [
+        { "h2": "Why generic CRMs fail agencies", "p": "Pipelines designed for SaaS sales do not match agency delivery. Teams work around the tool in spreadsheets and five browser tabs." },
+        { "h2": "What we model first", "p": "Leads, projects, owners, blockers and margin signals: only the fields your operators use daily. No feature bloat." },
+        { "h2": "Glue work disappears", "p": "When the same handover breaks every week, software is often the cleaner hire than another operations person copying data between tools." }
+      ],
+      "faqs": [
+        { "q": "Will this replace HubSpot?", "a": "Usually it complements marketing CRM: we own the delivery and ops layer HubSpot was never meant to run." },
+        { "q": "Can founders see pipeline and workload?", "a": "Yes. One dashboard for sales, delivery and what needs attention today." },
+        { "q": "How fast can we go live?", "a": "14 days for a focused first version with one workflow." }
+      ],
+      "related": ["internal-tools-for-agencies", "agency-client-portal"]
+    },
+    {
+      "slug": "saas-mvp-development",
+      "tag": "SaaS",
+      "title": "SaaS MVP Development | Standen",
+      "h1": "SaaS MVP development for founders and agencies",
+      "meta": "Build a SaaS MVP in 14 to 21 days. Production-ready, fixed scope from £5k. OhMyPod live in 21 days. You own 100% of the code.",
+      "lead": "From scoped idea to live product with auth, billing-ready architecture and full handover, not a no-code prototype you cannot scale.",
+      "answer": "Standen builds SaaS MVPs for founders and agencies in 14–21 day sprints: fixed scope, private live link from day one, full code and deployment handover. OhMyPod shipped in 21 days.",
+      "sections": [
+        { "h2": "How we scope an MVP that ships", "p": "One core outcome, one user type, one revenue or validation path. Everything else waits for phase two, so you launch while the market still cares." },
+        { "h2": "What you get on handover", "p": "Repository, hosting access, environment notes and a walkthrough. No black box. No licence fee to us." },
+        { "h2": "Recent SaaS delivery", "p": "OhMyPod, a podcast SaaS, live in <strong>21 days</strong>. Scrapr.io processes <strong>1,000+ verified leads in ~30 seconds</strong> as an owned product." }
+      ],
+      "faqs": [
+        { "q": "How much does a SaaS MVP cost?", "a": "From <strong>£5,000</strong> depending on scope. Fixed quote before build starts." },
+        { "q": "Do you work with non-technical founders?", "a": "Yes. Daily demos and plain-language updates throughout the sprint." },
+        { "q": "Can you add subscriptions later?", "a": "Yes. We structure v1 so Stripe or similar can slot in without rewriting core logic." }
+      ],
+      "related": ["internal-tools-for-agencies", "agency-proposal-systems"]
+    },
+    {
+      "slug": "internal-tools-for-agencies",
+      "tag": "Internal tools",
+      "title": "Internal Tool Development for Agencies | Standen",
+      "h1": "Internal tools for agencies",
+      "meta": "Internal tool development for agencies: workflows, integrations and bespoke ops software. 14-day builds. Full code ownership. Standen.",
+      "lead": "Replace spreadsheet glue and manual handoffs with software shaped to how your team already works.",
+      "answer": "Standen builds internal tools for agencies: automation, integrations, queues and bespoke ops software in 14-day scoped sprints. Clients own 100% of code, IP and deployment.",
+      "sections": [
+        { "h2": "What counts as an internal tool", "p": "Lead routers, QA checklists, resource planners, approval chains, data pipelines, anything your team rebuilds weekly in Sheets." },
+        { "h2": "Build vs buy for agency ops", "p": "When five SaaS products still need manual glue, a single owned tool often pays back in months. See our <a href=\"/compare/custom-build-vs-off-the-shelf.html\">build vs buy guide</a>." },
+        { "h2": "Delivery examples", "p": "Instagram lead scraper in <strong>8 days</strong>. Crypto news aggregation in <strong>6 days</strong>. Lead magnet generator in <strong>9 days</strong>." }
+      ],
+      "faqs": [
+        { "q": "Is this custom software development?", "a": "Yes, same engagement model as our <a href=\"/#service-saas\">SaaS builds</a>, scoped to internal users." },
+        { "q": "Can you integrate with our stack?", "a": "Slack, Notion, HubSpot, Google Workspace, ad APIs and custom databases." },
+        { "q": "What if we only know the pain, not the spec?", "a": "Start with the <a href=\"/audit.html\">agency ops audit</a>, we map the workflow before quoting." }
+      ],
+      "related": ["agency-internal-crm", "saas-mvp-development"]
+    }
+  ],
+  "comparisons": [
+    {
+      "slug": "custom-build-vs-off-the-shelf",
+      "title": "Agency Build vs Buy: Custom Software vs SaaS | Standen",
+      "h1": "Custom build vs off-the-shelf SaaS for agencies",
+      "meta": "Should your agency build custom software or buy SaaS? Build vs buy guide for proposals, reporting, portals and internal ops.",
+      "existing": true
+    },
+    {
+      "slug": "agency-build-vs-hiring-operations",
+      "title": "Build Software vs Hire Ops | Standen",
+      "h1": "Build internal software vs hiring another operations person",
+      "meta": "Should your agency hire another ops person or build owned software first? Compare cost, speed and long-term margin with Standen.",
+      "lead": "When the same handover breaks every week, a scoped internal tool often beats another salary, and compounds.",
+      "sections": [
+        { "h2": "When hiring ops is the right move", "p": "You need human judgment on client relationships, culture and ad-hoc firefighting, and volume is still manageable in spreadsheets." },
+        { "h2": "When software is the cleaner hire", "p": "The same data gets copied between five tools. Reporting takes days. Proposals stall in Docs. A <strong>14-day build</strong> removes recurring glue work permanently." },
+        { "h2": "The maths agencies overlook", "p": "A £5k–£15k owned system vs £40k+ annual ops salary, plus the system does not leave when someone moves on." }
+      ],
+      "faqs": [
+        { "q": "Can we do both?", "a": "Yes. Software handles repeat workflow; ops focuses on clients and exceptions." },
+        { "q": "How fast can software ship?", "a": "First useful version in <strong>14 days</strong> with Standen." }
+      ]
+    },
+    {
+      "slug": "custom-crm-vs-spreadsheet",
+      "title": "Custom CRM vs Spreadsheets for Agencies | Standen",
+      "h1": "Custom CRM vs spreadsheets for agency delivery",
+      "meta": "When agencies should move from spreadsheets to a custom CRM or ops dashboard, timelines, cost and ownership.",
+      "lead": "Spreadsheets work until delivery complexity makes them the risk, wrong version, no audit trail, no single view for founders.",
+      "sections": [
+        { "h2": "Signs you have outgrown Sheets", "p": "Multiple tabs nobody trusts. No owner on rows. Founders cannot see blockers without a meeting." },
+        { "h2": "What a custom CRM gives you", "p": "One queue, clear owners, status your team updates daily, and reporting that does not require export gymnastics." },
+        { "h2": "Cost and timeline", "p": "Focused CRM v1 from <strong>£5,000</strong>, typically <strong>14 days</strong> to handover." }
+      ],
+      "faqs": [
+        { "q": "Will my team actually use it?", "a": "We design around existing habits, fewer fields, faster updates than maintaining a sheet." },
+        { "q": "Can we migrate existing data?", "a": "Yes. CSV import and one-time migration scripts are common in scope." }
+      ]
+    }
+  ]
+}

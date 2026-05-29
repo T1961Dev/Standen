@@ -18,7 +18,7 @@
         posts.forEach(function (post) {
             html +=
                 '<article class="blog-card">' +
-                '<a href="blog-post.html?slug=' + encodeURIComponent(post.slug) + '" class="blog-card__link">' +
+                '<a href="/blog/' + encodeURIComponent(post.slug) + '.html" class="blog-card__link">' +
                 '<img class="blog-card__image" src="' + (post.image || "") + '" alt="" width="800" height="500" loading="lazy">' +
                 '<div class="blog-card__content">' +
                 '<time class="blog-card__date" datetime="' + post.date + '">' + formatDate(post.date) + '</time>' +
@@ -48,11 +48,11 @@
             return;
         }
 
-        document.title = post.title + " | Blog | Standen — Web Development & SaaS Agency Hampshire UK";
+        document.title = post.title + " | Blog | Standen. Web Development & SaaS Agency Hampshire UK";
 
         container.innerHTML =
             '<div class="section-inner section-inner--narrow"><div class="blog-post">' +
-            '<a href="blog.html" class="blog-post__back">← Back to blog</a>' +
+            '<a href="/blog.html" class="blog-post__back">&lt; Back to blog</a>' +
             '<article class="blog-post__article">' +
             '<header class="blog-post__header">' +
             '<time datetime="' + post.date + '" class="blog-post__date">' + formatDate(post.date) + '</time>' +

@@ -3,321 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="See the 5 places UK B2B agencies lose hours, margin and delivery speed through broken workflows.">
+    <meta name="description" content="Free agency ops audit: 5 workflows where B2B agencies lose hours and margin. See what to fix before hiring another ops person.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://standen.io/audit">
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="The 14 Day Agency Ops Audit | Standen">
-    <meta property="og:description" content="5 places UK B2B agencies lose hours, margin and delivery speed through broken workflows.">
+    <meta property="og:title" content="Agency Ops Audit | 5 Workflow Leaks | Standen">
+    <meta property="og:description" content="Free agency ops audit: 5 workflows where B2B agencies lose hours and margin. See what to fix before hiring another ops person.">
     <meta property="og:url" content="https://standen.io/audit">
+    <meta property="og:image" content="https://standen.io/logo.png">
+    <meta property="og:image:alt" content="Standen">
     <meta property="og:locale" content="en_GB">
-    <title>The 14 Day Agency Ops Audit | Standen</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Geist', 'system-ui', 'sans-serif'] },
-                    colors: { ink: '#050505', cloud: '#f7f7f2' }
-                }
-            }
-        };
-    </script>
-    <style>
-        :root {
-            --ink: #050505;
-            --paper: #f7f7f2;
-            --white: #ffffff;
-            --muted: rgba(5, 5, 5, .58);
-            --muted-2: rgba(5, 5, 5, .42);
-            --dark-muted: rgba(255, 255, 255, .64);
-            --line: rgba(5, 5, 5, .10);
-            --dark-line: rgba(255, 255, 255, .13);
-            --ease: cubic-bezier(.22, 1, .36, 1);
-        }
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0;
-            font-family: "Geist", system-ui, sans-serif;
-            font-weight: 400;
-            letter-spacing: -0.05em;
-            background: var(--paper);
-            color: var(--ink);
-            -webkit-font-smoothing: antialiased;
-            text-rendering: geometricPrecision;
-            overflow-x: hidden;
-        }
-        p { font-weight: 400; }
-        a, button { font: inherit; letter-spacing: inherit; }
-        a { color: inherit; text-decoration: none; }
-        ::selection { background: var(--ink); color: var(--white); }
-        .wordmark { font-weight: 500; letter-spacing: -0.05em; line-height: 1; }
-        .nav-shell {
-            position: relative;
-            width: min(100%, 1160px);
-            min-height: 64px;
-            margin: 0 auto;
-            border: 1px solid rgba(255,255,255,.16);
-            border-radius: 999px;
-            background: rgba(5,5,5,.74);
-        }
-        .nav-brand { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); }
-        .nav-centre { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-        .nav-cta {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            display: inline-flex;
-            min-height: 2.55rem;
-            padding: .72rem 1rem;
-            font-size: .84rem;
-            transform: translateY(-50%);
-        }
-        .nav-shell .nav-cta:hover { transform: translateY(calc(-50% - 2px)); }
-        .nav-menu-toggle {
-            display: none;
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 2.55rem;
-            height: 2.55rem;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: .28rem;
-            border: 1px solid rgba(255,255,255,.16);
-            border-radius: 999px;
-            background: rgba(255,255,255,.06);
-            color: #fff;
-            cursor: pointer;
-        }
-        .nav-menu-toggle span,
-        .nav-menu-toggle::before,
-        .nav-menu-toggle::after {
-            content: "";
-            display: block;
-            width: 1rem;
-            height: 1px;
-            background: currentColor;
-            transition: transform .25s var(--ease), opacity .25s var(--ease);
-        }
-        .nav-menu-toggle[aria-expanded="true"] span { opacity: 0; }
-        .nav-menu-toggle[aria-expanded="true"]::before { transform: translateY(.29rem) rotate(45deg); }
-        .nav-menu-toggle[aria-expanded="true"]::after { transform: translateY(-.29rem) rotate(-45deg); }
-        .mobile-nav-panel {
-            display: none;
-            width: min(100%, 1160px);
-            margin: .55rem auto 0;
-            border: 1px solid rgba(255,255,255,.16);
-            border-radius: 1.35rem;
-            background: rgba(5,5,5,.96);
-            padding: .6rem;
-            color: #fff;
-        }
-        .mobile-nav-panel[data-open="true"] { display: block; }
-        .mobile-nav-panel a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 999px;
-            padding: .9rem 1rem;
-            color: rgba(255,255,255,.72);
-            font-size: .95rem;
-        }
-        .mobile-nav-panel a:hover { color: #fff; background: rgba(255,255,255,.055); }
-        .mobile-nav-panel .mobile-nav-cta {
-            margin-top: .35rem;
-            background: #fff;
-            color: #050505;
-            justify-content: center;
-            gap: .55rem;
-            font-weight: 450;
-        }
-        .meet-img { width: 1.18rem; height: 1.18rem; flex: 0 0 auto; display: block; }
-        .hero-bg {
-            background:
-                linear-gradient(180deg, rgba(255,255,255,.055) 0%, transparent 34%),
-                linear-gradient(180deg, #050505 0%, #0d0d0b 58%, #050505 100%);
-        }
-        .mesh-light {
-            background:
-                linear-gradient(180deg, rgba(255,255,255,.72) 0%, transparent 22%),
-                linear-gradient(180deg, #fff 0%, #f7f7f2 100%);
-        }
-        .grid-lines {
-            background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
-            background-size: 68px 68px;
-            opacity: .46;
-        }
-        .title-xl { font-size: clamp(2.75rem, 5.25vw, 4.95rem); line-height: .94; letter-spacing: -0.075em; }
-        .title-lg { font-size: clamp(2.1rem, 4.15vw, 3.85rem); line-height: .96; letter-spacing: -0.075em; }
-        .section-label { font-size: .76rem; font-weight: 600; text-transform: uppercase; letter-spacing: -0.02em; opacity: .58; }
-        .body-copy { color: var(--muted); line-height: 1.7; letter-spacing: -0.045em; }
-        .body-copy-dark { color: var(--dark-muted); line-height: 1.7; letter-spacing: -0.045em; }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: .65rem;
-            border-radius: 999px;
-            min-height: 3.1rem;
-            padding: .92rem 1.35rem;
-            font-size: .92rem;
-            font-weight: 450;
-            transition: transform .35s var(--ease), border-color .35s var(--ease), background .35s var(--ease), color .35s var(--ease);
-        }
-        .btn:hover { transform: translateY(-2px); }
-        .btn-light { background: #fff; color: #050505; border: 1px solid rgba(255,255,255,.92); }
-        .btn-dark { background: #050505; color: #fff; border: 1px solid #050505; }
-        .btn-ghost-light { color: #fff; border: 1px solid var(--dark-line); background: rgba(255,255,255,.045); }
-        .btn-ghost-dark { color: #050505; border: 1px solid var(--line); background: rgba(255,255,255,.42); }
-        .audit-pill,
-        .stat-pill {
-            border: 1px solid rgba(255,255,255,.13);
-            background: rgba(255,255,255,.045);
-            border-radius: 999px;
-            padding: .8rem 1rem;
-            color: rgba(255,255,255,.55);
-        }
-        .bento-card {
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--line);
-            border-radius: 1.65rem;
-            background: rgba(255,255,255,.68);
-        }
-        .bento-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(180deg, rgba(255,255,255,.52), transparent 42%),
-                linear-gradient(90deg, rgba(5,5,5,.045) 1px, transparent 1px);
-            background-size: auto, 38px 38px;
-            opacity: .62;
-            pointer-events: none;
-        }
-        .dark-card { border-color: var(--dark-line); background: rgba(255,255,255,.05); color: #fff; }
-        .dark-card::before {
-            background:
-                linear-gradient(180deg, rgba(255,255,255,.075), transparent 48%),
-                linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
-            background-size: auto, 38px 38px;
-            opacity: .58;
-        }
-        .card-content { position: relative; z-index: 1; }
-        .audit-list {
-            display: grid;
-            gap: .85rem;
-            padding-left: 1.15rem;
-            color: rgba(5,5,5,.58);
-            line-height: 1.55;
-            list-style: disc;
-        }
-        .audit-list li::marker { color: rgba(5,5,5,.28); }
-        .dark-list { color: rgba(255,255,255,.64); }
-        .dark-list li::marker { color: rgba(255,255,255,.36); }
-        .issue-number {
-            display: inline-flex;
-            width: 2.5rem;
-            height: 2.5rem;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(5,5,5,.10);
-            border-radius: 999px;
-            background: rgba(255,255,255,.48);
-            color: rgba(5,5,5,.58);
-            font-size: .82rem;
-        }
-        .subhead { color: rgba(5,5,5,.42); font-size: .92rem; font-weight: 600; text-transform: uppercase; letter-spacing: -0.02em; }
-        .price-card {
-            background:
-                linear-gradient(135deg, #f4efe3 0%, #fffaf0 48%, #ece7da 100%);
-        }
-        .reveal-on-scroll { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-        .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-        @media (max-width: 1024px) {
-            .nav-shell,
-            .mobile-nav-panel { width: min(100%, 960px); }
-            .nav-centre { gap: 1.25rem; }
-        }
-        @media (max-width: 900px) {
-            .nav-shell { width: 100%; min-height: 58px; }
-            .nav-brand { left: 14px; }
-            .nav-centre { display: none; }
-            .nav-cta { display: none; }
-            .nav-menu-toggle { display: inline-flex; }
-            .mobile-nav-panel { width: 100%; }
-        }
-        @media (max-width: 760px) {
-            .title-xl { font-size: clamp(2.45rem, 11vw, 3.5rem); line-height: .94; }
-            .title-lg { font-size: clamp(2.25rem, 10vw, 3.25rem); line-height: .96; }
-            .section-label { font-size: .68rem; }
-            .body-copy,
-            .body-copy-dark { line-height: 1.58; }
-            .bento-card { border-radius: 1.25rem; padding: 1.5rem; }
-            .btn { width: 100%; min-height: 3rem; }
-        }
-        @media (max-width: 420px) {
-            .title-xl { font-size: clamp(2.25rem, 11.5vw, 3rem); }
-            .title-lg { font-size: clamp(2rem, 9.5vw, 2.7rem); }
-            .nav-shell { min-height: 54px; }
-            .wordmark { font-size: .94rem; }
-            .meet-img { width: 1rem; height: 1rem; }
-            .bento-card { padding: 1.25rem; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            .reveal-on-scroll { opacity: 1 !important; transform: none !important; transition: none !important; }
-            .btn { transition: none; }
-        }
-    </style>
-    <script src="/js/vercel-analytics.js"></script>
+    <meta property="og:site_name" content="Standen">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agency Ops Audit | 5 Workflow Leaks | Standen">
+    <meta name="twitter:description" content="Free agency ops audit: 5 workflows where B2B agencies lose hours and margin. See what to fix before hiring another ops person.">
+    <title>Agency Ops Audit | 5 Workflow Leaks | Standen</title>
+    <link rel="preload" href="/assets/fonts/gt-america-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/gt-america-medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/home.css">
+    <script src="/js/vercel-analytics.js" defer></script>
+    <script src="/js/ga4.js" defer></script>
 </head>
-<body>
-    <header class="fixed inset-x-0 top-0 z-50 px-5 pt-4 sm:px-8">
-        <div class="nav-shell text-white">
-            <a href="/" class="nav-brand wordmark text-[1.08rem]" aria-label="Standen home">Standen</a>
-            <nav class="nav-centre hidden items-center gap-7 text-[0.86rem] font-normal text-white/68 md:flex" aria-label="Primary">
-                <a class="transition hover:text-white" href="/work">Work</a>
-                <a class="transition hover:text-white" href="/process">Process</a>
-                <a class="transition hover:text-white" href="/pricing">Pricing</a>
-                <a class="transition hover:text-white" href="/audit">Audit</a>
-                <a class="transition hover:text-white" href="/contact">Contact</a>
+<body class="page-home">
+    <header class="site-nav" id="top">
+        <div class="nav-inner">
+            <a class="brand" href="/" aria-label="Standen home">
+                <span class="brand-name">Standen</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="/#services">Services</a>
+                <a href="/work.html">Work</a>
+                <a href="/#process">Process</a>
+                <a href="/guides.html">Guides</a>
             </nav>
-            <a href="https://calendly.com/standen/discovery-call" class="nav-cta btn btn-light" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
-            <button class="nav-menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
+            <a href="https://calendly.com/standen/discovery-call" class="btn btn--accent nav-cta" target="_blank" rel="noopener"><span class="btn__text">Book a Free Consultation</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
         </div>
-        <nav id="mobile-menu" class="mobile-nav-panel" data-open="false" aria-label="Mobile">
-            <a href="/work">Work</a>
-            <a href="/process">Process</a>
-            <a href="/pricing">Pricing</a>
-            <a href="/audit">Audit</a>
-            <a href="/contact">Contact</a>
-            <a href="https://calendly.com/standen/discovery-call" class="mobile-nav-cta" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
+        <nav id="mobile-menu" class="mobile-menu" data-open="false" aria-label="Mobile">
+            <a href="/#services">Services</a>
+            <a href="/work.html">Work</a>
+            <a href="/#process">Process</a>
+            <a href="/guides.html">Guides</a>
+            <a href="https://calendly.com/standen/discovery-call" class="btn btn--accent" target="_blank" rel="noopener"><span class="btn__text">Book a Free Consultation</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         </nav>
     </header>
+<main>
 
-    <main>
-        <section class="hero-bg relative flex min-h-[100svh] items-center overflow-hidden px-5 pb-20 pt-36 text-center text-white sm:px-8">
-            <div class="grid-lines absolute inset-0 opacity-90" aria-hidden="true"></div>
-            <div class="relative mx-auto max-w-5xl">
-                <p class="section-label mx-auto mb-7 text-white/58">The Standen agency ops resource</p>
-                <h1 class="title-xl mx-auto max-w-6xl font-semibold text-balance">The 14 Day Agency Ops Audit</h1>
-                <p class="mx-auto mt-8 max-w-3xl text-xl text-white/76 sm:text-2xl">5 places UK B2B agencies lose hours, margin and delivery speed.</p>
-                <p class="body-copy-dark mx-auto mt-6 max-w-3xl text-base sm:text-xl">Most agencies do not have a software problem. They have an operations problem hiding inside broken workflows, manual reporting, slow onboarding and disconnected tools.</p>
-                <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                    <a href="#audit" class="btn btn-light w-full sm:w-auto">Read the audit</a>
-                    <a href="https://calendly.com/standen/discovery-call" class="btn btn-ghost-light w-full sm:w-auto" target="_blank" rel="noopener">Book a 20 minute scoping call</a>
+        <div class="audit-page">
+            <div class="wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Audit</li></ol></nav></div>
+            
+        <section class="audit-hero audit-hero--dark">
+            <div class="grid-lines" aria-hidden="true"></div>
+            <div class="audit-hero__inner">
+                <p class="section-label">The Standen agency ops resource</p>
+                <h1 class="audit-title audit-title--xl">The 14 Day Agency Ops Audit</h1>
+                <p>5 places B2B agencies lose hours, margin and delivery speed.</p>
+                <p class="audit-prose audit-prose--on-dark">Most agencies do not have a software problem. They have an operations problem hiding inside broken workflows, manual reporting, slow onboarding and disconnected tools.</p>
+                <div>
+                    <a href="#audit" class="btn btn--light">Read the audit</a>
+                    <a href="https://calendly.com/standen/discovery-call" class="btn btn--outline-light" target="_blank" rel="noopener">Book a Free Consultation</a>
                 </div>
-                <div class="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-3 text-sm sm:grid-cols-3">
+                <div>
                     <p class="audit-pill">Built in 14 days</p>
                     <p class="audit-pill">Owned by you</p>
                     <p class="audit-pill">Money back if late</p>
@@ -325,17 +73,17 @@
             </div>
         </section>
 
-        <section id="audit" class="mesh-light px-5 py-24 sm:px-8 sm:py-32">
-            <div class="mx-auto max-w-6xl">
-                <div class="grid gap-5 lg:grid-cols-[.85fr_1.15fr] lg:items-start">
-                    <div class="bento-card p-8 md:p-10">
+        <section id="audit" class="audit-section">
+            <div>
+                <div>
+                    <div class="audit-card">
                         <div class="card-content">
-                            <p class="section-label mb-6">Why this audit exists</p>
-                            <h2 class="title-lg max-w-xl font-semibold text-balance">Most agencies do not have a software problem.</h2>
+                            <p class="section-label">Why this audit exists</p>
+                            <h2 class="audit-title audit-title--lg">Most agencies do not have a software problem.</h2>
                         </div>
                     </div>
-                    <div class="bento-card p-8 md:p-10">
-                        <div class="card-content grid gap-5 body-copy text-lg">
+                    <div class="audit-card">
+                        <div class="card-content">
                             <p>They have an operations problem hiding inside too many disconnected tools.</p>
                             <p>The stack usually starts clean.</p>
                             <p>HubSpot handles sales. ClickUp handles tasks. Slack handles updates. Notion handles docs. Google Sheets handles reporting. Looker or GA4 handles analytics. Zapier fills the gaps.</p>
@@ -346,7 +94,7 @@
                             <p>The problem is that the workflow was never built as one system.</p>
                             <p>That creates hidden cost.</p>
                             <p>Senior people spend hours moving data between tools. Founders get pulled back into delivery. Account managers rebuild reports every week. Client onboarding takes too long. Proposal cycles slow down. Retainer margin disappears through over servicing.</p>
-                            <p>This audit breaks down the 5 places UK B2B agencies usually lose the most time and money.</p>
+                            <p>This audit breaks down the 5 places B2B agencies usually lose the most time and money.</p>
                             <ol class="audit-list">
                                 <li>Reporting eats 20 to 40 hours per month</li>
                                 <li>Invisible utilisation kills retainer margin</li>
@@ -358,13 +106,13 @@
                     </div>
                 </div>
 
-                <div class="mt-5 grid gap-5">
-                    <article class="bento-card reveal-on-scroll p-8 md:p-10" id="reporting">
+                <div>
+                    <article class="audit-card" id="reporting">
                         <div class="card-content">
                             <span class="issue-number">01</span>
-                            <h2 class="title-lg mt-7 max-w-4xl font-semibold">Reporting eats 20 to 40 hours per month</h2>
-                            <div class="mt-10 grid gap-8 lg:grid-cols-2">
-                                <div class="grid gap-5 body-copy text-lg">
+                            <h2 class="audit-title audit-title--lg">Reporting eats 20 to 40 hours per month</h2>
+                            <div>
+                                <div>
                                     <h3 class="subhead">The pain</h3>
                                     <p>Most agency reporting is still far too manual.</p>
                                     <p>The data lives in one place. The client wants it in another. The account manager sits between both.</p>
@@ -376,7 +124,7 @@
                                     <p>The account manager loses time pulling data. The account director loses time checking it. The founder loses time reviewing key accounts. The client gets a report that often arrives later than it should and still needs explanation.</p>
                                     <p>Once the agency has 8 to 15 active retainers, reporting is no longer admin. It becomes part of delivery.</p>
                                 </div>
-                                <div class="grid gap-5 body-copy text-lg">
+                                <div>
                                     <h3 class="subhead">What it costs</h3>
                                     <p>A senior account manager spending 30 hours per month on reporting costs real money.</p>
                                     <p>If their loaded cost is &pound;50 to &pound;70 per hour, that is &pound;1,500 to &pound;2,100 per month on reporting time alone.</p>
@@ -403,12 +151,12 @@
                         </div>
                     </article>
 
-                    <article class="bento-card reveal-on-scroll p-8 md:p-10" id="utilisation">
+                    <article class="audit-card" id="utilisation">
                         <div class="card-content">
                             <span class="issue-number">02</span>
-                            <h2 class="title-lg mt-7 max-w-4xl font-semibold">Invisible utilisation kills retainer margin</h2>
-                            <div class="mt-10 grid gap-8 lg:grid-cols-2">
-                                <div class="grid gap-5 body-copy text-lg">
+                            <h2 class="audit-title audit-title--lg">Invisible utilisation kills retainer margin</h2>
+                            <div>
+                                <div>
                                     <h3 class="subhead">The pain</h3>
                                     <p>Most agencies find out which clients are unprofitable too late.</p>
                                     <p>Usually after the month ends. Or after the quarter ends. Or after the founder checks why the team feels busy but profit has not moved.</p>
@@ -426,7 +174,7 @@
                                     <p>Then the founder wonders why the team needs another hire.</p>
                                     <p>Sometimes the agency does need another hire. Often, it needs better visibility first.</p>
                                 </div>
-                                <div class="grid gap-5 body-copy text-lg">
+                                <div>
                                     <h3 class="subhead">What it costs</h3>
                                     <p>A &pound;6K per month retainer might look healthy.</p>
                                     <p>But if the agency planned for 50 hours and the team actually spends 75 hours, that extra 25 hours has to come from somewhere.</p>
@@ -454,12 +202,12 @@
                         </div>
                     </article>
 
-                    <article class="bento-card reveal-on-scroll p-8 md:p-10" id="onboarding">
+                    <article class="audit-card" id="onboarding">
                         <div class="card-content">
                             <span class="issue-number">03</span>
-                            <h2 class="title-lg mt-7 max-w-4xl font-semibold">Client onboarding takes 2 to 3 weeks before delivery starts properly</h2>
-                            <div class="mt-10 grid gap-8 lg:grid-cols-2">
-                                <div class="grid gap-5 body-copy text-lg">
+                            <h2 class="audit-title audit-title--lg">Client onboarding takes 2 to 3 weeks before delivery starts properly</h2>
+                            <div>
+                                <div>
                                     <h3 class="subhead">The pain</h3>
                                     <p>Most agencies sell faster than they onboard.</p>
                                     <p>The deal closes. Then the work begins.</p>
@@ -476,7 +224,7 @@
                                     <p>The founder gets pulled into small setup questions. The ops lead chases missing information. The account manager starts with incomplete context. The delivery team waits for access. The client feels the agency is slower than expected.</p>
                                     <p>That matters because the first 14 days after a deal closes set the tone for the whole relationship.</p>
                                 </div>
-                                <div class="grid gap-5 body-copy text-lg">
+                                <div>
                                     <h3 class="subhead">What it costs</h3>
                                     <p>Slow onboarding creates several costs.</p>
                                     <ul class="audit-list">
@@ -508,12 +256,12 @@
                         </div>
                     </article>
 
-                    <article class="bento-card reveal-on-scroll p-8 md:p-10" id="glue-work">
+                    <article class="audit-card" id="glue-work">
                         <div class="card-content">
                             <span class="issue-number">04</span>
-                            <h2 class="title-lg mt-7 max-w-4xl font-semibold">SaaS glue work burns 10 to 15 hours per week</h2>
-                            <div class="mt-10 grid gap-8 lg:grid-cols-2">
-                                <div class="grid gap-5 body-copy text-lg">
+                            <h2 class="audit-title audit-title--lg">SaaS glue work burns 10 to 15 hours per week</h2>
+                            <div>
+                                <div>
                                     <h3 class="subhead">The pain</h3>
                                     <p>Glue work is the work between tools.</p>
                                     <p>It is the copying, checking, updating and chasing that keeps the business moving.</p>
@@ -531,7 +279,7 @@
                                     <p>So senior people keep doing low value tasks.</p>
                                     <p>That is where margin leaks.</p>
                                 </div>
-                                <div class="grid gap-5 body-copy text-lg">
+                                <div>
                                     <h3 class="subhead">What it costs</h3>
                                     <p>10 hours per week equals 520 hours per year.</p>
                                     <p>15 hours per week equals 780 hours per year.</p>
@@ -558,12 +306,12 @@
                         </div>
                     </article>
 
-                    <article class="bento-card reveal-on-scroll p-8 md:p-10" id="proposals">
+                    <article class="audit-card" id="proposals">
                         <div class="card-content">
                             <span class="issue-number">05</span>
-                            <h2 class="title-lg mt-7 max-w-4xl font-semibold">Slow proposals lose same day deals</h2>
-                            <div class="mt-10 grid gap-8 lg:grid-cols-2">
-                                <div class="grid gap-5 body-copy text-lg">
+                            <h2 class="audit-title audit-title--lg">Slow proposals lose same day deals</h2>
+                            <div>
+                                <div>
                                     <h3 class="subhead">The pain</h3>
                                     <p>Most agencies do not lose deals because their proposal is poor.</p>
                                     <p>They lose because it lands too late.</p>
@@ -581,7 +329,7 @@
                                     <p>Not because they are slow.</p>
                                     <p>Because the system depends on them to rebuild judgement from scratch every time.</p>
                                 </div>
-                                <div class="grid gap-5 body-copy text-lg">
+                                <div>
                                     <h3 class="subhead">What it costs</h3>
                                     <p>Proposal delay kills momentum.</p>
                                     <p>If an agency has 10 strong inbound opportunities per month and 2 lose energy because follow up is slow, that is meaningful pipeline leakage.</p>
@@ -612,174 +360,57 @@
             </div>
         </section>
 
-        <section class="bg-ink px-5 py-24 text-white sm:px-8 sm:py-32">
-            <div class="mx-auto max-w-6xl">
-                <p class="section-label mb-7 text-white/58">First systems</p>
-                <h2 class="title-lg max-w-5xl font-semibold text-balance">Two systems we usually build first</h2>
-                <p class="body-copy-dark mt-6 max-w-2xl text-lg">For most UK B2B agencies under 50 people, the first build should target one expensive workflow that repeats every week.</p>
-                <p class="body-copy-dark mt-4 max-w-2xl text-lg">It should save time, protect margin or speed up revenue.</p>
-                <p class="body-copy-dark mt-4 max-w-2xl text-lg">Based on the 5 issues in this audit, these are the 2 systems we usually look for first.</p>
-                <div class="mt-14 grid gap-5 lg:grid-cols-2">
-                    <article class="bento-card dark-card p-8 text-left md:p-10">
-                        <div class="card-content">
-                            <p class="text-sm text-white/46">System 1</p>
-                            <h3 class="mt-5 text-3xl font-semibold tracking-[-0.075em]">Client reporting portal</h3>
-                            <p class="body-copy-dark mt-5">Most agencies already have the data. It is just spread across too many places.</p>
-                            <p class="body-copy-dark mt-4">A client reporting portal pulls the core numbers, commentary and weekly updates into one clean system.</p>
-                            <h4 class="mt-8 text-sm font-semibold uppercase text-white/50">What it includes</h4>
-                            <ul class="audit-list dark-list mt-4">
-                                <li>Internal reporting dashboard</li>
-                                <li>Client reporting dashboard</li>
-                                <li>Client login</li>
-                                <li>Role based access</li>
-                                <li>Campaign performance tables</li>
-                                <li>Commentary layer for account managers</li>
-                                <li>Weekly snapshot view</li>
-                                <li>Founder overview</li>
-                            </ul>
-                            <h4 class="mt-8 text-sm font-semibold uppercase text-white/50">Best fit</h4>
-                            <p class="body-copy-dark mt-4">This is best for agencies with 8 or more active retainers, regular reporting cycles and account managers spending hours every month preparing updates.</p>
-                            <h4 class="mt-8 text-sm font-semibold uppercase text-white/50">Why it matters</h4>
-                            <p class="body-copy-dark mt-4">Reporting is one of the easiest places to win back time. The workflow is repetitive. The data sources are known. The output is predictable. That makes it a strong 14 day build.</p>
-                        </div>
-                    </article>
-                    <article class="bento-card dark-card p-8 text-left md:p-10">
-                        <div class="card-content">
-                            <p class="text-sm text-white/46">System 2</p>
-                            <h3 class="mt-5 text-3xl font-semibold tracking-[-0.075em]">Retainer profitability tracker</h3>
-                            <p class="body-copy-dark mt-5">Most agencies do not see over servicing until the month is already over.</p>
-                            <p class="body-copy-dark mt-4">A retainer profitability tracker gives founders and ops teams live visibility into client margin.</p>
-                            <h4 class="mt-8 text-sm font-semibold uppercase text-white/50">What it includes</h4>
-                            <ul class="audit-list dark-list mt-4">
-                                <li>Client retainer value</li>
-                                <li>Budgeted hours</li>
-                                <li>Actual hours used</li>
-                                <li>Delivery owner</li>
-                                <li>Margin estimate</li>
-                                <li>Budget usage percentage</li>
-                                <li>Alerts when accounts approach over servicing</li>
-                                <li>Founder view across all accounts</li>
-                                <li>Account manager view for owned accounts</li>
-                            </ul>
-                            <h4 class="mt-8 text-sm font-semibold uppercase text-white/50">Best fit</h4>
-                            <p class="body-copy-dark mt-4">This is best for agencies with multi client retainers, delivery teams, account ownership and recurring scope creep.</p>
-                            <h4 class="mt-8 text-sm font-semibold uppercase text-white/50">Why it matters</h4>
-                            <p class="body-copy-dark mt-4">Most agencies do not need more delivery capacity first.</p>
-                            <p class="body-copy-dark mt-4">They need to know where current capacity is going.</p>
-                            <p class="body-copy-dark mt-4">This system shows which accounts are healthy, which accounts are drifting and where the agency needs a pricing or scope conversation.</p>
-                        </div>
-                    </article>
+        
+        </div>
+        <section class="final-cta" aria-labelledby="page-cta"><div class="wrap"><h2 id="page-cta">Ready to fix the workflow leak?</h2><p>If one of the 5 issues in this audit sounds familiar, we map the highest-value build and whether it fits inside 14 days.</p><a href="https://calendly.com/standen/discovery-call" class="btn btn--accent btn--lg" target="_blank" rel="noopener"><span class="btn__text">Book a Free Consultation</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div></section>
+</main>
+    <footer class="site-footer">
+        <div class="wrap footer-grid footer-grid--enterprise">
+            <div class="footer-brand">
+                <a class="brand" href="/">
+                    <span class="brand-name">Standen</span>
+                </a>
+                <p class="footer-tagline">Custom software and SaaS for agencies. Built in 14 days. You own everything.</p>
+                <div class="footer-contact">
+                    <a href="mailto:hello@standen.io" class="footer-contact__email">hello@standen.io</a>
+                    <a href="https://www.linkedin.com/in/tomas-jones1/" class="footer-contact__linkedin" target="_blank" rel="noopener noreferrer" aria-label="Tomas Jones on LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
                 </div>
             </div>
-        </section>
-
-        <section class="mesh-light px-5 py-24 sm:px-8 sm:py-32">
-            <div class="mx-auto max-w-6xl">
-                <p class="section-label mb-7">How Standen works</p>
-                <h2 class="title-lg max-w-5xl font-semibold text-balance">Custom software for UK B2B agencies in 14 days.</h2>
-                <p class="body-copy mt-6 max-w-3xl text-lg">The work usually sits inside internal tools, client portals, reporting dashboards, internal CRMs, retainer profitability trackers, onboarding systems, proposal builders, delivery dashboards and workflow systems.</p>
-                <div class="mt-14 grid gap-5 md:grid-cols-3">
-                    <article class="bento-card p-8 text-left">
-                        <div class="card-content"><p class="text-sm text-black/42">01</p><h3 class="mt-8 text-2xl font-semibold tracking-[-0.065em]">Scope</h3><p class="body-copy mt-4">We lock what gets built, who uses it, what data it needs, what integrations matter and what counts as delivered.</p></div>
-                    </article>
-                    <article class="bento-card p-8 text-left">
-                        <div class="card-content"><p class="text-sm text-black/42">02</p><h3 class="mt-8 text-2xl font-semibold tracking-[-0.065em]">Build</h3><p class="body-copy mt-4">We build with Next.js, Supabase, Postgres, Tailwind, Vercel and the integrations your workflow needs.</p></div>
-                    </article>
-                    <article class="bento-card p-8 text-left">
-                        <div class="card-content"><p class="text-sm text-black/42">03</p><h3 class="mt-8 text-2xl font-semibold tracking-[-0.065em]">Handover</h3><p class="body-copy mt-4">You get the live software, codebase, database structure, hosting setup, handover docs, Loom walkthrough and full ownership.</p></div>
-                    </article>
-                </div>
-                <div class="mt-5 grid gap-5 lg:grid-cols-3">
-                    <article class="bento-card p-8 text-left">
-                        <div class="card-content">
-                            <p class="section-label mb-5">Best fit</p>
-                            <ul class="audit-list">
-                                <li>UK B2B agency</li>
-                                <li>&pound;500K to &pound;10M revenue</li>
-                                <li>Messy operations</li>
-                                <li>Too many tools already</li>
-                                <li>Clear workflow problem</li>
-                                <li>Wants full ownership</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="price-card bento-card p-8 text-left lg:col-span-2">
-                        <div class="card-content grid gap-5 body-copy text-lg">
-                            <p class="section-label">Pricing</p>
-                            <h3 class="text-4xl font-semibold tracking-[-0.08em] text-black">Pricing starts from &pound;5K fixed.</h3>
-                            <p>&pound;5K to &pound;7K for a single workflow, one main dashboard and light integrations.</p>
-                            <p>&pound;8K to &pound;10K for a multi workflow internal tool, role based access and 1 to 2 integrations.</p>
-                            <p>&pound;11K to &pound;15K for a full internal system, client access, several workflows and more complex data flows.</p>
-                            <p>Payment is 50 percent upfront and 50 percent on delivery.</p>
-                        </div>
-                    </article>
-                </div>
-                <article class="bento-card mt-5 p-8 text-left md:p-10">
-                    <div class="card-content grid gap-5 body-copy text-lg">
-                        <p class="section-label">Guarantee</p>
-                        <h3 class="text-4xl font-semibold tracking-[-0.08em] text-black">If Standen misses the agreed 14 day delivery date, your deposit is returned.</h3>
-                        <p>The guarantee works because scope is locked before build starts.</p>
-                        <p>If the scope changes halfway through, the timeline changes too.</p>
-                        <p>That is why version one stays focused.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="hero-bg relative overflow-hidden px-5 py-24 text-center text-white sm:px-8 sm:py-32">
-            <div class="grid-lines absolute inset-0 opacity-90" aria-hidden="true"></div>
-            <div class="relative mx-auto max-w-3xl">
-                <p class="wordmark mx-auto text-2xl">Standen</p>
-                <h2 class="title-lg mt-8 font-semibold text-balance">Book a 20 minute scoping call</h2>
-                <p class="body-copy-dark mx-auto mt-7 max-w-xl text-lg">If one of the 5 issues in this audit sounds familiar, we look at your current workflow, identify the highest value build and tell you whether it fits inside 14 days.</p>
-                <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                    <a href="https://calendly.com/standen/discovery-call" class="btn btn-light w-full sm:w-auto" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
-                    <a href="/" class="btn btn-ghost-light w-full sm:w-auto">Back to Standen</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-ink px-5 pb-12 text-white sm:px-8">
-        <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 border-t border-white/12 pt-8 text-center sm:flex-row sm:text-left">
-            <p class="wordmark text-xl">Standen</p>
-            <p class="text-sm font-normal text-white/38">&copy; 2026 Standen. Custom internal tools, portals and dashboards for UK B2B agencies.</p>
-            <nav class="flex flex-wrap justify-center gap-5 text-sm text-white/50" aria-label="Footer"><a href="/work" class="hover:text-white">Work</a><a href="/process" class="hover:text-white">Process</a><a href="/pricing" class="hover:text-white">Pricing</a><a href="/audit" class="hover:text-white">Audit</a><a href="/contact" class="hover:text-white">Contact</a></nav>
+            <nav aria-label="Services">
+                <h2>Services</h2>
+                <a href="/#services">All services</a>
+                <a href="/#service-proposals">Proposal systems</a>
+                <a href="/#service-reporting">Reporting dashboards</a>
+                <a href="/#service-portals">Client portals</a>
+                <a href="/#service-crm">Internal CRM</a>
+                <a href="/#service-saas">SaaS MVP</a>
+                <a href="/#service-internal">Internal tools</a>
+            </nav>
+            <nav aria-label="Company">
+                <h2>Company</h2>
+                <a href="/work.html">Work</a>
+                <a href="/about.html">About</a>
+                <a href="/#process">Process</a>
+                <a href="/#pricing">Pricing</a>
+            </nav>
+            <nav aria-label="Resources">
+                <h2>Resources</h2>
+                <a href="/guides.html">Guides</a>
+                <a href="/audit.html">Ops audit</a>
+                <a href="/compare/index.html">Compare</a>
+                <a href="/blog.html">Blog</a>
+            </nav>
+        </div>
+        <div class="wrap footer-bottom footer-bottom--enterprise">
+            <p>&copy; Standen</p>
+            <nav aria-label="Legal">
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+            </nav>
         </div>
     </footer>
-
-    <script>
-        (function () {
-            var els = document.querySelectorAll('.reveal-on-scroll');
-            var menuButton = document.querySelector('.nav-menu-toggle');
-            var mobileMenu = document.getElementById('mobile-menu');
-            if (menuButton && mobileMenu) {
-                menuButton.addEventListener('click', function () {
-                    var isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-                    menuButton.setAttribute('aria-expanded', String(!isOpen));
-                    mobileMenu.setAttribute('data-open', String(!isOpen));
-                });
-                mobileMenu.querySelectorAll('a').forEach(function (link) {
-                    link.addEventListener('click', function () {
-                        menuButton.setAttribute('aria-expanded', 'false');
-                        mobileMenu.setAttribute('data-open', 'false');
-                    });
-                });
-            }
-            if (!els.length || !('IntersectionObserver' in window)) {
-                els.forEach(function (el) { el.classList.add('is-visible'); });
-                return;
-            }
-            var io = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        io.unobserve(entry.target);
-                    }
-                });
-            }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
-            els.forEach(function (el) { io.observe(el); });
-        })();
-    </script>
+    <script src="/home.js"></script>
 </body>
 </html>

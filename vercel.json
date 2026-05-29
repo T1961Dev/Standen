@@ -1,13 +1,132 @@
 {
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.standen.io" }],
+      "destination": "https://standen.io/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/case-study.html",
+      "has": [{ "type": "query", "key": "id", "value": "ohmypod" }],
+      "destination": "/case-studies/ohmypod",
+      "permanent": true
+    },
+    {
+      "source": "/case-study.html",
+      "has": [{ "type": "query", "key": "id", "value": "fx-quant-research-platform" }],
+      "destination": "/case-studies/fx-quant-research-platform",
+      "permanent": true
+    },
+    {
+      "source": "/case-study.html",
+      "has": [{ "type": "query", "key": "id", "value": "real-estate-property-prediction" }],
+      "destination": "/case-studies/real-estate-property-prediction",
+      "permanent": true
+    },
+    {
+      "source": "/case-study.html",
+      "has": [{ "type": "query", "key": "id", "value": "scrapr-io" }],
+      "destination": "/case-studies/scrapr-io",
+      "permanent": true
+    },
+    {
+      "source": "/case-study.html",
+      "has": [{ "type": "query", "key": "id", "value": "instagram-lead-scraper" }],
+      "destination": "/case-studies/instagram-lead-scraper",
+      "permanent": true
+    },
+    {
+      "source": "/case-study.html",
+      "has": [{ "type": "query", "key": "id", "value": "crypto-news-scraper" }],
+      "destination": "/case-studies/crypto-news-scraper",
+      "permanent": true
+    },
+    {
+      "source": "/case-study.html",
+      "has": [{ "type": "query", "key": "id", "value": "lead-magnet-generator" }],
+      "destination": "/case-studies/lead-magnet-generator",
+      "permanent": true
+    },
+    {
+      "source": "/blog-post.html",
+      "has": [{ "type": "query", "key": "slug", "value": "how-to-scope-a-saas-mvp" }],
+      "destination": "/blog/how-to-scope-a-saas-mvp",
+      "permanent": true
+    },
+    {
+      "source": "/blog-post.html",
+      "has": [{ "type": "query", "key": "slug", "value": "web-development-hampshire-what-to-expect" }],
+      "destination": "/blog/web-development-hampshire-what-to-expect",
+      "permanent": true
+    },
+    {
+      "source": "/blog-post.html",
+      "has": [{ "type": "query", "key": "slug", "value": "when-to-build-custom-software-vs-saas" }],
+      "destination": "/blog/when-to-build-custom-software-vs-saas",
+      "permanent": true
+    },
+    {
+      "source": "/blog-post.html",
+      "has": [{ "type": "query", "key": "slug", "value": "rapid-delivery-without-cutting-corners" }],
+      "destination": "/blog/rapid-delivery-without-cutting-corners",
+      "permanent": true
+    },
     { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/audit.html", "destination": "/audit", "permanent": true }
+    { "source": "/audit.html", "destination": "/audit", "permanent": true },
+    { "source": "/guides.html", "destination": "/guides", "permanent": true },
+    { "source": "/blog.html", "destination": "/blog", "permanent": true },
+    { "source": "/resources.html", "destination": "/resources", "permanent": true },
+    { "source": "/privacy.html", "destination": "/privacy", "permanent": true },
+    { "source": "/terms.html", "destination": "/terms", "permanent": true },
+    { "source": "/contact.html", "destination": "/#contact", "permanent": true },
+    { "source": "/contact", "destination": "/#contact", "permanent": true },
+    { "source": "/contact-thank-you.html", "destination": "/#contact", "permanent": true },
+    { "source": "/contact-thank-you", "destination": "/#contact", "permanent": true },
+    { "source": "/case-studies.html", "destination": "/work", "permanent": true },
+    { "source": "/case-studies", "destination": "/work", "permanent": true },
+    { "source": "/case-studies/:slug.html", "destination": "/case-studies/:slug", "permanent": true },
+    { "source": "/blog/:slug.html", "destination": "/blog/:slug", "permanent": true },
+    { "source": "/guides/:slug.html", "destination": "/guides/:slug", "permanent": true },
+    { "source": "/saas-development-uk.html", "destination": "/#service-saas", "permanent": true },
+    { "source": "/saas-development-uk", "destination": "/#service-saas", "permanent": true },
+    { "source": "/custom-software-development-uk.html", "destination": "/#service-internal", "permanent": true },
+    { "source": "/custom-software-development-uk", "destination": "/#service-internal", "permanent": true },
+    { "source": "/services", "destination": "/#services", "permanent": true },
+    { "source": "/services/index.html", "destination": "/#services", "permanent": true },
+    { "source": "/services/agency-proposal-systems", "destination": "/#service-proposals", "permanent": true },
+    { "source": "/services/agency-proposal-systems.html", "destination": "/#service-proposals", "permanent": true },
+    { "source": "/services/agency-reporting-dashboard", "destination": "/#service-reporting", "permanent": true },
+    { "source": "/services/agency-reporting-dashboard.html", "destination": "/#service-reporting", "permanent": true },
+    { "source": "/services/agency-client-portal", "destination": "/#service-portals", "permanent": true },
+    { "source": "/services/agency-client-portal.html", "destination": "/#service-portals", "permanent": true },
+    { "source": "/services/agency-internal-crm", "destination": "/#service-crm", "permanent": true },
+    { "source": "/services/agency-internal-crm.html", "destination": "/#service-crm", "permanent": true },
+    { "source": "/services/saas-mvp-development", "destination": "/#service-saas", "permanent": true },
+    { "source": "/services/saas-mvp-development.html", "destination": "/#service-saas", "permanent": true },
+    { "source": "/services/internal-tools-for-agencies", "destination": "/#service-internal", "permanent": true },
+    { "source": "/services/internal-tools-for-agencies.html", "destination": "/#service-internal", "permanent": true },
+    { "source": "/custom-build-vs-off-the-shelf.html", "destination": "/compare/custom-build-vs-off-the-shelf", "permanent": true },
+    { "source": "/custom-build-vs-off-the-shelf", "destination": "/compare/custom-build-vs-off-the-shelf", "permanent": true },
+    { "source": "/case-study.html", "destination": "/work", "permanent": true },
+    { "source": "/blog-post.html", "destination": "/blog", "permanent": true },
+    { "source": "/guide.html", "destination": "/guides", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/compare", "destination": "/compare/index.html" },
+    { "source": "/compare/:slug", "destination": "/compare/:slug.html" },
+    { "source": "/case-studies/:slug", "destination": "/case-studies/:slug.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
+    { "source": "/guides/:slug", "destination": "/guides/:slug.html" },
+    { "source": "/work", "destination": "/work.html" },
+    { "source": "/about", "destination": "/about.html" },
     { "source": "/audit", "destination": "/audit.html" },
-    { "source": "/work", "destination": "/index.html" },
+    { "source": "/guides", "destination": "/guides.html" },
+    { "source": "/resources", "destination": "/resources.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" },
     { "source": "/process", "destination": "/index.html" },
-    { "source": "/pricing", "destination": "/index.html" },
-    { "source": "/contact", "destination": "/index.html" }
+    { "source": "/pricing", "destination": "/index.html" }
   ]
 }

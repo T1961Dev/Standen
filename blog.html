@@ -3,161 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blog -  Standen. Insights on SaaS development, custom software and delivery from a Hampshire-based UK agency. Scoping, building and launching software.">
+    <meta name="description" content="Insights on SaaS development, custom software and delivery from Standen. Scoping, building and launching software for agencies.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://standen.io/blog.html">
+    <link rel="canonical" href="https://standen.io/blog">
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Blog | Standen -  SaaS & Custom Software Development UK">
-    <meta property="og:description" content="Insights on SaaS development, custom software and delivery. Hampshire-based, UK.">
-    <meta property="og:url" content="https://standen.io/blog.html">
-    <meta property="og:image" content="https://standen.io/og-image.jpg">
+    <meta property="og:title" content="Blog | Standen. SaaS &amp; Custom Software">
+    <meta property="og:description" content="Insights on SaaS development, custom software and delivery from Standen. Scoping, building and launching software for agencies.">
+    <meta property="og:url" content="https://standen.io/blog">
+    <meta property="og:image" content="https://standen.io/logo.png">
+    <meta property="og:image:alt" content="Standen">
     <meta property="og:locale" content="en_GB">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;600;700&display=swap" rel="stylesheet">
-    <title>Blog | Standen -  SaaS & Custom Software Development UK</title>
-    <script src="/js/vercel-analytics.js"></script>
+    <meta property="og:site_name" content="Standen">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | Standen. SaaS &amp; Custom Software">
+    <meta name="twitter:description" content="Insights on SaaS development, custom software and delivery from Standen. Scoping, building and launching software for agencies.">
+    <title>Blog | Standen. SaaS &amp; Custom Software</title>
+    <link rel="preload" href="/assets/fonts/gt-america-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/gt-america-medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/home.css">
+    <script src="/js/vercel-analytics.js" defer></script>
+    <script src="/js/ga4.js" defer></script>
 </head>
-<body>
-    <header class="nav-shell">
+<body class="page-home">
+    <header class="site-nav" id="top">
         <div class="nav-inner">
-            <a href="/" class="brand" aria-label="Standen - Home"><span class="wordmark">Standen</span></a>
+            <a class="brand" href="/" aria-label="Standen home">
+                <span class="brand-name">Standen</span>
+            </a>
             <nav class="nav-links" aria-label="Primary">
-                <a href="saas-development-uk.html" class="nav-link">SaaS Development</a>
-                <a href="custom-software-development-uk.html" class="nav-link">Custom Software</a>
-                <a href="case-studies.html" class="nav-link">Case studies</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="/#services">Services</a>
+                <a href="/work.html">Work</a>
+                <a href="/#process">Process</a>
+                <a href="/guides.html">Guides</a>
             </nav>
-            <div class="nav-cta">
-                <a href="contact.html" class="btn btn-primary">Get in touch</a>
-            </div>
-            <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"></button>
+            <a href="https://calendly.com/standen/discovery-call" class="btn btn--accent nav-cta" target="_blank" rel="noopener"><span class="btn__text">Book a Free Consultation</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
         </div>
-    </header>
-    <div class="nav-overlay" aria-hidden="true"></div>
-    <div class="nav-drawer" aria-hidden="true">
-        <nav class="nav-drawer__links" aria-label="Mobile menu">
-            <a href="saas-development-uk.html">SaaS Development</a>
-            <a href="custom-software-development-uk.html">Custom Software</a>
-            <a href="case-studies.html">Case studies</a>
-            <a href="about.html">About</a>
-            <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact</a>
-            <a href="contact.html" class="btn btn-primary">Get in touch</a>
+        <nav id="mobile-menu" class="mobile-menu" data-open="false" aria-label="Mobile">
+            <a href="/#services">Services</a>
+            <a href="/work.html">Work</a>
+            <a href="/#process">Process</a>
+            <a href="/guides.html">Guides</a>
+            <a href="https://calendly.com/standen/discovery-call" class="btn btn--accent" target="_blank" rel="noopener"><span class="btn__text">Book a Free Consultation</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         </nav>
-    </div>
+    </header>
+<main>
 
-    <main class="section section--blog" aria-label="Blog">
-        <div class="section-inner">
-            <p class="section-label section-label--center">BLOG</p>
-            <h1 class="section-title section-title--center">Insights on SaaS and software delivery</h1>
-            <p class="section-body section-body--center">Practical posts on scoping, building and launching SaaS and custom software. Hampshire-based, UK delivery.</p>
-            <div class="blog-list">
-                <div class="blog-grid">
-                    <article class="blog-card">
-                        <a href="blog/how-to-scope-a-saas-mvp.html" class="blog-card__link">
-                            <img class="blog-card__image" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop" alt="Scoping a SaaS MVP" width="800" height="500" loading="lazy">
-                            <div class="blog-card__content">
-                                <time class="blog-card__date" datetime="2025-01-15">15 January 2025</time>
-                                <h2 class="blog-card__title">How to scope a SaaS MVP that actually ships</h2>
-                                <p class="blog-card__excerpt">Practical steps to define scope, avoid creep, and get from idea to launch in weeks -  not months.</p>
-                                <span class="blog-card__meta">5 min read · Standen</span>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="blog-card">
-                        <a href="blog/web-development-hampshire-what-to-expect.html" class="blog-card__link">
-                            <img class="blog-card__image" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop" alt="Web development in Hampshire" width="800" height="500" loading="lazy">
-                            <div class="blog-card__content">
-                                <time class="blog-card__date" datetime="2025-01-08">8 January 2025</time>
-                                <h2 class="blog-card__title">Web development in Hampshire: what to expect from a local agency</h2>
-                                <p class="blog-card__excerpt">What it's like working with a Hampshire-based web and SaaS agency -  timelines, communication, and how we deliver.</p>
-                                <span class="blog-card__meta">4 min read · Standen</span>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="blog-card">
-                        <a href="blog/when-to-build-custom-software-vs-saas.html" class="blog-card__link">
-                            <img class="blog-card__image" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop" alt="Custom software vs SaaS" width="800" height="500" loading="lazy">
-                            <div class="blog-card__content">
-                                <time class="blog-card__date" datetime="2024-12-18">18 December 2024</time>
-                                <h2 class="blog-card__title">When to build custom software vs use existing SaaS</h2>
-                                <p class="blog-card__excerpt">Deciding between bespoke build and off-the-shelf tools? We break down the trade-offs so you can choose with confidence.</p>
-                                <span class="blog-card__meta">6 min read · Standen</span>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="blog-card">
-                        <a href="blog/rapid-delivery-without-cutting-corners.html" class="blog-card__link">
-                            <img class="blog-card__image" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop" alt="Rapid delivery" width="800" height="500" loading="lazy">
-                            <div class="blog-card__content">
-                                <time class="blog-card__date" datetime="2024-12-05">5 December 2024</time>
-                                <h2 class="blog-card__title">Rapid delivery without cutting corners</h2>
-                                <p class="blog-card__excerpt">How we ship MVPs and web apps in weeks while keeping quality high and tech debt low.</p>
-                                <span class="blog-card__meta">5 min read · Standen</span>
-                            </div>
-                        </a>
-                    </article>
+        <section class="blog-page">
+            <div class="wrap">
+                <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Blog</li></ol></nav>
+                <header class="guides-page-head">
+                    <h1>Insights on SaaS and software delivery</h1>
+                    <p class="guides-page-lead">Practical posts on scoping, building and launching SaaS and custom software for agencies and product teams.</p>
+                </header>
+                <div class="blog-grid"><article class="blog-card">
+            <a href="/blog/how-to-scope-a-saas-mvp.html" class="blog-card__link">
+                <div class="blog-card__media"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop" alt="Scoping a SaaS MVP" width="800" height="500" loading="lazy" decoding="async"></div>
+                <div class="blog-card__body">
+                    <time class="blog-card__date" datetime="2025-01-15">15 January 2025</time>
+                    <h2>How to scope a SaaS MVP that actually ships</h2>
+                    <p class="blog-card__excerpt">Practical steps to define scope, avoid creep, and get from idea to launch in weeks, not months.</p>
+                    <span class="blog-card__meta">5 min read · Standen</span>
+                </div>
+            </a>
+        </article>
+                <article class="blog-card">
+            <a href="/blog/web-development-hampshire-what-to-expect.html" class="blog-card__link">
+                <div class="blog-card__media"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop" alt="Web development in Hampshire" width="800" height="500" loading="lazy" decoding="async"></div>
+                <div class="blog-card__body">
+                    <time class="blog-card__date" datetime="2025-01-08">8 January 2025</time>
+                    <h2>What to expect from a fixed-scope product studio</h2>
+                    <p class="blog-card__excerpt">Timelines, communication, and how Standen delivers scoped SaaS and custom software builds for agencies and founders.</p>
+                    <span class="blog-card__meta">4 min read · Standen</span>
+                </div>
+            </a>
+        </article>
+                <article class="blog-card">
+            <a href="/blog/when-to-build-custom-software-vs-saas.html" class="blog-card__link">
+                <div class="blog-card__media"><img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop" alt="Custom software vs SaaS" width="800" height="500" loading="lazy" decoding="async"></div>
+                <div class="blog-card__body">
+                    <time class="blog-card__date" datetime="2024-12-18">18 December 2024</time>
+                    <h2>When to build custom software vs use existing SaaS</h2>
+                    <p class="blog-card__excerpt">Deciding between bespoke build and off-the-shelf tools? We break down the trade-offs so you can choose with confidence.</p>
+                    <span class="blog-card__meta">6 min read · Standen</span>
+                </div>
+            </a>
+        </article>
+                <article class="blog-card">
+            <a href="/blog/rapid-delivery-without-cutting-corners.html" class="blog-card__link">
+                <div class="blog-card__media"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop" alt="Rapid delivery" width="800" height="500" loading="lazy" decoding="async"></div>
+                <div class="blog-card__body">
+                    <time class="blog-card__date" datetime="2024-12-05">5 December 2024</time>
+                    <h2>Rapid delivery without cutting corners</h2>
+                    <p class="blog-card__excerpt">How we ship MVPs and web apps in weeks while keeping quality high and tech debt low.</p>
+                    <span class="blog-card__meta">5 min read · Standen</span>
+                </div>
+            </a>
+        </article></div>
+            </div>
+        </section>
+</main>
+    <footer class="site-footer">
+        <div class="wrap footer-grid footer-grid--enterprise">
+            <div class="footer-brand">
+                <a class="brand" href="/">
+                    <span class="brand-name">Standen</span>
+                </a>
+                <p class="footer-tagline">Custom software and SaaS for agencies. Built in 14 days. You own everything.</p>
+                <div class="footer-contact">
+                    <a href="mailto:hello@standen.io" class="footer-contact__email">hello@standen.io</a>
+                    <a href="https://www.linkedin.com/in/tomas-jones1/" class="footer-contact__linkedin" target="_blank" rel="noopener noreferrer" aria-label="Tomas Jones on LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
                 </div>
             </div>
+            <nav aria-label="Services">
+                <h2>Services</h2>
+                <a href="/#services">All services</a>
+                <a href="/#service-proposals">Proposal systems</a>
+                <a href="/#service-reporting">Reporting dashboards</a>
+                <a href="/#service-portals">Client portals</a>
+                <a href="/#service-crm">Internal CRM</a>
+                <a href="/#service-saas">SaaS MVP</a>
+                <a href="/#service-internal">Internal tools</a>
+            </nav>
+            <nav aria-label="Company">
+                <h2>Company</h2>
+                <a href="/work.html">Work</a>
+                <a href="/about.html">About</a>
+                <a href="/#process">Process</a>
+                <a href="/#pricing">Pricing</a>
+            </nav>
+            <nav aria-label="Resources">
+                <h2>Resources</h2>
+                <a href="/guides.html">Guides</a>
+                <a href="/audit.html">Ops audit</a>
+                <a href="/compare/index.html">Compare</a>
+                <a href="/blog.html">Blog</a>
+            </nav>
         </div>
-    </main>
-
-        <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-top">
-                <div class="footer-col footer-col--services">
-                    <h3 class="footer-heading">Services</h3>
-                    <div class="footer-services-grid">
-                        <div class="footer-category">
-                            <span class="footer-category__title">What we build</span>
-                            <a href="/saas-development-uk.html">SaaS Development</a>
-                            <a href="/custom-software-development-uk.html">Custom Software</a>
-                        </div>
-                        <div class="footer-category">
-                            <span class="footer-category__title">Pages</span>
-                            <a href="/work">Case studies</a>
-                            <a href="/about.html">About</a>
-                            <a href="/contact">Contact</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-col footer-col--nav">
-                    <div class="footer-nav-group">
-                        <h3 class="footer-heading">Main</h3>
-                        <a href="/saas-development-uk.html">SaaS Development</a>
-                        <a href="/custom-software-development-uk.html">Custom Software</a>
-                        <a href="/work">Case studies</a>
-                        <a href="/contact">Contact</a>
-                    </div>
-                    <div class="footer-nav-group">
-                        <h3 class="footer-heading">Learn</h3>
-                        <a href="/blog.html">Blog</a>
-                        <a href="resources.html">Resources</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-brand-row">
-                    <span class="footer-copy">Â© 2026 Standen. All rights reserved.</span>
-                </div>
-                <nav class="footer-links" aria-label="Legal and policies">
-                    <a href="privacy.html">Privacy policy</a>
-                    <span class="footer-sep" aria-hidden="true">Â·</span>
-                    <a href="terms.html">Terms of use</a>
-                </nav>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/tomas-jones1/" class="footer-social__link" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <span class="wordmark wordmark--footer">Standen</span>
-                </div>
-            </div>
+        <div class="wrap footer-bottom footer-bottom--enterprise">
+            <p>&copy; Standen</p>
+            <nav aria-label="Legal">
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+            </nav>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="/home.js"></script>
 </body>
 </html>

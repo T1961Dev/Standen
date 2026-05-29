@@ -7,18 +7,21 @@
 }
 
 :root {
-    --cloud-50: 247 247 242;
-    --bg-cream: #F7F7F2;
-    --charcoal: #050505;
-    --charcoal-rgb: 5, 5, 5;
-    --dark-green: #050505;
+    --cloud-50: 255 255 255;
+    --bg-cream: #FFFFFF;
+    --charcoal: #0D1726;
+    --charcoal-rgb: 13, 23, 38;
+    --dark-green: #0D1726;
+    --brand-blue: #B7C7DC;
+    --brand-blue-deep: #8FA7C6;
+    --brand-blue-soft: #EAF0F8;
     --accent-green: #FFFFFF;
     --lime-highlight: #FFFFFF;
     --white: #FFFFFF;
     /* Nav = light bg, charcoal text */
     --nav-bg: var(--bg-cream);
     --nav-text: var(--charcoal);
-    --nav-border: rgba(5, 5, 5, 0.10);
+    --nav-border: rgba(13, 23, 38, 0.12);
     --nav-height: 60px;
     /* Sections: cream bg, charcoal text */
     --section-bg: var(--bg-cream);
@@ -103,10 +106,10 @@ body::before {
     z-index: 0;
     pointer-events: none;
     background-image:
-        linear-gradient(rgba(5, 5, 5, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(5, 5, 5, 0.045) 1px, transparent 1px);
+        linear-gradient(rgba(13, 23, 38, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 23, 38, 0.03) 1px, transparent 1px);
     background-size: 36px 36px;
-    opacity: 0.72;
+    opacity: 0.42;
 }
 
 /* —— Global animations —— */
@@ -201,8 +204,9 @@ body::before {
 }
 
 .nav-shell.nav-shell--scrolled {
-    background: var(--bg-cream);
-    box-shadow: 0 2px 20px rgba(31, 31, 31, 0.06);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 26px rgba(13, 23, 38, 0.08);
 }
 
 .nav-shell--scrolled .brand {
@@ -543,8 +547,11 @@ a.brand:hover {
     padding: 12px 24px;
     cursor: pointer;
     border: 1px solid transparent;
-    transition: opacity 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.2s ease;
     text-decoration: none;
+}
+.btn:hover {
+    transform: translateY(-1px);
 }
 
 .btn img {
@@ -562,14 +569,16 @@ a.brand:hover {
     position: relative;
     background: var(--btn-primary-bg);
     color: var(--btn-primary-text);
-    border: 1px solid var(--charcoal);
+    border: 1px solid rgba(13, 23, 38, 0.94);
     overflow: hidden;
     isolation: isolate;
-    transition: color 0.25s ease 0.12s, border-color 0.25s ease;
+    box-shadow: 0 10px 28px rgba(13, 23, 38, 0.14);
+    transition: color 0.25s ease 0.12s, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .btn-primary:hover {
-    border: 1px solid var(--charcoal);
+    border: 1px solid rgba(13, 23, 38, 1);
+    box-shadow: 0 14px 36px rgba(13, 23, 38, 0.18);
 }
 
 .btn-primary::before {
@@ -610,19 +619,20 @@ a.brand:hover {
 
 .btn-outline {
     position: relative;
-    background: var(--charcoal);
-    color: var(--white);
-    border: 1px solid var(--charcoal);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    color: var(--charcoal);
+    border: 1px solid rgba(13, 23, 38, 0.16);
     overflow: hidden;
     isolation: isolate;
-    transition: color 0.25s ease 0.12s, border-color 0.25s ease;
+    box-shadow: 0 8px 24px rgba(13, 23, 38, 0.08);
+    transition: color 0.25s ease 0.12s, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .btn-outline::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: var(--lime-highlight);
+    background: var(--brand-blue-soft);
     z-index: 0;
     transform: scaleX(0);
     transform-origin: left;
@@ -631,6 +641,8 @@ a.brand:hover {
 
 .btn-outline:hover {
     color: var(--charcoal);
+    border-color: rgba(13, 23, 38, 0.24);
+    box-shadow: 0 12px 30px rgba(13, 23, 38, 0.12);
 }
 
 .btn-outline:hover::before {
@@ -971,7 +983,7 @@ a.brand:hover {
 .section-label {
     font-size: var(--text-label);
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: -0.05em;
     text-transform: uppercase;
     color: var(--charcoal);
     opacity: 0.65;
@@ -990,7 +1002,7 @@ a.brand:hover {
     font-size: var(--text-h2);
     font-weight: 600;
     line-height: 1.15;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.05em;
     color: var(--charcoal);
     margin-bottom: 20px;
 }
@@ -1862,7 +1874,7 @@ a.brand:hover {
     display: block;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(var(--charcoal-rgb), 0.15);
+    border: 1px solid rgba(var(--charcoal-rgb), 0.12);
     background: var(--section-bg);
     text-decoration: none;
     color: var(--charcoal);
@@ -1870,9 +1882,9 @@ a.brand:hover {
 }
 
 .work-card:hover {
-    border-color: rgba(var(--charcoal-rgb), 0.3);
-    box-shadow: 0 8px 24px rgba(var(--charcoal-rgb), 0.08);
-    transform: translateY(-2px);
+    border-color: rgba(var(--charcoal-rgb), 0.22);
+    box-shadow: 0 14px 36px rgba(var(--charcoal-rgb), 0.10);
+    transform: translateY(-4px);
 }
 
 .work-image {
@@ -2456,15 +2468,15 @@ a.footer-logo:hover img {
 .blog-card {
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(var(--charcoal-rgb), 0.15);
+    border: 1px solid rgba(var(--charcoal-rgb), 0.12);
     background: var(--section-bg);
     transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .blog-card:hover {
-    border-color: rgba(var(--charcoal-rgb), 0.3);
-    box-shadow: 0 8px 24px rgba(var(--charcoal-rgb), 0.08);
-    transform: translateY(-2px);
+    border-color: rgba(var(--charcoal-rgb), 0.22);
+    box-shadow: 0 14px 36px rgba(var(--charcoal-rgb), 0.10);
+    transform: translateY(-4px);
 }
 
 .blog-card__link {

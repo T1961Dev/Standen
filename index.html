@@ -3,772 +3,544 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Standen builds custom internal tools, client portals, dashboards and workflow software for UK B2B agencies.">
+    <meta name="description" content="Standen builds custom software, SaaS MVPs, client portals and reporting dashboards for agencies. Fixed scope from £5k. You own 100% of the code. Book a free consultation.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://standen.io/">
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Standen | Custom software for UK B2B agencies">
-    <meta property="og:description" content="Owned software systems for UK B2B agencies: internal tools, client portals, dashboards and workflow software.">
+    <meta property="og:title" content="Standen | Custom Software for Agencies">
+    <meta property="og:description" content="Internal tools, proposal systems, reporting dashboards and client portals, built in 14 days. You own everything on handover.">
     <meta property="og:url" content="https://standen.io/">
+    <meta property="og:image" content="https://standen.io/logo.png">
     <meta property="og:locale" content="en_GB">
-    <title>Standen | Custom software for UK B2B agencies</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Geist', 'system-ui', 'sans-serif'] },
-                    colors: { ink: '#050505', cloud: '#f7f7f2' }
-                }
-            }
-        };
-    </script>
-    <style>
-        :root {
-            --ink: #050505;
-            --paper: #f7f7f2;
-            --white: #ffffff;
-            --sand: #efece2;
-            --muted: rgba(5, 5, 5, .58);
-            --muted-2: rgba(5, 5, 5, .42);
-            --dark-muted: rgba(255, 255, 255, .64);
-            --line: rgba(5, 5, 5, .10);
-            --dark-line: rgba(255, 255, 255, .13);
-            --ease: cubic-bezier(.22, 1, .36, 1);
-        }
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0;
-            font-family: "Geist", system-ui, sans-serif;
-            font-weight: 400;
-            letter-spacing: -0.05em;
-            background: var(--paper);
-            color: var(--ink);
-            -webkit-font-smoothing: antialiased;
-            text-rendering: geometricPrecision;
-            overflow-x: hidden;
-        }
-        img, svg { max-width: 100%; }
-        p { font-weight: 400; }
-        a, button, input, textarea { font: inherit; letter-spacing: inherit; }
-        a { color: inherit; text-decoration: none; }
-        ::selection { background: var(--ink); color: var(--white); }
-        .wordmark { font-weight: 500; letter-spacing: -0.05em; line-height: 1; }
-        .nav-shell {
-            position: relative;
-            width: min(100%, 1160px);
-            min-height: 64px;
-            margin: 0 auto;
-            border: 1px solid rgba(255,255,255,.16);
-            border-radius: 999px;
-            background: rgba(5,5,5,.74);
-        }
-        .nav-brand { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); }
-        .nav-centre { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-        .nav-cta {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            display: inline-flex;
-            min-height: 2.55rem;
-            padding: .72rem 1rem;
-            font-size: .84rem;
-            transform: translateY(-50%);
-        }
-        .nav-shell .nav-cta:hover { transform: translateY(calc(-50% - 2px)); }
-        .nav-menu-toggle {
-            display: none;
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 2.55rem;
-            height: 2.55rem;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: .28rem;
-            border: 1px solid rgba(255,255,255,.16);
-            border-radius: 999px;
-            background: rgba(255,255,255,.06);
-            color: #fff;
-            cursor: pointer;
-        }
-        .nav-menu-toggle span,
-        .nav-menu-toggle::before,
-        .nav-menu-toggle::after {
-            content: "";
-            display: block;
-            width: 1rem;
-            height: 1px;
-            background: currentColor;
-            transition: transform .25s var(--ease), opacity .25s var(--ease);
-        }
-        .nav-menu-toggle[aria-expanded="true"] span { opacity: 0; }
-        .nav-menu-toggle[aria-expanded="true"]::before { transform: translateY(.29rem) rotate(45deg); }
-        .nav-menu-toggle[aria-expanded="true"]::after { transform: translateY(-.29rem) rotate(-45deg); }
-        .mobile-nav-panel {
-            display: none;
-            width: min(100%, 1160px);
-            margin: .55rem auto 0;
-            border: 1px solid rgba(255,255,255,.16);
-            border-radius: 1.35rem;
-            background: rgba(5,5,5,.96);
-            padding: .6rem;
-            color: #fff;
-        }
-        .mobile-nav-panel[data-open="true"] { display: block; }
-        .mobile-nav-panel a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 999px;
-            padding: .9rem 1rem;
-            color: rgba(255,255,255,.72);
-            font-size: .95rem;
-        }
-        .mobile-nav-panel a:hover { color: #fff; background: rgba(255,255,255,.055); }
-        .mobile-nav-panel .mobile-nav-cta {
-            margin-top: .35rem;
-            background: #fff;
-            color: #050505;
-            justify-content: center;
-            gap: .55rem;
-            font-weight: 450;
-        }
-        .meet-img { width: 1.18rem; height: 1.18rem; flex: 0 0 auto; display: block; }
-        .hero-bg {
-            background:
-                linear-gradient(180deg, rgba(255,255,255,.055) 0%, transparent 34%),
-                linear-gradient(180deg, #050505 0%, #0d0d0b 58%, #050505 100%);
-        }
-        .mesh-light {
-            background:
-                linear-gradient(180deg, rgba(255,255,255,.72) 0%, transparent 22%),
-                linear-gradient(180deg, #fff 0%, #f7f7f2 100%);
-        }
-        .grid-lines {
-            background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
-            background-size: 68px 68px;
-            opacity: .46;
-        }
-        .title-xl { font-size: clamp(2.75rem, 5.25vw, 4.95rem); line-height: .94; letter-spacing: -0.075em; }
-        .title-lg { font-size: clamp(2.1rem, 4.15vw, 3.85rem); line-height: .96; letter-spacing: -0.075em; }
-        .section-label { font-size: .76rem; font-weight: 600; text-transform: uppercase; letter-spacing: -0.02em; opacity: .58; }
-        .body-copy { color: var(--muted); line-height: 1.7; letter-spacing: -0.045em; }
-        .body-copy-dark { color: var(--dark-muted); line-height: 1.7; letter-spacing: -0.045em; }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: .65rem;
-            border-radius: 999px;
-            min-height: 3.1rem;
-            padding: .92rem 1.35rem;
-            font-size: .92rem;
-            font-weight: 450;
-            transition: transform .35s var(--ease), border-color .35s var(--ease), background .35s var(--ease), color .35s var(--ease);
-        }
-        .btn:hover { transform: translateY(-2px); }
-        .btn-light { background: #fff; color: #050505; border: 1px solid rgba(255,255,255,.92); }
-        .btn-dark { background: #050505; color: #fff; border: 1px solid #050505; }
-        .btn-ghost-light { color: #fff; border: 1px solid var(--dark-line); background: rgba(255,255,255,.045); }
-        .btn-ghost-dark { color: #050505; border: 1px solid var(--line); background: rgba(255,255,255,.42); }
-        .bento-card {
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--line);
-            border-radius: 1.65rem;
-            background: rgba(255,255,255,.68);
-            transition: transform .45s var(--ease), border-color .45s var(--ease), background .45s var(--ease);
-        }
-        .bento-card:hover { transform: translateY(-5px); border-color: rgba(5,5,5,.24); }
-        .bento-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(180deg, rgba(255,255,255,.52), transparent 42%),
-                linear-gradient(90deg, rgba(5,5,5,.045) 1px, transparent 1px);
-            background-size: auto, 38px 38px;
-            opacity: .62;
-            pointer-events: none;
-        }
-        .case-link {
-            display: block;
-            color: inherit;
-        }
-        .case-link:focus-visible {
-            outline: 2px solid rgba(5,5,5,.42);
-            outline-offset: 4px;
-        }
-        .dark-card { border-color: var(--dark-line); background: rgba(255,255,255,.05); color: #fff; }
-        .dark-card::before {
-            background:
-                linear-gradient(180deg, rgba(255,255,255,.075), transparent 48%),
-                linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
-            background-size: auto, 38px 38px;
-            opacity: .58;
-        }
-        .dark-card:hover { border-color: rgba(255,255,255,.28); }
-        .card-content { position: relative; z-index: 1; }
-        .icon-tile { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border-radius: 1rem; border: 1px solid currentColor; color: inherit; opacity: .72; }
-        .mini-browser { border: 1px solid rgba(5,5,5,.10); border-radius: 1.1rem; background: rgba(255,255,255,.72); overflow: hidden; }
-        .mini-top { display: flex; gap: .35rem; padding: .75rem; border-bottom: 1px solid rgba(5,5,5,.08); }
-        .dot { width: .45rem; height: .45rem; border-radius: 999px; background: rgba(5,5,5,.22); }
-        .mini-line { height: .55rem; border-radius: 999px; background: rgba(5,5,5,.11); }
-        .stat-pill { border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.045); border-radius: 999px; padding: .8rem 1rem; color: rgba(255,255,255,.55); }
-        .case-study-card {
-            border-color: rgba(89, 39, 255, .24);
-            background:
-                radial-gradient(circle at 85% 12%, rgba(255, 79, 229, .18), transparent 32%),
-                linear-gradient(135deg, rgba(255,255,255,.86), rgba(246,242,255,.78));
-        }
-        .case-study-card::before {
-            background:
-                linear-gradient(180deg, rgba(255,255,255,.58), transparent 44%),
-                linear-gradient(90deg, rgba(89,39,255,.065) 1px, transparent 1px);
-            background-size: auto, 34px 34px;
-        }
-        .case-logo {
-            width: 3.4rem;
-            height: 3.4rem;
-            border-radius: 1.05rem;
-            box-shadow: 0 18px 48px rgba(89,39,255,.22);
-        }
-        .case-visual {
-            position: relative;
-            margin: -.25rem -.25rem 1.35rem;
-            border-radius: 1.25rem;
-            isolation: isolate;
-        }
-        .case-visual::before {
-            content: "";
-            position: absolute;
-            inset: 12% 7% -9%;
-            z-index: -1;
-            border-radius: 1.35rem;
-            background: radial-gradient(circle at 50% 50%, var(--case-glow, rgba(89,39,255,.28)), transparent 68%);
-            filter: blur(28px);
-            opacity: .95;
-            transform: translateY(.35rem);
-            transition: opacity .45s var(--ease), transform .45s var(--ease);
-        }
-        .case-visual img {
-            display: block;
-            width: 100%;
-            aspect-ratio: 16 / 10;
-            object-fit: cover;
-            object-position: top left;
-            border: 1px solid rgba(5,5,5,.09);
-            border-radius: 1.25rem;
-            box-shadow: 0 18px 52px rgba(5,5,5,.12);
-        }
-        .bento-card:hover .case-visual::before {
-            opacity: 1;
-            transform: translateY(.1rem) scale(1.04);
-        }
-        .case-visual--dark img { border-color: rgba(255,255,255,.11); }
-        .case-pill {
-            display: inline-flex;
-            align-items: center;
-            border: 1px solid rgba(89,39,255,.18);
-            border-radius: 999px;
-            background: rgba(89,39,255,.07);
-            padding: .48rem .7rem;
-            color: rgba(5,5,5,.58);
-            font-size: .78rem;
-        }
-        .case-quote {
-            border-left: 1px solid rgba(89,39,255,.26);
-            padding-left: 1rem;
-            color: rgba(5,5,5,.58);
-            line-height: 1.55;
-        }
-        .case-meta {
-            display: inline-flex;
-            width: fit-content;
-            border: 1px solid rgba(5,5,5,.10);
-            border-radius: 999px;
-            background: rgba(255,255,255,.48);
-            padding: .46rem .68rem;
-            color: rgba(5,5,5,.50);
-            font-size: .78rem;
-        }
-        .case-list {
-            display: grid;
-            gap: .72rem;
-            color: rgba(5,5,5,.56);
-            line-height: 1.5;
-        }
-        .case-list li::marker { color: rgba(5,5,5,.28); }
-        .proof-card {
-            border-color: rgba(5,5,5,.14);
-            background:
-                linear-gradient(135deg, rgba(5,5,5,.92), rgba(18,18,16,.86));
-            color: #fff;
-        }
-        .proof-card::before {
-            background:
-                radial-gradient(circle at 20% 0%, rgba(255,255,255,.16), transparent 32%),
-                linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
-            background-size: auto, 34px 34px;
-        }
-        .process-step { position: relative; min-height: 15rem; }
-        .process-step::after { content: ""; position: absolute; left: 2rem; right: 2rem; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(5,5,5,.16), transparent); }
-        .price-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .85fr); gap: 1rem; align-items: stretch; }
-        .price-left { grid-row: span 2; }
-        .price-primary {
-            border-color: rgba(5,5,5,.16);
-            background:
-                linear-gradient(135deg, #f4efe3 0%, #fffaf0 48%, #ece7da 100%);
-        }
-        .price-primary::before {
-            background:
-                linear-gradient(180deg, rgba(255,255,255,.58), transparent 38%),
-                linear-gradient(90deg, rgba(5,5,5,.055) 1px, transparent 1px),
-                linear-gradient(180deg, rgba(5,5,5,.04) 1px, transparent 1px);
-            background-size: auto, 40px 40px, 40px 40px;
-            opacity: .52;
-        }
-        .price-primary:hover {
-            border-color: rgba(5,5,5,.26);
-            background:
-                linear-gradient(135deg, #f4efe3 0%, #fffaf0 48%, #ece7da 100%);
-        }
-        .price-hero { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
-        .price-badge {
-            border: 1px solid rgba(5,5,5,.11);
-            border-radius: 999px;
-            background: rgba(255,255,255,.38);
-            padding: .7rem 1rem;
-            color: rgba(5,5,5,.54);
-            font-size: .9rem;
-            white-space: nowrap;
-        }
-        .price-list {
-            display: grid;
-            gap: 1rem;
-            max-width: 42rem;
-            padding-left: 1.15rem;
-            color: rgba(5,5,5,.58);
-            line-height: 1.55;
-            list-style: disc;
-        }
-        .reveal-on-scroll { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-        .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-        @media (max-width: 1024px) {
-            .nav-shell,
-            .mobile-nav-panel { width: min(100%, 960px); }
-            .nav-centre { gap: 1.35rem; }
-            .title-xl { font-size: clamp(2.9rem, 8vw, 4.35rem); }
-            .title-lg { font-size: clamp(2.45rem, 6.6vw, 3.45rem); }
-            .price-grid { grid-template-columns: 1fr; }
-            .price-left { grid-row: auto; }
-        }
-        @media (max-width: 900px) {
-            .nav-shell {
-                width: 100%;
-                min-height: 58px;
-            }
-            .nav-brand { left: 14px; }
-            .nav-centre { display: none; }
-            .nav-cta { display: none; }
-            .nav-menu-toggle { display: inline-flex; }
-            .mobile-nav-panel { width: 100%; }
-        }
-        @media (max-width: 760px) {
-            .title-xl {
-                font-size: clamp(2.45rem, 11vw, 3.5rem);
-                line-height: .94;
-            }
-            .title-lg {
-                font-size: clamp(2.25rem, 10vw, 3.25rem);
-                line-height: .96;
-            }
-            .section-label { font-size: .68rem; }
-            .body-copy,
-            .body-copy-dark { line-height: 1.58; }
-            .bento-card {
-                border-radius: 1.25rem;
-                padding: 1.5rem;
-            }
-            .icon-tile {
-                width: 2.35rem;
-                height: 2.35rem;
-                border-radius: .8rem;
-            }
-            .price-hero {
-                display: grid;
-                grid-template-columns: 1fr;
-            }
-            .price-badge {
-                width: fit-content;
-            }
-            .price-list {
-                max-width: none;
-                gap: .85rem;
-            }
-            .btn {
-                width: 100%;
-                min-height: 3rem;
-            }
-        }
-        @media (max-width: 420px) {
-            .title-xl { font-size: clamp(2.25rem, 11.5vw, 3rem); }
-            .title-lg { font-size: clamp(2rem, 9.5vw, 2.7rem); }
-            .nav-shell { min-height: 54px; }
-            .wordmark { font-size: .94rem; }
-            .meet-img {
-                width: 1rem;
-                height: 1rem;
-            }
-            .bento-card { padding: 1.25rem; }
-            .price-badge { font-size: .8rem; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            .reveal-on-scroll { opacity: 1 !important; transform: none !important; transition: none !important; }
-            .btn, .bento-card { transition: none; }
-        }
-    </style>
+    <title>Standen | Custom Software for Agencies, 14 Days</title>
+    <link rel="preload" href="/assets/fonts/gt-america-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/gt-america-medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/home.css">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"ProfessionalService","name":"Standen","description":"Custom internal tools, client portals, dashboards, workflow software, and web systems for UK agencies.","url":"https://standen.io","areaServed":"GB","serviceType":["Custom software development","Internal tool development","Client portal development","Dashboard development","Workflow software development","Agency operations software"]}
+    {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://standen.io/#organization","name":"Standen","url":"https://standen.io","logo":"https://standen.io/logo.png","description":"Standen builds custom software and SaaS for B2B agencies: internal tools, client portals, reporting dashboards and workflow systems in 14-day scoped sprints. Clients own 100% of code and IP.","founder":{"@type":"Person","name":"Tomas Jones"},"sameAs":["https://www.linkedin.com/in/tomas-jones1/"],"areaServed":"Worldwide"},{"@type":"WebSite","@id":"https://standen.io/#website","url":"https://standen.io","name":"Standen","publisher":{"@id":"https://standen.io/#organization"}},{"@type":"ProfessionalService","name":"Standen","url":"https://standen.io","provider":{"@id":"https://standen.io/#organization"},"areaServed":"Worldwide","serviceType":["Custom software development","SaaS MVP development","Client portal development","Agency reporting dashboard","Internal tool development"],"offers":{"@type":"Offer","priceCurrency":"GBP","price":"5000","description":"Fixed-scope custom software build from £5,000"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does custom software cost for an agency?","acceptedAnswer":{"@type":"Answer","text":"Standen scopes a first build from £5,000 with fixed scope and timeline. You pay 50% upfront and 50% on handover. The price covers workflow mapping, design, build, deployment and full code ownership."}},{"@type":"Question","name":"How long does an agency software MVP take?","acceptedAnswer":{"@type":"Answer","text":"A typical first build ships in 14 days, one workflow, one system, clear handover. Recent projects include a live SaaS in 21 days, a forex research platform in 12 days, and a lead magnet tool in 9 days."}},{"@type":"Question","name":"Does the client own the code?","acceptedAnswer":{"@type":"Answer","text":"Yes. You receive the full codebase, deployment access, handover documentation and workflow logic. There is no licence lock-in or platform dependency."}},{"@type":"Question","name":"What should an agency build first?","acceptedAnswer":{"@type":"Answer","text":"Start with the workflow that costs the most time or margin: proposals, client reporting, delivery portals, or internal CRM and queues. Standen maps the bottleneck on a discovery call and scopes the smallest useful version."}}]}]}
     </script>
-    <script src="/js/vercel-analytics.js"></script>
+    <script src="/js/vercel-analytics.js" defer></script>
+    <script src="/js/ga4.js" defer></script>
 </head>
-<body>
-    <header class="fixed inset-x-0 top-0 z-50 px-5 pt-4 sm:px-8">
-        <div class="nav-shell text-white">
-            <a href="/" class="nav-brand wordmark text-[1.08rem]" aria-label="Standen home">Standen</a>
-            <nav class="nav-centre hidden items-center gap-7 text-[0.86rem] font-normal text-white/68 md:flex" aria-label="Primary">
-                <a class="transition hover:text-white" href="/work">Work</a>
-                <a class="transition hover:text-white" href="/process">Process</a>
-                <a class="transition hover:text-white" href="/pricing">Pricing</a>
-                <a class="transition hover:text-white" href="/audit">Audit</a>
-                <a class="transition hover:text-white" href="/contact">Contact</a>
+<body class="page-home">
+    <header class="site-nav" id="top">
+        <div class="nav-inner">
+            <a class="brand" href="/" aria-label="Standen home">
+                <span class="brand-name">Standen</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="/#services">Services</a>
+                <a href="/work.html">Work</a>
+                <a href="#process">Process</a>
+                <a href="/guides.html">Guides</a>
             </nav>
-            <a href="https://calendly.com/standen/discovery-call" class="nav-cta btn btn-light" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
-            <button class="nav-menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
+            <a href="https://calendly.com/standen/discovery-call" class="btn btn--accent nav-cta" target="_blank" rel="noopener"><span class="btn__text">Book a Free Consultation</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
         </div>
-        <nav id="mobile-menu" class="mobile-nav-panel" data-open="false" aria-label="Mobile">
-            <a href="/work">Work</a>
-            <a href="/process">Process</a>
-            <a href="/pricing">Pricing</a>
-            <a href="/audit">Audit</a>
-            <a href="/contact">Contact</a>
-            <a href="https://calendly.com/standen/discovery-call" class="mobile-nav-cta" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
+        <nav id="mobile-menu" class="mobile-menu" data-open="false" aria-label="Mobile">
+            <a href="/#services">Services</a>
+            <a href="/work.html">Work</a>
+            <a href="#process">Process</a>
+            <a href="/guides.html">Guides</a>
+            <a href="https://calendly.com/standen/discovery-call" class="btn btn--accent" target="_blank" rel="noopener"><span class="btn__text">Book a Free Consultation</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         </nav>
     </header>
 
     <main>
-        <section class="hero-bg relative flex min-h-[100svh] items-center overflow-hidden px-5 pb-20 pt-36 text-center text-white sm:px-8">
-            <div class="grid-lines absolute inset-0 opacity-90" aria-hidden="true"></div>
-            <div class="relative mx-auto max-w-5xl">
-                <p class="section-label mx-auto mb-7 text-white/58">Custom software for UK B2B agencies</p>
-                <h1 class="title-xl mx-auto max-w-6xl font-semibold text-balance">Custom software systems that make your agency easier to run.</h1>
-                <p class="body-copy-dark mx-auto mt-8 max-w-2xl text-base sm:text-xl">Standen designs and builds owned internal tools, client portals, dashboards, automations, and web platforms for agencies that have outgrown spreadsheets, scattered tools, and manual delivery workflows.</p>
-                <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                    <a href="https://calendly.com/standen/discovery-call" class="btn btn-light w-full sm:w-auto" target="_blank" rel="noopener" aria-label="Book a discovery call"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
-                    <a href="/audit" class="btn btn-ghost-light w-full sm:w-auto">Read the Agency Ops Audit</a>
+        <section class="hero" aria-label="Introduction">
+            <div class="wrap hero__inner">
+                <div class="hero-content hero-content--animate">
+                    <a href="#services" class="hero-badge">Built for agencies <span aria-hidden="true">&gt;</span></a>
+                    <h1>Custom software for agencies, built in 14 days.</h1>
+                    <p class="hero-lead">Internal tools, proposal systems, reporting dashboards and client portals, scoped around how your agency already operates. You own 100% of the code on handover.</p>
                 </div>
-                <div class="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-3 text-sm sm:grid-cols-3">
-                    <p class="stat-pill">Internal tools from &pound;5K</p>
-                    <p class="stat-pill">Full code ownership</p>
-                    <p class="stat-pill">Built around your workflow</p>
+                <div class="hero-visual">
+                    <img src="/assets/showcase.png" alt="Standen product showcase" width="1280" height="800" loading="eager" decoding="async">
                 </div>
             </div>
         </section>
 
-        <section id="work" class="mesh-light px-5 py-24 text-center sm:px-8 sm:py-32">
-            <div class="mx-auto max-w-6xl">
-                <p class="section-label mb-7">Case studies</p>
-                <h2 class="title-lg reveal-on-scroll mx-auto max-w-5xl font-semibold text-balance">Real products shipped in days, not quarters.</h2>
-                <p class="body-copy reveal-on-scroll mx-auto mt-6 max-w-2xl text-lg">A selection of previous software builds, dashboards, internal systems and workflow tools delivered with tight scope, fast feedback and clean handover.</p>
-                <div class="mt-14 grid gap-5 md:grid-cols-12">
-                    <a href="case-study.html?id=ohmypod" class="case-link case-study-card bento-card reveal-on-scroll p-7 text-left md:col-span-8 md:p-9" aria-label="Read the OhMyPod case study">
-                        <div class="card-content grid h-full gap-8 lg:grid-cols-[1fr_.72fr] lg:items-start">
-                            <div>
-                                <div class="flex items-start justify-between gap-4">
-                                    <img src="assets/ohmypod-logo.png" class="case-logo" alt="OhMyPod logo" width="64" height="64">
-                                    <span class="case-pill">21-day SaaS MVP</span>
-                                </div>
-                                <p class="mt-9 text-sm text-black/42">OhMyPod / Built for Tom Sargent</p>
-                                <h3 class="mt-3 max-w-xl text-4xl font-semibold tracking-[-0.075em]">From notes app idea to live, owned SaaS in 21 days.</h3>
-                                <p class="body-copy mt-5 max-w-2xl text-lg">Tom came with an idea for a custom podcast SaaS. We turned it into workflow, features, and fixed scope, then built the product behind a private live link so he could test the platform from day one.</p>
-                                <p class="case-quote mt-7 text-sm">"Huge credit to Tomas Jones for moving fast, keeping scope tight, and building properly from day one. No fluff. Just execution."</p>
-                            </div>
-                            <div class="grid gap-3 text-sm">
-                                <p class="case-meta">Custom SaaS / live product</p>
-                                <ul class="case-list pl-5">
-                                    <li>Mapped MVP around what the product actually needed to do.</li>
-                                    <li>Sent a fixed quote with clear feature list and contract.</li>
-                                    <li>Shared daily screenshots, live demos, and quick feature reviews.</li>
-                                    <li>Transferred hosting, database, and source code on completion.</li>
-                                </ul>
-                                <span class="btn btn-dark mt-3 w-full">Read case study</span>
-                            </div>
-                        </div>
-                    </a>
-                    <article class="proof-card bento-card reveal-on-scroll p-7 text-left md:col-span-4 md:p-8">
-                        <div class="card-content flex h-full flex-col">
-                            <p class="text-sm text-white/48">Delivery pattern</p>
-                            <h3 class="mt-5 text-3xl font-semibold tracking-[-0.075em]">Scope first. Build visibly. Transfer fully.</h3>
-                            <div class="mt-8 grid gap-4 text-sm text-white/58">
-                                <p>Private live links from day one.</p>
-                                <p>Daily progress screenshots and demos.</p>
-                                <p>Source code, hosting, and database handed over.</p>
-                                <p>Clients own every part of the software.</p>
-                            </div>
-                        </div>
+        <section class="trust" id="trust" aria-label="Who we build for">
+            <div class="wrap">
+                <p class="trust-intro">Built for agencies running delivery, reporting, sales and client operations.</p>
+                <ul class="trust-logos" aria-label="System types">
+                    <li>Proposals</li>
+                    <li>Reporting</li>
+                    <li>Portals</li>
+                    <li>Internal CRM</li>
+                    <li>Workflows</li>
+                    <li>Dashboards</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="metrics" aria-labelledby="metrics-heading">
+            <div class="wrap">
+                <h2 id="metrics-heading" class="reveal">Designed to remove drag.<br>Built to scale delivery.</h2>
+                <div class="stats reveal" style="--reveal-delay: 80ms">
+                    <article class="stat">
+                        <p class="stat-num">14<span class="stat-unit">days</span></p>
+                        <p class="stat-label">Typical first build</p>
                     </article>
-                    <a href="case-study.html?id=fx-quant-research-platform" class="case-link bento-card reveal-on-scroll p-7 text-left md:col-span-6 lg:col-span-4 md:p-8" aria-label="Read the FX Quant Research Platform case study">
-                        <div class="card-content flex h-full flex-col">
-                            <div class="case-visual" style="--case-glow: rgba(58, 139, 255, .34);">
-                                <img src="assets/quant.png" alt="FX Quant Research Platform dashboard" width="1024" height="576" loading="lazy">
-                            </div>
-                            <span class="case-meta">Delivered in 12 days</span>
-                            <h3 class="mt-6 text-2xl font-semibold tracking-[-0.065em]">FX Quant Research Platform</h3>
-                            <p class="body-copy mt-4">A complete forex research platform with real-time data feeds, automated backtesting, and predictive analytics for turning complex market data into trading insight.</p>
-                            <div class="mt-auto pt-8 text-sm text-black/46">Real-time data / backtesting / analytics</div>
+                    <article class="stat">
+                        <p class="stat-num"><span class="stat-from">3</span><span class="stat-arrow" aria-hidden="true">→</span><span class="stat-to">1</span><span class="stat-unit">hr</span></p>
+                        <p class="stat-label">Proposal turnaround</p>
+                    </article>
+                    <article class="stat">
+                        <p class="stat-num">15<span class="stat-unit">+ hrs</span></p>
+                        <p class="stat-label">Monthly reporting saved</p>
+                    </article>
+                </div>
+                <div class="values reveal" style="--reveal-delay: 160ms">
+                    <a class="value-card" href="#service-proposals">
+                        <div class="value-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 14l4-4 3 3 7-8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </div>
+                        <h3>Win faster</h3>
+                        <p>Send proposals while the buyer still remembers the call. Remove friction from scope, pricing and approval.</p>
+                        <span class="value-card__link">Proposal systems <span aria-hidden="true">&gt;</span></span>
                     </a>
-                    <a href="case-study.html?id=real-estate-property-prediction" class="case-link bento-card reveal-on-scroll p-7 text-left md:col-span-6 lg:col-span-4 md:p-8" aria-label="Read the Real Estate Property Prediction App case study">
-                        <div class="card-content flex h-full flex-col">
-                            <div class="case-visual" style="--case-glow: rgba(64, 211, 133, .34);">
-                                <img src="assets/realestatedash.png" alt="Real Estate Property Prediction App dashboard" width="1024" height="576" loading="lazy">
-                            </div>
-                            <span class="case-meta">Delivered in 14 days</span>
-                            <h3 class="mt-6 text-2xl font-semibold tracking-[-0.065em]">Real Estate Property Prediction App</h3>
-                            <p class="body-copy mt-4">A full-stack property platform with AI-powered predictions, interactive mapping, portfolio management, and staff coordination in one operational system.</p>
-                            <div class="mt-auto pt-8 text-sm text-black/46">AI predictions / maps / portfolio ops</div>
+                    <a class="value-card" href="#service-reporting">
+                        <div class="value-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="4.5" y="8" width="11" height="8" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M7 8V6a3 3 0 116 0v2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
                         </div>
+                        <h3>Run cleaner</h3>
+                        <p>Move delivery status out of Slack, Docs and spreadsheets into one owned system your team can trust.</p>
+                        <span class="value-card__link">Reporting dashboards <span aria-hidden="true">&gt;</span></span>
                     </a>
-                    <a href="case-study.html?id=scrapr-io" class="case-link bento-card reveal-on-scroll p-7 text-left md:col-span-6 lg:col-span-4 md:p-8" aria-label="Read the Scrapr.io case study">
-                        <div class="card-content flex h-full flex-col">
-                            <div class="case-visual case-visual--dark" style="--case-glow: rgba(245, 164, 73, .34);">
-                                <img src="assets/scrapr.png" alt="Scrapr.io dashboard" width="1024" height="576" loading="lazy">
-                            </div>
-                            <span class="case-meta">Owned SaaS product</span>
-                            <h3 class="mt-6 text-2xl font-semibold tracking-[-0.065em]">Scrapr.io</h3>
-                            <p class="body-copy mt-4">A lead generation SaaS that returns 1,000+ verified leads in around 30 seconds, including real email addresses and phone numbers for decision-makers.</p>
-                            <div class="mt-auto pt-8 text-sm text-black/46">Lead data / enrichment / speed</div>
+                    <a class="value-card" href="#company">
+                        <div class="value-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M7 10h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
                         </div>
-                    </a>
-                    <a href="case-study.html?id=instagram-lead-scraper" class="case-link bento-card reveal-on-scroll p-7 text-left md:col-span-6 lg:col-span-4 md:p-8" aria-label="Read the Instagram Lead Scraper case study">
-                        <div class="card-content flex h-full flex-col">
-                            <div class="case-visual case-visual--dark" style="--case-glow: rgba(220, 45, 218, .36);">
-                                <img src="assets/ig.png" alt="Instagram Lead Scraper dashboard" width="1024" height="768" loading="lazy">
-                            </div>
-                            <span class="case-meta">Built in 8 days</span>
-                            <h3 class="mt-6 text-2xl font-semibold tracking-[-0.065em]">Instagram Lead Scraper</h3>
-                            <p class="body-copy mt-4">An automated lead generation tool that processes thousands of Instagram profiles, identifies high-value prospects, and sends qualified leads into a CRM.</p>
-                            <div class="mt-auto pt-8 text-sm text-black/46">Profile scraping / prospect scoring / CRM delivery</div>
-                        </div>
-                    </a>
-                    <a href="case-study.html?id=crypto-news-scraper" class="case-link bento-card reveal-on-scroll p-7 text-left md:col-span-6 lg:col-span-4 md:p-8" aria-label="Read the Crypto News Scraper case study">
-                        <div class="card-content flex h-full flex-col">
-                            <div class="case-visual" style="--case-glow: rgba(239, 95, 12, .35);">
-                                <img src="assets/automation.png" alt="Crypto News Scraper automation workflow" width="1024" height="177" loading="lazy">
-                            </div>
-                            <span class="case-meta">Completed in 6 days</span>
-                            <h3 class="mt-6 text-2xl font-semibold tracking-[-0.065em]">Crypto News Scraper</h3>
-                            <p class="body-copy mt-4">A real-time crypto news aggregator monitoring 50+ sources, filtering noise, and surfacing market-moving updates directly to the user.</p>
-                            <div class="mt-auto pt-8 text-sm text-black/46">50+ sources / filtering / alerts</div>
-                        </div>
-                    </a>
-                    <a href="case-study.html?id=lead-magnet-generator" class="case-link bento-card reveal-on-scroll p-7 text-left md:col-span-6 lg:col-span-4 md:p-8" aria-label="Read the Lead Magnet Generator case study">
-                        <div class="card-content flex h-full flex-col">
-                            <div class="case-visual" style="--case-glow: rgba(55, 119, 255, .34);">
-                                <img src="assets/magnet.png" alt="Lead Magnet Generator interface" width="1024" height="576" loading="lazy">
-                            </div>
-                            <span class="case-meta">Built in 9 days</span>
-                            <h3 class="mt-6 text-2xl font-semibold tracking-[-0.065em]">Lead Magnet Generator</h3>
-                            <p class="body-copy mt-4">An AI-powered content generator for creating high-converting LinkedIn lead magnets, saving outputs to Notion, and tracking performance from one dashboard.</p>
-                            <div class="mt-auto pt-8 text-sm text-black/46">AI content / Notion workflow / performance tracking</div>
-                        </div>
+                        <h3>Own the system</h3>
+                        <p>Keep the codebase, deployment notes and workflow logic. No licence lock-in. No platform dependency.</p>
+                        <span class="value-card__link">Ownership model <span aria-hidden="true">&gt;</span></span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="process" class="mesh-light px-5 py-24 text-center sm:px-8 sm:py-32">
-            <div class="mx-auto max-w-6xl">
-                <p class="section-label mb-7">Process</p>
-                <h2 class="title-lg reveal-on-scroll mx-auto max-w-5xl font-semibold text-balance">A clear build process from messy workflow to working software.</h2>
-                <div class="mt-14 grid gap-5 md:grid-cols-12">
-                    <article class="bento-card process-step reveal-on-scroll p-8 text-left md:col-span-6 lg:col-span-3">
-                        <div class="card-content"><p class="text-sm text-black/42">01 / Discovery</p><h3 class="mt-9 text-2xl font-semibold tracking-[-0.065em]">Map the workflow</h3><p class="body-copy mt-4">We look at the manual process, the users involved, the data moving through it, and where time or margin is being lost.</p></div>
-                    </article>
-                    <article class="bento-card process-step reveal-on-scroll p-8 text-left md:col-span-6 lg:col-span-3">
-                        <div class="card-content"><p class="text-sm text-black/42">02 / Prototype</p><h3 class="mt-9 text-2xl font-semibold tracking-[-0.065em]">Design the system</h3><p class="body-copy mt-4">We turn the workflow into screens, user journeys, permissions, data structure, and a clear build scope before development starts.</p></div>
-                    </article>
-                    <article class="bento-card process-step reveal-on-scroll p-8 text-left md:col-span-6 lg:col-span-3">
-                        <div class="card-content"><p class="text-sm text-black/42">03 / Build</p><h3 class="mt-9 text-2xl font-semibold tracking-[-0.065em]">Build with visibility</h3><p class="body-copy mt-4">You get staging links, progress updates, QA, and clear decisions throughout the build, so the project never disappears into a black box.</p></div>
-                    </article>
-                    <article class="bento-card process-step reveal-on-scroll p-8 text-left md:col-span-6 lg:col-span-3">
-                        <div class="card-content"><p class="text-sm text-black/42">04 / Handover</p><h3 class="mt-9 text-2xl font-semibold tracking-[-0.065em]">Hand over ownership</h3><p class="body-copy mt-4">You receive the codebase, deployment notes, training, documentation, and a clean post-launch fix window.</p></div>
-                    </article>
-                </div>
-                <div class="bento-card reveal-on-scroll mt-5 p-6 text-left md:p-8">
-                    <div class="card-content grid gap-6 md:grid-cols-[1fr_1.2fr] md:items-center">
-                        <h3 class="text-3xl font-semibold tracking-[-0.07em]">No vague retainers. No mystery build process.</h3>
-                        <p class="body-copy">You see what has been built, what is next, what needs a decision, and what is already locked. The scope stays clear from start to finish.</p>
+        <section class="testimonial reveal" aria-labelledby="testimonial-heading">
+            <div class="wrap testimonial-head">
+                <h2 id="testimonial-heading">Trusted by agency operators</h2>
+                <p class="testimonial-sub">Run proposals, reporting and client delivery like a larger team, without hiring another operations person first.</p>
+            </div>
+            <div class="wrap">
+                <figure class="quote-card">
+                    <blockquote>
+                        <p>“Standen helped us turn a messy internal process into a system the team could actually use every week.”</p>
+                        <figcaption>
+                            <strong>Agency founder</strong>
+                            <span>Marketing agency</span>
+                        </figcaption>
+                    </blockquote>
+                    <div class="quote-visual" aria-hidden="true">
+                        <div class="quote-visual__panel"></div>
                     </div>
-                </div>
+                </figure>
             </div>
         </section>
 
-        <section id="pricing" class="bg-ink px-5 py-24 text-center text-white sm:px-8 sm:py-32">
-            <div class="mx-auto max-w-6xl">
-                <p class="section-label mb-7 text-white/58">Pricing</p>
-                <h2 class="title-lg reveal-on-scroll mx-auto max-w-5xl font-semibold text-balance">Simple pricing for serious custom software projects.</h2>
-                <p class="body-copy-dark reveal-on-scroll mx-auto mt-6 max-w-2xl text-lg">Projects start from &pound;5,000. After a short audit call, we define the workflow, write the scope in plain English, and confirm exactly what will be delivered.</p>
-                <div class="price-grid mt-14 text-left">
-                    <article class="price-left price-primary bento-card reveal-on-scroll p-8 text-ink md:p-10">
-                        <div class="card-content flex h-full flex-col">
-                            <div class="price-hero">
-                                <div>
-                                    <p class="text-sm text-black/46">Custom software project</p>
-                                    <h3 class="mt-5 text-5xl font-semibold tracking-[-0.08em]">From &pound;5,000</h3>
-                                </div>
-                                <p class="price-badge">Scoped first release</p>
-                            </div>
-                            <p class="body-copy mt-7 max-w-2xl text-lg">For a client portal, internal tool, reporting dashboard, workflow system or operational software build with a clear business use case.</p>
-                            <ul class="price-list mt-9 text-sm">
-                                <li>Workflow audit, UX direction, and clear acceptance criteria</li>
-                                <li>Interface build, backend logic, integrations, testing, and staging link</li>
-                                <li>Full code ownership, repo transfer, deployment notes, and no lock-in</li>
-                                <li>Optional post-launch support once the first release is live</li>
-                                <li>Best for agencies with a repeated workflow, reporting process, client experience, or internal operation that should no longer run manually</li>
-                            </ul>
-                            <div class="mt-auto flex flex-col gap-3 pt-10 sm:flex-row sm:items-center">
-                                <a href="https://calendly.com/standen/discovery-call" class="btn btn-dark" target="_blank" rel="noopener">Scope my system</a>
-                                <p class="text-sm text-black/45">50% deposit, 50% on delivery.</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="bento-card dark-card reveal-on-scroll p-8 md:p-9">
-                        <div class="card-content">
-                            <p class="text-sm text-white/46">Consultation call</p>
-                            <h3 class="mt-4 text-4xl font-semibold tracking-[-0.08em]">&pound;120/hr</h3>
-                            <p class="body-copy-dark mt-4">Use this for software strategy, workflow mapping, technical scoping, UX review, system architecture, or deciding what to build first.</p>
-                            <a href="https://calendly.com/standen/discovery-call" class="btn btn-light mt-8" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a consultation</a>
-                        </div>
-                    </article>
-                    <article class="bento-card dark-card reveal-on-scroll p-8 md:p-9">
-                        <div class="card-content">
-                            <p class="text-sm text-white/46">Not sure yet?</p>
-                            <h3 class="mt-4 text-3xl font-semibold tracking-[-0.075em]">Start with the messy version.</h3>
-                            <p class="body-copy-dark mt-4">Send a Loom, notes doc, rough brief, broken spreadsheet, messy workflow, or half-built tool. We will turn it into a clear build plan.</p>
-                            <a href="mailto:tomas@standen.io?subject=Project%20enquiry" class="btn btn-ghost-light mt-8">Email tomas@standen.io</a>
-                        </div>
-                    </article>
-                </div>
-                <a href="/audit" class="bento-card reveal-on-scroll mt-5 block p-6 text-left text-white md:p-8">
-                    <div class="card-content grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
-                        <div>
-                            <p class="text-sm text-white/46">Not ready to book yet?</p>
-                            <h3 class="mt-3 text-2xl font-semibold tracking-[-0.065em]">Read the 14 Day Agency Ops Audit.</h3>
-                        </div>
-                        <span class="btn btn-light">Read the audit</span>
+        <section class="work" id="work" aria-labelledby="work-heading">
+            <div class="wrap work-head reveal">
+                <h2 id="work-heading">Selected work</h2>
+                <p class="work-sub">Recent builds for agencies, founders and product teams: scoped, shipped and handed over with full ownership.</p>
+            </div>
+            <div class="wrap work-grid">
+                <a href="/case-studies/ohmypod.html" class="work-card reveal">
+                    <div class="work-card__media work-card__media--logo">
+                        <img src="/assets/ohmypod-logo.png" alt="OhMyPod logo" width="220" height="80" loading="lazy" decoding="async">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__meta">Custom SaaS MVP · 21 days</p>
+                        <h3>OhMyPod</h3>
+                        <p class="work-card__summary">A podcast SaaS went from an idea in Tom&rsquo;s notes app to a live, owned product in 21 days.</p>
+                        <span class="work-card__link">View case study <span aria-hidden="true">&gt;</span></span>
+                    </div>
+                </a>
+                <a href="/case-studies/fx-quant-research-platform.html" class="work-card reveal" style="--reveal-delay: 60ms">
+                    <div class="work-card__media">
+                        <img src="/assets/quant.png" alt="FX Quant Research Platform dashboard" width="800" height="500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__meta">Financial research platform · 12 days</p>
+                        <h3>FX Quant Research Platform</h3>
+                        <p class="work-card__summary">A complete forex research platform for exploring price data, testing strategies, and turning market information into usable insight.</p>
+                        <span class="work-card__link">View case study <span aria-hidden="true">&gt;</span></span>
+                    </div>
+                </a>
+                <a href="/case-studies/real-estate-property-prediction.html" class="work-card reveal" style="--reveal-delay: 120ms">
+                    <div class="work-card__media">
+                        <img src="/assets/realestatedash.png" alt="Real Estate Property Prediction App dashboard" width="800" height="500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__meta">AI property platform · 14 days</p>
+                        <h3>Real Estate Property Prediction App</h3>
+                        <p class="work-card__summary">A full-stack property platform combining predictions, portfolio management, staff coordination, and mapping.</p>
+                        <span class="work-card__link">View case study <span aria-hidden="true">&gt;</span></span>
+                    </div>
+                </a>
+                <a href="/case-studies/scrapr-io.html" class="work-card reveal" style="--reveal-delay: 180ms">
+                    <div class="work-card__media">
+                        <img src="/assets/scrapr.png" alt="Scrapr.io dashboard" width="800" height="500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__meta">Owned SaaS product · Ongoing</p>
+                        <h3>Scrapr.io</h3>
+                        <p class="work-card__summary">A lead generation SaaS that returns 1,000+ verified leads in around 30 seconds.</p>
+                        <span class="work-card__link">View case study <span aria-hidden="true">&gt;</span></span>
+                    </div>
+                </a>
+                <a href="/case-studies/instagram-lead-scraper.html" class="work-card reveal" style="--reveal-delay: 240ms">
+                    <div class="work-card__media">
+                        <img src="/assets/ig.png" alt="Instagram Lead Scraper dashboard" width="800" height="500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__meta">Automation tool · 8 days</p>
+                        <h3>Instagram Lead Scraper</h3>
+                        <p class="work-card__summary">An automated Instagram prospecting system that processes profiles, identifies high-value leads, and moves them into a CRM.</p>
+                        <span class="work-card__link">View case study <span aria-hidden="true">&gt;</span></span>
+                    </div>
+                </a>
+                <a href="/case-studies/crypto-news-scraper.html" class="work-card reveal" style="--reveal-delay: 300ms">
+                    <div class="work-card__media">
+                        <img src="/assets/automation.png" alt="Crypto News Scraper automation workflow" width="800" height="500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__meta">Real-time aggregation · 6 days</p>
+                        <h3>Crypto News Scraper</h3>
+                        <p class="work-card__summary">A real-time crypto news system that monitors 50+ sources and filters market-moving updates.</p>
+                        <span class="work-card__link">View case study <span aria-hidden="true">&gt;</span></span>
+                    </div>
+                </a>
+                <a href="/case-studies/lead-magnet-generator.html" class="work-card reveal" style="--reveal-delay: 360ms">
+                    <div class="work-card__media">
+                        <img src="/assets/magnet.png" alt="Lead Magnet Generator interface" width="800" height="500" loading="lazy" decoding="async">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__meta">AI content tool · 9 days</p>
+                        <h3>Lead Magnet Generator</h3>
+                        <p class="work-card__summary">An AI-powered generator for creating LinkedIn lead magnets, saving them to Notion, and tracking performance from one dashboard.</p>
+                        <span class="work-card__link">View case study <span aria-hidden="true">&gt;</span></span>
                     </div>
                 </a>
             </div>
         </section>
 
-        <section id="contact" class="mesh-light px-5 py-24 text-center sm:px-8 sm:py-32">
-            <div class="mx-auto max-w-3xl">
-                <p class="wordmark mx-auto text-2xl">Standen</p>
-                <h2 class="title-lg reveal-on-scroll mx-auto mt-8 max-w-5xl font-semibold text-balance">Have a workflow your agency has outgrown?</h2>
-                <p class="body-copy mx-auto mt-7 max-w-xl text-lg">Book a short call. We will look at the workflow, identify what should be automated or centralised, and map the simplest first version worth building.</p>
-                <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                    <a href="https://calendly.com/standen/discovery-call" class="btn btn-dark w-full sm:w-auto" target="_blank" rel="noopener" aria-label="Book a discovery call"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" class="meet-img" alt="" width="20" height="20">Book a software audit call</a>
-                    <a href="mailto:tomas@standen.io?subject=Project%20enquiry" class="btn btn-ghost-dark w-full sm:w-auto">Email tomas@standen.io</a>
+        <!-- HOMEPAGE-SERVICES -->
+        <section class="services" id="services" aria-labelledby="services-heading">
+            <div class="wrap">
+                <header class="services-head reveal">
+                    <span class="module-tag">Services</span>
+                    <h2 id="services-heading">What we build for agencies</h2>
+                    <p class="services-lead">Six focused systems. One owned codebase. Scoped and shipped in fixed sprints with full handover.</p>
+                </header>
+                <div class="services-grid">
+                <article id="service-proposals" class="services-card reveal">
+                    <div class="services-card__top">
+                        <span class="module-tag">Proposals</span>
+                        <span class="services-card__delivery">14 days</span>
+                    </div>
+                    <div class="services-card__visual" aria-hidden="true"><div class="mock-proposal">
+        <div class="mock-proposal__head"><strong>Q2 Retainer</strong><span>Draft</span></div>
+        <div class="mock-line wide"></div>
+        <div class="mock-line short"></div>
+        <div class="mock-line wide"></div>
+        <div class="mock-proposal__price"><span>Total</span><strong>£12,400</strong></div>
+    </div></div>
+                    <div class="services-card__body">
+                        <h3>Proposal systems for agencies</h3>
+                        <p>Send proposals while the buyer still remembers the call, with scope, pricing and approvals in one owned system, not another Google Doc.</p>
+                        <ul class="services-card__features"><li>Scoped pricing and approval chains</li><li>Version history and buyer-ready export</li></ul>
+                        <span class="services-card__link">Explore Proposal systems <span aria-hidden="true">&gt;</span></span>
+                    </div>
+                </article>
+                <article id="service-reporting" class="services-card reveal" style="--reveal-delay: 60ms">
+                    <div class="services-card__top">
+                        <span class="module-tag">Reporting</span>
+                        <span class="services-card__delivery">14 days</span>
+                    </div>
+                    <div class="services-card__visual" aria-hidden="true"><div class="mock-report">
+        <div class="mock-report__stats">
+            <div><span>Spend</span><strong>£24k</strong></div>
+            <div><span>ROAS</span><strong>3.2x</strong></div>
+            <div><span>Leads</span><strong>186</strong></div>
+        </div>
+        <div class="mock-bars">
+            <i style="--h:58%"></i><i style="--h:82%"></i><i style="--h:44%"></i><i style="--h:70%"></i><i style="--h:92%"></i>
+        </div>
+    </div></div>
+                    <div class="services-card__body">
+                        <h3>Client reporting dashboards for agencies</h3>
+                        <p>Pull GA4, ad platforms and CRM pipeline into one live view, and stop rebuilding the same PDF every month.</p>
+                        <ul class="services-card__features"><li>Live KPIs per client</li><li>GA4, ads and CRM in one view</li></ul>
+                        <span class="services-card__link">Explore Reporting dashboards <span aria-hidden="true">&gt;</span></span>
+                    </div>
+                </article>
+                <article id="service-portals" class="services-card reveal" style="--reveal-delay: 120ms">
+                    <div class="services-card__top">
+                        <span class="module-tag">Portals</span>
+                        <span class="services-card__delivery">14 days</span>
+                    </div>
+                    <div class="services-card__visual" aria-hidden="true"><div class="mock-portal">
+        <div class="mock-portal__head"><strong>Website relaunch</strong><span>Week 3</span></div>
+        <div class="mock-portal__steps">
+            <span class="done">Brief</span><span class="done">Design</span><span>Build</span><span>Launch</span>
+        </div>
+        <div class="mock-portal__note"><strong>Approved</strong>Homepage wireframes signed off today.</div>
+    </div></div>
+                    <div class="services-card__body">
+                        <h3>Client portals for agency delivery</h3>
+                        <p>Move delivery out of Slack threads and email, one secure portal your clients actually open.</p>
+                        <ul class="services-card__features"><li>Status, files and approvals in one place</li><li>Branded portal your clients open</li></ul>
+                        <span class="services-card__link">Explore Client portals <span aria-hidden="true">&gt;</span></span>
+                    </div>
+                </article>
+                <article id="service-crm" class="services-card reveal" style="--reveal-delay: 180ms">
+                    <div class="services-card__top">
+                        <span class="module-tag">Operations</span>
+                        <span class="services-card__delivery">14 days</span>
+                    </div>
+                    <div class="services-card__visual" aria-hidden="true"><div class="mock-ops">
+        <div class="mock-ops__queue"><span>Leads</span><span>In build</span><span>Blocked</span></div>
+        <div class="mock-ops__rows">
+            <div><strong>Acme Co</strong><span>Design</span><em>On track</em></div>
+            <div><strong>Bright Ltd</strong><span>Dev</span><em>Blocked</em></div>
+        </div>
+    </div></div>
+                    <div class="services-card__body">
+                        <h3>Internal CRM and delivery queues for agencies</h3>
+                        <p>Route leads, track delivery and surface blockers in one workspace your team actually opens.</p>
+                        <ul class="services-card__features"><li>Lead routing and delivery queues</li><li>Founder view of blockers and workload</li></ul>
+                        <span class="services-card__link">Explore Internal CRM <span aria-hidden="true">&gt;</span></span>
+                    </div>
+                </article>
+                <article id="service-saas" class="services-card reveal" style="--reveal-delay: 240ms">
+                    <div class="services-card__top">
+                        <span class="module-tag">SaaS</span>
+                        <span class="services-card__delivery">14 to 21 days</span>
+                    </div>
+                    <div class="services-card__visual" aria-hidden="true"><div class="mock-saas">
+        <div class="mock-saas__head"><strong>Product dashboard</strong><span>Live</span></div>
+        <div class="mock-saas__metrics">
+            <div><span>Users</span><strong>248</strong></div>
+            <div><span>MRR</span><strong>£4.2k</strong></div>
+            <div><span>Uptime</span><strong>99.9%</strong></div>
+        </div>
+        <div class="mock-saas__usage"><i style="--w:72%"></i></div>
+    </div></div>
+                    <div class="services-card__body">
+                        <h3>SaaS MVP development for founders and agencies</h3>
+                        <p>From scoped idea to live product with auth, billing-ready architecture and full handover, not a no-code prototype you cannot scale.</p>
+                        <ul class="services-card__features"><li>Auth, billing-ready architecture</li><li>Private live link from day one</li></ul>
+                        <span class="services-card__link">Explore SaaS MVP builds <span aria-hidden="true">&gt;</span></span>
+                    </div>
+                </article>
+                <article id="service-internal" class="services-card reveal" style="--reveal-delay: 300ms">
+                    <div class="services-card__top">
+                        <span class="module-tag">Internal tools</span>
+                        <span class="services-card__delivery">14 days</span>
+                    </div>
+                    <div class="services-card__visual" aria-hidden="true"><div class="mock-internal">
+        <div class="mock-internal__flow"><span>Sheets</span><i aria-hidden="true"></i><span>Router</span><i aria-hidden="true"></i><span>CRM</span></div>
+        <div class="mock-internal__rows">
+            <div><strong>Lead sync</strong><em>Every hour</em></div>
+            <div><strong>Weekly report</strong><em>Automated</em></div>
+        </div>
+    </div></div>
+                    <div class="services-card__body">
+                        <h3>Internal tools for agencies</h3>
+                        <p>Replace spreadsheet glue and manual handoffs with software shaped to how your team already works.</p>
+                        <ul class="services-card__features"><li>Slack, Notion and CRM integrations</li><li>Replace spreadsheet glue work</li></ul>
+                        <span class="services-card__link">Explore Internal tools <span aria-hidden="true">&gt;</span></span>
+                    </div>
+                </article>
                 </div>
+            </div>
+        </section>
+        <!-- /HOMEPAGE-SERVICES -->
+
+        <section class="ownership" id="company" aria-labelledby="ownership-heading">
+            <div class="wrap ownership-grid">
+                <div>
+                    <span class="module-tag">Ownership</span>
+                    <h2 id="ownership-heading">Owned by you. Built properly.</h2>
+                    <p class="ownership-lead">Every build comes with source code, deployment access, handover docs and clear ownership.</p>
+                    <a href="#services" class="btn btn--outline">View services <span aria-hidden="true">&gt;</span></a>
+                </div>
+                <ul class="ownership-list">
+                    <li>100% code ownership</li>
+                    <li>Clean handover docs</li>
+                    <li>Deployment included</li>
+                    <li>Modern infrastructure</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="process" id="process" aria-labelledby="process-heading">
+            <div class="wrap">
+                <h2 id="process-heading">From messy workflow to working software.</h2>
+                <ol class="process-steps">
+                    <li><span>01</span><div><h3>Audit</h3><p>We map the workflow, users, inputs, outputs and bottlenecks.</p></div></li>
+                    <li><span>02</span><div><h3>Scope</h3><p>We define the first useful version worth building.</p></div></li>
+                    <li><span>03</span><div><h3>Build</h3><p>We design and ship the system in focused weekly sprints.</p></div></li>
+                    <li><span>04</span><div><h3>Handover</h3><p>You receive the codebase, docs and deployment notes.</p></div></li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+            <div class="wrap pricing-layout">
+                <div class="pricing-copy reveal">
+                    <h2 id="pricing-heading">Simple build pricing.</h2>
+                    <p class="pricing-note">One workflow. One system. Clear delivery.</p>
+                    <p class="pricing-lead">We scope around a single operational bottleneck: proposals, reporting, client delivery or internal ops, and ship a working first version in 14 days.</p>
+                    <ul class="pricing-highlights">
+                        <li><strong>14-day build</strong>: focused weekly sprints with visible progress</li>
+                        <li><strong>Founder-led</strong>: you work directly with the person designing and shipping it</li>
+                        <li><strong>Full handover</strong>: codebase, deployment notes and workflow logic stay with you</li>
+                    </ul>
+                    <div class="pricing-builds">
+                        <p class="pricing-builds__label">Typical first builds</p>
+                        <ul>
+                            <li>Proposal and scope systems</li>
+                            <li>Client reporting dashboards</li>
+                            <li>Client portals and approval flows</li>
+                            <li>Internal CRMs, queues and team dashboards</li>
+                        </ul>
+                    </div>
+                    <p class="pricing-aside">Not sure what to build first? <a href="#service-saas">SaaS development</a>, <a href="#service-internal">custom software</a>, <a href="/guides.html">free guides</a>, or <a href="https://calendly.com/standen/discovery-call" target="_blank" rel="noopener">book a short call</a>.</p>
+                </div>
+                <article class="pricing-card reveal" style="--reveal-delay: 120ms">
+                    <div class="pricing-card__shine" aria-hidden="true"></div>
+                    <div class="pricing-card__inner">
+                        <div class="pricing-card__top">
+                            <span class="pricing-card__badge">Custom software build</span>
+                            <p class="pricing-card__price">From <strong>£5,000</strong></p>
+                            <p class="pricing-card__meta">per project · fixed scope</p>
+                        </div>
+                        <ul class="pricing-card__list">
+                            <li>Workflow mapping</li>
+                            <li>System design</li>
+                            <li>Frontend and backend build</li>
+                            <li>Integrations</li>
+                            <li>Testing and deployment</li>
+                            <li>Handover docs</li>
+                            <li>100% code ownership</li>
+                        </ul>
+                        <p class="pricing-card__terms">50% upfront · 50% on handover</p>
+                        <a href="https://calendly.com/standen/discovery-call" class="btn btn--accent btn--lg" target="_blank" rel="noopener"><span class="btn__text">Book a Free Consultation</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="notes" aria-labelledby="notes-heading">
+            <div class="wrap notes-head">
+                <h2 id="notes-heading">Build notes</h2>
+                <a href="/guides.html" class="text-link">See all guides <span aria-hidden="true">&gt;</span></a>
+            </div>
+            <div class="wrap notes-grid">
+                <article>
+                    <p class="notes-meta">Guides <span>·</span> 7 min read</p>
+                    <h3><a href="/guides/a2a-protocol.html">A2A Protocol Explained</a></h3>
+                </article>
+                <article>
+                    <p class="notes-meta">Guides <span>·</span> 5 min read</p>
+                    <h3><a href="/guides/agency-proposal-systems.html">Why agency proposals should not live in Google Docs</a></h3>
+                </article>
+                <article>
+                    <p class="notes-meta">Guides <span>·</span> 6 min read</p>
+                    <h3><a href="/guides/client-reporting-dashboards.html">How to replace monthly reporting PDFs with client dashboards</a></h3>
+                </article>
+            </div>
+        </section>
+
+        <section class="seo-faq wrap reveal" id="faq" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">Frequently asked questions</h2>
+            <div class="seo-faq__list">
+                <details class="seo-faq__item" open>
+                    <summary>What does custom software cost for an agency?</summary>
+                    <p>Standen scopes a first build from <strong>£5,000</strong> with fixed scope and timeline. You pay 50% upfront and 50% on handover. The price covers workflow mapping, design, build, deployment and full code ownership.</p>
+                </details>
+                <details class="seo-faq__item">
+                    <summary>How long does an agency software MVP take?</summary>
+                    <p>A typical first build ships in <strong>14 days</strong>, one workflow, one system, clear handover. Recent projects include a live SaaS in 21 days, a forex research platform in 12 days, and a lead magnet tool in 9 days.</p>
+                </details>
+                <details class="seo-faq__item">
+                    <summary>Does the client own the code?</summary>
+                    <p>Yes. You receive the full codebase, deployment access, handover documentation and workflow logic. There is no licence lock-in or platform dependency.</p>
+                </details>
+                <details class="seo-faq__item">
+                    <summary>What should an agency build first?</summary>
+                    <p>Start with the workflow that costs the most time or margin: <a href="#service-proposals">proposals</a>, <a href="#service-reporting">client reporting</a>, <a href="#service-portals">delivery portals</a>, or <a href="#service-crm">internal CRM</a>. We map the bottleneck on a <a href="https://calendly.com/standen/discovery-call" target="_blank" rel="noopener">discovery call</a> and scope the smallest useful version.</p>
+                </details>
+                <details class="seo-faq__item">
+                    <summary>Custom build vs off-the-shelf SaaS?</summary>
+                    <p>Use SaaS when the workflow is standard. Build custom when your delivery model, data or approvals are unique. See our <a href="/compare/custom-build-vs-off-the-shelf.html">agency build vs buy guide</a>.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="final-cta" id="contact" aria-labelledby="final-heading">
+            <div class="wrap">
+                <h2 id="final-heading">Have a workflow your agency has outgrown?</h2>
+                <p>Book a short call. We&rsquo;ll map the simplest system worth building first.</p>
+                <a href="https://calendly.com/standen/discovery-call" class="btn btn--accent btn--lg" target="_blank" rel="noopener"><span class="btn__text">Book a Free Consultation</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
             </div>
         </section>
     </main>
 
-    <footer class="bg-ink px-5 pb-12 text-white sm:px-8">
-        <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 border-t border-white/12 pt-8 text-center sm:flex-row sm:text-left">
-            <p class="wordmark text-xl">Standen</p>
-            <p class="text-sm font-normal text-white/38">&copy; 2026 Standen. Custom internal tools, portals and dashboards for UK B2B agencies.</p>
-            <nav class="flex flex-wrap justify-center gap-5 text-sm text-white/50" aria-label="Footer"><a href="/work" class="hover:text-white">Work</a><a href="/process" class="hover:text-white">Process</a><a href="/pricing" class="hover:text-white">Pricing</a><a href="/audit" class="hover:text-white">Audit</a><a href="/contact" class="hover:text-white">Contact</a></nav>
+    <footer class="site-footer">
+        <div class="wrap footer-grid footer-grid--enterprise">
+            <div class="footer-brand">
+                <a class="brand" href="/">
+                    <span class="brand-name">Standen</span>
+                </a>
+                <p class="footer-tagline">Custom software and SaaS for agencies. Built in 14 days. You own everything.</p>
+                <div class="footer-contact">
+                    <a href="mailto:hello@standen.io" class="footer-contact__email">hello@standen.io</a>
+                    <a href="https://www.linkedin.com/in/tomas-jones1/" class="footer-contact__linkedin" target="_blank" rel="noopener noreferrer" aria-label="Tomas Jones on LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <nav aria-label="Services">
+                <h2>Services</h2>
+                <a href="/#services">All services</a>
+                <a href="/#service-proposals">Proposal systems</a>
+                <a href="/#service-reporting">Reporting dashboards</a>
+                <a href="/#service-portals">Client portals</a>
+                <a href="/#service-crm">Internal CRM</a>
+                <a href="/#service-saas">SaaS MVP</a>
+                <a href="/#service-internal">Internal tools</a>
+            </nav>
+            <nav aria-label="Company">
+                <h2>Company</h2>
+                <a href="/work.html">Work</a>
+                <a href="/about.html">About</a>
+                <a href="/#process">Process</a>
+                <a href="/#pricing">Pricing</a>
+            </nav>
+            <nav aria-label="Resources">
+                <h2>Resources</h2>
+                <a href="/guides.html">Guides</a>
+                <a href="/audit.html">Ops audit</a>
+                <a href="/compare/index.html">Compare</a>
+                <a href="/blog.html">Blog</a>
+            </nav>
+        </div>
+        <div class="wrap footer-bottom footer-bottom--enterprise">
+            <p>&copy; Standen</p>
+            <nav aria-label="Legal">
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+            </nav>
         </div>
     </footer>
 
-    <script>
-        (function () {
-            var SECTIONS = { work: true, process: true, pricing: true, contact: true };
-            function sectionIdFromPath() {
-                var p = (window.location.pathname || '/').replace(/\/+$/, '') || '/';
-                var map = { '/work': 'work', '/process': 'process', '/pricing': 'pricing', '/contact': 'contact' };
-                if (map[p]) return map[p];
-                if (p === '/' && window.location.hash) {
-                    var h = window.location.hash.replace(/^#/, '');
-                    if (SECTIONS[h] && window.history && window.history.replaceState) {
-                        window.history.replaceState(null, '', '/' + h);
-                        return h;
-                    }
-                }
-                return null;
-            }
-            var sectionId = sectionIdFromPath();
-            if (sectionId) {
-                function scrollToSection() {
-                    var el = document.getElementById(sectionId);
-                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    var menuButton = document.querySelector('.nav-menu-toggle');
-                    var mobileMenu = document.getElementById('mobile-menu');
-                    if (menuButton && mobileMenu) {
-                        menuButton.setAttribute('aria-expanded', 'false');
-                        mobileMenu.setAttribute('data-open', 'false');
-                    }
-                }
-                if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', scrollToSection);
-                else scrollToSection();
-            }
-        })();
-    </script>
-    <script>
-        (function () {
-            var els = document.querySelectorAll('.reveal-on-scroll');
-            var menuButton = document.querySelector('.nav-menu-toggle');
-            var mobileMenu = document.getElementById('mobile-menu');
-            if (menuButton && mobileMenu) {
-                menuButton.addEventListener('click', function () {
-                    var isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-                    menuButton.setAttribute('aria-expanded', String(!isOpen));
-                    mobileMenu.setAttribute('data-open', String(!isOpen));
-                });
-                mobileMenu.querySelectorAll('a').forEach(function (link) {
-                    link.addEventListener('click', function () {
-                        menuButton.setAttribute('aria-expanded', 'false');
-                        mobileMenu.setAttribute('data-open', 'false');
-                    });
-                });
-            }
-            if (!els.length || !('IntersectionObserver' in window)) {
-                els.forEach(function (el) { el.classList.add('is-visible'); });
-                return;
-            }
-            var io = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        io.unobserve(entry.target);
-                    }
-                });
-            }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
-            els.forEach(function (el) { io.observe(el); });
-        })();
-    </script>
+    <script src="/home.js"></script>
 </body>
 </html>
