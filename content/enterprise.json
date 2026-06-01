@@ -87,7 +87,7 @@
       "h1": "SaaS MVP development for founders and agencies",
       "meta": "Build a SaaS MVP in 14 to 30 days. Production-ready, fixed-scope tiers from £5k to £18k. OhMyPod live in 21 days. You own 100% of the code.",
       "lead": "From scoped idea to live product with auth, billing-ready architecture and full handover, not a no-code prototype you cannot scale.",
-      "answer": "Standen builds SaaS MVPs for founders and agencies in 14–21 day sprints: fixed scope, private live link from day one, full code and deployment handover. OhMyPod shipped in 21 days.",
+      "answer": "Standen builds SaaS MVPs for founders and agencies in 14 to 30 day sprints: fixed scope, private live link from day one, full code and deployment handover. OhMyPod shipped in 21 days.",
       "sections": [
         { "h2": "How we scope an MVP that ships", "p": "One core outcome, one user type, one revenue or validation path. Everything else waits for phase two, so you launch while the market still cares." },
         { "h2": "What you get on handover", "p": "Repository, hosting access, environment notes and a walkthrough. No black box. No licence fee to us." },
@@ -127,7 +127,17 @@
       "title": "Agency Build vs Buy: Custom Software vs SaaS | Standen",
       "h1": "Custom build vs off-the-shelf SaaS for agencies",
       "meta": "Should your agency build custom software or buy SaaS? Build vs buy guide for proposals, reporting, portals and internal ops.",
-      "existing": true
+      "lead": "Off-the-shelf SaaS wins when the job is standard. Custom wins when your workflow, data model or client experience is the thing you compete on, and you want to own it.",
+      "sections": [
+        { "h2": "When off-the-shelf SaaS is the right call", "p": "If a mature product already does the job and it is not where you differentiate, buy it. You move faster, pay less upfront and get maintenance for free. Most marketing, comms, accounting and scheduling needs are solved this way, and a custom build there is wasted budget." },
+        { "h2": "When a custom build pays for itself", "p": "Build when five tools still need manual glue, when approvals, pricing or reporting fit no product on the market, or when you are renting the workflow logic that defines how your agency runs. An owned system removes the recurring copy-paste and does not disappear when a subscription lapses or a connector breaks." },
+        { "h2": "How Standen scopes a build vs buy decision", "p": "We map the workflow, score repetition, integration depth and ownership risk, then scope the smallest useful build. Launch ships in 14 days from <strong>£5,000</strong>, Scale in 21 from <strong>£9,500</strong> and Enterprise in 30 from <strong>£18,000</strong>, with 100% code ownership on handover." }
+      ],
+      "faqs": [
+        { "q": "Is custom software more expensive than SaaS?", "a": "Upfront, usually yes. Over two to three years a fixed-scope build from <strong>£5,000</strong> often costs less than stacked subscriptions plus the manual work they leave behind, and you own the asset instead of renting it." },
+        { "q": "Can we start with SaaS and build later?", "a": "Yes. Many teams buy off-the-shelf to start, then build the one workflow that becomes a bottleneck. We scope that first build around the highest-friction handoff." },
+        { "q": "What do we own at the end?", "a": "Everything: source code, deployment access and documentation. No licence lock-in and no platform dependency." }
+      ]
     },
     {
       "slug": "agency-build-vs-hiring-operations",
@@ -138,7 +148,7 @@
       "sections": [
         { "h2": "When hiring ops is the right move", "p": "You need human judgment on client relationships, culture and ad-hoc firefighting, and volume is still manageable in spreadsheets." },
         { "h2": "When software is the cleaner hire", "p": "The same data gets copied between five tools. Reporting takes days. Proposals stall in Docs. A scoped build (from 14 days on Launch) removes recurring glue work permanently." },
-        { "h2": "The maths agencies overlook", "p": "A £5k–£18k owned system vs £40k+ annual ops salary, plus the system does not leave when someone moves on." }
+        { "h2": "The maths agencies overlook", "p": "A £5k-£18k owned system vs £40k+ annual ops salary, plus the system does not leave when someone moves on." }
       ],
       "faqs": [
         { "q": "Can we do both?", "a": "Yes. Software handles repeat workflow; ops focuses on clients and exceptions." },

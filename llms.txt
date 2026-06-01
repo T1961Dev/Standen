@@ -1,0 +1,20 @@
+# Standen
+
+> Standen builds custom software and SaaS for founders and agencies: SaaS MVPs, internal tools, proposal systems, reporting dashboards and client portals. Fixed-scope tiers: Launch (14 days, from £5,000), Scale (21 days, from £9,500) and Enterprise (30 days, from £18,000). Clients own 100% of the code, IP and deployment on handover. UK-based studio, founder-led by Tomas Jones, working remotely with clients worldwide.
+
+## Main pages
+- [Home](https://www.standen.io/): Services, four-stage process, fixed-scope pricing and FAQs
+- [Work](https://www.standen.io/work): Case studies of delivered builds
+
+## Case studies
+- [OhMyPod](https://www.standen.io/case-studies/ohmypod): Podcast SaaS taken from idea to a live, owned product in 21 days
+- [FX Quant Research Platform](https://www.standen.io/case-studies/fx-quant-research-platform): Forex research and strategy-testing platform shipped in 12 days
+- [Real Estate Property Prediction App](https://www.standen.io/case-studies/real-estate-property-prediction): Full-stack property prediction, portfolio and mapping platform in 14 days
+- [Scrapr.io](https://www.standen.io/case-studies/scrapr-io): Lead-generation SaaS returning 1,000+ verified leads in around 30 seconds
+- [Instagram Lead Scraper](https://www.standen.io/case-studies/instagram-lead-scraper): Automated Instagram prospecting into a CRM, built in 8 days
+- [Crypto News Scraper](https://www.standen.io/case-studies/crypto-news-scraper): Real-time crypto news aggregation from 50+ sources in 6 days
+- [Lead Magnet Generator](https://www.standen.io/case-studies/lead-magnet-generator): AI tool for LinkedIn lead magnets with Notion sync, built in 9 days
+
+## Contact
+- Book a call: https://calendly.com/standen/discovery-call
+- Email: tomas@standen.io

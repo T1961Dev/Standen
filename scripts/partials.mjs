@@ -1,6 +1,7 @@
 import { serviceHref, servicesHubHref } from "./service-anchors.mjs";
 
 const SITE = "https://www.standen.io";
+const BRAND_NAME = "standen";
 const CALENDLY = "https://calendly.com/standen/discovery-call";
 const CTA_LABEL = "Book a call";
 const FOOTER_TAGLINE =
@@ -15,14 +16,17 @@ export function accentCtaButton(extraClass = "nav-cta") {
 }
 const LINKEDIN_URL = "https://www.linkedin.com/in/tomas-jones1/";
 
-export function headBlock({ title, description, canonical, ogType = "website", schema }) {
+export const ROBOTS_INDEX = "index, follow";
+export const ROBOTS_NOINDEX = "noindex, follow";
+
+export function headBlock({ title, description, canonical, ogType = "website", schema, robots = ROBOTS_INDEX }) {
     const schemaScript = schema
         ? `\n    <script type="application/ld+json">\n    ${JSON.stringify(schema)}\n    </script>`
         : "";
     return `    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="${escapeAttr(description)}">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="${escapeAttr(robots)}">
     <link rel="canonical" href="${escapeAttr(canonical)}">
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
@@ -51,7 +55,7 @@ export function navBlock(active = "") {
     return `    <header class="site-nav" id="top">
         <div class="nav-inner">
             <a class="brand" href="/" aria-label="Standen home">
-                <span class="brand-name">Standen</span>
+                <span class="brand-name">${BRAND_NAME}</span>
             </a>
             <nav class="nav-links" aria-label="Primary">
                 <a href="/#services"${servicesActive}>Services</a>
@@ -77,7 +81,7 @@ export function footerBlock() {
         <div class="wrap footer-grid footer-grid--enterprise">
             <div class="footer-brand">
                 <a class="brand" href="/">
-                    <span class="brand-name">Standen</span>
+                    <span class="brand-name">${BRAND_NAME}</span>
                 </a>
                 <p class="footer-tagline">${FOOTER_TAGLINE}</p>
                 <div class="footer-contact">
@@ -167,11 +171,11 @@ export function finalCta(
     return `<section class="final-cta" aria-labelledby="page-cta"><div class="wrap"><h2 id="page-cta">${heading}</h2><p>${text}</p>${accentCtaButton()}</div></section>`;
 }
 
-export function pageShell({ title, description, canonical, body, activeNav, schema, ogType, extraScripts = "" }) {
+export function pageShell({ title, description, canonical, body, activeNav, schema, ogType, robots = ROBOTS_INDEX, extraScripts = "" }) {
     return `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
-${headBlock({ title, description, canonical, ogType, schema })}
+${headBlock({ title, description, canonical, ogType, schema, robots })}
 </head>
 <body class="page-home">
 ${navBlock(activeNav)}

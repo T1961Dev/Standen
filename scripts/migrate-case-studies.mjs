@@ -84,11 +84,29 @@ for (const [id, study] of Object.entries(studies)) {
         activeNav: "work",
         schema: {
             "@context": "https://schema.org",
-            "@type": "Article",
-            headline: study.title,
-            description: study.summary,
-            dateModified: "2026-05-26",
-            mainEntityOfPage: `${SITE}/case-studies/${slug}`,
+            "@graph": [
+                {
+                    "@type": "Article",
+                    headline: study.title,
+                    description: study.summary,
+                    ...(study.image
+                        ? { image: study.image.startsWith("http") ? study.image : `${SITE}${imageSrc(study.image)}` }
+                        : {}),
+                    author: { "@type": "Organization", name: "Standen", url: SITE },
+                    publisher: { "@id": "https://www.standen.io/#organization" },
+                    datePublished: "2026-05-26",
+                    dateModified: "2026-05-26",
+                    mainEntityOfPage: `${SITE}/case-studies/${slug}`,
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    itemListElement: [
+                        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+                        { "@type": "ListItem", position: 2, name: "Work", item: `${SITE}/work` },
+                        { "@type": "ListItem", position: 3, name: study.title, item: `${SITE}/case-studies/${slug}` },
+                    ],
+                },
+            ],
         },
         ogType: "article",
         body,

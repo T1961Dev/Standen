@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { pageShell, breadcrumbs, finalCta, CALENDLY, SITE, CTA_LABEL } from "./partials.mjs";
+import { pageShell, breadcrumbs, finalCta, CALENDLY, SITE, CTA_LABEL, ROBOTS_NOINDEX } from "./partials.mjs";
 import { redirectPage, serviceHref } from "./service-anchors.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -88,6 +88,7 @@ write(
         title: "Case studies | Standen",
         description: "Standen case studies: SaaS MVPs, dashboards and internal tools for agencies. Delivered in 6 to 21 days.",
         canonical: SITE + "/work",
+        robots: ROBOTS_NOINDEX,
         activeNav: "work",
         body: `
         <section class="contact-page">
@@ -110,6 +111,7 @@ write(
         title: "Resources | Standen",
         description: "Guides, comparisons, blog posts and FAQs for agencies planning custom software builds.",
         canonical: SITE + "/resources",
+        robots: ROBOTS_NOINDEX,
         activeNav: "guides",
         body: `
         <section class="blog-page">
@@ -160,6 +162,7 @@ for (const post of blogPosts) {
             title: `${post.title} | Blog | Standen`,
             description: post.excerpt,
             canonical: url,
+            robots: ROBOTS_NOINDEX,
             ogType: "article",
             activeNav: "",
             body: `

@@ -89,11 +89,11 @@ const GUIDE_CONTENT = {
             {
                 h2: "The one-hour proposal sprint",
                 ol: [
-                    "<strong>0–10 min:</strong> Pull call notes into a structured brief (goal, budget band, timeline, decision makers).",
-                    "<strong>10–25 min:</strong> Select scope blocks from your library. Do not rewrite from scratch.",
-                    "<strong>25–40 min:</strong> Apply pricing rules. Let the sheet or system calculate totals.",
-                    "<strong>40–50 min:</strong> Internal sanity check, delivery lead confirms capacity, not just sales enthusiasm.",
-                    "<strong>50–60 min:</strong> Export and send while you still have a thread open with the buyer.",
+                    "<strong>0-10 min:</strong> Pull call notes into a structured brief (goal, budget band, timeline, decision makers).",
+                    "<strong>10-25 min:</strong> Select scope blocks from your library. Do not rewrite from scratch.",
+                    "<strong>25-40 min:</strong> Apply pricing rules. Let the sheet or system calculate totals.",
+                    "<strong>40-50 min:</strong> Internal sanity check, delivery lead confirms capacity, not just sales enthusiasm.",
+                    "<strong>50-60 min:</strong> Export and send while you still have a thread open with the buyer.",
                 ],
             },
             {
@@ -170,7 +170,7 @@ const GUIDE_CONTENT = {
     },
 
     "reporting-automation": {
-        lead: "Most agencies lose 10–20 hours per month per account manager to reporting glue work. That is margin walking out the door.",
+        lead: "Most agencies lose 10-20 hours per month per account manager to reporting glue work. That is margin walking out the door.",
         blocks: [
             {
                 h2: "Time-box a reporting audit",
@@ -356,9 +356,9 @@ const GUIDE_CONTENT = {
             {
                 h2: "The 14-day scoping frame",
                 ol: [
-                    "<strong>Day 1–2:</strong> Map current workflow with one operator in the room.",
-                    "<strong>Day 3–4:</strong> Define success metric (one number or observable behaviour).",
-                    "<strong>Day 5–6:</strong> Cut everything that does not serve that metric.",
+                    "<strong>Day 1-2:</strong> Map current workflow with one operator in the room.",
+                    "<strong>Day 3-4:</strong> Define success metric (one number or observable behaviour).",
+                    "<strong>Day 5-6:</strong> Cut everything that does not serve that metric.",
                     "<strong>Day 7:</strong> Fixed scope doc: users, screens, integrations, out-of-scope list.",
                     "<strong>Week 2:</strong> Build, demo, handover, no parallel feature requests.",
                 ],
@@ -476,7 +476,7 @@ const GUIDE_CONTENT = {
         lead: "Buy when the problem is standard. Build when the workflow is your product.",
         blocks: [
             {
-                h2: "Score each option 1–5",
+                h2: "Score each option 1-5",
                 ul: [
                     "<strong>Fit:</strong> Does off-the-shelf match how you actually work?",
                     "<strong>Frequency:</strong> Daily workflow or quarterly annoyance?",
@@ -508,7 +508,7 @@ const GUIDE_CONTENT = {
             {
                 h2: "Pick one leak to fix this quarter",
                 p: [
-                    "Score each 1–5 on pain and frequency. Highest combined score wins. Everything else waits.",
+                    "Score each 1-5 on pain and frequency. Highest combined score wins. Everything else waits.",
                     "For a deeper worksheet, use our <a href=\"/audit.html\">free agency ops audit</a>.",
                 ],
             },
@@ -704,7 +704,7 @@ const GUIDE_CONTENT = {
         lead: "Use the same scorecard for every \"should we build?\" conversation.",
         blocks: [
             {
-                h2: "Score 1–5 per row",
+                h2: "Score 1-5 per row",
                 ul: [
                     "Workflow uniqueness",
                     "Weekly repetition",

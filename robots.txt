@@ -1,8 +1,8 @@
-# standen.io — allow search engines and AI crawlers (required for GEO)
+# standen.io: allow search engines and AI crawlers (required for GEO)
 User-agent: *
 Allow: /
 
-# Explicit allow for AI / LLM crawlers (do not block — GEO depends on crawl access)
+# Explicit allow for AI / LLM crawlers (do not block; GEO depends on crawl access)
 User-agent: GPTBot
 Allow: /
 

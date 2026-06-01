@@ -7,6 +7,13 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const LASTMOD = new Date().toISOString().slice(0, 10);
 
 const SKIP_DIRS = new Set(["scripts", "content", "public", "node_modules", ".git", "assets", "pics", "js"]);
+
+/** Not in primary nav, keep crawl budget on commercial URLs */
+const SITEMAP_EXCLUDE_PREFIXES = ["/guides", "/blog", "/resources"];
+
+function includeInSitemap(loc) {
+    return !SITEMAP_EXCLUDE_PREFIXES.some((prefix) => loc === prefix || loc.startsWith(`${prefix}/`));
+}
 const SKIP_FILES = new Set([
     "case-study.html",
     "guide.html",
@@ -62,7 +69,7 @@ function changefreqFor(loc) {
 }
 
 const htmlFiles = walkHtml(ROOT);
-const urlPaths = [...new Set(htmlFiles.map(toUrlPath))].sort((a, b) => a.localeCompare(b));
+const urlPaths = [...new Set(htmlFiles.map(toUrlPath).filter(includeInSitemap))].sort((a, b) => a.localeCompare(b));
 
 const body = urlPaths
     .map(

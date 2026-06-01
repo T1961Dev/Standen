@@ -85,6 +85,9 @@
       "permanent": true
     },
     { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/work.html", "destination": "/work", "permanent": true },
+    { "source": "/about.html", "destination": "/about", "permanent": true },
+    { "source": "/case-studies.html", "destination": "/work", "permanent": true },
     { "source": "/audit.html", "destination": "/audit", "permanent": true },
     { "source": "/guides.html", "destination": "/guides", "permanent": true },
     { "source": "/blog.html", "destination": "/blog", "permanent": true },

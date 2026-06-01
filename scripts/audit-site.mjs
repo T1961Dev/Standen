@@ -88,6 +88,22 @@ for (const file of files) {
     }
 
     assertJsonLd(file, html, errors);
+
+    // Template leak: a tag whose text is literally "undefined"/"NaN" (e.g. a missing data field).
+    if (/>\s*(?:undefined|NaN)\s*</.test(html)) {
+        errors.push(`${r} contains a template leak (undefined/NaN) in rendered content`);
+    }
+    // Typographic consistency: house style uses hyphens or commas, never em/en dashes.
+    // (Char codes, not literal dashes, so remove-em-dashes.mjs can't rewrite this check.)
+    if (html.includes(String.fromCharCode(0x2014)) || html.includes(String.fromCharCode(0x2013)) || /&(?:m|n)dash;/.test(html)) {
+        errors.push(`${r} contains an em or en dash; house style uses hyphens or commas`);
+    }
+    // Brand voice: the single approved CTA is "Book a call". Only flag isolated
+    // link/button labels (exact text), not the same words appearing in prose.
+    for (const m of html.matchAll(/>\s*(Get in touch|Contact us|Get started|Email us)\s*</gi)) {
+        errors.push(`${r} uses off-brand CTA label "${m[1].trim()}"; standard CTA is "Book a call"`);
+    }
+
     if (noindex) continue;
 
     if (!/<title>[^<]{8,}<\/title>/i.test(html)) {
@@ -106,6 +122,16 @@ for (const file of files) {
     const h1s = html.match(/<h1\b/gi) || [];
     if (h1s.length !== 1) {
         errors.push(`${r} should have exactly one h1, found ${h1s.length}`);
+    }
+    // Social/SEO cards: indexed pages must carry the same OG/Twitter set as headBlock.
+    if (!/<meta\s+property=["']og:title["']/i.test(html)) {
+        errors.push(`${r} is missing an og:title tag`);
+    }
+    if (!/<meta\s+property=["']og:image["']/i.test(html)) {
+        errors.push(`${r} is missing an og:image tag`);
+    }
+    if (!/<meta\s+name=["']twitter:card["']/i.test(html)) {
+        errors.push(`${r} is missing a twitter:card tag`);
     }
 }
 

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { pageShell, breadcrumbs, finalCta, SITE } from "./partials.mjs";
+import { pageShell, breadcrumbs, finalCta, SITE, ROBOTS_NOINDEX } from "./partials.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -31,13 +31,32 @@ const grid = workCards
     })
     .join("\n                ");
 
+const workSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Case studies",
+    description: "SaaS MVPs, reporting dashboards, automation and internal tools built and handed over by Standen.",
+    url: `${SITE}/work`,
+    isPartOf: { "@id": "https://www.standen.io/#website" },
+    mainEntity: {
+        "@type": "ItemList",
+        itemListElement: workCards.map((c, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            url: `${SITE}${c.href.replace(/\.html$/, "")}`,
+            name: c.title,
+        })),
+    },
+};
+
 write(
     "work.html",
     pageShell({
         title: "Case Studies | Custom Software & SaaS | Standen",
-        description: "Standen case studies: SaaS MVPs, reporting dashboards, automation and internal tools for agencies and founders. Delivered in 6–21 days.",
+        description: "Standen case studies: SaaS MVPs, reporting dashboards, automation and internal tools for agencies and founders. Delivered in 6-21 days.",
         canonical: `${SITE}/work`,
         activeNav: "work",
+        schema: workSchema,
         body: `
         <section class="work work--page">
             <div class="wrap">
@@ -97,7 +116,7 @@ const blogPosts = [
     {
         href: "/blog/web-development-hampshire-what-to-expect.html",
         img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
-        alt: "Web development in Hampshire",
+        alt: "Fixed-scope product studio delivery",
         date: "2025-01-08",
         title: "What to expect from a fixed-scope product studio",
         excerpt: "Timelines, communication, and how Standen delivers scoped SaaS and custom software builds for agencies and founders.",
@@ -146,6 +165,7 @@ write(
         description:
             "Insights on SaaS development, custom software and delivery from Standen. Scoping, building and launching software for agencies.",
         canonical: `${SITE}/blog`,
+        robots: ROBOTS_NOINDEX,
         activeNav: "",
         body: `
         <section class="blog-page">

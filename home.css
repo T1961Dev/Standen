@@ -240,10 +240,11 @@ h3 {
 }
 
 .brand-name {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    text-transform: lowercase;
+    color: var(--ink-plum);
 }
 
 .nav-links {
@@ -1119,7 +1120,7 @@ h3 {
 .hero-visual {
     position: relative;
     width: 100%;
-    min-height: clamp(280px, 42vw, 520px);
+    aspect-ratio: 1280 / 800;
     border-radius: 16px;
     border: 1px solid var(--line-soft);
     background: var(--surface);
@@ -1130,7 +1131,6 @@ h3 {
     display: block;
     width: 100%;
     height: 100%;
-    min-height: clamp(280px, 42vw, 520px);
     object-fit: cover;
     object-position: center top;
 }
@@ -1162,11 +1162,26 @@ h3 {
 }
 
 .trust-logos li {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: rgba(26, 23, 21, 0.35);
-    text-transform: lowercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.trust-logos img {
+    display: block;
+    max-height: clamp(28px, 4vw, 40px);
+    max-width: clamp(88px, 14vw, 140px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.45;
+    filter: grayscale(100%);
+    transition: opacity 0.25s var(--ease);
+}
+
+.trust-logos img:hover {
+    opacity: 0.75;
 }
 
 /* Work / case studies */
@@ -1642,7 +1657,7 @@ main > .notes.guides-page:first-child {
 .case-study__hero {
     margin-top: clamp(40px, 5vw, 56px);
     margin-bottom: clamp(32px, 4vw, 48px);
-    border-radius: 8px;
+    border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--line-soft);
     aspect-ratio: 16 / 9;
@@ -1661,12 +1676,12 @@ main > .notes.guides-page:first-child {
 .case-study__hero--logo {
     aspect-ratio: auto;
     max-height: none;
-    min-height: clamp(200px, 28vw, 280px);
-    padding: clamp(48px, 8vw, 80px);
+    min-height: clamp(150px, 17vw, 200px);
+    padding: clamp(28px, 4vw, 48px);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1b0624 0%, #2d1540 100%);
+    background: var(--surface);
 }
 
 .case-study__hero--logo img {
@@ -1678,7 +1693,8 @@ main > .notes.guides-page:first-child {
 }
 
 .case-study__content {
-    padding: clamp(48px, 6vw, 72px) 0 clamp(80px, 10vw, 120px);
+    padding-top: clamp(48px, 6vw, 72px);
+    padding-bottom: clamp(80px, 10vw, 120px);
 }
 
 .case-study__stats {
@@ -1693,7 +1709,7 @@ main > .notes.guides-page:first-child {
     gap: 10px;
     padding: clamp(20px, 2.5vw, 28px);
     border: 1px solid var(--line-soft);
-    border-radius: 8px;
+    border-radius: 16px;
     background: #fff;
 }
 
@@ -1732,7 +1748,7 @@ main > .notes.guides-page:first-child {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--line-soft);
-    border-radius: 8px;
+    border-radius: 16px;
     background: #fff;
     overflow: hidden;
 }
@@ -1838,7 +1854,7 @@ main > .notes.guides-page:first-child {
     margin-top: clamp(32px, 4vw, 48px);
     padding: clamp(28px, 3.5vw, 40px);
     border: 1px solid var(--line-soft);
-    border-radius: 8px;
+    border-radius: 16px;
     background: var(--surface);
 }
 
@@ -1868,10 +1884,6 @@ main > .notes.guides-page:first-child {
 @media (max-width: 960px) {
     .case-study__grid,
     .case-study__grid--split {
-        grid-template-columns: 1fr;
-    }
-
-    .pricing-cards {
         grid-template-columns: 1fr;
     }
 
@@ -2131,6 +2143,15 @@ main > .notes.guides-page:first-child {
     background:
         radial-gradient(circle at 70% 40%, rgba(26, 23, 21, 0.08), transparent 50%),
         linear-gradient(145deg, #ebe8e0 0%, #f5f3ed 100%);
+}
+
+.quote-visual__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+    object-position: center 30%;
 }
 
 /* Product modules */
@@ -2969,6 +2990,14 @@ main > .notes.guides-page:first-child {
     gap: 10px;
 }
 
+@media (max-width: 960px) {
+    .pricing-cards {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin-inline: auto;
+    }
+}
+
 /* Notes */
 .notes {
     padding: clamp(80px, 10vw, 120px) 0;
@@ -3191,6 +3220,7 @@ main > .notes.guides-page:first-child {
 }
 
 .final-cta .btn {
+    display: inline-flex;
     margin-top: 32px;
 }
 
@@ -3252,7 +3282,8 @@ main > .notes.guides-page:first-child {
 @media (max-width: 1024px) {
     .module-title-row {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
     }
 
     .module-body,
@@ -3292,8 +3323,8 @@ main > .notes.guides-page:first-child {
         min-width: 0;
     }
 
-    .nav-links,
-    .nav-cta {
+    .site-nav .nav-links,
+    .site-nav .nav-cta {
         display: none;
     }
 
@@ -3371,7 +3402,6 @@ main > .notes.guides-page:first-child {
     }
 
     .hero-visual {
-        min-height: clamp(220px, 56vw, 320px);
         border-radius: 12px;
     }
 
@@ -3388,8 +3418,9 @@ main > .notes.guides-page:first-child {
         margin-top: 24px;
     }
 
-    .trust-logos li {
-        font-size: 13px;
+    .trust-logos img {
+        max-height: 32px;
+        max-width: 108px;
     }
 
     .metrics h2,
@@ -3513,6 +3544,229 @@ main > .notes.guides-page:first-child {
         flex-direction: column;
         align-items: center;
     }
+
+    .hero-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero h1 {
+        margin-inline: auto;
+    }
+
+    .hero-lead {
+        margin-inline: auto;
+    }
+
+    .trust-logos {
+        justify-content: center;
+    }
+
+    .metrics h2,
+    .services-head,
+    .services-head h2,
+    .services-lead,
+    .pricing-head,
+    .pricing-head h2,
+    .pricing-lead,
+    .ownership h2,
+    .ownership-lead,
+    .process-head,
+    .process-head__intro,
+    .process h2,
+    .process-lead,
+    .seo-faq h2,
+    .seo-faq--center h2 {
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    .services-head,
+    .pricing-head,
+    .ownership-grid > div:first-child,
+    .process-head {
+        max-width: none;
+    }
+
+    .services-head .module-tag,
+    .ownership .module-tag,
+    .process-head .module-tag,
+    .pricing-head .module-tag {
+        margin-inline: auto;
+    }
+
+    .stat,
+    .stat-label {
+        text-align: center;
+    }
+
+    .stat-num {
+        justify-content: center;
+    }
+
+    .value-card {
+        align-items: center;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .value-card p {
+        max-width: none;
+        margin-inline: auto;
+    }
+
+    .value-card__link {
+        justify-content: center;
+    }
+
+    .work-card__body {
+        text-align: center;
+    }
+
+    .work-card__link {
+        justify-content: center;
+    }
+
+    .services-card__top {
+        justify-content: center;
+    }
+
+    .services-card__body {
+        align-items: center;
+        text-align: center;
+    }
+
+    .services-card__features li {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .services-card__link {
+        justify-content: center;
+    }
+
+    .quote-card blockquote {
+        align-items: center;
+        text-align: center;
+    }
+
+    .ownership-grid > div:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ownership .btn {
+        align-self: center;
+    }
+
+    .ownership-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .process-lead {
+        justify-self: center;
+        text-align: center;
+    }
+
+    .process-step {
+        text-align: center;
+    }
+
+    .process-step__head {
+        justify-content: center;
+    }
+
+    .process-step__points li {
+        padding-left: 0;
+    }
+
+    .process-step__points li::before {
+        position: static;
+        display: inline-block;
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+
+    .pricing-card__inner {
+        align-items: center;
+        text-align: center;
+    }
+
+    .pricing-card__badges {
+        justify-content: center;
+    }
+
+    .pricing-card__timeline {
+        align-self: center;
+    }
+
+    .pricing-card__list li {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .seo-faq--center .seo-faq__item summary,
+    .seo-faq__item summary {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .seo-faq--center .seo-faq__item p,
+    .seo-faq__item p {
+        text-align: center;
+    }
+
+    .seo-faq__list {
+        margin-inline: auto;
+    }
+
+    .breadcrumbs ol {
+        justify-content: center;
+    }
+
+    .guide-article__head,
+    .guide-article__head h1,
+    .guide-article__body,
+    .guide-article__lead {
+        text-align: center;
+    }
+
+    .guide-article__back {
+        margin-inline: auto;
+    }
+
+    .guide-article__close {
+        text-align: center;
+    }
+
+    .guide-article__close .btn {
+        margin-inline: auto;
+    }
+
+    .mobile-menu a:not(.btn) {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .module-title-row {
+        align-items: center;
+        text-align: center;
+    }
+
+    .case-study__head,
+    .case-study__head h1,
+    .case-study__lead {
+        text-align: center;
+    }
+
+    .case-study__actions {
+        align-items: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -3523,7 +3777,7 @@ main > .notes.guides-page:first-child {
     }
 
     .trust-logos {
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .guides-bento-row {

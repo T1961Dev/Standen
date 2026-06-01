@@ -8,6 +8,7 @@ import {
     finalCta,
     SITE,
     escapeHtml,
+    ROBOTS_NOINDEX,
 } from "./partials.mjs";
 import { renderGuideBody } from "./guides-content.mjs";
 
@@ -153,6 +154,7 @@ function renderGuide(guide) {
         description: guide.excerpt,
         canonical: url,
         activeNav: "guides",
+        robots: ROBOTS_NOINDEX,
         ogType: "article",
         schema: {
             "@context": "https://schema.org",
@@ -195,6 +197,7 @@ write(
         description: "Free guides for agencies, proposals, reporting, client portals, operations and custom software. Practical build notes from Standen.",
         canonical: `${SITE}/guides`,
         activeNav: "guides",
+        robots: ROBOTS_NOINDEX,
         extraScripts: `
     <script src="/guides-data.js"></script>
     <script src="/guides.js"></script>`,
