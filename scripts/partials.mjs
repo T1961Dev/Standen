@@ -2,8 +2,17 @@ import { serviceHref, servicesHubHref } from "./service-anchors.mjs";
 
 const SITE = "https://www.standen.io";
 const CALENDLY = "https://calendly.com/standen/discovery-call";
-const CTA_LABEL = "Book a Free Consultation";
-const CONTACT_EMAIL = "hello@standen.io";
+const CTA_LABEL = "Book a call";
+const FOOTER_TAGLINE =
+    "Custom software and SaaS for founders and agencies. Fixed-scope tiers from 14 to 30 days. You own everything.";
+const CONTACT_EMAIL = "tomas@standen.io";
+const CTA_ARROW =
+    '<span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+
+export function accentCtaButton(extraClass = "nav-cta") {
+    const classes = extraClass ? `btn btn--accent ${extraClass}` : "btn btn--accent nav-cta";
+    return `<a href="${CALENDLY}" class="${classes}" target="_blank" rel="noopener"><span class="btn__text">${CTA_LABEL}</span>${CTA_ARROW}</a>`;
+}
 const LINKEDIN_URL = "https://www.linkedin.com/in/tomas-jones1/";
 
 export function headBlock({ title, description, canonical, ogType = "website", schema }) {
@@ -39,7 +48,6 @@ export function headBlock({ title, description, canonical, ogType = "website", s
 export function navBlock(active = "") {
     const servicesActive = active === "services" ? ' aria-current="page"' : "";
     const workActive = active === "work" ? ' aria-current="page"' : "";
-    const guidesActive = active === "guides" ? ' aria-current="page"' : "";
     return `    <header class="site-nav" id="top">
         <div class="nav-inner">
             <a class="brand" href="/" aria-label="Standen home">
@@ -49,7 +57,7 @@ export function navBlock(active = "") {
                 <a href="/#services"${servicesActive}>Services</a>
                 <a href="/work.html"${workActive}>Work</a>
                 <a href="/#process">Process</a>
-                <a href="/guides.html"${guidesActive}>Guides</a>
+                <a href="/#pricing">Pricing</a>
             </nav>
             <a href="${CALENDLY}" class="btn btn--accent nav-cta" target="_blank" rel="noopener"><span class="btn__text">${CTA_LABEL}</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
             <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
@@ -58,7 +66,7 @@ export function navBlock(active = "") {
             <a href="/#services">Services</a>
             <a href="/work.html">Work</a>
             <a href="/#process">Process</a>
-            <a href="/guides.html">Guides</a>
+            <a href="/#pricing">Pricing</a>
             <a href="${CALENDLY}" class="btn btn--accent" target="_blank" rel="noopener"><span class="btn__text">${CTA_LABEL}</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         </nav>
     </header>`;
@@ -71,7 +79,7 @@ export function footerBlock() {
                 <a class="brand" href="/">
                     <span class="brand-name">Standen</span>
                 </a>
-                <p class="footer-tagline">Custom software and SaaS for agencies. Built in 14 days. You own everything.</p>
+                <p class="footer-tagline">${FOOTER_TAGLINE}</p>
                 <div class="footer-contact">
                     <a href="mailto:${CONTACT_EMAIL}" class="footer-contact__email">${CONTACT_EMAIL}</a>
                     <a href="${LINKEDIN_URL}" class="footer-contact__linkedin" target="_blank" rel="noopener noreferrer" aria-label="Tomas Jones on LinkedIn">
@@ -92,16 +100,8 @@ export function footerBlock() {
             <nav aria-label="Company">
                 <h2>Company</h2>
                 <a href="/work.html">Work</a>
-                <a href="/about.html">About</a>
                 <a href="/#process">Process</a>
                 <a href="/#pricing">Pricing</a>
-            </nav>
-            <nav aria-label="Resources">
-                <h2>Resources</h2>
-                <a href="/guides.html">Guides</a>
-                <a href="/audit.html">Ops audit</a>
-                <a href="/compare/index.html">Compare</a>
-                <a href="/blog.html">Blog</a>
             </nav>
         </div>
         <div class="wrap footer-bottom footer-bottom--enterprise">
@@ -160,8 +160,11 @@ export function faqSchema(faqs) {
     };
 }
 
-export function finalCta(heading = "Have a workflow your agency has outgrown?", text = "Book a short call. We&rsquo;ll map the simplest system worth building first.") {
-    return `<section class="final-cta" aria-labelledby="page-cta"><div class="wrap"><h2 id="page-cta">${heading}</h2><p>${text}</p><a href="${CALENDLY}" class="btn btn--accent btn--lg" target="_blank" rel="noopener"><span class="btn__text">${CTA_LABEL}</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div></section>`;
+export function finalCta(
+    heading = "Ready to scope your next build?",
+    text = "Book a short call. We&rsquo;ll map the simplest system worth building first."
+) {
+    return `<section class="final-cta" aria-labelledby="page-cta"><div class="wrap"><h2 id="page-cta">${heading}</h2><p>${text}</p>${accentCtaButton()}</div></section>`;
 }
 
 export function pageShell({ title, description, canonical, body, activeNav, schema, ogType, extraScripts = "" }) {

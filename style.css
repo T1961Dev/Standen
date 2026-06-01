@@ -29,7 +29,7 @@
     --btn-primary-text: var(--white);
     --page-padding-x: 32px;
     --content-max-width: 1200px;
-    /* Type scale — same style = same size */
+    /* Type scale, same style = same size */
     --text-h1: clamp(3.5rem, 7vw, 6rem);
     --text-h2: clamp(2.25rem, 4.5vw, 3.25rem);
     --text-h3: 1.25rem;
@@ -112,7 +112,7 @@ body::before {
     opacity: 0.42;
 }
 
-/* —— Global animations —— */
+/* Global animations */
 @keyframes fade-in-up {
     from {
         opacity: 0;
@@ -193,7 +193,7 @@ body::before {
     color: var(--white);
 }
 
-/* —— Nav (dark green bg, white text — Superside) —— */
+/* Nav (dark green bg, white text, Superside) */
 .nav-shell {
     width: 100%;
     background: transparent;
@@ -369,7 +369,7 @@ a.brand:hover {
     transform: rotate(180deg);
 }
 
-/* —— Dropdown panel: starts at bottom of navbar, height = content + padding only —— */
+/* Dropdown panel: starts at bottom of navbar, height = content + padding only */
 .dropdown-panel {
     position: fixed;
     left: 0;
@@ -649,7 +649,7 @@ a.brand:hover {
     transform: scaleX(1);
 }
 
-/* —— Hero (centre-aligned, lime highlights) —— */
+/* Hero (centre-aligned, lime highlights) */
 .hero {
     width: 100%;
     padding: 60px var(--page-padding-x);
@@ -713,7 +713,7 @@ a.brand:hover {
     animation-fill-mode: both;
 }
 
-/* Slider — from reference: overflow hidden, ::before/::after edge fade, track translate -50% for infinite loop */
+/* Slider, from reference: overflow hidden, ::before/::after edge fade, track translate -50% for infinite loop */
 .slider {
     position: relative;
     width: min(960px, 100%);
@@ -856,7 +856,7 @@ a.brand:hover {
     justify-content: center;
 }
 
-/* —— Trusted by / Company carousel (inside hero, light text) —— */
+/* Trusted by / Company carousel (inside hero, light text) */
 .hero .carousel {
     width: 100%;
     padding: 64px 0 80px;
@@ -928,7 +928,7 @@ a.brand:hover {
     100% { transform: translateX(-50%); }
 }
 
-/* —— Section wrapper —— */
+/* Section wrapper */
 .section {
     position: relative;
     z-index: 1;
@@ -955,7 +955,7 @@ a.brand:hover {
     padding-bottom: 100px;
 }
 
-/* About section — content from about page, centre-aligned, same padding as other sections */
+/* About section, content from about page, centre-aligned, same padding as other sections */
 .section-inner--about-centre {
     text-align: center;
 }
@@ -972,7 +972,7 @@ a.brand:hover {
     margin-bottom: 0;
 }
 
-/* —— Two-column section (New era / Support) —— */
+/* Two-column section (New era / Support) */
 .section--two-col .section-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1069,7 +1069,7 @@ a.brand:hover {
     margin-bottom: 12px;
 }
 
-/* —— Service pages (SaaS / Custom Software) —— */
+/* Service pages (SaaS / Custom Software) */
 .page--service {
     padding: 0;
     position: relative;
@@ -1449,7 +1449,7 @@ a.brand:hover {
     clip-path: polygon(28% 22%, 28% 78%, 78% 50%);
 }
 
-/* —— Talent section (reverse layout on desktop) —— */
+/* Talent section (reverse layout on desktop) */
 .section--talent .section-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1469,7 +1469,7 @@ a.brand:hover {
     min-height: 300px;
 }
 
-/* —— Stats section —— */
+/* Stats section */
 .section-label--center,
 .section-body--center {
     text-align: center;
@@ -1523,7 +1523,7 @@ a.brand:hover {
     opacity: 0.75;
 }
 
-/* —— CTA section (light bg, dark pill buttons — reference style) —— */
+/* CTA section (light bg, dark pill buttons, reference style) */
 .section--cta {
     background: transparent;
     border-top: none;
@@ -1609,7 +1609,7 @@ a.brand:hover {
     margin-top: 40px;
 }
 
-/* —— Compare (Freelancer vs Standen) —— */
+/* Compare (Freelancer vs Standen) */
 .section--compare {
     background: transparent;
 }
@@ -1728,7 +1728,7 @@ a.brand:hover {
     margin-right: auto;
 }
 
-/* —— Why us (3 columns) —— */
+/* Why us (3 columns) */
 .why-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1782,7 +1782,7 @@ a.brand:hover {
     opacity: 0.88;
 }
 
-/* —— Services section —— */
+/* Services section */
 .services-grid {
     display: flex;
     flex-wrap: wrap;
@@ -1842,7 +1842,7 @@ a.brand:hover {
     opacity: 0.85;
 }
 
-/* —— Our work grid (reference: header row + 3x2 grid, live images) —— */
+/* Our work grid (reference: header row + 3x2 grid, live images) */
 .section--work .section-inner {
     padding-top: 80px;
 }
@@ -1944,7 +1944,7 @@ a.brand:hover {
     font-size: var(--text-caption);
 }
 
-/* —— Process section (light, same as rest of page) —— */
+/* Process section (light, same as rest of page) */
 .section--process {
     background: transparent;
 }
@@ -2023,7 +2023,7 @@ a.brand:hover {
     color: var(--btn-primary-text);
 }
 
-/* —— Testimonials (Client stories — improved card style) —— */
+/* Testimonials (Client stories, improved card style) */
 .section-inner--testimonials {
     max-width: var(--content-max-width);
     padding-top: 100px;
@@ -2232,7 +2232,7 @@ a.brand:hover {
     background: rgba(var(--charcoal-rgb), 0.04);
 }
 
-/* —— Footer —— */
+/* Footer */
 .footer {
     background: var(--charcoal);
     padding: 56px var(--page-padding-x) 36px;
@@ -2449,7 +2449,7 @@ a.footer-logo:hover img {
     opacity: 0.9;
 }
 
-/* —— Blog listing and post —— */
+/* Blog listing and post */
 .section--blog .section-inner {
     padding-top: 80px;
     padding-bottom: 100px;
@@ -2610,7 +2610,7 @@ a.footer-logo:hover img {
     font-weight: 600;
 }
 
-/* —— Resources page —— */
+/* Resources page */
 .resources-guides,
 .resources-faqs {
     margin-top: 56px;
@@ -2757,7 +2757,7 @@ a.footer-logo:hover img {
     margin: 0;
 }
 
-/* —— Case study page (dynamic) —— */
+/* Case study page (dynamic) */
 .case-study-page .section-inner {
     padding-top: 48px;
     padding-bottom: 80px;
@@ -2871,7 +2871,7 @@ a.footer-logo:hover img {
     margin-top: 16px;
 }
 
-/* —— Pricing section —— */
+/* Pricing section */
 .section--pricing .section-inner {
     text-align: center;
 }
@@ -2900,7 +2900,7 @@ a.footer-logo:hover img {
     margin-bottom: 32px;
 }
 
-/* —— Contact form —— */
+/* Contact form */
 .contact-form {
     max-width: 560px;
     margin: 32px auto 0;
@@ -2960,7 +2960,7 @@ a.footer-logo:hover img {
     width: 100%;
 }
 
-/* —— Work card (case study) placeholder —— */
+/* Work card (case study) placeholder */
 .work-card--coming-soon {
     pointer-events: none;
     opacity: 0.85;
@@ -2974,7 +2974,7 @@ a.footer-logo:hover img {
     font-style: italic;
 }
 
-/* —— Legal pages (Privacy, Terms) —— */
+/* Legal pages (Privacy, Terms) */
 .legal-page .section-inner {
     padding-top: 48px;
     padding-bottom: 80px;
@@ -3009,7 +3009,7 @@ a.footer-logo:hover img {
     margin-top: 40px;
 }
 
-/* —— Mobile nav: hamburger, overlay, drawer —— */
+/* Mobile nav: hamburger, overlay, drawer */
 .nav-toggle {
     display: none;
     width: 44px;
@@ -3099,7 +3099,7 @@ a.footer-logo:hover img {
     width: fit-content;
 }
 
-/* —— Section responsive —— */
+/* Section responsive */
 @media (max-width: 900px) {
     .section--two-col .section-inner,
     .section--talent .section-inner {
@@ -3380,7 +3380,7 @@ a.footer-logo:hover img {
         overflow: visible;
     }
 
-    /* Mobile: flexbox per row — criteria full width, then two icon cells side by side */
+    /* Mobile: flexbox per row, criteria full width, then two icon cells side by side */
     .compare-grid {
         display: block;
         width: 100%;

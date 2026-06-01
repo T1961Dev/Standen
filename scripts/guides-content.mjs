@@ -528,8 +528,13 @@ const GUIDE_CONTENT = {
                 ],
             },
             {
-                h2: "Typical first builds from £5,000",
-                p: ["Proposal flow, reporting dashboard, client portal slice, or internal queue, one per phase."],
+                h2: "Typical fixed-scope tiers",
+                ul: [
+                    "Launch: from £5,000, shipped in 14 days (single user type, up to 3 core screens).",
+                    "Scale: from £9,500, shipped in 21 days (multiple roles, integrations, billing logic).",
+                    "Enterprise: from £18,000, shipped in 30 days (compliance, SSO, unlimited screens).",
+                ],
+                p: ["One workflow per phase: proposal flow, reporting dashboard, client portal slice, or internal queue."],
             },
         ],
     },

@@ -62,7 +62,7 @@ renderLegal({
         "<h2>Legal basis</h2><p>We process personal data where necessary for contract performance, legitimate interests (e.g. improving our services) or with your consent where required.</p>",
         "<h2>Retention and security</h2><p>We retain data only as long as needed for the purposes above or as required by law. We use appropriate technical and organisational measures to protect your data.</p>",
         "<h2>Your rights</h2><p>You have the right to access, rectify, erase, restrict processing, object and data portability where applicable. You may lodge a complaint with a supervisory authority. To exercise your rights, contact us at the details on our website.</p>",
-        "<h2>Contact</h2><p>For privacy enquiries, email <a href=\"mailto:hello@standen.io\">hello@standen.io</a>.</p>",
+        "<h2>Contact</h2><p>For privacy enquiries, email <a href=\"mailto:tomas@standen.io\">tomas@standen.io</a>.</p>",
     ],
 });
 
@@ -78,7 +78,7 @@ renderLegal({
         "<h2>Intellectual property</h2><p>Content on this website (text, design, logos) is owned by Standen or licensed to us. You may not copy, modify or distribute it without our prior written consent. Work we create for you is governed by the terms of your project agreement.</p>",
         "<h2>Limitation of liability</h2><p>To the fullest extent permitted by law, we exclude liability for indirect, consequential or special loss arising from your use of the website or our services. Our total liability in connection with any contract shall not exceed the fees paid by you for the relevant project.</p>",
         "<h2>Changes</h2><p>We may update these terms from time to time. The last updated date at the top indicates when they were last revised. Continued use of the site after changes constitutes acceptance.</p>",
-        "<h2>Contact</h2><p>For questions about these terms, email <a href=\"mailto:hello@standen.io\">hello@standen.io</a>.</p>",
+        "<h2>Contact</h2><p>For questions about these terms, email <a href=\"mailto:tomas@standen.io\">tomas@standen.io</a>.</p>",
     ],
 });
 
@@ -133,8 +133,8 @@ write(
 
 function faqSectionResources() {
     const faqs = [
-        { q: "How long does a typical build take?", a: "A focused first version usually ships in <strong>14 days</strong>. Larger SaaS MVPs often land in <strong>14 to 21 days</strong> depending on scope." },
-        { q: "What does it cost?", a: "First builds start from <strong>£5,000</strong> with fixed scope. You pay 50% upfront and 50% on handover." },
+        { q: "How long does a typical build take?", a: "Launch tier ships in <strong>14 days</strong>, Scale in <strong>21 days</strong>, and Enterprise in <strong>30 days</strong>, depending on scope." },
+        { q: "What does it cost?", a: "Launch starts from <strong>£5,000</strong>, Scale from <strong>£9,500</strong>, and Enterprise from <strong>£18,000</strong>, with fixed scope and full handover." },
         { q: "Do you work with agencies outside the UK?", a: "Yes. We are UK-based and work remotely with agencies worldwide." },
         { q: "What is your process?", a: "Discovery and scope, build in weekly sprints with demos, then handover with full code ownership." },
     ];

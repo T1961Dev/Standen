@@ -108,7 +108,7 @@ window.GUIDES = [
   {
     slug: "pricing-first-build",
     title: "Simple build pricing for agency systems",
-    excerpt: "One workflow. One system. From £5,000 with 50% upfront and full handover.",
+    excerpt: "Launch from £5,000, Scale from £9,500 and Enterprise from £18,000, with fixed scope and full handover.",
     category: "Pricing",
     readTime: "3 min",
     image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=520&fit=crop"

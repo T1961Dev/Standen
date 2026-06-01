@@ -67,9 +67,9 @@
         return (
             "<section class=\"final-cta\" aria-labelledby=\"case-study-cta-heading\">" +
             "  <div class=\"wrap\">" +
-            "    <h2 id=\"case-study-cta-heading\">Have a workflow your agency has outgrown?</h2>" +
+            "    <h2 id=\"case-study-cta-heading\">Ready to scope your next build?</h2>" +
             "    <p>Book a short call. We&rsquo;ll map the simplest system worth building first.</p>" +
-            "    <a href=\"https://calendly.com/standen/discovery-call\" class=\"btn btn--accent btn--lg\" target=\"_blank\" rel=\"noopener\"><span class=\"btn__text\">Book a Free Consultation</span><span class=\"btn__arrow\" aria-hidden=\"true\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\"><path d=\"M2.5 6h7M6.5 3.5 9 6 6.5 8.5\" stroke=\"currentColor\" stroke-width=\"1.35\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a>" +
+            "    <a href=\"https://calendly.com/standen/discovery-call\" class=\"btn btn--accent nav-cta\" target=\"_blank\" rel=\"noopener\"><span class=\"btn__text\">Book a call</span><span class=\"btn__arrow\" aria-hidden=\"true\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\"><path d=\"M2.5 6h7M6.5 3.5 9 6 6.5 8.5\" stroke=\"currentColor\" stroke-width=\"1.35\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a>" +
             "  </div>" +
             "</section>"
         );
@@ -150,7 +150,7 @@
         "      <h1 id=\"case-study-title\">" + escapeHtml(study.title) + "</h1>" +
         "      <p class=\"case-study__lead\">" + escapeHtml(study.summary || "") + "</p>" +
         "      <div class=\"case-study__actions\">" +
-        "        <a href=\"https://calendly.com/standen/discovery-call\" class=\"btn btn--accent\" target=\"_blank\" rel=\"noopener\"><span class=\"btn__text\">Book a Free Consultation</span><span class=\"btn__arrow\" aria-hidden=\"true\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\"><path d=\"M2.5 6h7M6.5 3.5 9 6 6.5 8.5\" stroke=\"currentColor\" stroke-width=\"1.35\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a>" +
+        "        <a href=\"https://calendly.com/standen/discovery-call\" class=\"btn btn--accent\" target=\"_blank\" rel=\"noopener\"><span class=\"btn__text\">Book a call</span><span class=\"btn__arrow\" aria-hidden=\"true\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\"><path d=\"M2.5 6h7M6.5 3.5 9 6 6.5 8.5\" stroke=\"currentColor\" stroke-width=\"1.35\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a>" +
                liveLink +
         "      </div>" +
         "    </header>" +
@@ -164,21 +164,21 @@
         "    </div>" +
         "    <div class=\"case-study__grid reveal\">" +
         "      <section class=\"case-study__card\">" +
-        "        <div class=\"case-study__card__top\"><span class=\"module-tag\">The challenge</span></div>" +
+        "        <div class=\"case-study__card__top\"><h2 class=\"case-study__section-title\">The challenge</h2></div>" +
         "        <p>" + escapeHtml(study.problem || "") + "</p>" +
         "      </section>" +
         "      <section class=\"case-study__card\">" +
-        "        <div class=\"case-study__card__top\"><span class=\"module-tag\">What we delivered</span></div>" +
+        "        <div class=\"case-study__card__top\"><h2 class=\"case-study__section-title\">What we delivered</h2></div>" +
         "        <p>" + escapeHtml(study.solution || "") + "</p>" +
         "      </section>" +
         "    </div>" +
         "    <div class=\"case-study__grid case-study__grid--split reveal\">" +
         "      <section class=\"case-study__card case-study__card--surface\">" +
-        "        <div class=\"case-study__card__top\"><span class=\"module-tag\">Results</span></div>" +
+        "        <div class=\"case-study__card__top\"><h2 class=\"case-study__section-title\">Results</h2></div>" +
         "        <ul class=\"case-study__results\">" + listHtml(study.results) + "</ul>" +
         "      </section>" +
         "      <section class=\"case-study__card\">" +
-        "        <div class=\"case-study__card__top\"><span class=\"module-tag\">Stack and workflow</span></div>" +
+        "        <div class=\"case-study__card__top\"><h2 class=\"case-study__section-title\">Stack and workflow</h2></div>" +
         "        <div class=\"case-study__pills\">" + pillHtml(study.stack) + "</div>" +
         "      </section>" +
         "    </div>" +

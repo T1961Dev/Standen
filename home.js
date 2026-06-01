@@ -61,4 +61,16 @@
         }
     });
 
+    var faqItems = document.querySelectorAll("#faq .seo-faq__item");
+    if (faqItems.length) {
+        faqItems.forEach(function (item) {
+            item.addEventListener("toggle", function () {
+                if (!item.open) return;
+                faqItems.forEach(function (other) {
+                    if (other !== item && other.open) other.open = false;
+                });
+            });
+        });
+    }
+
 })();

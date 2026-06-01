@@ -6,6 +6,54 @@ import { SERVICE_ANCHORS } from "./service-anchors.mjs";
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const content = JSON.parse(fs.readFileSync(path.join(ROOT, "content/enterprise.json"), "utf8"));
 
+const HOMEPAGE_ORDER = [
+    "saas-mvp-development",
+    "internal-tools-for-agencies",
+    "agency-proposal-systems",
+    "agency-reporting-dashboard",
+    "agency-client-portal",
+    "agency-internal-crm",
+];
+
+const HOMEPAGE_COPY = {
+    "saas-mvp-development": {
+        h1: "SaaS MVP development",
+        lead: "From scoped idea to live product with auth, billing-ready architecture and full handover. OhMyPod shipped in 21 days.",
+        features: ["Auth and billing-ready architecture", "Private live link from day one"],
+        link: "SaaS MVP builds",
+    },
+    "internal-tools-for-agencies": {
+        h1: "Custom software and internal tools",
+        lead: "Replace spreadsheet glue with owned software: lead routers, data pipelines, automation and ops dashboards built around how your team already works.",
+        features: ["API and CRM integrations", "Replace manual copy-paste work"],
+        link: "Custom software",
+    },
+    "agency-proposal-systems": {
+        h1: "Proposal and quoting systems",
+        lead: "Send proposals while the buyer still remembers the call, with scope, pricing and approvals in one owned system, not another Google Doc.",
+        features: ["Scoped pricing and approval chains", "Version history and buyer-ready export"],
+        link: "Proposal systems",
+    },
+    "agency-reporting-dashboard": {
+        h1: "Reporting dashboards",
+        lead: "Pull analytics, ads and CRM data into one live view for clients or internal teams, and stop rebuilding the same deck every month.",
+        features: ["Live KPIs per account", "GA4, ads and CRM in one view"],
+        link: "Reporting dashboards",
+    },
+    "agency-client-portal": {
+        h1: "Client and customer portals",
+        lead: "Move delivery out of Slack threads and email. One secure portal for status, files and approvals your users actually open.",
+        features: ["Status, files and approvals in one place", "Branded portal experience"],
+        link: "Client portals",
+    },
+    "agency-internal-crm": {
+        h1: "Internal ops and delivery queues",
+        lead: "Route work, track delivery and surface blockers in one workspace your team actually opens.",
+        features: ["Lead routing and delivery queues", "Founder view of blockers and workload"],
+        link: "Internal ops",
+    },
+};
+
 const MOCKS = {
     "agency-proposal-systems": `<div class="mock-proposal">
         <div class="mock-proposal__head"><strong>Q2 Retainer</strong><span>Draft</span></div>
@@ -56,33 +104,17 @@ const MOCKS = {
     </div>`,
 };
 
-const FEATURES = {
-    "agency-proposal-systems": ["Scoped pricing and approval chains", "Version history and buyer-ready export"],
-    "agency-reporting-dashboard": ["Live KPIs per client", "GA4, ads and CRM in one view"],
-    "agency-client-portal": ["Status, files and approvals in one place", "Branded portal your clients open"],
-    "agency-internal-crm": ["Lead routing and delivery queues", "Founder view of blockers and workload"],
-    "saas-mvp-development": ["Auth, billing-ready architecture", "Private live link from day one"],
-    "internal-tools-for-agencies": ["Slack, Notion and CRM integrations", "Replace spreadsheet glue work"],
-};
-
-const LINK_LABELS = {
-    "agency-proposal-systems": "Proposal systems",
-    "agency-reporting-dashboard": "Reporting dashboards",
-    "agency-client-portal": "Client portals",
-    "agency-internal-crm": "Internal CRM",
-    "saas-mvp-development": "SaaS MVP builds",
-    "internal-tools-for-agencies": "Internal tools",
-};
-
 function card(svc, i) {
     const id = SERVICE_ANCHORS[svc.slug] || svc.slug;
     const delay = i ? ` style="--reveal-delay: ${i * 60}ms"` : "";
-    const delivery = svc.slug === "saas-mvp-development" ? "14 to 21 days" : "14 days";
+    const delivery = "14 to 30 days";
     const mock = MOCKS[svc.slug] || "";
-    const features = (FEATURES[svc.slug] || [])
+    const copy = HOMEPAGE_COPY[svc.slug];
+    const features = (copy?.features || [])
         .map((f) => `<li>${f}</li>`)
         .join("");
-    const linkLabel = LINK_LABELS[svc.slug] || svc.tag;
+    const h1 = copy?.h1 || svc.h1;
+    const lead = copy?.lead || svc.lead;
 
     return `                <article id="${id}" class="services-card reveal"${delay}>
                     <div class="services-card__top">
@@ -91,23 +123,25 @@ function card(svc, i) {
                     </div>
                     <div class="services-card__visual" aria-hidden="true">${mock}</div>
                     <div class="services-card__body">
-                        <h3>${svc.h1}</h3>
-                        <p>${svc.lead}</p>
+                        <h3>${h1}</h3>
+                        <p>${lead}</p>
                         <ul class="services-card__features">${features}</ul>
-                        <span class="services-card__link">Explore ${linkLabel} <span aria-hidden="true">&gt;</span></span>
                     </div>
                 </article>`;
 }
+
+const servicesBySlug = Object.fromEntries(content.services.map((s) => [s.slug, s]));
+const orderedServices = HOMEPAGE_ORDER.map((slug) => servicesBySlug[slug]).filter(Boolean);
 
 const section = `        <section class="services" id="services" aria-labelledby="services-heading">
             <div class="wrap">
                 <header class="services-head reveal">
                     <span class="module-tag">Services</span>
-                    <h2 id="services-heading">What we build for agencies</h2>
-                    <p class="services-lead">Six focused systems. One owned codebase. Scoped and shipped in fixed sprints with full handover.</p>
+                    <h2 id="services-heading">What we build</h2>
+                    <p class="services-lead">SaaS MVPs, custom software and internal tools for founders and agencies. One owned codebase per build, scoped and shipped in fixed sprints.</p>
                 </header>
                 <div class="services-grid">
-${content.services.map(card).join("\n")}
+${orderedServices.map(card).join("\n")}
                 </div>
             </div>
         </section>`;

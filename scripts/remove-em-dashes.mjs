@@ -7,7 +7,7 @@ const SKIP_DIRS = new Set(["node_modules", ".git", ".cursor"]);
 const EXT = new Set([".html", ".json", ".js", ".mjs", ".xml"]);
 
 function fixEmDash(text) {
-    return text.replace(/\s*—\s*/g, ", ").replace(/—/g, ", ").replace(/,\s+,/g, ", ");
+    return text.replace(/\s*\u2014\s*/g, ", ").replace(/\u2014/g, ", ").replace(/,\s+,/g, ", ");
 }
 
 function fixColonArtifacts(text) {
@@ -30,7 +30,7 @@ for (const file of walk(ROOT)) {
     if (file.includes(`${path.sep}scripts${path.sep}remove-em-dashes.mjs`)) continue;
     let text = fs.readFileSync(file, "utf8");
     const orig = text;
-    if (text.includes("—") || text.includes("&mdash;")) {
+    if (text.includes("\u2014") || text.includes("&mdash;")) {
         text = fixEmDash(text.replace(/&mdash;/g, ","));
     }
     text = fixColonArtifacts(text);

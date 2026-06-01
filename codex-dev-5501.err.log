@@ -1,0 +1,17 @@
+C:\Users\tomas\OneDrive\Documents\Work and Business\Standen\dev-server.js:406
+    throw err;
+    ^
+
+Error: listen UNKNOWN: unknown error 127.0.0.1:5501
+    at Server.setupListenHandle [as _listen2] (node:net:1917:21)
+    at listenInCluster (node:net:1996:12)
+    at node:net:2205:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'UNKNOWN',
+  errno: -4094,
+  syscall: 'listen',
+  address: '127.0.0.1',
+  port: 5501
+}
+
+Node.js v22.16.0

@@ -44,7 +44,7 @@ write(
                 ${breadcrumbs([{ label: "Home", href: "/" }, { label: "Work", href: "/work" }])}
                 <header class="work-head reveal">
                     <h1>Case studies</h1>
-                    <p class="work-sub">Recent builds for agencies, founders and product teams: scoped, shipped and handed over with full ownership.</p>
+                    <p class="work-sub">Recent builds for founders and product teams: scoped, shipped and handed over with full ownership.</p>
                 </header>
                 <div class="work-grid">${grid}</div>
             </div>
@@ -56,8 +56,8 @@ write(
 write(
     "about.html",
     pageShell({
-        title: "About Standen | Custom Software for Agencies",
-        description: "Standen builds custom software and SaaS for B2B agencies. Founder-led, 14-day delivery, full code ownership. UK-based studio.",
+        title: "About Standen | Custom Software for Founders and Agencies",
+        description: "Standen builds custom software and SaaS for founders and agencies. Founder-led, fixed-scope tiers from 14 to 30 days, full code ownership. UK-based studio.",
         canonical: `${SITE}/about`,
         activeNav: "",
         body: `
@@ -66,8 +66,8 @@ write(
                 ${breadcrumbs([{ label: "Home", href: "/" }, { label: "About", href: "/about" }])}
                 <header class="guide-article__head">
                     <h1>About Standen</h1>
-                    <p class="guide-article__lead">We build custom software and SaaS for agencies: proposal systems, reporting dashboards, client portals and internal ops tools.</p>
-                    <p class="seo-answer">Standen is a UK-based studio led by Tomas Jones. We scope one workflow per build, ship in 14-day sprints, and hand over 100% of the codebase. No licence lock-in.</p>
+                    <p class="guide-article__lead">We build custom software and SaaS for founders and agencies: SaaS MVPs, proposal systems, reporting dashboards, client portals and internal ops tools.</p>
+                    <p class="seo-answer">Standen is a UK-based studio led by Tomas Jones. We scope one workflow per build, ship in fixed sprints (14, 21 or 30 days by tier), and hand over 100% of the codebase. No licence lock-in.</p>
                 </header>
                 <div class="guide-article__body">
                     <h2>How we work</h2>

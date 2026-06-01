@@ -65,12 +65,12 @@ for (const [id, study] of Object.entries(studies)) {
                     <div><span>Services</span><strong>${servicesLabel || "Custom build"}</strong></div>
                 </div>
                 <div class="case-study__grid">
-                    <section class="case-study__card"><div class="case-study__card__top"><span class="module-tag">The challenge</span></div><p>${study.problem || ""}</p></section>
-                    <section class="case-study__card"><div class="case-study__card__top"><span class="module-tag">What we delivered</span></div><p>${study.solution || ""}</p></section>
+                    <section class="case-study__card"><div class="case-study__card__top"><h2 class="case-study__section-title">The challenge</h2></div><p>${study.problem || ""}</p></section>
+                    <section class="case-study__card"><div class="case-study__card__top"><h2 class="case-study__section-title">What we delivered</h2></div><p>${study.solution || ""}</p></section>
                 </div>
                 <div class="case-study__grid case-study__grid--split">
-                    <section class="case-study__card case-study__card--surface"><div class="case-study__card__top"><span class="module-tag">Results</span></div><ul class="case-study__results">${results}</ul></section>
-                    <section class="case-study__card"><div class="case-study__card__top"><span class="module-tag">Stack and workflow</span></div><div class="case-study__pills">${pills}</div></section>
+                    <section class="case-study__card case-study__card--surface"><div class="case-study__card__top"><h2 class="case-study__section-title">Results</h2></div><ul class="case-study__results">${results}</ul></section>
+                    <section class="case-study__card"><div class="case-study__card__top"><h2 class="case-study__section-title">Stack and workflow</h2></div><div class="case-study__pills">${pills}</div></section>
                 </div>
                 ${quote}
             </div>

@@ -53,7 +53,7 @@ function standardizeAuditCtas(html) {
         .replace(/<img src="https:\/\/upload\.wikimedia\.org[^>]*>/g, "")
         .replace(/Book a (20 minute scoping call|software audit call|discovery call)/g, CTA_LABEL)
         .replace(
-            /<section class="audit-section audit-section--dark">[\s\S]*?Book a Free Consultation[\s\S]*?<\/section>\s*$/i,
+            /<section class="audit-section audit-section--dark">[\s\S]*?Book a call[\s\S]*?<\/section>\s*$/i,
             ""
         );
 }
@@ -96,7 +96,7 @@ const defaultBody = `
                     <a href="${CALENDLY}" class="btn btn--outline-light" target="_blank" rel="noopener">${CTA_LABEL}</a>
                 </div>
                 <div class="audit-pills">
-                    <span class="audit-pill">Built in 14 days</span>
+                    <span class="audit-pill">14 to 30 day builds</span>
                     <span class="audit-pill">Owned by you</span>
                     <span class="audit-pill">Money back if late</span>
                 </div>
@@ -117,7 +117,7 @@ const html = pageShell({
             <div class="wrap">${breadcrumbs([{ label: "Home", href: "/" }, { label: "Audit", href: "/audit" }])}</div>
             ${auditMain}
         </div>
-        ${finalCta("Ready to fix the workflow leak?", "If one of the 5 issues in this audit sounds familiar, we map the highest-value build and whether it fits inside 14 days.")}`,
+        ${finalCta("Ready to fix the workflow leak?", "If one of the 5 issues in this audit sounds familiar, we map the highest-value build and the right tier (14, 21 or 30 days).")}`,
 });
 
 fs.writeFileSync(OUT, html, "utf8");
