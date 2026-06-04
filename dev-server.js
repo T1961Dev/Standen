@@ -52,6 +52,7 @@ const REWRITE = {
   '/privacy': 'privacy.html',
   '/terms': 'terms.html',
   '/compare': 'compare/index.html',
+  '/agencies': 'agencies.html',
 };
 
 const SERVICE_REDIRECTS = {
@@ -59,7 +60,7 @@ const SERVICE_REDIRECTS = {
   'agency-reporting-dashboard': 'service-reporting',
   'agency-client-portal': 'service-portals',
   'agency-internal-crm': 'service-crm',
-  'saas-mvp-development': 'service-saas',
+  'saas-mvp-development': 'services',
   'internal-tools-for-agencies': 'service-internal',
 };
 

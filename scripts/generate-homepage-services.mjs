@@ -7,50 +7,38 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const content = JSON.parse(fs.readFileSync(path.join(ROOT, "content/enterprise.json"), "utf8"));
 
 const HOMEPAGE_ORDER = [
-    "saas-mvp-development",
     "internal-tools-for-agencies",
-    "agency-proposal-systems",
     "agency-reporting-dashboard",
+    "agency-proposal-systems",
     "agency-client-portal",
     "agency-internal-crm",
 ];
 
 const HOMEPAGE_COPY = {
-    "saas-mvp-development": {
-        h1: "SaaS MVP development",
-        lead: "From scoped idea to live product with auth, billing-ready architecture and full handover. OhMyPod shipped in 21 days.",
-        features: ["Auth and billing-ready architecture", "Private live link from day one"],
-        link: "SaaS MVP builds",
-    },
     "internal-tools-for-agencies": {
         h1: "Custom software and internal tools",
-        lead: "Replace spreadsheet glue with owned software: lead routers, data pipelines, automation and ops dashboards built around how your team already works.",
+        lead: "Automate the manual, repeated-per-client work in your delivery. Lead routers, data pipelines, qualification and research workflows, built around how your team already works.",
         features: ["API and CRM integrations", "Replace manual copy-paste work"],
-        link: "Custom software",
     },
     "agency-proposal-systems": {
         h1: "Proposal and quoting systems",
         lead: "Send proposals while the buyer still remembers the call, with scope, pricing and approvals in one owned system, not another Google Doc.",
         features: ["Scoped pricing and approval chains", "Version history and buyer-ready export"],
-        link: "Proposal systems",
     },
     "agency-reporting-dashboard": {
         h1: "Reporting dashboards",
-        lead: "Pull analytics, ads and CRM data into one live view for clients or internal teams, and stop rebuilding the same deck every month.",
+        lead: "Pull analytics, ads and CRM data into one live client-ready view, and stop rebuilding the same report every month.",
         features: ["Live KPIs per account", "GA4, ads and CRM in one view"],
-        link: "Reporting dashboards",
     },
     "agency-client-portal": {
         h1: "Client and customer portals",
         lead: "Move delivery out of Slack threads and email. One secure portal for status, files and approvals your users actually open.",
         features: ["Status, files and approvals in one place", "Branded portal experience"],
-        link: "Client portals",
     },
     "agency-internal-crm": {
         h1: "Internal ops and delivery queues",
         lead: "Route work, track delivery and surface blockers in one workspace your team actually opens.",
-        features: ["Lead routing and delivery queues", "Founder view of blockers and workload"],
-        link: "Internal ops",
+        features: ["Lead routing and delivery queues", "Delivery visibility for leads"],
     },
 };
 
@@ -85,15 +73,6 @@ const MOCKS = {
             <div><strong>Acme Co</strong><span>Design</span><em>On track</em></div>
             <div><strong>Bright Ltd</strong><span>Dev</span><em>Blocked</em></div>
         </div>
-    </div>`,
-    "saas-mvp-development": `<div class="mock-saas">
-        <div class="mock-saas__head"><strong>Product dashboard</strong><span>Live</span></div>
-        <div class="mock-saas__metrics">
-            <div><span>Users</span><strong>248</strong></div>
-            <div><span>MRR</span><strong>£4.2k</strong></div>
-            <div><span>Uptime</span><strong>99.9%</strong></div>
-        </div>
-        <div class="mock-saas__usage"><i style="--w:72%"></i></div>
     </div>`,
     "internal-tools-for-agencies": `<div class="mock-internal">
         <div class="mock-internal__flow"><span>Sheets</span><i aria-hidden="true"></i><span>Router</span><i aria-hidden="true"></i><span>CRM</span></div>
@@ -138,7 +117,7 @@ const section = `        <section class="services" id="services" aria-labelledby
                 <header class="services-head reveal">
                     <span class="module-tag">Services</span>
                     <h2 id="services-heading">What we build</h2>
-                    <p class="services-lead">SaaS MVPs, custom software and internal tools for founders and agencies. One owned codebase per build, scoped and shipped in fixed sprints.</p>
+                    <p class="services-lead">Internal tools, reporting, proposals, portals and ops software for B2B agencies. One owned codebase per build, scoped and shipped in fixed sprints.</p>
                 </header>
                 <div class="services-grid">
 ${orderedServices.map(card).join("\n")}

@@ -11,6 +11,17 @@ function write(rel, html) {
     console.log("wrote", rel);
 }
 
+const rethinkCard = `<article class="work-card work-card--static reveal">
+                    <div class="work-card__media work-card__media--logo">
+                        <img src="/pics/rethink.png" alt="Rethink Demand logo" width="220" height="80" loading="lazy" decoding="async">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__meta">Internal delivery tool · B2B demand-gen agency</p>
+                        <h3>Rethink Demand</h3>
+                        <p class="work-card__summary">A B2B demand generation agency was running part of its client delivery manually, repeating the same process for every account. We turned it into an internal tool the team owns and runs themselves, removing the manual step from their workflow.</p>
+                    </div>
+                </article>`;
+
 const workCards = [
     { href: "/case-studies/ohmypod.html", logo: true, img: "/assets/ohmypod-logo.png", alt: "OhMyPod logo", meta: "Custom SaaS MVP · 21 days", title: "OhMyPod", summary: "A podcast SaaS went from an idea in Tom&rsquo;s notes app to a live, owned product in 21 days." },
     { href: "/case-studies/fx-quant-research-platform.html", img: "/assets/quant.png", alt: "FX Quant Research Platform dashboard", meta: "Financial research platform · 12 days", title: "FX Quant Research Platform", summary: "A complete forex research platform for exploring price data, testing strategies, and turning market information into usable insight." },
@@ -35,7 +46,7 @@ const workSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Case studies",
-    description: "SaaS MVPs, reporting dashboards, automation and internal tools built and handed over by Standen.",
+    description: "Internal tools, reporting dashboards, automation and full-stack delivery software built and handed over by Standen.",
     url: `${SITE}/work`,
     isPartOf: { "@id": "https://www.standen.io/#website" },
     mainEntity: {
@@ -52,8 +63,8 @@ const workSchema = {
 write(
     "work.html",
     pageShell({
-        title: "Case Studies | Custom Software & SaaS | Standen",
-        description: "Standen case studies: SaaS MVPs, reporting dashboards, automation and internal tools for agencies and founders. Delivered in 6-21 days.",
+        title: "Case Studies | Internal Tools & Delivery Software | Standen",
+        description: "Standen case studies: internal delivery tools, reporting dashboards, automation and full-stack software for B2B agencies. Delivered in 6 to 21 days.",
         canonical: `${SITE}/work`,
         activeNav: "work",
         schema: workSchema,
@@ -62,10 +73,11 @@ write(
             <div class="wrap">
                 ${breadcrumbs([{ label: "Home", href: "/" }, { label: "Work", href: "/work" }])}
                 <header class="work-head reveal">
-                    <h1>Case studies</h1>
-                    <p class="work-sub">Recent builds for founders and product teams: scoped, shipped and handed over with full ownership.</p>
+                    <h1>What we can build</h1>
+                    <p class="work-sub">Every system below was scoped, built and shipped with full ownership. Different domains, same engineering. The range here is what we build into agency delivery: data pipelines, dashboards, automation, integrations and full-stack tools.</p>
                 </header>
-                <div class="work-grid">${grid}</div>
+                <div class="work-grid">${rethinkCard}
+                ${grid}</div>
             </div>
         </section>
         ${finalCta()}`,
@@ -75,8 +87,8 @@ write(
 write(
     "about.html",
     pageShell({
-        title: "About Standen | Custom Software for Founders and Agencies",
-        description: "Standen builds custom software and SaaS for founders and agencies. Founder-led, fixed-scope tiers from 14 to 30 days, full code ownership. UK-based studio.",
+        title: "About Standen | Internal Tools for B2B Agencies",
+        description: "Standen builds internal tools for B2B agencies that automate client delivery. Founder-led, fixed-scope tiers from 14 to 30 days, full code ownership.",
         canonical: `${SITE}/about`,
         activeNav: "",
         body: `
@@ -85,8 +97,8 @@ write(
                 ${breadcrumbs([{ label: "Home", href: "/" }, { label: "About", href: "/about" }])}
                 <header class="guide-article__head">
                     <h1>About Standen</h1>
-                    <p class="guide-article__lead">We build custom software and SaaS for founders and agencies: SaaS MVPs, proposal systems, reporting dashboards, client portals and internal ops tools.</p>
-                    <p class="seo-answer">Standen is a UK-based studio led by Tomas Jones. We scope one workflow per build, ship in fixed sprints (14, 21 or 30 days by tier), and hand over 100% of the codebase. No licence lock-in.</p>
+                    <p class="guide-article__lead">We build internal tools for B2B agencies: delivery automation, proposal systems, reporting dashboards, client portals and ops software.</p>
+                    <p class="seo-answer">Standen is a UK-based studio led by Tomas Jones. We scope one delivery workflow per build, ship in fixed sprints (14, 21 or 30 days by tier), and hand over 100% of the codebase. No licence lock-in.</p>
                 </header>
                 <div class="guide-article__body">
                     <h2>How we work</h2>

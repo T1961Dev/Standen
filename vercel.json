@@ -142,6 +142,7 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/process", "destination": "/index.html" },
-    { "source": "/pricing", "destination": "/index.html" }
+    { "source": "/pricing", "destination": "/index.html" },
+    { "source": "/agencies", "destination": "/index.html" }
   ]
 }

@@ -22,6 +22,7 @@ const SKIP_FILES = new Set([
     "custom-build-vs-off-the-shelf.html",
     "saas-development-uk.html",
     "custom-software-development-uk.html",
+    "agencies.html",
 ]);
 
 function walkHtml(dir, files = []) {

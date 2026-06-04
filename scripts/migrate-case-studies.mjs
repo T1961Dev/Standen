@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import vm from "vm";
 import { fileURLToPath } from "url";
-import { pageShell, breadcrumbs, finalCta, CALENDLY, CTA_LABEL, SITE } from "./partials.mjs";
+import { pageShell, breadcrumbs, finalCta, accentCtaButton, SITE } from "./partials.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -52,7 +52,7 @@ for (const [id, study] of Object.entries(studies)) {
                     <h1>${study.title}</h1>
                     <p class="case-study__lead">${study.summary || ""}</p>
                     <div class="case-study__actions">
-                        <a href="${CALENDLY}" class="btn btn--accent" target="_blank" rel="noopener"><span class="btn__text">${CTA_LABEL}</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+                        ${accentCtaButton("nav-cta")}
                         ${live}
                     </div>
                 </header>

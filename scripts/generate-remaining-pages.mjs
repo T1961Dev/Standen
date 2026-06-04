@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { pageShell, breadcrumbs, finalCta, CALENDLY, SITE, CTA_LABEL, ROBOTS_NOINDEX } from "./partials.mjs";
+import { pageShell, breadcrumbs, finalCta, accentCtaButton, CALENDLY, SITE, CTA_LABEL, ROBOTS_NOINDEX } from "./partials.mjs";
 import { redirectPage, serviceHref } from "./service-anchors.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -177,7 +177,7 @@ for (const post of blogPosts) {
                 </header>
                 ${post.image ? `<div class="guide-article__hero"><img src="${post.image}" alt="" width="800" height="500" loading="lazy" decoding="async"></div>` : ""}
                 <div class="guide-article__body">${post.body}</div>
-                <p class="guide-article__close"><a href="${CALENDLY}" class="btn btn--accent" target="_blank" rel="noopener"><span class="btn__text">${CTA_LABEL}</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></p>
+                <p class="guide-article__close">${accentCtaButton("nav-cta")}</p>
             </div>
         </article>`,
         })

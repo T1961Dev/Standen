@@ -5,13 +5,14 @@ const BRAND_NAME = "standen";
 const CALENDLY = "https://calendly.com/standen/discovery-call";
 const CTA_LABEL = "Book a call";
 const FOOTER_TAGLINE =
-    "Custom software and SaaS for founders and agencies. Fixed-scope tiers from 14 to 30 days. You own everything.";
+    "Internal tools for B2B agencies. Fixed-scope builds from 14 to 30 days. You own everything.";
 const CONTACT_EMAIL = "tomas@standen.io";
 const CTA_ARROW =
     '<span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
 
-export function accentCtaButton(extraClass = "nav-cta") {
-    const classes = extraClass ? `btn btn--accent ${extraClass}` : "btn btn--accent nav-cta";
+export function accentCtaButton(extraClass = "nav-cta", { active = false } = {}) {
+    const activeMod = active ? " btn--accent-active" : "";
+    const classes = `btn btn--accent${activeMod}${extraClass ? ` ${extraClass.trim()}` : ""}`;
     return `<a href="${CALENDLY}" class="${classes}" target="_blank" rel="noopener"><span class="btn__text">${CTA_LABEL}</span>${CTA_ARROW}</a>`;
 }
 const LINKEDIN_URL = "https://www.linkedin.com/in/tomas-jones1/";
@@ -63,7 +64,7 @@ export function navBlock(active = "") {
                 <a href="/#process">Process</a>
                 <a href="/#pricing">Pricing</a>
             </nav>
-            <a href="${CALENDLY}" class="btn btn--accent nav-cta" target="_blank" rel="noopener"><span class="btn__text">${CTA_LABEL}</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+            ${accentCtaButton("nav-cta")}
             <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
         </div>
         <nav id="mobile-menu" class="mobile-menu" data-open="false" aria-label="Mobile">
@@ -71,7 +72,7 @@ export function navBlock(active = "") {
             <a href="/work.html">Work</a>
             <a href="/#process">Process</a>
             <a href="/#pricing">Pricing</a>
-            <a href="${CALENDLY}" class="btn btn--accent" target="_blank" rel="noopener"><span class="btn__text">${CTA_LABEL}</span><span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+            ${accentCtaButton("nav-cta")}
         </nav>
     </header>`;
 }
@@ -94,12 +95,11 @@ export function footerBlock() {
             <nav aria-label="Services">
                 <h2>Services</h2>
                 <a href="/#services">All services</a>
-                <a href="/#service-proposals">Proposal systems</a>
+                <a href="/#service-internal">Internal tools</a>
                 <a href="/#service-reporting">Reporting dashboards</a>
+                <a href="/#service-proposals">Proposal systems</a>
                 <a href="/#service-portals">Client portals</a>
                 <a href="/#service-crm">Internal CRM</a>
-                <a href="/#service-saas">SaaS MVP</a>
-                <a href="/#service-internal">Internal tools</a>
             </nav>
             <nav aria-label="Company">
                 <h2>Company</h2>
