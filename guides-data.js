@@ -11,8 +11,8 @@ window.GUIDES = [
   },
   {
     slug: "agency-proposal-systems",
-    title: "Why agency proposals should not live in Google Docs",
-    excerpt: "Proposal systems need pricing, approval, version history and buyer behaviour, not another duplicated doc.",
+    title: "Why SaaS pricing workflows should not live in Google Docs",
+    excerpt: "Pricing systems need plan logic, approval, version history and buyer behaviour, not another duplicated doc.",
     category: "Proposals",
     readTime: "5 min",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=520&fit=crop"
@@ -35,7 +35,7 @@ window.GUIDES = [
   },
   {
     slug: "scope-first-build",
-    title: "How to scope a first agency system in 14 days",
+    title: "How to scope a first SaaS system in 14 days",
     excerpt: "Fix time and budget, then scope. One workflow, one system, clear handover.",
     category: "Process",
     readTime: "7 min",
@@ -51,16 +51,16 @@ window.GUIDES = [
   },
   {
     slug: "client-portals",
-    title: "When your agency needs a client portal",
-    excerpt: "Stop spreading updates across Slack, email, Notion and Drive. One owned place for status, files and approvals.",
+    title: "When your SaaS needs a customer portal",
+    excerpt: "Stop spreading updates across email, support tools, Notion and Drive. One owned place for status, files and approvals.",
     category: "Portals",
     readTime: "6 min",
     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=520&fit=crop"
   },
   {
     slug: "reporting-automation",
-    title: "The 15 hours agencies lose to manual reporting every month",
-    excerpt: "Pull GA4, ad platforms and CRM pipeline into one view: instead of rebuilding PDFs.",
+    title: "The 15 hours SaaS teams lose to manual reporting every month",
+    excerpt: "Pull product, revenue and CRM data into one view instead of rebuilding reports.",
     category: "Reporting",
     readTime: "5 min",
     image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=520&fit=crop"
@@ -75,7 +75,7 @@ window.GUIDES = [
   },
   {
     slug: "ownership-model",
-    title: "Own the codebase: why agency software should not be rented",
+    title: "Own the codebase: why SaaS product logic should not be rented",
     excerpt: "100% code ownership, deployment notes and workflow logic stay with you. No licence lock-in.",
     category: "Ownership",
     readTime: "4 min",
@@ -99,7 +99,7 @@ window.GUIDES = [
   },
   {
     slug: "onboarding-systems",
-    title: "Client onboarding without the email ping-pong",
+    title: "Customer onboarding without the email ping-pong",
     excerpt: "Collect briefs, assets and approvals in one auditable flow, not twelve threads.",
     category: "Portals",
     readTime: "5 min",
@@ -107,16 +107,16 @@ window.GUIDES = [
   },
   {
     slug: "pricing-first-build",
-    title: "Simple build pricing for agency systems",
-    excerpt: "Launch from £5,000, Scale from £9,500 and Enterprise from £18,000, with fixed scope and full handover.",
+    title: "Simple build pricing for SaaS systems",
+    excerpt: "SaaS builds from £5,000 and Enterprise from £18,000, with fixed scope and full handover.",
     category: "Pricing",
     readTime: "3 min",
     image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=520&fit=crop"
   },
   {
     slug: "workflow-audit",
-    title: "The 5 places agencies lose hours every week",
-    excerpt: "Proposals, reporting, onboarding, client comms and glue work, mapped to what to build first.",
+    title: "The 5 places SaaS teams lose hours every week",
+    excerpt: "Pricing, reporting, onboarding, customer comms and glue work, mapped to what to build first.",
     category: "Strategy",
     readTime: "8 min",
     image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=800&h=520&fit=crop"
@@ -147,23 +147,23 @@ window.GUIDES = [
   },
   {
     slug: "integrations-101",
-    title: "Integrations agencies actually need in a first build",
-    excerpt: "GA4, HubSpot, ad platforms and CRM, connect the data you already have.",
+    title: "Integrations SaaS founders actually need in a first build",
+    excerpt: "Product analytics, Stripe, HubSpot and CRM, connect the data you already have.",
     category: "Technical",
     readTime: "6 min",
     image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=520&fit=crop"
   },
   {
     slug: "14-day-build",
-    title: "What fits inside a 14-day agency software build",
-    excerpt: "Scoped around one bottleneck: proposals, reporting, portals or internal ops.",
+    title: "What fits inside a 14-day SaaS software build",
+    excerpt: "Scoped around one bottleneck: onboarding, reporting, portals or internal ops.",
     category: "Process",
     readTime: "5 min",
     image: "/assets/hero-landscape-new.jpg"
   },
   {
     slug: "founder-led-delivery",
-    title: "Founder-led builds: why it matters for agencies",
+    title: "Founder-led builds: why it matters for SaaS founders",
     excerpt: "You work directly with the person designing and shipping, not a handoff chain.",
     category: "Process",
     readTime: "3 min",
@@ -179,16 +179,16 @@ window.GUIDES = [
   },
   {
     slug: "kickoff-checklist",
-    title: "The agency kickoff checklist that stops projects drifting",
-    excerpt: "Same steps before every kickoff: brief, access, stakeholders, success metric and internal owner.",
+    title: "The SaaS kickoff checklist that stops projects drifting",
+    excerpt: "Same steps before every build: brief, access, stakeholders, success metric and internal owner.",
     category: "Portals",
     readTime: "5 min",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=520&fit=crop"
   },
   {
     slug: "report-narrative-template",
-    title: "A monthly report narrative template account managers can reuse",
-    excerpt: "Headline, what moved, why it moved, next actions, structure commentary so decks stop taking all day.",
+    title: "A product update narrative template founders can reuse",
+    excerpt: "Headline, what moved, why it moved, next actions, structure commentary so updates stop taking all day.",
     category: "Reporting",
     readTime: "4 min",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=520&fit=crop"
@@ -211,8 +211,8 @@ window.GUIDES = [
   },
   {
     slug: "proposal-pricing-models",
-    title: "Fixed, retainer or hybrid: pick a pricing model deliberately",
-    excerpt: "Your proposal system should enforce how you sell, not let reps accidentally mix models.",
+    title: "Fixed, subscription or hybrid: pick a pricing model deliberately",
+    excerpt: "Your pricing system should enforce how you sell, not let reps accidentally mix models.",
     category: "Proposals",
     readTime: "5 min",
     image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=520&fit=crop"
@@ -227,7 +227,7 @@ window.GUIDES = [
   },
   {
     slug: "build-vs-buy-scorecard",
-    title: "Build vs buy scorecard for agency software",
+    title: "Build vs buy scorecard for SaaS software",
     excerpt: "Score fit, repetition, integration, ownership and glue work, same sheet every time you evaluate.",
     category: "Strategy",
     readTime: "5 min",
@@ -235,7 +235,7 @@ window.GUIDES = [
   },
   {
     slug: "client-approval-sla",
-    title: "Client approval SLAs that protect your margin",
+    title: "Customer approval SLAs that protect your margin",
     excerpt: "Mutual response times, revision rounds and what happens when feedback is late, agreed in onboarding.",
     category: "Portals",
     readTime: "4 min",
@@ -243,7 +243,7 @@ window.GUIDES = [
   },
   {
     slug: "ga4-client-reporting",
-    title: "Standardise GA4 setup for every client account",
+    title: "Standardise analytics setup for every customer account",
     excerpt: "Property structure, key events, UTMs and QA, productise the checklist instead of relying on memory.",
     category: "Reporting",
     readTime: "6 min",
@@ -259,8 +259,8 @@ window.GUIDES = [
   },
   {
     slug: "handoff-to-accounts",
-    title: "Sales-to-delivery handoff: the minimum packet",
-    excerpt: "Signed SOW, call summary, margin notes and comms preferences, delivery accepts or rejects, not inherits.",
+    title: "Sales-to-customer-success handoff: the minimum packet",
+    excerpt: "Signed scope, call summary, margin notes and comms preferences, success accepts or rejects, not inherits.",
     category: "Operations",
     readTime: "4 min",
     image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=520&fit=crop"
@@ -291,7 +291,7 @@ window.GUIDES = [
   },
   {
     slug: "software-rfp-light",
-    title: "A one-page brief for agency software (not a 40-page RFP)",
+    title: "A one-page brief for SaaS software (not a 40-page RFP)",
     excerpt: "Problem, users, integrations, success metric, budget and ownership, enough to compare vendors fairly.",
     category: "Strategy",
     readTime: "5 min",
@@ -299,7 +299,7 @@ window.GUIDES = [
   },
   {
     slug: "agent-ready-ops",
-    title: "Prepare agency ops for AI agents (without boiling the ocean)",
+    title: "Prepare SaaS ops for AI agents (without boiling the ocean)",
     excerpt: "Structured data, allowed actions, human approval and audit logs, one workflow at a time.",
     category: "AI",
     readTime: "6 min",

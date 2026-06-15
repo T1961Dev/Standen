@@ -12,7 +12,6 @@ export function servicesHubHref() {
 }
 
 export function serviceHref(slug) {
-    if (slug === "saas-mvp-development") return "/#services";
     const anchor = SERVICE_ANCHORS[slug];
     return anchor ? `/#${anchor}` : "/#services";
 }

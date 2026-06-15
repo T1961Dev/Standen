@@ -46,7 +46,7 @@ const workSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Case studies",
-    description: "Internal tools, reporting dashboards, automation and full-stack delivery software built and handed over by Standen.",
+    description: "SaaS MVPs, product platforms, dashboards and automation built and handed over by Standen.",
     url: `${SITE}/work`,
     isPartOf: { "@id": "https://www.standen.io/#website" },
     mainEntity: {
@@ -63,8 +63,8 @@ const workSchema = {
 write(
     "work.html",
     pageShell({
-        title: "Case Studies | Internal Tools & Delivery Software | Standen",
-        description: "Standen case studies: internal delivery tools, reporting dashboards, automation and full-stack software for B2B agencies. Delivered in 6 to 21 days.",
+        title: "Case Studies | SaaS & Full-Stack Software | Standen",
+        description: "Standen case studies: SaaS MVPs, product platforms, dashboards, automation and full-stack software. Delivered in 6 to 21 days.",
         canonical: `${SITE}/work`,
         activeNav: "work",
         schema: workSchema,
@@ -74,7 +74,7 @@ write(
                 ${breadcrumbs([{ label: "Home", href: "/" }, { label: "Work", href: "/work" }])}
                 <header class="work-head reveal">
                     <h1>What we can build</h1>
-                    <p class="work-sub">Every system below was scoped, built and shipped with full ownership. Different domains, same engineering. The range here is what we build into agency delivery: data pipelines, dashboards, automation, integrations and full-stack tools.</p>
+                    <p class="work-sub">Every system below was scoped, built and shipped with full ownership. Different domains, same engineering. The range here is what we build into SaaS products: data pipelines, dashboards, automation, integrations and full-stack tools.</p>
                 </header>
                 <div class="work-grid">${rethinkCard}
                 ${grid}</div>
@@ -87,8 +87,8 @@ write(
 write(
     "about.html",
     pageShell({
-        title: "About Standen | Internal Tools for B2B Agencies",
-        description: "Standen builds internal tools for B2B agencies that automate client delivery. Founder-led, fixed-scope tiers from 14 to 30 days, full code ownership.",
+        title: "About Standen | SaaS Development for Founders",
+        description: "Standen builds SaaS products for founders. Founder-led, fixed-scope tiers from 14 to 30 days, full code ownership.",
         canonical: `${SITE}/about`,
         activeNav: "",
         body: `
@@ -97,7 +97,7 @@ write(
                 ${breadcrumbs([{ label: "Home", href: "/" }, { label: "About", href: "/about" }])}
                 <header class="guide-article__head">
                     <h1>About Standen</h1>
-                    <p class="guide-article__lead">We build internal tools for B2B agencies: delivery automation, proposal systems, reporting dashboards, client portals and ops software.</p>
+                    <p class="guide-article__lead">We build SaaS products for founders: MVPs, product dashboards, customer portals, billing-ready workflows and ops software.</p>
                     <p class="seo-answer">Standen is a UK-based studio led by Tomas Jones. We scope one delivery workflow per build, ship in fixed sprints (14, 21 or 30 days by tier), and hand over 100% of the codebase. No licence lock-in.</p>
                 </header>
                 <div class="guide-article__body">
@@ -131,7 +131,7 @@ const blogPosts = [
         alt: "Fixed-scope product studio delivery",
         date: "2025-01-08",
         title: "What to expect from a fixed-scope product studio",
-        excerpt: "Timelines, communication, and how Standen delivers scoped SaaS and custom software builds for agencies and founders.",
+        excerpt: "Timelines, communication, and how Standen delivers scoped SaaS and custom software builds for founders.",
         meta: "4 min read",
     },
     {
@@ -175,7 +175,7 @@ write(
     pageShell({
         title: "Blog | Standen. SaaS & Custom Software",
         description:
-            "Insights on SaaS development, custom software and delivery from Standen. Scoping, building and launching software for agencies.",
+            "Insights on SaaS development, custom software and delivery from Standen. Scoping, building and launching software for founders.",
         canonical: `${SITE}/blog`,
         robots: ROBOTS_NOINDEX,
         activeNav: "",
@@ -185,7 +185,7 @@ write(
                 ${breadcrumbs([{ label: "Home", href: "/" }, { label: "Blog", href: "/blog.html" }])}
                 <header class="guides-page-head">
                     <h1>Insights on SaaS and software delivery</h1>
-                    <p class="guides-page-lead">Practical posts on scoping, building and launching SaaS and custom software for agencies and product teams.</p>
+                    <p class="guides-page-lead">Practical posts on scoping, building and launching SaaS and custom software for founders and product teams.</p>
                 </header>
                 <div class="blog-grid">${blogGrid}</div>
             </div>

@@ -1,6 +1,6 @@
 # Standen
 
-> Standen builds custom software and SaaS for founders and agencies: SaaS MVPs, internal tools, proposal systems, reporting dashboards and client portals. Fixed-scope tiers: Launch (14 days, from £5,000), Scale (21 days, from £9,500) and Enterprise (30 days, from £18,000). Clients own 100% of the code, IP and deployment on handover. UK-based studio, founder-led by Tomas Jones, working remotely with clients worldwide.
+> Standen builds SaaS products for founders: SaaS MVPs, product workflow automation, customer portals, product analytics dashboards and admin tools. Fixed-scope tiers: Launch (14 days, from £5,000), Scale (21 days, from £9,500) and Enterprise (30 days, from £18,000). Clients own 100% of the code, IP and deployment on handover. UK-based studio, founder-led by Tomas Jones, working remotely with clients worldwide.
 
 ## Main pages
 - [Home](https://www.standen.io/): Services, four-stage process, fixed-scope pricing and FAQs

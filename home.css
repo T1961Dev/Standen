@@ -2907,6 +2907,10 @@ main > .notes.guides-page:first-child {
     transition: border-color 0.4s var(--ease);
 }
 
+.pricing-card--product {
+    grid-column: span 2;
+}
+
 .pricing-card--featured {
     border-color: var(--accent-blue-deep);
     box-shadow: 0 24px 48px rgba(184, 207, 224, 0.35);
@@ -3056,6 +3060,13 @@ main > .notes.guides-page:first-child {
     background: var(--surface-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8' fill='none'%3E%3Cpath d='M1 4.2 3.4 6.6 9 1.4' stroke='%231b0624' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 10px no-repeat;
 }
 
+.pricing-card--product .pricing-card__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(18px, 3vw, 32px);
+    row-gap: 12px;
+}
+
 .pricing-card__terms {
     margin-top: auto;
     padding-top: 20px;
@@ -3083,6 +3094,15 @@ main > .notes.guides-page:first-child {
         max-width: 480px;
         margin-inline: auto;
     }
+
+    .pricing-card--product {
+        grid-column: auto;
+    }
+
+    .pricing-card--product .pricing-card__list {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 /* Notes */

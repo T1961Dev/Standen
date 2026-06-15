@@ -1,0 +1,6 @@
+Standen dev server (routes + live reload)
+  http://127.0.0.1:5510/
+  /work /about /contact /services/:slug /compare/:slug /case-studies/:slug /blog/:slug /guides/:slug
+  Save a file → browser refreshes automatically.
+  Stop the Cursor Live Server extension if port 5500 is in use.
+[live reload] guides-data.js

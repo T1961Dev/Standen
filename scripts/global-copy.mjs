@@ -5,24 +5,24 @@ import { fileURLToPath } from "url";
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 const REPLACEMENTS = [
-    [/Custom software and SaaS for UK agencies/g, "Custom software and SaaS for agencies"],
-    [/for UK agencies and founders/g, "for agencies and founders"],
-    [/for UK agency founders/g, "for agency founders"],
-    [/for your UK agency/g, "for your agency"],
-    [/for UK founders and agencies/g, "for founders and agencies"],
+    [/Custom software and SaaS for UK agencies/g, "SaaS development for founders"],
+    [/for UK agencies and founders/g, "for SaaS founders"],
+    [/for UK agency founders/g, "for SaaS founders"],
+    [/for your UK agency/g, "for your SaaS product"],
+    [/for UK founders and agencies/g, "for SaaS founders"],
     [/for UK founders/g, "for founders"],
-    [/UK B2B agencies/g, "B2B agencies"],
-    [/UK B2B agency/g, "B2B agency"],
-    [/UK agencies/g, "agencies"],
-    [/UK agency/g, "agency"],
+    [/UK B2B agencies/g, "SaaS founders"],
+    [/UK B2B agency/g, "SaaS founder"],
+    [/UK agencies/g, "SaaS teams"],
+    [/UK agency/g, "SaaS team"],
     [/UK delivery by Standen/g, "Remote delivery by Standen"],
     [/Built in the UK\./g, "Founder-led delivery."],
     [/Based in the UK\./g, "UK-based studio."],
-    [/Custom Software for UK Agencies/g, "Custom Software for Agencies"],
-    [/Agency Ops Audit UK/g, "Agency Ops Audit"],
+    [/Custom Software for UK Agencies/g, "SaaS Development for Founders"],
+    [/Agency Ops Audit UK/g, "SaaS Ops Audit"],
     [/"areaServed":"GB"/g, '"areaServed":"Worldwide"'],
-    [/Primary focus is UK B2B agencies\./g, "We work with B2B agencies worldwide."],
-    [/We are UK-based and work remotely with UK and international clients\./g, "We are UK-based and work remotely with agencies worldwide."],
+    [/Primary focus is UK B2B agencies\./g, "We work with SaaS founders worldwide."],
+    [/We are UK-based and work remotely with UK and international clients\./g, "We are UK-based and work remotely with SaaS founders worldwide."],
 ];
 
 const SKIP_DIRS = new Set(["node_modules", ".git", ".cursor", "content"]);

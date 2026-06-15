@@ -1,5 +1,5 @@
 /**
- * Actionable guide bodies for B2B agencies.
+ * Actionable guide bodies for SaaS founders.
  * Teaches enough to act today; implementation depth stays in scoped builds.
  */
 
@@ -31,7 +31,7 @@ export function renderGuideBody(guide, { copyFor, escapeHtml }) {
     const closeText =
         content.close ||
         `Use this as a working checklist inside your team first. When the same steps repeat every week and spreadsheets start breaking, that is usually the moment to scope ${escapeHtml(c.first)} as an owned system.`;
-    parts.push(`<p class="guide-article__close">${closeText} <a href="${serviceHref}">See the relevant Standen service</a> or <a href="/audit.html">read the agency ops audit</a>.</p>`);
+    parts.push(`<p class="guide-article__close">${closeText} <a href="${serviceHref}">See the relevant Standen service</a> or <a href="/audit.html">read the SaaS ops audit</a>.</p>`);
 
     return parts.join("\n                    ");
 }
@@ -40,7 +40,7 @@ export function renderGuideBody(guide, { copyFor, escapeHtml }) {
 const GUIDE_CONTENT = {
     "agency-proposal-systems": {
         lead: "If proposals still live in Google Docs, you do not have a proposal system. You have a folder of templates and a lot of copy-paste.",
-        answer: "Agencies that win faster treat proposals as workflow: sections, pricing rules, approvals, version history and a buyer-ready export, not another duplicated doc.",
+        answer: "SaaS teams that win faster treat pricing as workflow: plan rules, approvals, version history and a buyer-ready handoff, not another duplicated doc.",
         blocks: [
             {
                 h2: "Audit your current proposal flow (30 minutes)",
@@ -77,14 +77,14 @@ const GUIDE_CONTENT = {
                 h2: "What version one of a proposal system looks like",
                 p: [
                     "Not a full CPQ. One service line, one pricing model, one approval chain, one PDF or link the client receives. Ship that, measure turnaround time for four weeks, then expand modules.",
-                    "That is the shape of system Standen scopes in a fixed 14-day build: owned, tailored to how your agency prices and approves, not another rented doc tool.",
+                    "That is the shape of system Standen scopes in a fixed 14-day build: owned, tailored to how your SaaS prices and approves, not another rented doc tool.",
                 ],
             },
         ],
     },
 
     "proposal-turnaround": {
-        lead: "Speed wins when the buyer still remembers the call. Most agencies lose deals in the gap between enthusiasm and the proposal landing.",
+        lead: "Speed wins when the buyer still remembers the call. Most SaaS teams lose deals in the gap between enthusiasm and the proposal landing.",
         blocks: [
             {
                 h2: "The one-hour proposal sprint",
@@ -170,7 +170,7 @@ const GUIDE_CONTENT = {
     },
 
     "reporting-automation": {
-        lead: "Most agencies lose 10-20 hours per month per account manager to reporting glue work. That is margin walking out the door.",
+        lead: "Most SaaS teams lose 10-20 hours per month to reporting glue work. That is margin walking out the door.",
         blocks: [
             {
                 h2: "Time-box a reporting audit",
@@ -351,7 +351,7 @@ const GUIDE_CONTENT = {
     },
 
     "scope-first-build": {
-        lead: "Fix time and budget first, then scope. Agencies that scope open-endedly never ship version one.",
+        lead: "Fix time and budget first, then scope. SaaS founders who scope open-endedly never ship version one.",
         blocks: [
             {
                 h2: "The 14-day scoping frame",
@@ -419,7 +419,7 @@ const GUIDE_CONTENT = {
                 ],
             },
             {
-                h2: "Why it matters for agencies",
+                h2: "Why it matters for SaaS teams",
                 p: [
                     "Your clients hire you for direct senior attention. Your software vendor should work the same way. Founder-led delivery is not vanity, it is risk control on a fixed budget.",
                 ],
@@ -493,7 +493,7 @@ const GUIDE_CONTENT = {
     },
 
     "workflow-audit": {
-        lead: "Five places leak time in almost every agency. Map yours before you buy or build anything.",
+        lead: "Five places leak time in almost every SaaS team. Map yours before you buy or build anything.",
         blocks: [
             {
                 h2: "The five leaks",
@@ -509,14 +509,14 @@ const GUIDE_CONTENT = {
                 h2: "Pick one leak to fix this quarter",
                 p: [
                     "Score each 1-5 on pain and frequency. Highest combined score wins. Everything else waits.",
-                    "For a deeper worksheet, use our <a href=\"/audit.html\">free agency ops audit</a>.",
+                    "For a deeper worksheet, use our <a href=\"/audit.html\">free SaaS ops audit</a>.",
                 ],
             },
         ],
     },
 
     "pricing-first-build": {
-        lead: "One workflow. One system. Fixed price. That is how agencies avoid open-ended dev spend.",
+        lead: "One workflow. One system. Fixed price. That is how SaaS founders avoid open-ended dev spend.",
         blocks: [
             {
                 h2: "How fixed-scope pricing works",
@@ -528,13 +528,12 @@ const GUIDE_CONTENT = {
                 ],
             },
             {
-                h2: "Typical fixed-scope tiers",
+                h2: "Typical fixed-scope pricing",
                 ul: [
-                    "Launch: from £5,000, shipped in 14 days (single user type, up to 3 core screens).",
-                    "Scale: from £9,500, shipped in 21 days (multiple roles, integrations, billing logic).",
+                    "SaaS build: from £5,000, shipped from 14 days (customer accounts, onboarding, workspace, admin dashboard, product workflow, Stripe, transactional email, integrations, reporting and deployment).",
                     "Enterprise: from £18,000, shipped in 30 days (compliance, SSO, unlimited screens).",
                 ],
-                p: ["One workflow per phase: proposal flow, reporting dashboard, client portal slice, or internal queue."],
+                p: ["One product phase at a time: MVP workflow, onboarding flow, customer portal, admin dashboard or reporting slice."],
             },
         ],
     },
@@ -543,7 +542,7 @@ const GUIDE_CONTENT = {
         lead: "Integrate the smallest path that removes daily copy-paste. Not the perfect enterprise map.",
         blocks: [
             {
-                h2: "Priority order for agencies",
+                h2: "Priority order for SaaS teams",
                 ol: [
                     "CRM ↔ email/calendar (leads and activity).",
                     "Ads/GA4 → reporting warehouse or sheet.",
@@ -666,7 +665,7 @@ const GUIDE_CONTENT = {
         lead: "Pricing model shapes behaviour. Pick one deliberately per offer.",
         blocks: [
             {
-                h2: "Three models agencies use",
+                h2: "Three models SaaS teams use",
                 ul: [
                     "<strong>Fixed project</strong>, clear scope, clear price, change orders for extras.",
                     "<strong>Retainer</strong>, capped deliverables or hours, renewal tied to review.",
@@ -748,7 +747,7 @@ const GUIDE_CONTENT = {
                     "Property structure agreed (single vs subproperties).",
                     "Key events defined and documented.",
                     "UTM conventions written down.",
-                    "Access for agency granted with least privilege.",
+                    "Access for the team granted with least privilege.",
                     "Baseline report template connected to Looker/Sheet/dashboard.",
                     "QA hit recorded before first client report.",
                 ],
@@ -849,10 +848,10 @@ const GUIDE_CONTENT = {
     },
 
     "software-rfp-light": {
-        lead: "You do not need a 40-page RFP for a first agency system. You need clear outcomes and constraints.",
+        lead: "You do not need a 40-page RFP for a first SaaS system. You need clear outcomes and constraints.",
         blocks: [
             {
-                h2: "One-page brief agencies can reuse",
+                h2: "One-page brief SaaS teams can reuse",
                 ul: [
                     "Problem statement (workflow, not technology).",
                     "Users and permissions.",

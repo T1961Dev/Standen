@@ -5,7 +5,7 @@ const BRAND_NAME = "standen";
 const CALENDLY = "https://calendly.com/standen/discovery-call";
 const CTA_LABEL = "Book a call";
 const FOOTER_TAGLINE =
-    "Internal tools for B2B agencies. Fixed-scope builds from 14 to 30 days. You own everything.";
+    "SaaS development for founders. Fixed-scope builds from 14 to 30 days. You own everything.";
 const CONTACT_EMAIL = "tomas@standen.io";
 const CTA_ARROW =
     '<span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
@@ -95,11 +95,11 @@ export function footerBlock() {
             <nav aria-label="Services">
                 <h2>Services</h2>
                 <a href="/#services">All services</a>
-                <a href="/#service-internal">Internal tools</a>
-                <a href="/#service-reporting">Reporting dashboards</a>
-                <a href="/#service-proposals">Proposal systems</a>
-                <a href="/#service-portals">Client portals</a>
-                <a href="/#service-crm">Internal CRM</a>
+                <a href="/#service-saas">SaaS MVPs</a>
+                <a href="/#service-internal">Product automation</a>
+                <a href="/#service-reporting">Product dashboards</a>
+                <a href="/#service-portals">Customer portals</a>
+                <a href="/#service-crm">Admin dashboards</a>
             </nav>
             <nav aria-label="Company">
                 <h2>Company</h2>

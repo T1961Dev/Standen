@@ -79,8 +79,8 @@ function renderCompareHub() {
         .join("");
 
     return pageShell({
-        title: "Compare | Agency Build Guides | Standen",
-        description: "Build vs buy, custom CRM vs spreadsheets, software vs hiring ops, practical guides for agency founders.",
+        title: "Compare | SaaS Build Guides | Standen",
+        description: "Build vs buy, custom dashboards vs spreadsheets, software vs hiring ops, practical guides for SaaS founders.",
         canonical: SITE + "/compare",
         body: `
         <section class="service-hub">
@@ -88,7 +88,7 @@ function renderCompareHub() {
                 ${breadcrumbs([{ label: "Home", href: "/" }, { label: "Compare", href: "/compare" }])}
                 <header class="guides-page-head">
                     <h1>Compare your options</h1>
-                    <p class="guides-page-lead">Decision guides for agency founders, written to be cited and useful, not generic thought leadership.</p>
+                    <p class="guides-page-lead">Decision guides for SaaS founders, written to be cited and useful, not generic thought leadership.</p>
                 </header>
                 <div class="service-hub__grid">${items}</div>
             </div>

@@ -12,7 +12,7 @@ window.BLOG_POSTS = [
   {
     slug: "web-development-hampshire-what-to-expect",
     title: "What to expect from a fixed-scope product studio",
-    excerpt: "Timelines, communication, and how Standen delivers scoped SaaS and custom software builds for agencies and founders.",
+    excerpt: "Timelines, communication, and how Standen delivers scoped SaaS and custom software builds for founders.",
     date: "2025-01-08",
     author: "Standen",
     readTime: "4 min read",

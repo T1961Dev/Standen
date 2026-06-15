@@ -1,93 +1,13 @@
 {
   "services": [
     {
-      "slug": "agency-proposal-systems",
-      "tag": "Proposals",
-      "title": "Agency Proposal Systems | Standen",
-      "h1": "Proposal systems for agencies",
-      "meta": "Custom agency proposal systems with pricing, approvals and version history. Fixed-scope tiers from £5k to £18k, 14 to 30 days. You own 100% of the code.",
-      "lead": "Send proposals while the buyer still remembers the call, with scope, pricing and approvals in one owned system, not another Google Doc.",
-      "answer": "Standen builds custom proposal systems for agencies: scoped pricing, approval chains, version history and buyer-ready PDFs in one workflow. Launch builds ship in 14 days from £5,000, Scale builds ship in 21 days from £9,500, and Enterprise builds ship in 30 days from £18,000 with full code ownership.",
-      "sections": [
-        { "h2": "Why proposals should not live in Google Docs", "p": "Docs duplicate, drift and hide margin. A proposal system ties scope, rate cards, optional modules and sign-off to how your agency actually sells, so founders stop rewriting the same deck every week." },
-        { "h2": "What we build in the first sprint", "p": "One sales workflow end to end: template logic, pricing rules, internal approval, client-facing view and export. Launch tier ships in 14 days; Scale and Enterprise extend scope and timeline. No CRM replacement: the system sits where proposals actually get made." },
-        { "h2": "Proof from recent builds", "p": "OhMyPod went from notes to a live owned SaaS in <strong>21 days</strong>. Agencies using Standen builds typically cut proposal turnaround from days to under an hour when the template and pricing logic are in place." }
-      ],
-      "faqs": [
-        { "q": "How much does a proposal system cost?", "a": "Launch starts from <strong>£5,000</strong>, Scale from <strong>£9,500</strong>, and Enterprise from <strong>£18,000</strong>, with fixed scope and full handover." },
-        { "q": "Do we own the code?", "a": "Yes: repository, deployment and documentation are transferred on handover." },
-        { "q": "Can this connect to our CRM?", "a": "Yes. We integrate with HubSpot, Pipedrive, spreadsheets or your existing stack where it saves manual copy-paste." }
-      ],
-      "related": ["agency-reporting-dashboard", "agency-client-portal"]
-    },
-    {
-      "slug": "agency-reporting-dashboard",
-      "tag": "Reporting",
-      "title": "Agency Reporting Dashboard | Standen",
-      "h1": "Client reporting dashboards for agencies",
-      "meta": "Replace monthly reporting PDFs with live client dashboards. Fixed-scope tiers from £5k, 14 to 30 days. Full code ownership.",
-      "lead": "Pull GA4, ad platforms and CRM pipeline into one live view, and stop rebuilding the same PDF every month.",
-      "answer": "Standen builds agency reporting dashboards that replace manual PDFs with live, client-ready views. Data from ads, analytics and CRM in one place. Launch tier ships in 14 days; Scale in 21 and Enterprise in 30 with full ownership.",
-      "sections": [
-        { "h2": "The cost of manual reporting", "p": "Most agencies lose <strong>15 to 40 hours a month</strong> pulling screenshots into decks. Clients still ask for numbers that are already stale by the time the PDF lands." },
-        { "h2": "What a useful dashboard includes", "p": "Clear KPIs per client, period comparison, commentary slots and export when procurement still wants a file. Built around how your team and clients already read performance." },
-        { "h2": "Recent delivery", "p": "FX Quant Research Platform, a full research and analytics environment, shipped in <strong>12 days</strong>. Reporting builds reuse the same disciplined scoping and weekly delivery rhythm." }
-      ],
-      "faqs": [
-        { "q": "Can clients log in securely?", "a": "Yes. Role-based access, per-client views and optional white-label branding." },
-        { "q": "Which data sources can you connect?", "a": "Common stacks include GA4, Google Ads, Meta, LinkedIn, HubSpot and custom APIs." },
-        { "q": "How is this different from Looker Studio?", "a": "You own the product logic and UX, not a template that breaks every time a connector changes." }
-      ],
-      "related": ["agency-client-portal", "agency-proposal-systems"]
-    },
-    {
-      "slug": "agency-client-portal",
-      "tag": "Portals",
-      "title": "Agency Client Portal Development | Standen",
-      "h1": "Client portals for agency delivery",
-      "meta": "Custom client portals for agencies: status, files, approvals and messaging in one owned place. Fixed-scope tiers from £5k, 14 to 30 days.",
-      "lead": "Move delivery out of Slack threads and email, one secure portal your clients actually open.",
-      "answer": "Standen builds client portals for agencies: project status, file sharing, approvals and in-portal messaging in a single owned product. Delivery follows Launch (14 days), Scale (21) or Enterprise (30) with full source-code handover.",
-      "sections": [
-        { "h2": "When Slack and email stop scaling", "p": "Clients lose track of requests. Your team chases updates. A portal gives one auditable place for status, assets and sign-off: branded as your agency." },
-        { "h2": "What goes in version one", "p": "Project timeline, deliverable upload, approval buttons and a simple message thread. Integrations with Drive or Notion only if they remove real work." },
-        { "h2": "Onboarding speed", "p": "Portals reduce repetitive client questions and make handover predictable: especially when you run multiple retainers with different stakeholders." }
-      ],
-      "faqs": [
-        { "q": "Is this a white-label client portal?", "a": "Yes. Your brand, your domain, your data model." },
-        { "q": "Can we add approvals and e-sign later?", "a": "Yes. We scope phases so v1 ships fast and v2 extends without rebuilding." },
-        { "q": "Who hosts it?", "a": "We deploy on modern infrastructure and hand over access: you are not locked to our hosting." }
-      ],
-      "related": ["agency-reporting-dashboard", "agency-internal-crm"]
-    },
-    {
-      "slug": "agency-internal-crm",
-      "tag": "Operations",
-      "title": "Custom CRM for Agencies | Standen",
-      "h1": "Internal CRM and delivery queues for agencies",
-      "meta": "Custom internal CRM for agencies: lead routing, delivery queues and team dashboards. Fixed-scope tiers from £5k, 14 to 30 days. You own the codebase.",
-      "lead": "Route leads, track delivery and surface blockers in one workspace your team actually opens.",
-      "answer": "Standen builds internal CRMs and ops dashboards for agencies: lead routing, delivery queues and founder views in one tool shaped to your process. Launch tier ships in 14 days; larger builds use Scale or Enterprise timelines with full ownership on handover.",
-      "sections": [
-        { "h2": "Why generic CRMs fail agencies", "p": "Pipelines designed for SaaS sales do not match agency delivery. Teams work around the tool in spreadsheets and five browser tabs." },
-        { "h2": "What we model first", "p": "Leads, projects, owners, blockers and margin signals: only the fields your operators use daily. No feature bloat." },
-        { "h2": "Glue work disappears", "p": "When the same handover breaks every week, software is often the cleaner hire than another operations person copying data between tools." }
-      ],
-      "faqs": [
-        { "q": "Will this replace HubSpot?", "a": "Usually it complements marketing CRM: we own the delivery and ops layer HubSpot was never meant to run." },
-        { "q": "Can founders see pipeline and workload?", "a": "Yes. One dashboard for sales, delivery and what needs attention today." },
-        { "q": "How fast can we go live?", "a": "Launch tier: 14 days for a focused first version. Scale (21 days) and Enterprise (30 days) when you need more roles, integrations or compliance." }
-      ],
-      "related": ["internal-tools-for-agencies", "agency-client-portal"]
-    },
-    {
       "slug": "saas-mvp-development",
       "tag": "SaaS",
       "title": "SaaS MVP Development | Standen",
-      "h1": "SaaS MVP development for founders and agencies",
+      "h1": "SaaS MVP development for founders",
       "meta": "Build a SaaS MVP in 14 to 30 days. Production-ready, fixed-scope tiers from £5k to £18k. OhMyPod live in 21 days. You own 100% of the code.",
       "lead": "From scoped idea to live product with auth, billing-ready architecture and full handover, not a no-code prototype you cannot scale.",
-      "answer": "Standen builds SaaS MVPs for founders and agencies in 14 to 30 day sprints: fixed scope, private live link from day one, full code and deployment handover. OhMyPod shipped in 21 days.",
+      "answer": "Standen builds SaaS MVPs for founders in 14 to 30 day sprints: fixed scope, private live link from day one, full code and deployment handover. OhMyPod shipped in 21 days.",
       "sections": [
         { "h2": "How we scope an MVP that ships", "p": "One core outcome, one user type, one revenue or validation path. Everything else waits for phase two, so you launch while the market still cares." },
         { "h2": "What you get on handover", "p": "Repository, hosting access, environment notes and a walkthrough. No black box. No licence fee to us." },
@@ -98,44 +18,124 @@
         { "q": "Do you work with non-technical founders?", "a": "Yes. Daily demos and plain-language updates throughout the sprint." },
         { "q": "Can you add subscriptions later?", "a": "Yes. We structure v1 so Stripe or similar can slot in without rewriting core logic." }
       ],
-      "related": ["internal-tools-for-agencies", "agency-proposal-systems"]
+      "related": ["internal-tools-for-agencies", "agency-client-portal"]
     },
     {
       "slug": "internal-tools-for-agencies",
-      "tag": "Internal tools",
-      "title": "Internal Tool Development for Agencies | Standen",
-      "h1": "Internal tools for agencies",
-      "meta": "Internal tool development for agencies: workflows, integrations and bespoke ops software. Fixed-scope tiers, 14 to 30 days. Full code ownership.",
-      "lead": "Replace spreadsheet glue and manual handoffs with software shaped to how your team already works.",
-      "answer": "Standen builds internal tools for agencies: automation, integrations, queues and bespoke ops software in fixed-scope sprints (14, 21 or 30 days by tier). Clients own 100% of code, IP and deployment.",
+      "tag": "Automation",
+      "title": "Product Workflow Automation for SaaS | Standen",
+      "h1": "Product workflow automation for SaaS founders",
+      "meta": "Custom SaaS workflow automation: onboarding, fulfilment, integrations and bespoke product ops tools. Fixed-scope tiers, 14 to 30 days. Full code ownership.",
+      "lead": "Replace spreadsheet glue and manual handoffs with software shaped to how your product already works.",
+      "answer": "Standen builds product workflow automation for SaaS founders: integrations, queues, onboarding flows and bespoke ops software in fixed-scope sprints (14, 21 or 30 days by tier). Clients own 100% of code, IP and deployment.",
       "sections": [
-        { "h2": "What counts as an internal tool", "p": "Lead routers, QA checklists, resource planners, approval chains, data pipelines, anything your team rebuilds weekly in Sheets." },
-        { "h2": "Build vs buy for agency ops", "p": "When five SaaS products still need manual glue, a single owned tool often pays back in months. See our <a href=\"/compare/custom-build-vs-off-the-shelf.html\">build vs buy guide</a>." },
+        { "h2": "What counts as product workflow automation", "p": "Onboarding checklists, customer queues, data pipelines, fulfilment workflows, approval chains, anything your team rebuilds weekly in Sheets." },
+        { "h2": "Build vs buy for SaaS ops", "p": "When five SaaS products still need manual glue, a single owned tool often pays back in months. See our <a href=\"/compare/custom-build-vs-off-the-shelf.html\">build vs buy guide</a>." },
         { "h2": "Delivery examples", "p": "Instagram lead scraper in <strong>8 days</strong>. Crypto news aggregation in <strong>6 days</strong>. Lead magnet generator in <strong>9 days</strong>." }
       ],
       "faqs": [
-        { "q": "Is this custom software development?", "a": "Yes, same engagement model as our <a href=\"/#service-saas\">SaaS builds</a>, scoped to internal users." },
-        { "q": "Can you integrate with our stack?", "a": "Slack, Notion, HubSpot, Google Workspace, ad APIs and custom databases." },
-        { "q": "What if we only know the pain, not the spec?", "a": "Start with the <a href=\"/audit.html\">agency ops audit</a>, we map the workflow before quoting." }
+        { "q": "Is this custom software development?", "a": "Yes, same engagement model as our <a href=\"/#service-saas\">SaaS builds</a>, scoped to internal users and product operations." },
+        { "q": "Can you integrate with our stack?", "a": "Stripe, HubSpot, Google Workspace, analytics tools, support tools, APIs and custom databases." },
+        { "q": "What if we only know the pain, not the spec?", "a": "Start with the <a href=\"/audit.html\">SaaS ops audit</a>, we map the workflow before quoting." }
       ],
       "related": ["agency-internal-crm", "saas-mvp-development"]
+    },
+    {
+      "slug": "agency-client-portal",
+      "tag": "Portals",
+      "title": "Customer Portal Development for SaaS | Standen",
+      "h1": "Customer portals for SaaS products",
+      "meta": "Custom customer portals for SaaS products: onboarding, status, files, approvals and account actions in one owned place. Fixed-scope tiers from £5k, 14 to 30 days.",
+      "lead": "Give customers one secure place to manage onboarding, files, approvals, status and account actions inside your product experience.",
+      "answer": "Standen builds customer portals for SaaS products: onboarding status, file sharing, approvals and in-portal messaging in a single owned product. Delivery follows Launch (14 days), Scale (21) or Enterprise (30) with full source-code handover.",
+      "sections": [
+        { "h2": "When email and support threads stop scaling", "p": "Customers lose track of requests. Your team chases updates. A portal gives one auditable place for status, assets and account actions: branded as your product." },
+        { "h2": "What goes in version one", "p": "Onboarding timeline, deliverable upload, approval buttons and a simple message thread. Integrations with Drive, Stripe or your database only if they remove real work." },
+        { "h2": "Onboarding speed", "p": "Portals reduce repetitive customer questions and make handover predictable, especially when the same setup steps repeat across accounts." }
+      ],
+      "faqs": [
+        { "q": "Is this a white-label customer portal?", "a": "Yes. Your brand, your domain, your data model." },
+        { "q": "Can we add approvals and billing later?", "a": "Yes. We scope phases so v1 ships fast and v2 extends without rebuilding." },
+        { "q": "Who hosts it?", "a": "We deploy on modern infrastructure and hand over access: you are not locked to our hosting." }
+      ],
+      "related": ["agency-reporting-dashboard", "agency-internal-crm"]
+    },
+    {
+      "slug": "agency-reporting-dashboard",
+      "tag": "Analytics",
+      "title": "Product Analytics Dashboards for SaaS | Standen",
+      "h1": "Product analytics dashboards for SaaS founders",
+      "meta": "Replace manual product and revenue reporting with live dashboards. Fixed-scope tiers from £5k, 14 to 30 days. Full code ownership.",
+      "lead": "Pull product, revenue and CRM data into one live view, so founders can see activation, retention and the next bottleneck clearly.",
+      "answer": "Standen builds product analytics dashboards for SaaS founders that replace manual reporting with live, founder-ready views. Data from product events, revenue and CRM in one place. Launch tier ships in 14 days; Scale in 21 and Enterprise in 30 with full ownership.",
+      "sections": [
+        { "h2": "The cost of manual reporting", "p": "Most teams lose hours every month pulling screenshots into decks. The numbers are already stale by the time the update lands." },
+        { "h2": "What a useful dashboard includes", "p": "Clear KPIs for activation, retention, revenue and usage, with period comparison and commentary slots. Built around how founders actually read product performance." },
+        { "h2": "Recent delivery", "p": "FX Quant Research Platform, a full research and analytics environment, shipped in <strong>12 days</strong>. Dashboard builds reuse the same disciplined scoping and weekly delivery rhythm." }
+      ],
+      "faqs": [
+        { "q": "Can customers or team members log in securely?", "a": "Yes. Role-based access, account-level views and optional white-label branding." },
+        { "q": "Which data sources can you connect?", "a": "Common stacks include Stripe, GA4, product analytics tools, HubSpot and custom APIs." },
+        { "q": "How is this different from Looker Studio?", "a": "You own the product logic and UX, not a template that breaks every time a connector changes." }
+      ],
+      "related": ["agency-client-portal", "saas-mvp-development"]
+    },
+    {
+      "slug": "agency-internal-crm",
+      "tag": "Admin",
+      "title": "Admin Dashboards for SaaS | Standen",
+      "h1": "Admin dashboards and ops tools for SaaS products",
+      "meta": "Custom admin dashboards for SaaS products: user management, account queues and team dashboards. Fixed-scope tiers from £5k, 14 to 30 days. You own the codebase.",
+      "lead": "Manage users, accounts, support queues and product operations from one workspace your team actually opens.",
+      "answer": "Standen builds admin dashboards and ops tools for SaaS founders: user management, account queues and founder views in one tool shaped to your product. Launch tier ships in 14 days; larger builds use Scale or Enterprise timelines with full ownership on handover.",
+      "sections": [
+        { "h2": "Why generic CRMs fail SaaS ops", "p": "Pipelines designed for sales do not match product operations. Teams work around the tool in spreadsheets and five browser tabs." },
+        { "h2": "What we model first", "p": "Users, accounts, owners, blockers and revenue signals: only the fields your operators use daily. No feature bloat." },
+        { "h2": "Glue work disappears", "p": "When the same handover breaks every week, software is often the cleaner hire than another operations person copying data between tools." }
+      ],
+      "faqs": [
+        { "q": "Will this replace HubSpot?", "a": "Usually it complements marketing CRM: we own the product and ops layer HubSpot was never meant to run." },
+        { "q": "Can founders see pipeline and workload?", "a": "Yes. One dashboard for users, accounts, delivery and what needs attention today." },
+        { "q": "How fast can we go live?", "a": "Launch tier: 14 days for a focused first version. Scale (21 days) and Enterprise (30 days) when you need more roles, integrations or compliance." }
+      ],
+      "related": ["internal-tools-for-agencies", "agency-client-portal"]
+    },
+    {
+      "slug": "agency-proposal-systems",
+      "tag": "Billing",
+      "title": "Pricing and Subscription Systems | Standen",
+      "h1": "Pricing and subscription systems for SaaS founders",
+      "meta": "Custom pricing, checkout and subscription workflows for SaaS products. Fixed-scope tiers from £5k to £18k, 14 to 30 days. You own 100% of the code.",
+      "lead": "Turn plan logic, trials, upgrades and approvals into one owned workflow, not a spreadsheet behind Stripe.",
+      "answer": "Standen builds custom pricing and subscription systems for SaaS founders: plan logic, approval chains, version history and checkout-ready workflows. Launch builds ship in 14 days from £5,000, Scale builds ship in 21 days from £9,500, and Enterprise builds ship in 30 days from £18,000 with full code ownership.",
+      "sections": [
+        { "h2": "Why pricing should not live in Google Docs", "p": "Docs duplicate, drift and hide margin. A pricing system ties plans, add-ons, discounts and sign-off to how your SaaS actually sells, so founders stop rewriting the same logic every week." },
+        { "h2": "What we build in the first sprint", "p": "One revenue workflow end to end: plan logic, pricing rules, internal approval, customer-facing view and checkout-ready handoff. Launch tier ships in 14 days; Scale and Enterprise extend scope and timeline." },
+        { "h2": "Proof from recent builds", "p": "OhMyPod went from notes to a live owned SaaS in <strong>21 days</strong>. Pricing workflows use the same fixed-scope delivery model." }
+      ],
+      "faqs": [
+        { "q": "How much does a pricing system cost?", "a": "Launch starts from <strong>£5,000</strong>, Scale from <strong>£9,500</strong>, and Enterprise from <strong>£18,000</strong>, with fixed scope and full handover." },
+        { "q": "Do we own the code?", "a": "Yes: repository, deployment and documentation are transferred on handover." },
+        { "q": "Can this connect to Stripe?", "a": "Yes. We integrate with Stripe, Paddle, HubSpot, spreadsheets or your existing stack where it saves manual copy-paste." }
+      ],
+      "related": ["saas-mvp-development", "agency-reporting-dashboard"]
     }
   ],
   "comparisons": [
     {
       "slug": "custom-build-vs-off-the-shelf",
-      "title": "Agency Build vs Buy: Custom Software vs SaaS | Standen",
-      "h1": "Custom build vs off-the-shelf SaaS for agencies",
-      "meta": "Should your agency build custom software or buy SaaS? Build vs buy guide for proposals, reporting, portals and internal ops.",
-      "lead": "Off-the-shelf SaaS wins when the job is standard. Custom wins when your workflow, data model or client experience is the thing you compete on, and you want to own it.",
+      "title": "Custom SaaS Build vs Off-the-Shelf Tools | Standen",
+      "h1": "Custom SaaS build vs off-the-shelf tools for founders",
+      "meta": "Should your SaaS build custom software or buy off-the-shelf tools? Build vs buy guide for MVPs, dashboards, portals and internal ops.",
+      "lead": "Off-the-shelf tools win when the job is standard. Custom wins when your workflow, data model or customer experience is the thing you compete on, and you want to own it.",
       "sections": [
-        { "h2": "When off-the-shelf SaaS is the right call", "p": "If a mature product already does the job and it is not where you differentiate, buy it. You move faster, pay less upfront and get maintenance for free. Most marketing, comms, accounting and scheduling needs are solved this way, and a custom build there is wasted budget." },
-        { "h2": "When a custom build pays for itself", "p": "Build when five tools still need manual glue, when approvals, pricing or reporting fit no product on the market, or when you are renting the workflow logic that defines how your agency runs. An owned system removes the recurring copy-paste and does not disappear when a subscription lapses or a connector breaks." },
+        { "h2": "When off-the-shelf tools are the right call", "p": "If a mature product already does the job and it is not where you differentiate, buy it. You move faster, pay less upfront and get maintenance for free. Most marketing, comms, accounting and scheduling needs are solved this way, and a custom build there is wasted budget." },
+        { "h2": "When a custom build pays for itself", "p": "Build when five tools still need manual glue, when approvals, pricing or reporting fit no product on the market, or when you are renting the workflow logic that defines how your SaaS runs. An owned system removes recurring copy-paste and does not disappear when a subscription lapses or a connector breaks." },
         { "h2": "How Standen scopes a build vs buy decision", "p": "We map the workflow, score repetition, integration depth and ownership risk, then scope the smallest useful build. Launch ships in 14 days from <strong>£5,000</strong>, Scale in 21 from <strong>£9,500</strong> and Enterprise in 30 from <strong>£18,000</strong>, with 100% code ownership on handover." }
       ],
       "faqs": [
         { "q": "Is custom software more expensive than SaaS?", "a": "Upfront, usually yes. Over two to three years a fixed-scope build from <strong>£5,000</strong> often costs less than stacked subscriptions plus the manual work they leave behind, and you own the asset instead of renting it." },
-        { "q": "Can we start with SaaS and build later?", "a": "Yes. Many teams buy off-the-shelf to start, then build the one workflow that becomes a bottleneck. We scope that first build around the highest-friction handoff." },
+        { "q": "Can we start with tools and build later?", "a": "Yes. Many teams buy off-the-shelf to start, then build the one workflow that becomes a bottleneck. We scope that first build around the highest-friction handoff." },
         { "q": "What do we own at the end?", "a": "Everything: source code, deployment access and documentation. No licence lock-in and no platform dependency." }
       ]
     },
@@ -143,28 +143,28 @@
       "slug": "agency-build-vs-hiring-operations",
       "title": "Build Software vs Hire Ops | Standen",
       "h1": "Build internal software vs hiring another operations person",
-      "meta": "Should your agency hire another ops person or build owned software first? Compare cost, speed and long-term margin with Standen.",
+      "meta": "Should your SaaS hire another ops person or build owned software first? Compare cost, speed and long-term margin with Standen.",
       "lead": "When the same handover breaks every week, a scoped internal tool often beats another salary, and compounds.",
       "sections": [
-        { "h2": "When hiring ops is the right move", "p": "You need human judgment on client relationships, culture and ad-hoc firefighting, and volume is still manageable in spreadsheets." },
-        { "h2": "When software is the cleaner hire", "p": "The same data gets copied between five tools. Reporting takes days. Proposals stall in Docs. A scoped build (from 14 days on Launch) removes recurring glue work permanently." },
-        { "h2": "The maths agencies overlook", "p": "A £5k-£18k owned system vs £40k+ annual ops salary, plus the system does not leave when someone moves on." }
+        { "h2": "When hiring ops is the right move", "p": "You need human judgment on customer relationships, culture and ad-hoc firefighting, and volume is still manageable in spreadsheets." },
+        { "h2": "When software is the cleaner hire", "p": "The same data gets copied between five tools. Reporting takes days. Onboarding stalls in docs. A scoped build (from 14 days on Launch) removes recurring glue work permanently." },
+        { "h2": "The maths founders overlook", "p": "A £5k-£18k owned system vs £40k+ annual ops salary, plus the system does not leave when someone moves on." }
       ],
       "faqs": [
-        { "q": "Can we do both?", "a": "Yes. Software handles repeat workflow; ops focuses on clients and exceptions." },
+        { "q": "Can we do both?", "a": "Yes. Software handles repeat workflow; ops focuses on customers and exceptions." },
         { "q": "How fast can software ship?", "a": "Launch tier ships in <strong>14 days</strong>; Scale in <strong>21</strong> and Enterprise in <strong>30</strong> when scope requires it." }
       ]
     },
     {
       "slug": "custom-crm-vs-spreadsheet",
-      "title": "Custom CRM vs Spreadsheets for Agencies | Standen",
-      "h1": "Custom CRM vs spreadsheets for agency delivery",
-      "meta": "When agencies should move from spreadsheets to a custom CRM or ops dashboard, timelines, cost and ownership.",
-      "lead": "Spreadsheets work until delivery complexity makes them the risk, wrong version, no audit trail, no single view for founders.",
+      "title": "Custom Dashboard vs Spreadsheets for SaaS | Standen",
+      "h1": "Custom dashboard vs spreadsheets for SaaS ops",
+      "meta": "When SaaS founders should move from spreadsheets to a custom dashboard or ops tool, timelines, cost and ownership.",
+      "lead": "Spreadsheets work until product complexity makes them the risk: wrong version, no audit trail, no single view for founders.",
       "sections": [
         { "h2": "Signs you have outgrown Sheets", "p": "Multiple tabs nobody trusts. No owner on rows. Founders cannot see blockers without a meeting." },
-        { "h2": "What a custom CRM gives you", "p": "One queue, clear owners, status your team updates daily, and reporting that does not require export gymnastics." },
-        { "h2": "Cost and timeline", "p": "A focused CRM v1 fits the Launch tier from <strong>£5,000</strong> and typically ships in <strong>14 days</strong>. Scale or Enterprise applies when the CRM needs more roles, integrations or compliance-oriented architecture." }
+        { "h2": "What a custom dashboard gives you", "p": "One queue, clear owners, status your team updates daily, and reporting that does not require export gymnastics." },
+        { "h2": "Cost and timeline", "p": "A focused dashboard v1 fits the Launch tier from <strong>£5,000</strong> and typically ships in <strong>14 days</strong>. Scale or Enterprise applies when the product needs more roles, integrations or compliance-oriented architecture." }
       ],
       "faqs": [
         { "q": "Will my team actually use it?", "a": "We design around existing habits, fewer fields, faster updates than maintaining a sheet." },

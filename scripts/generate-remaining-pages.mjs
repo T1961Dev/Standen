@@ -86,7 +86,7 @@ write(
     "case-studies.html",
     pageShell({
         title: "Case studies | Standen",
-        description: "Standen case studies: SaaS MVPs, dashboards and internal tools for agencies. Delivered in 6 to 21 days.",
+        description: "Standen case studies: SaaS MVPs, dashboards, automation and full-stack software. Delivered in 6 to 21 days.",
         canonical: SITE + "/work",
         robots: ROBOTS_NOINDEX,
         activeNav: "work",
@@ -109,7 +109,7 @@ write(
     "resources.html",
     pageShell({
         title: "Resources | Standen",
-        description: "Guides, comparisons, blog posts and FAQs for agencies planning custom software builds.",
+        description: "Guides, comparisons, blog posts and FAQs for SaaS founders planning custom software builds.",
         canonical: SITE + "/resources",
         robots: ROBOTS_NOINDEX,
         activeNav: "guides",
@@ -119,12 +119,12 @@ write(
                 ${breadcrumbs([{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }])}
                 <header class="guides-page-head">
                     <h1>Resources</h1>
-                    <p class="guides-page-lead">Guides, comparisons and practical posts for agency founders and operators.</p>
+                    <p class="guides-page-lead">Guides, comparisons and practical posts for SaaS founders and product operators.</p>
                 </header>
                 <div class="service-hub__grid">
-                    <a href="/guides.html" class="service-hub__card"><h2>Guides</h2><p>Proposals, reporting, portals, operations and custom software.</p><span class="text-link">Browse guides <span aria-hidden="true">&gt;</span></span></a>
-                    <a href="/compare/index.html" class="service-hub__card"><h2>Compare</h2><p>Build vs buy, CRM vs spreadsheets, software vs hiring ops.</p><span class="text-link">Read comparisons <span aria-hidden="true">&gt;</span></span></a>
-                    <a href="/audit.html" class="service-hub__card"><h2>Ops audit</h2><p>Five workflow leaks that cost agencies hours and margin.</p><span class="text-link">Read the audit <span aria-hidden="true">&gt;</span></span></a>
+                    <a href="/guides.html" class="service-hub__card"><h2>Guides</h2><p>SaaS MVPs, product workflows, portals, operations and custom software.</p><span class="text-link">Browse guides <span aria-hidden="true">&gt;</span></span></a>
+                    <a href="/compare/index.html" class="service-hub__card"><h2>Compare</h2><p>Build vs buy, dashboards vs spreadsheets, software vs hiring ops.</p><span class="text-link">Read comparisons <span aria-hidden="true">&gt;</span></span></a>
+                    <a href="/audit.html" class="service-hub__card"><h2>Ops audit</h2><p>Five workflow leaks that cost SaaS founders hours and margin.</p><span class="text-link">Read the audit <span aria-hidden="true">&gt;</span></span></a>
                     <a href="/blog.html" class="service-hub__card"><h2>Blog</h2><p>Scoping, delivery and build vs buy notes from Standen.</p><span class="text-link">Read the blog <span aria-hidden="true">&gt;</span></span></a>
                 </div>
             </div>
@@ -137,7 +137,7 @@ function faqSectionResources() {
     const faqs = [
         { q: "How long does a typical build take?", a: "Launch tier ships in <strong>14 days</strong>, Scale in <strong>21 days</strong>, and Enterprise in <strong>30 days</strong>, depending on scope." },
         { q: "What does it cost?", a: "Launch starts from <strong>£5,000</strong>, Scale from <strong>£9,500</strong>, and Enterprise from <strong>£18,000</strong>, with fixed scope and full handover." },
-        { q: "Do you work with agencies outside the UK?", a: "Yes. We are UK-based and work remotely with agencies worldwide." },
+        { q: "Do you work with founders outside the UK?", a: "Yes. We are UK-based and work remotely with SaaS founders worldwide." },
         { q: "What is your process?", a: "Discovery and scope, build in weekly sprints with demos, then handover with full code ownership." },
     ];
     return `<section class="seo-faq wrap" aria-labelledby="res-faq"><h2 id="res-faq">Common questions</h2><div class="seo-faq__list">${faqs.map((f, i) => `<details class="seo-faq__item"${i === 0 ? " open" : ""}><summary>${f.q}</summary><p>${f.a}</p></details>`).join("")}</div></section>`;
