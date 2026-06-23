@@ -196,16 +196,16 @@ for (const guide of guides) {
 
 write(
     "guides.html",
-    pageShell({
-        title: "Guides | Standen",
-        description: metaDescription(
-            "Free guides on SaaS MVP development and custom software. Practical scoping, portals, dashboards and handover notes from Standen."
-        ),
-        canonical: `${SITE}/guides`,
-        activeNav: "blog",
-        robots: ROBOTS_INDEX,
-        extraScripts: `
-    <script>location.replace("/blog");</script>`,
-        body: `<p><a href="/blog.html">Continue to the Standen blog</a></p>`,
-    })
+    `<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="${SITE}/blog">
+    <title>Guides | Standen</title>
+    <script>location.replace("/blog.html");</script>
+</head>
+<body><p><a href="/blog.html">View blog and guides</a></p></body>
+</html>`
 );

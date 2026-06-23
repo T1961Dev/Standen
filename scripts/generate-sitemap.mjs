@@ -23,6 +23,7 @@ const SKIP_FILES = new Set([
     "saas-development-uk.html",
     "custom-software-development-uk.html",
     "agencies.html",
+    "guides.html",
 ]);
 
 function walkHtml(dir, files = []) {
@@ -58,7 +59,6 @@ function priorityFor(loc) {
     }
     if (loc.startsWith("/case-studies/")) return loc.endsWith("/ohmypod") ? "0.7" : "0.6";
     if (loc === "/about") return "0.75";
-    if (loc === "/guides") return "0.85";
     return "0.5";
 }
 
