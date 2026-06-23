@@ -8,8 +8,8 @@ const LASTMOD = new Date().toISOString().slice(0, 10);
 
 const SKIP_DIRS = new Set(["scripts", "content", "public", "node_modules", ".git", "assets", "pics", "js"]);
 
-/** Not in primary nav, keep crawl budget on commercial URLs */
-const SITEMAP_EXCLUDE_PREFIXES = ["/guides", "/blog", "/resources"];
+/** Not in primary nav; keep crawl budget on commercial URLs */
+const SITEMAP_EXCLUDE_PREFIXES = [];
 
 function includeInSitemap(loc) {
     return !SITEMAP_EXCLUDE_PREFIXES.some((prefix) => loc === prefix || loc.startsWith(`${prefix}/`));
@@ -51,21 +51,22 @@ function toUrlPath(rel) {
 
 function priorityFor(loc) {
     if (loc === "/") return "1.0";
-    if (loc === "/work" || loc === "/audit" || loc === "/guides") return "0.9";
+    if (loc === "/work" || loc === "/audit" || loc === "/blog") return "0.9";
     if (loc.startsWith("/compare")) return "0.85";
-    if (loc.startsWith("/guides/")) return loc.endsWith("/a2a-protocol") ? "0.8" : "0.65";
+    if (loc.startsWith("/guides/") || loc.startsWith("/blog/")) {
+        return loc.includes("how-to-scope") || loc.includes("scope-first") ? "0.85" : "0.75";
+    }
     if (loc.startsWith("/case-studies/")) return loc.endsWith("/ohmypod") ? "0.7" : "0.6";
-    if (loc.startsWith("/blog/")) return "0.6";
     if (loc === "/about") return "0.75";
-    if (loc === "/blog") return "0.7";
-    if (loc === "/resources") return "0.65";
+    if (loc === "/guides") return "0.85";
     return "0.5";
 }
 
 function changefreqFor(loc) {
-    if (loc === "/" || loc === "/guides" || loc === "/blog") return "weekly";
+    if (loc === "/" || loc === "/blog" || loc === "/guides") return "weekly";
     if (loc === "/privacy" || loc === "/terms") return "yearly";
-    if (loc.startsWith("/case-studies/") || loc.startsWith("/blog/")) return "yearly";
+    if (loc.startsWith("/guides/") || loc.startsWith("/blog/")) return "monthly";
+    if (loc.startsWith("/case-studies/")) return "yearly";
     return "monthly";
 }
 

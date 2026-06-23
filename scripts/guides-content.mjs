@@ -31,7 +31,7 @@ export function renderGuideBody(guide, { copyFor, escapeHtml }) {
     const closeText =
         content.close ||
         `Use this as a working checklist inside your team first. When the same steps repeat every week and spreadsheets start breaking, that is usually the moment to scope ${escapeHtml(c.first)} as an owned system.`;
-    parts.push(`<p class="guide-article__close">${closeText} <a href="${serviceHref}">See the relevant Standen service</a> or <a href="/audit.html">read the SaaS ops audit</a>.</p>`);
+    parts.push(`<p class="guide-article__close">${closeText} <a href="${serviceHref}">See the relevant Standen service</a> · <a href="/blog.html">More guides</a> · <a href="/audit.html">SaaS ops audit</a>.</p>`);
 
     return parts.join("\n                    ");
 }
@@ -887,6 +887,400 @@ const GUIDE_CONTENT = {
             },
         ],
         service: "/#service-saas",
+    },
+
+    "saas-mvp-architecture": {
+        lead: "Architecture debates kill MVPs. Version one needs a boring stack, clear boundaries and a path to grow without rewriting everything.",
+        answer: "Most first SaaS products should be a single deployable app with Postgres, server-side auth and a thin API layer. Split services only when a team boundary or scaling pain forces it.",
+        blocks: [
+            {
+                h2: "The default stack we recommend for MVPs",
+                ul: [
+                    "One web app (React or similar) plus one API (Node, Python or similar).",
+                    "Postgres as the system of record.",
+                    "Managed auth or a well-tested session layer.",
+                    "Object storage for uploads, not the database.",
+                    "Background jobs only for email, webhooks and long tasks.",
+                ],
+            },
+            {
+                h2: "Draw boundaries on paper first",
+                p: [
+                    "List entities: users, organisations, the core object your product manages, billing account. Draw which service owns writes. If two modules both mutate the same row, merge them until v2.",
+                    "Version one is allowed to be ugly inside if the user journey is clean. Version two pays down debt when you know which features survive.",
+                ],
+            },
+            {
+                h2: "What not to build in v1",
+                ul: [
+                    "Separate microservices per feature.",
+                    "Custom admin framework before you have admins.",
+                    "Plugin marketplace before you have ten paying customers.",
+                    "Real-time everything unless the product promise requires it.",
+                ],
+            },
+            {
+                h2: "Handover-friendly architecture",
+                p: ["Document env vars, migrations, seed data and how to run locally in one README. Clients who own the code should not need you to deploy a patch in year two."],
+            },
+        ],
+        service: "/#service-saas",
+    },
+
+    "stripe-billing-saas": {
+        lead: "Payments are not the product, but broken billing kills trust on day one. Stripe is the default for UK SaaS MVPs because it handles compliance, cards and subscriptions.",
+        answer: "Start with one paid plan, optional trial, Customer portal for self-serve changes and webhooks that update your database. Add usage-based billing only when pricing truly depends on metered events.",
+        blocks: [
+            {
+                h2: "Minimum viable billing",
+                ol: [
+                    "Create Products and Prices in Stripe (monthly first).",
+                    "Checkout Session or Payment Link for the first conversion path.",
+                    "Store stripe_customer_id and subscription_status on your user or org record.",
+                    "Listen for checkout.session.completed and customer.subscription.updated webhooks.",
+                    "Gate features in app code from subscription_status, not from guessing.",
+                ],
+            },
+            {
+                h2: "Trials and upgrades",
+                p: [
+                    "Trials work when activation is measurable: connect data, invite a teammate, complete one core action. End trial access cleanly with email plus in-app banner.",
+                    "Use Stripe Customer Portal for plan changes so you do not rebuild billing UI in v1.",
+                ],
+            },
+            {
+                h2: "Webhook hygiene",
+                ul: [
+                    "Verify signatures on every request.",
+                    "Make handlers idempotent (same event twice should be safe).",
+                    "Log failures to a queue you can replay.",
+                    "Never trust client-side payment success alone.",
+                ],
+            },
+        ],
+        service: "/#service-saas",
+    },
+
+    "auth-for-saas-mvps": {
+        lead: "Auth is table stakes. Buyers expect email login, password reset and sensible session expiry. B2B buyers also expect invites and role separation.",
+        answer: "Pick managed auth (Clerk, Auth0, Supabase Auth) when speed matters. Roll your own only when compliance or pricing forces it and you budget time for edge cases.",
+        blocks: [
+            {
+                h2: "Flows you must ship",
+                ul: [
+                    "Sign up, sign in, sign out.",
+                    "Email verification or magic link.",
+                    "Password reset.",
+                    "Invite teammate (B2B).",
+                    "Optional: Google or Microsoft OAuth for enterprise buyers.",
+                ],
+            },
+            {
+                h2: "Sessions vs JWTs",
+                p: [
+                    "Server-side sessions in HTTP-only cookies are simpler to revoke and debug for most MVPs.",
+                    "JWT access tokens shine for mobile or third-party API consumers. Add them when you have those clients, not before.",
+                ],
+            },
+            {
+                h2: "Roles in version one",
+                p: ["Owner, admin, member is enough for most B2B SaaS. Customer-facing portals may need a separate user type with narrower permissions. See our <a href=\"/guides/rbac-for-saas.html\">RBAC guide</a>."],
+            },
+        ],
+        service: "/#service-saas",
+    },
+
+    "postgres-vs-managed-db": {
+        lead: "Your database choice outlives your frontend framework. For owned SaaS products, Postgres is still the safest default in 2026.",
+        answer: "Use Postgres when you need relational data, reporting, migrations and predictable query patterns. Managed Firebase or similar can work for mobile-first prototypes with simple document shapes.",
+        blocks: [
+            {
+                h2: "When Postgres wins",
+                ul: [
+                    "Multi-tenant B2B with joins across users, orgs and resources.",
+                    "Financial or operational reporting from SQL.",
+                    "Integrations that export CSV or sync via API.",
+                    "You want the client to host anywhere (RDS, Supabase, Neon, etc.).",
+                ],
+            },
+            {
+                h2: "When document stores win",
+                p: ["Rapid prototypes with nested JSON, offline-first mobile, or teams already deep in a vendor ecosystem. Plan the migration path if the product succeeds."],
+            },
+            {
+                h2: "Managed hosting",
+                p: ["Neon, Supabase, RDS or Railway Postgres all work. Pick based on backup policy, region and who will operate it after handover."],
+            },
+        ],
+        service: "/#service-internal",
+    },
+
+    "saas-deployment-checklist": {
+        lead: "Deployment is part of the product. If only the agency can ship, the client does not truly own the system.",
+        blocks: [
+            {
+                h2: "Environments",
+                ul: [
+                    "Local with docker-compose or documented native setup.",
+                    "Staging on the same host pattern as production.",
+                    "Production with separate database and secrets.",
+                ],
+            },
+            {
+                h2: "Pre-launch checklist",
+                ol: [
+                    "Environment variables documented (.env.example).",
+                    "Database migrations run in CI or documented script.",
+                    "Health check endpoint monitored.",
+                    "Error tracking (Sentry or similar) wired.",
+                    "Backups enabled and restore tested once.",
+                    "Domain, SSL and redirect from www.",
+                ],
+            },
+            {
+                h2: "Handover packet",
+                p: ["Repo access, hosting login, DNS notes, runbook for deploy and rollback, and who to call when Stripe or email breaks."],
+            },
+        ],
+        service: "/#service-saas",
+    },
+
+    "monolith-first-mvp": {
+        lead: "Microservices are an organisational tool, not a shortcut for solo founders. Most MVPs fail on distribution, not on modular deployment.",
+        answer: "Stay monolithic until you have clear scaling pain, separate teams or compliance zones that force a split.",
+        blocks: [
+            {
+                h2: "Costs of splitting early",
+                ul: [
+                    "Distributed tracing and logging across services.",
+                    "Contract testing between APIs.",
+                    "Slower local development.",
+                    "Harder onboarding for the client's future team.",
+                ],
+            },
+            {
+                h2: "Modular monolith pattern",
+                p: ["Keep one deployable unit but enforce module folders: billing, core domain, notifications. Extract a service when a module needs independent scaling or release cadence."],
+            },
+        ],
+        service: "/#service-saas",
+    },
+
+    "rbac-for-saas": {
+        lead: "Enterprise buyers ask about permissions in the second call. If your data model cannot answer 'who can see this?', deals stall.",
+        blocks: [
+            {
+                h2: "Model orgs and memberships",
+                p: ["User belongs to Organisation via Membership with role enum. Resources belong to Organisation. Every query filters by org_id from the session, never from client input alone."],
+            },
+            {
+                h2: "Role matrix (starter)",
+                ul: [
+                    "Owner: billing, delete org, manage all data.",
+                    "Admin: manage users and settings, not billing.",
+                    "Member: create and edit assigned resources.",
+                    "Viewer: read-only.",
+                ],
+            },
+            {
+                h2: "Customer portal users",
+                p: ["Separate table or role flag for external users with access to one project or account. Never reuse internal admin routes."],
+            },
+        ],
+        service: "/#service-portals",
+    },
+
+    "api-design-saas-mvp": {
+        lead: "Your API is a product for integrators. Even if v1 has no public API docs, webhooks and future partners will need stable shapes.",
+        blocks: [
+            {
+                h2: "REST conventions that age well",
+                ul: [
+                    "Plural nouns, stable IDs (UUIDs).",
+                    "Consistent error JSON: code, message, field errors.",
+                    "Pagination: cursor or offset, always documented.",
+                    "Version prefix (/v1/) before external consumers depend on you.",
+                ],
+            },
+            {
+                h2: "Webhooks out",
+                p: ["Sign payloads, retry with backoff, let receivers verify with a shared secret. Log delivery status in admin."],
+            },
+            {
+                h2: "Webhooks in",
+                p: ["Stripe, HubSpot, Slack, one handler module per provider, idempotent processing, dead-letter queue for failures."],
+            },
+        ],
+        service: "/#service-internal",
+    },
+
+    "technical-debt-mvp": {
+        lead: "All MVPs carry debt. Good teams choose which debt is strategic and which debt becomes a production incident.",
+        blocks: [
+            {
+                h2: "Acceptable debt",
+                ul: [
+                    "Duplicated UI components.",
+                    "Manual admin scripts instead of full admin UI.",
+                    "Hard-coded email templates.",
+                    "Missing test coverage on experimental features.",
+                ],
+            },
+            {
+                h2: "Unacceptable debt",
+                ul: [
+                    "No migrations for schema changes.",
+                    "Secrets in the repo.",
+                    "Auth checks only in the frontend.",
+                    "Ambiguous ownership of money-moving code.",
+                ],
+            },
+            {
+                h2: "Paydown trigger",
+                p: ["When a second engineer joins or monthly revenue crosses your comfort threshold, schedule a hardening sprint: tests on billing and auth, monitoring, and delete dead code paths."],
+            },
+        ],
+        service: "/#service-saas",
+    },
+
+    "saas-onboarding-metrics": {
+        lead: "Pretty onboarding screens do not matter if users never reach the aha moment. Measure the funnel before you redesign copy.",
+        blocks: [
+            {
+                h2: "Core events to track",
+                ul: [
+                    "account_created",
+                    "integration_connected or data_imported",
+                    "core_action_completed (define one per product)",
+                    "invited_teammate",
+                    "upgraded_to_paid",
+                ],
+            },
+            {
+                h2: "Metrics that matter early",
+                p: [
+                    "Median time from sign-up to core_action_completed.",
+                    "Activation rate at day 7.",
+                    "Support tickets tagged 'getting started'.",
+                    "Trial-to-paid if you run trials.",
+                ],
+            },
+            {
+                h2: "Fix the step with the biggest drop",
+                p: ["One improvement per week beats a full redesign. Often the fix is defaults, sample data or a shorter form, not new features."],
+            },
+        ],
+        service: "/#service-saas",
+    },
+
+    "multi-tenant-saas-basics": {
+        lead: "Multi-tenancy sounds enterprise. In practice it means every row knows which customer it belongs to and every query respects that boundary.",
+        blocks: [
+            {
+                h2: "Tenant models",
+                ul: [
+                    "Org-per-customer (default for B2B).",
+                    "Workspace inside org for large accounts.",
+                    "Siloed database per enterprise client (only when contract requires).",
+                ],
+            },
+            {
+                h2: "Isolation checklist",
+                ol: [
+                    "org_id on every tenant-owned table.",
+                    "Middleware sets tenant from session.",
+                    "Integration tests that user A cannot read user B's IDs.",
+                    "Background jobs pass org_id explicitly.",
+                ],
+            },
+            {
+                h2: "Billing linkage",
+                p: ["Map Stripe customer to organisation, not individual user, unless you are prosumer B2C."],
+            },
+        ],
+        service: "/#service-saas",
+    },
+
+    "custom-admin-dashboards": {
+        lead: "BI tools are brilliant for exploration. They are weak when operators need to act inside a workflow: approve, reassign, trigger a job.",
+        answer: "Build a custom dashboard when the UI must match your process, write back to systems, or combine data no warehouse has yet.",
+        blocks: [
+            {
+                h2: "Use off-the-shelf when",
+                ul: [
+                    "Leaders want charts from a warehouse you already maintain.",
+                    "Read-only is fine.",
+                    "Filters are standard (date range, region, product).",
+                ],
+            },
+            {
+                h2: "Build custom when",
+                ul: [
+                    "Operators approve or edit records inline.",
+                    "Data spans internal DB plus live API calls.",
+                    "Role-based views differ materially by team.",
+                    "Speed of action matters more than chart polish.",
+                ],
+            },
+            {
+                h2: "Scope v1",
+                p: ["One role, one table view, three KPIs, two actions. Ship behind auth, iterate with the people who run the process daily."],
+            },
+        ],
+        service: "/#service-reporting",
+    },
+
+    "saas-discovery-questions": {
+        lead: "Bad scoping starts with vague problems. These questions turn a founder call into a buildable brief.",
+        blocks: [
+            {
+                h2: "Worksheet",
+                ol: [
+                    "Who uses this weekly? Who approves outcomes?",
+                    "What triggers the workflow today?",
+                    "What systems hold data (CRM, sheets, product DB)?",
+                    "What does done look like in 30 days?",
+                    "What must never happen (compliance, data leaks)?",
+                    "What integrations are must-have vs nice-to-have?",
+                    "How will you measure success?",
+                    "What is the budget band and deadline?",
+                    "Who owns the code and hosting after launch?",
+                    "What is explicitly out of scope for v1?",
+                    "What happens if a third-party API is down?",
+                    "What is the one demo that wins the next customer?",
+                ],
+            },
+            {
+                h2: "After the call",
+                p: ["Send a one-page scope with acceptance criteria. If you cannot write acceptance criteria, the build is not ready."],
+            },
+        ],
+        service: "/#service-saas",
+    },
+
+    "internal-tools-roi": {
+        lead: "Finance understands hours. Translate custom software into repeated labour you can stop paying for.",
+        blocks: [
+            {
+                h2: "Simple ROI model",
+                p: [
+                    "Hours saved per week × loaded hourly cost × 52 = annual benefit.",
+                    "Compare to build cost plus modest annual maintenance.",
+                    "Add error reduction if bad data causes rework or churn.",
+                ],
+            },
+            {
+                h2: "Example",
+                p: [
+                    "Four people spend three hours weekly on manual reporting (12 hours). At £45/hour loaded, that is £28,080/year. A £9,500 dashboard that cuts that by 70% pays back in under six months.",
+                ],
+            },
+            {
+                h2: "When ROI is not the point",
+                p: ["Strategic products, compliance or revenue unlock may justify build without spreadsheet ROI. Still document the bet."],
+            },
+        ],
+        service: "/#service-internal",
     },
 };
 

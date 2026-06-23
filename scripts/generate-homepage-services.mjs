@@ -21,29 +21,24 @@ const HOMEPAGE_COPY = {
         features: ["Auth, roles and core user journeys", "Billing-ready architecture and deployment"],
     },
     "internal-tools-for-agencies": {
-        h1: "Product workflow automation",
-        lead: "Automate the repeated product ops work behind onboarding, fulfilment, support and data workflows, built around how your SaaS actually runs.",
-        features: ["API and CRM integrations", "Replace manual product ops work"],
-    },
-    "agency-proposal-systems": {
-        h1: "Pricing and subscription workflows",
-        lead: "Connect plan logic, trials, checkout and upgrades in one owned workflow, not a spreadsheet behind Stripe.",
-        features: ["Plan logic and upgrade paths", "Checkout-ready product flows"],
+        h1: "Custom software and automation",
+        lead: "Replace spreadsheet glue with owned software: data pipelines, integrations, internal tools and automation built around how your product or ops actually run.",
+        features: ["API and third-party integrations", "Replace manual copy-paste work"],
     },
     "agency-reporting-dashboard": {
-        h1: "Product analytics dashboards",
-        lead: "Pull product, revenue and customer data into one live view, so founders can see activation, retention and the next bottleneck clearly.",
-        features: ["Activation and retention KPIs", "Product, revenue and CRM in one view"],
+        h1: "Dashboards and reporting",
+        lead: "Pull product, revenue, ops and customer data into one live view, so your team can see what matters without rebuilding the same report every week.",
+        features: ["Live KPIs and operational metrics", "Product, revenue and CRM in one view"],
     },
     "agency-client-portal": {
         h1: "Customer portals",
-        lead: "Give customers one secure place to manage onboarding, files, approvals, status and account actions inside your product experience.",
+        lead: "Give customers one secure place for onboarding, files, approvals, status and account actions, whether inside a SaaS product or as standalone custom software.",
         features: ["Status, files and approvals in one place", "Branded customer experience"],
     },
     "agency-internal-crm": {
-        h1: "Admin dashboards and ops tools",
-        lead: "Manage users, accounts, support queues and product operations from one workspace your team actually opens.",
-        features: ["User and account management", "Operational visibility for founders"],
+        h1: "Admin dashboards and internal tools",
+        lead: "Manage users, accounts, queues and operations from one workspace your team actually opens.",
+        features: ["User and account management", "Operational visibility for your team"],
     },
 };
 
@@ -54,13 +49,6 @@ const MOCKS = {
             <span class="done">Auth</span><span class="done">Core flow</span><span>Billing</span><span>Launch</span>
         </div>
         <div class="mock-portal__note"><strong>Trial active</strong> 8 users onboarded this week.</div>
-    </div>`,
-    "agency-proposal-systems": `<div class="mock-proposal">
-        <div class="mock-proposal__head"><strong>Q2 Retainer</strong><span>Draft</span></div>
-        <div class="mock-line wide"></div>
-        <div class="mock-line short"></div>
-        <div class="mock-line wide"></div>
-        <div class="mock-proposal__price"><span>Total</span><strong>£12,400</strong></div>
     </div>`,
     "agency-reporting-dashboard": `<div class="mock-report">
         <div class="mock-report__stats">
@@ -129,7 +117,7 @@ const section = `        <section class="services" id="services" aria-labelledby
                 <header class="services-head reveal">
                     <span class="module-tag">Services</span>
                     <h2 id="services-heading">What we build</h2>
-                    <p class="services-lead">SaaS MVPs, product workflows, customer portals and admin dashboards for founders. One owned codebase per build, scoped and shipped in fixed sprints.</p>
+                    <p class="services-lead">SaaS MVPs and custom software: portals, dashboards, automation and internal tools. One owned codebase per build, scoped and shipped in fixed sprints.</p>
                 </header>
                 <div class="services-grid">
 ${orderedServices.map(card).join("\n")}

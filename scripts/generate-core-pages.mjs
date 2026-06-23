@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { pageShell, breadcrumbs, finalCta, SITE, ROBOTS_NOINDEX } from "./partials.mjs";
+import { pageShell, breadcrumbs, finalCta, SITE } from "./partials.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -46,7 +46,7 @@ const workSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Case studies",
-    description: "SaaS MVPs, product platforms, dashboards and automation built and handed over by Standen.",
+    description: "SaaS MVPs, custom software, dashboards and automation built and handed over by Standen.",
     url: `${SITE}/work`,
     isPartOf: { "@id": "https://www.standen.io/#website" },
     mainEntity: {
@@ -63,8 +63,8 @@ const workSchema = {
 write(
     "work.html",
     pageShell({
-        title: "Case Studies | SaaS & Full-Stack Software | Standen",
-        description: "Standen case studies: SaaS MVPs, product platforms, dashboards, automation and full-stack software. Delivered in 6 to 21 days.",
+        title: "Case Studies | SaaS and Custom Software | Standen",
+        description: "Standen case studies: SaaS MVPs, custom software, dashboards, automation and full-stack builds. Delivered in 6 to 21 days.",
         canonical: `${SITE}/work`,
         activeNav: "work",
         schema: workSchema,
@@ -74,7 +74,7 @@ write(
                 ${breadcrumbs([{ label: "Home", href: "/" }, { label: "Work", href: "/work" }])}
                 <header class="work-head reveal">
                     <h1>What we can build</h1>
-                    <p class="work-sub">Every system below was scoped, built and shipped with full ownership. Different domains, same engineering. The range here is what we build into SaaS products: data pipelines, dashboards, automation, integrations and full-stack tools.</p>
+                    <p class="work-sub">Every system below was scoped, built and shipped with full ownership. Different domains, same engineering. The range here is what we build across SaaS products and custom software: data pipelines, dashboards, automation, integrations and full-stack tools.</p>
                 </header>
                 <div class="work-grid">${rethinkCard}
                 ${grid}</div>
@@ -87,8 +87,8 @@ write(
 write(
     "about.html",
     pageShell({
-        title: "About Standen | SaaS Development for Founders",
-        description: "Standen builds SaaS products for founders. Founder-led, fixed-scope tiers from 14 to 30 days, full code ownership.",
+        title: "About Standen | SaaS and Custom Software Development",
+        description: "Standen builds SaaS products and custom software. Founder-led, fixed-scope builds from 14 to 30 days, full code ownership.",
         canonical: `${SITE}/about`,
         activeNav: "",
         body: `
@@ -97,8 +97,8 @@ write(
                 ${breadcrumbs([{ label: "Home", href: "/" }, { label: "About", href: "/about" }])}
                 <header class="guide-article__head">
                     <h1>About Standen</h1>
-                    <p class="guide-article__lead">We build SaaS products for founders: MVPs, product dashboards, customer portals, billing-ready workflows and ops software.</p>
-                    <p class="seo-answer">Standen is a UK-based studio led by Tomas Jones. We scope one delivery workflow per build, ship in fixed sprints (14, 21 or 30 days by tier), and hand over 100% of the codebase. No licence lock-in.</p>
+                    <p class="guide-article__lead">We build SaaS products and custom software: MVPs, dashboards, customer portals, automation, internal tools and ops software.</p>
+                    <p class="seo-answer">Standen is a UK-based studio led by Tomas Jones. We scope one workflow per build, ship in fixed sprints from 14 days, and hand over 100% of the codebase. No licence lock-in.</p>
                 </header>
                 <div class="guide-article__body">
                     <h2>How we work</h2>
@@ -115,80 +115,4 @@ write(
     })
 );
 
-const blogPosts = [
-    {
-        href: "/blog/how-to-scope-a-saas-mvp.html",
-        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
-        alt: "Scoping a SaaS MVP",
-        date: "2025-01-15",
-        title: "How to scope a SaaS MVP that actually ships",
-        excerpt: "Practical steps to define scope, avoid creep, and get from idea to launch in weeks, not months.",
-        meta: "5 min read",
-    },
-    {
-        href: "/blog/web-development-hampshire-what-to-expect.html",
-        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
-        alt: "Fixed-scope product studio delivery",
-        date: "2025-01-08",
-        title: "What to expect from a fixed-scope product studio",
-        excerpt: "Timelines, communication, and how Standen delivers scoped SaaS and custom software builds for founders.",
-        meta: "4 min read",
-    },
-    {
-        href: "/blog/when-to-build-custom-software-vs-saas.html",
-        img: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop",
-        alt: "Custom software vs SaaS",
-        date: "2024-12-18",
-        title: "When to build custom software vs use existing SaaS",
-        excerpt: "Deciding between bespoke build and off-the-shelf tools? We break down the trade-offs so you can choose with confidence.",
-        meta: "6 min read",
-    },
-    {
-        href: "/blog/rapid-delivery-without-cutting-corners.html",
-        img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop",
-        alt: "Rapid delivery",
-        date: "2024-12-05",
-        title: "Rapid delivery without cutting corners",
-        excerpt: "How we ship MVPs and web apps in weeks while keeping quality high and tech debt low.",
-        meta: "5 min read",
-    },
-];
-
-const blogGrid = blogPosts
-    .map(
-        (p) => `<article class="blog-card">
-            <a href="${p.href}" class="blog-card__link">
-                <div class="blog-card__media"><img src="${p.img}" alt="${p.alt}" width="800" height="500" loading="lazy" decoding="async"></div>
-                <div class="blog-card__body">
-                    <time class="blog-card__date" datetime="${p.date}">${new Date(p.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</time>
-                    <h2>${p.title}</h2>
-                    <p class="blog-card__excerpt">${p.excerpt}</p>
-                    <span class="blog-card__meta">${p.meta} · Standen</span>
-                </div>
-            </a>
-        </article>`
-    )
-    .join("\n                ");
-
-write(
-    "blog.html",
-    pageShell({
-        title: "Blog | Standen. SaaS & Custom Software",
-        description:
-            "Insights on SaaS development, custom software and delivery from Standen. Scoping, building and launching software for founders.",
-        canonical: `${SITE}/blog`,
-        robots: ROBOTS_NOINDEX,
-        activeNav: "",
-        body: `
-        <section class="blog-page">
-            <div class="wrap">
-                ${breadcrumbs([{ label: "Home", href: "/" }, { label: "Blog", href: "/blog.html" }])}
-                <header class="guides-page-head">
-                    <h1>Insights on SaaS and software delivery</h1>
-                    <p class="guides-page-lead">Practical posts on scoping, building and launching SaaS and custom software for founders and product teams.</p>
-                </header>
-                <div class="blog-grid">${blogGrid}</div>
-            </div>
-        </section>`,
-    })
-);
+console.log("Done. Core pages (work, about) generated.");

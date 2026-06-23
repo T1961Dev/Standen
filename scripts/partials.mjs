@@ -1,11 +1,12 @@
 import { serviceHref, servicesHubHref } from "./service-anchors.mjs";
+import { metaDescription } from "./seo-meta.mjs";
 
 const SITE = "https://www.standen.io";
 const BRAND_NAME = "standen";
 const CALENDLY = "https://calendly.com/standen/discovery-call";
 const CTA_LABEL = "Book a call";
 const FOOTER_TAGLINE =
-    "SaaS development for founders. Fixed-scope builds from 14 to 30 days. You own everything.";
+    "SaaS and custom software. Fixed-scope builds from 14 to 30 days. You own everything.";
 const CONTACT_EMAIL = "tomas@standen.io";
 const CTA_ARROW =
     '<span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
@@ -21,19 +22,20 @@ export const ROBOTS_INDEX = "index, follow";
 export const ROBOTS_NOINDEX = "noindex, follow";
 
 export function headBlock({ title, description, canonical, ogType = "website", schema, robots = ROBOTS_INDEX }) {
+    const safeDescription = metaDescription(description);
     const schemaScript = schema
         ? `\n    <script type="application/ld+json">\n    ${JSON.stringify(schema)}\n    </script>`
         : "";
     return `    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="${escapeAttr(description)}">
+    <meta name="description" content="${escapeAttr(safeDescription)}">
     <meta name="robots" content="${escapeAttr(robots)}">
     <link rel="canonical" href="${escapeAttr(canonical)}">
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
     <meta property="og:type" content="${ogType}">
     <meta property="og:title" content="${escapeAttr(title)}">
-    <meta property="og:description" content="${escapeAttr(description)}">
+    <meta property="og:description" content="${escapeAttr(safeDescription)}">
     <meta property="og:url" content="${escapeAttr(canonical)}">
     <meta property="og:image" content="${SITE}/logo.png">
     <meta property="og:image:alt" content="Standen">
@@ -41,7 +43,7 @@ export function headBlock({ title, description, canonical, ogType = "website", s
     <meta property="og:site_name" content="Standen">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${escapeAttr(title)}">
-    <meta name="twitter:description" content="${escapeAttr(description)}">
+    <meta name="twitter:description" content="${escapeAttr(safeDescription)}">
     <title>${escapeHtml(title)}</title>
     <link rel="preload" href="/assets/fonts/gt-america-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/gt-america-medium.woff2" as="font" type="font/woff2" crossorigin>
@@ -53,6 +55,7 @@ export function headBlock({ title, description, canonical, ogType = "website", s
 export function navBlock(active = "") {
     const servicesActive = active === "services" ? ' aria-current="page"' : "";
     const workActive = active === "work" ? ' aria-current="page"' : "";
+    const blogActive = active === "blog" ? ' aria-current="page"' : "";
     return `    <header class="site-nav" id="top">
         <div class="nav-inner">
             <a class="brand" href="/" aria-label="Standen home">
@@ -61,6 +64,7 @@ export function navBlock(active = "") {
             <nav class="nav-links" aria-label="Primary">
                 <a href="/#services"${servicesActive}>Services</a>
                 <a href="/work.html"${workActive}>Work</a>
+                <a href="/blog.html"${blogActive}>Blog</a>
                 <a href="/#process">Process</a>
                 <a href="/#pricing">Pricing</a>
             </nav>
@@ -70,6 +74,7 @@ export function navBlock(active = "") {
         <nav id="mobile-menu" class="mobile-menu" data-open="false" aria-label="Mobile">
             <a href="/#services">Services</a>
             <a href="/work.html">Work</a>
+            <a href="/blog.html">Blog</a>
             <a href="/#process">Process</a>
             <a href="/#pricing">Pricing</a>
             ${accentCtaButton("nav-cta")}
@@ -96,14 +101,16 @@ export function footerBlock() {
                 <h2>Services</h2>
                 <a href="/#services">All services</a>
                 <a href="/#service-saas">SaaS MVPs</a>
-                <a href="/#service-internal">Product automation</a>
-                <a href="/#service-reporting">Product dashboards</a>
+                <a href="/#service-internal">Custom software</a>
+                <a href="/#service-reporting">Dashboards</a>
                 <a href="/#service-portals">Customer portals</a>
                 <a href="/#service-crm">Admin dashboards</a>
             </nav>
             <nav aria-label="Company">
                 <h2>Company</h2>
                 <a href="/work.html">Work</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/compare/index.html">Compare</a>
                 <a href="/#process">Process</a>
                 <a href="/#pricing">Pricing</a>
             </nav>

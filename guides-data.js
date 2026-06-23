@@ -304,5 +304,117 @@ window.GUIDES = [
     category: "AI",
     readTime: "6 min",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "saas-mvp-architecture",
+    title: "SaaS MVP architecture: what to build in version one",
+    excerpt: "Monolith, auth, database and API boundaries for a first SaaS product that can ship in weeks, not months.",
+    category: "Technical",
+    readTime: "9 min",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "stripe-billing-saas",
+    title: "Stripe billing for SaaS MVPs: plans, trials and webhooks",
+    excerpt: "Subscriptions, usage limits and webhook handling without over-engineering payments on day one.",
+    category: "Technical",
+    readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "auth-for-saas-mvps",
+    title: "Authentication for SaaS MVPs: email, OAuth and roles",
+    excerpt: "Pick auth that matches your buyers, not your favourite library. Sessions, invites and admin access.",
+    category: "Technical",
+    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "postgres-vs-managed-db",
+    title: "Postgres vs managed databases for early SaaS",
+    excerpt: "When a standard Postgres stack beats Firebase, and what to optimise for in the first 90 days.",
+    category: "Technical",
+    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "saas-deployment-checklist",
+    title: "SaaS deployment checklist: staging, env vars and rollbacks",
+    excerpt: "Ship behind a private link, promote to production safely, and hand over access the client can run.",
+    category: "Process",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "monolith-first-mvp",
+    title: "Why most SaaS MVPs should stay a monolith",
+    excerpt: "Microservices add coordination cost before you have product-market fit. Start simple, split later.",
+    category: "Strategy",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "rbac-for-saas",
+    title: "Roles and permissions in B2B SaaS (without RBAC theatre)",
+    excerpt: "Admin, member, viewer and customer-facing roles. Model what buyers actually ask for in sales calls.",
+    category: "Technical",
+    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "api-design-saas-mvp",
+    title: "API design for SaaS MVPs: REST, webhooks and version one",
+    excerpt: "Expose what integrations need, hide what they do not. Stable IDs, pagination and error shapes.",
+    category: "Technical",
+    readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "technical-debt-mvp",
+    title: "Technical debt on SaaS MVPs: what to accept and what to refuse",
+    excerpt: "Speed with guardrails. Copy-paste is fine in UI; data model shortcuts are not.",
+    category: "Process",
+    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "saas-onboarding-metrics",
+    title: "SaaS onboarding metrics that predict retention",
+    excerpt: "Time-to-value, activation events and support tickets. Measure the funnel before you redesign UI.",
+    category: "Strategy",
+    readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "multi-tenant-saas-basics",
+    title: "Multi-tenant SaaS basics: orgs, workspaces and data isolation",
+    excerpt: "How to model accounts, teams and billing without building enterprise complexity on day one.",
+    category: "Technical",
+    readTime: "9 min",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "custom-admin-dashboards",
+    title: "Custom admin dashboards vs off-the-shelf BI tools",
+    excerpt: "When Looker or Metabase is enough, and when operators need a dashboard tied to your workflow.",
+    category: "Reporting",
+    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "saas-discovery-questions",
+    title: "12 discovery questions before scoping custom software",
+    excerpt: "Users, data sources, approvals, integrations and success metrics. A worksheet for the first call.",
+    category: "Process",
+    readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=800&h=520&fit=crop"
+  },
+  {
+    slug: "internal-tools-roi",
+    title: "ROI of internal tools: hours saved vs build cost",
+    excerpt: "A simple model to justify custom software to finance when spreadsheets are still 'free'.",
+    category: "Strategy",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=520&fit=crop"
   }
 ];

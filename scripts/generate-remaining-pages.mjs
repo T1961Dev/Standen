@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { pageShell, breadcrumbs, finalCta, accentCtaButton, CALENDLY, SITE, CTA_LABEL, ROBOTS_NOINDEX } from "./partials.mjs";
+import { pageShell, breadcrumbs, finalCta, accentCtaButton, CALENDLY, SITE, CTA_LABEL, ROBOTS_NOINDEX, ROBOTS_INDEX } from "./partials.mjs";
+import { metaDescription, articleSchema } from "./seo-meta.mjs";
 import { redirectPage, serviceHref } from "./service-anchors.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -109,10 +110,12 @@ write(
     "resources.html",
     pageShell({
         title: "Resources | Standen",
-        description: "Guides, comparisons, blog posts and FAQs for SaaS founders planning custom software builds.",
+        description: metaDescription(
+            "Guides, comparisons, blog posts and FAQs for founders planning SaaS MVPs and custom software builds."
+        ),
         canonical: SITE + "/resources",
-        robots: ROBOTS_NOINDEX,
-        activeNav: "guides",
+        robots: ROBOTS_INDEX,
+        activeNav: "blog",
         body: `
         <section class="blog-page">
             <div class="wrap">
@@ -122,10 +125,10 @@ write(
                     <p class="guides-page-lead">Guides, comparisons and practical posts for SaaS founders and product operators.</p>
                 </header>
                 <div class="service-hub__grid">
-                    <a href="/guides.html" class="service-hub__card"><h2>Guides</h2><p>SaaS MVPs, product workflows, portals, operations and custom software.</p><span class="text-link">Browse guides <span aria-hidden="true">&gt;</span></span></a>
+                    <a href="/blog.html" class="service-hub__card"><h2>Blog and guides</h2><p>SaaS MVPs, custom software, portals, operations and scoping.</p><span class="text-link">Browse all guides <span aria-hidden="true">&gt;</span></span></a>
                     <a href="/compare/index.html" class="service-hub__card"><h2>Compare</h2><p>Build vs buy, dashboards vs spreadsheets, software vs hiring ops.</p><span class="text-link">Read comparisons <span aria-hidden="true">&gt;</span></span></a>
                     <a href="/audit.html" class="service-hub__card"><h2>Ops audit</h2><p>Five workflow leaks that cost SaaS founders hours and margin.</p><span class="text-link">Read the audit <span aria-hidden="true">&gt;</span></span></a>
-                    <a href="/blog.html" class="service-hub__card"><h2>Blog</h2><p>Scoping, delivery and build vs buy notes from Standen.</p><span class="text-link">Read the blog <span aria-hidden="true">&gt;</span></span></a>
+                    <a href="/guides/scope-first-build.html" class="service-hub__card"><h2>Scope a first build</h2><p>How to scope a first SaaS system in 14 days.</p><span class="text-link">Read the guide <span aria-hidden="true">&gt;</span></span></a>
                 </div>
             </div>
         </section>
@@ -156,15 +159,17 @@ function formatDate(iso) {
 
 for (const post of blogPosts) {
     const url = `${SITE}/blog/${post.slug}`;
+    const desc = metaDescription(post.excerpt);
     write(
         `blog/${post.slug}.html`,
         pageShell({
             title: `${post.title} | Blog | Standen`,
-            description: post.excerpt,
+            description: desc,
             canonical: url,
-            robots: ROBOTS_NOINDEX,
+            robots: ROBOTS_INDEX,
             ogType: "article",
-            activeNav: "",
+            activeNav: "blog",
+            schema: articleSchema({ title: post.title, description: desc, url, datePublished: post.date }),
             body: `
         <article class="guide-article blog-post-page">
             <div class="wrap">
@@ -177,7 +182,7 @@ for (const post of blogPosts) {
                 </header>
                 ${post.image ? `<div class="guide-article__hero"><img src="${post.image}" alt="" width="800" height="500" loading="lazy" decoding="async"></div>` : ""}
                 <div class="guide-article__body">${post.body}</div>
-                <p class="guide-article__close">${accentCtaButton("nav-cta")}</p>
+                <p class="guide-article__close">${accentCtaButton("nav-cta")} · <a href="/blog.html">More guides</a></p>
             </div>
         </article>`,
         })
@@ -213,11 +218,11 @@ write(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
-    <link rel="canonical" href="${SITE}/guides">
+    <link rel="canonical" href="${SITE}/blog">
     <title>Guides | Standen</title>
-    <script>location.replace("/guides.html");</script>
+    <script>location.replace("/blog.html");</script>
 </head>
-<body><p><a href="/guides.html">View guides</a></p></body>
+<body><p><a href="/blog.html">View blog and guides</a></p></body>
 </html>`
 );
 

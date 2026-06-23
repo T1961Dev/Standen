@@ -8,9 +8,10 @@ import {
     finalCta,
     SITE,
     escapeHtml,
-    ROBOTS_NOINDEX,
+    ROBOTS_INDEX,
 } from "./partials.mjs";
 import { renderGuideBody } from "./guides-content.mjs";
+import { metaDescription, articleSchema } from "./seo-meta.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -120,21 +121,32 @@ function renderGeneratedBody(guide) {
     const c = copyFor(guide);
     return `
                     <p class="guide-article__lead">${escapeHtml(guide.excerpt)}</p>
-                    <p class="seo-answer">${escapeHtml(guide.excerpt)} For most SaaS founders, the answer is not another generic tool. It is a smaller owned system that removes one repeated product workflow problem and gives operators a reliable source of truth.</p>
+                    <p class="seo-answer">${escapeHtml(guide.excerpt)} For teams building SaaS products or custom software, the answer is usually a smaller owned system that removes one repeated workflow and gives operators a reliable source of truth.</p>
+
+                    <h2>Who this guide is for</h2>
+                    <p>Founders, product leads and operators who are deciding whether to buy another SaaS seat, patch spreadsheets, or scope a focused custom build. If you already know the workflow is painful but the first version is not defined, start here.</p>
 
                     <h2>What this means in practice</h2>
-                    <p>This is a ${escapeHtml(c.system)} question. If ${escapeHtml(c.pain)}, the process is already costing time, trust and margin. Enterprise buyers also notice the mess: slow follow-up, inconsistent numbers, unclear approvals and handovers that depend on one person remembering the details.</p>
+                    <p>This is a ${escapeHtml(c.system)} question. If ${escapeHtml(c.pain)}, the process is already costing time, trust and margin. Buyers notice slow follow-up, inconsistent numbers, unclear approvals and handovers that depend on one person remembering the details.</p>
 
                     <h2>When to prioritise it</h2>
-                    <p>Prioritise this when ${escapeHtml(c.signal)}. That is the point where a better template is no longer enough. You need workflow rules, permissions, history and reporting that match how the product actually operates.</p>
+                    <p>Prioritise this when ${escapeHtml(c.signal)}. That is the point where a better template is no longer enough. You need workflow rules, permissions, history and reporting that match how the product or ops team actually works.</p>
 
                     <h2>What to build first</h2>
-                    <p>Scope ${escapeHtml(c.first)}. Keep the first version narrow, one user group, one workflow, one clear success metric. The goal is not to replace every tool in the company. The goal is to remove the highest-friction handoff and make the system trustworthy enough to use every week.</p>
+                    <p>Scope ${escapeHtml(c.first)}. Keep the first version narrow, one user group, one workflow, one measurable outcome. The goal is not to replace every tool in the company. The goal is to remove the highest-friction handoff and make the system trustworthy enough to use every week.</p>
 
-                    <h2>How Standen scopes it</h2>
-                    <p>Standen maps the workflow, agrees fixed scope, builds behind a private live link and hands over the codebase, deployment access and documentation. The first useful version is usually scoped for a 14-day delivery window.</p>
+                    <h2>How to scope it like a product</h2>
+                    <ul>
+                        <li>Write the workflow as steps a new hire could follow without asking you.</li>
+                        <li>List inputs, outputs, integrations and who approves each step.</li>
+                        <li>Define one success metric you can check at handover (time saved, errors removed, faster send).</li>
+                        <li>Cut anything that does not serve that metric in version one.</li>
+                    </ul>
 
-                    <p class="guide-article__close"><a href="${c.service}">See the relevant Standen service</a> or <a href="/audit.html">read the SaaS ops audit</a>.</p>`;
+                    <h2>How Standen scopes SaaS and custom software builds</h2>
+                    <p>Standen maps the workflow on a discovery call, agrees fixed scope and price, builds behind a private live link and hands over the codebase, deployment access and documentation. The first useful version is usually scoped for a 14 to 30 day delivery window depending on surface area.</p>
+
+                    <p class="guide-article__close"><a href="${c.service}">See the relevant Standen service</a> · <a href="/blog.html">More guides</a> · <a href="/audit.html">SaaS ops audit</a>.</p>`;
 }
 
 function renderGuide(guide) {
@@ -149,29 +161,21 @@ function renderGuide(guide) {
         ? `<div class="guide-article__hero${guide.imageFit === "contain" ? " guide-article__hero--contain" : ""}"><img src="${escapeHtml(guide.image)}" alt="${escapeHtml(guide.title)}" width="800" height="520" loading="eager" decoding="async"></div>`
         : "";
 
+    const desc = metaDescription(guide.excerpt);
     return pageShell({
-        title: `${guide.title} | Standen Guides`,
-        description: guide.excerpt,
+        title: `${guide.title} | Standen`,
+        description: desc,
         canonical: url,
-        activeNav: "guides",
-        robots: ROBOTS_NOINDEX,
+        activeNav: "blog",
+        robots: ROBOTS_INDEX,
         ogType: "article",
-        schema: {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            headline: guide.title,
-            description: guide.excerpt,
-            author: { "@type": "Organization", name: "Standen" },
-            publisher: { "@type": "Organization", name: "Standen" },
-            dateModified: "2026-05-29",
-            mainEntityOfPage: url,
-        },
+        schema: articleSchema({ title: guide.title, description: desc, url }),
         body: `
         <article class="guide-article" aria-labelledby="guide-title">
             <div class="wrap">
-                ${breadcrumbs([{ label: "Home", href: "/" }, { label: "Guides", href: "/guides" }, { label: guide.title, href: `/guides/${guide.slug}` }])}
+                ${breadcrumbs([{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: guide.title, href: `/guides/${guide.slug}` }])}
                 <header class="guide-article__head">
-                    <a href="/guides.html" class="guide-article__back text-link">All guides <span aria-hidden="true">&gt;</span></a>
+                    <a href="/blog.html" class="guide-article__back text-link">Blog <span aria-hidden="true">&gt;</span></a>
                     <p class="notes-meta guide-article__meta">${escapeHtml(guide.category)} <span>&middot;</span> ${escapeHtml(readTimeLabel(guide))}</p>
                     <h1 id="guide-title">${escapeHtml(guide.title)}</h1>
                     ${hero}
@@ -194,35 +198,14 @@ write(
     "guides.html",
     pageShell({
         title: "Guides | Standen",
-        description: "Free guides for SaaS founders, product workflows, customer portals, operations and custom software. Practical build notes from Standen.",
+        description: metaDescription(
+            "Free guides on SaaS MVP development and custom software. Practical scoping, portals, dashboards and handover notes from Standen."
+        ),
         canonical: `${SITE}/guides`,
-        activeNav: "guides",
-        robots: ROBOTS_NOINDEX,
+        activeNav: "blog",
+        robots: ROBOTS_INDEX,
         extraScripts: `
-    <script src="/guides-data.js"></script>
-    <script src="/guides.js"></script>`,
-        body: `
-        <section class="notes guides-page" aria-labelledby="guides-heading">
-            <div class="wrap">
-                <header class="guides-page-head">
-                    <span class="guides-intro__eyebrow">SaaS resources</span>
-                    <h1 id="guides-heading">Guides for SaaS founders building better products</h1>
-                    <p class="guides-page-lead">Practical notes on MVPs, product workflows, customer portals and internal ops, written for SaaS founders and operators who want cleaner delivery without hiring another operations person first.</p>
-                </header>
-
-                <div class="guides-search" role="search">
-                    <label class="guides-search__field" for="guides-search">
-                        <svg class="guides-search__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.25" stroke="currentColor" stroke-width="1.35"/><path d="M12.5 12.5 16 16" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg>
-                        <input type="search" id="guides-search" name="q" placeholder="Search guides…" autocomplete="off" spellcheck="false">
-                    </label>
-                    <p class="guides-search__count" id="guides-search-count" aria-live="polite"></p>
-                </div>
-
-                <div class="guides-bento" id="guides-grid"></div>
-                <p class="guides-empty" id="guides-empty" hidden>No guides match your search.</p>
-            </div>
-        </section>
-
-        ${finalCta("Ready to build the product workflow behind one of these ideas?")}`,
+    <script>location.replace("/blog");</script>`,
+        body: `<p><a href="/blog.html">Continue to the Standen blog</a></p>`,
     })
 );

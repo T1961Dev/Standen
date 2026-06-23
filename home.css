@@ -3915,6 +3915,72 @@ main > .notes.guides-page:first-child {
     padding-bottom: clamp(80px, 10vw, 120px);
 }
 
+.home-blog-preview {
+    padding: clamp(64px, 8vw, 96px) 0;
+}
+
+.home-blog-preview .guides-page-head {
+    margin-bottom: 32px;
+}
+
+.home-blog-preview__grid {
+    margin-top: 0;
+}
+
+.home-blog-preview__grid .blog-card__body {
+    padding: 24px;
+}
+
+.home-blog-preview__grid h3 {
+    font-size: 1.125rem;
+    margin: 0.5rem 0;
+}
+
+.blog-section-title {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    margin: 48px 0 0;
+    padding-top: 8px;
+}
+
+.guides-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.guides-filter__btn {
+    font: inherit;
+    font-size: 0.875rem;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line-soft);
+    background: var(--surface);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: border-color 0.2s var(--ease), color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.guides-filter__btn:hover,
+.guides-filter__btn.is-active {
+    border-color: var(--line);
+    color: var(--text);
+    background: var(--surface-muted);
+}
+
+.blog-hub-links {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-soft);
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+}
+
+.blog-card__media--contain img {
+    object-fit: contain;
+    padding: 16px;
+}
+
 .seo-faq.wrap {
     display: flex;
     flex-direction: column;
