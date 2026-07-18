@@ -52,7 +52,7 @@ function toUrlPath(rel) {
 
 function priorityFor(loc) {
     if (loc === "/") return "1.0";
-    if (loc === "/work" || loc === "/audit" || loc === "/blog") return "0.9";
+    if (loc === "/work" || loc === "/audit" || loc === "/blog" || loc === "/waitlist") return "0.9";
     if (loc.startsWith("/compare")) return "0.85";
     if (loc.startsWith("/guides/") || loc.startsWith("/blog/")) {
         return loc.includes("how-to-scope") || loc.includes("scope-first") ? "0.85" : "0.75";

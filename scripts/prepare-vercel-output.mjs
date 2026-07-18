@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "public");
 
-const EXCLUDE_DIRS = new Set(["scripts", "content", "public", "node_modules", ".git"]);
+const EXCLUDE_DIRS = new Set(["scripts", "content", "public", "node_modules", ".git", "api", "supabase"]);
 const EXCLUDE_FILES = new Set([
     "dev-server.js",
     "package.json",

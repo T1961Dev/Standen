@@ -19,6 +19,45 @@ const HOST = process.env.HOST || '127.0.0.1';
 const ROOT = __dirname;
 const OPEN_BROWSER = process.env.OPEN !== '0';
 
+function loadLocalEnv() {
+  const candidates = ['.env.local', '.env'];
+  const FORCE_KEYS = new Set([
+    'RESEND_API_KEY',
+    'WAITLIST_FROM_EMAIL',
+    'WAITLIST_REPLY_TO',
+    'WAITLIST_NOTIFY_TO',
+    'SUPABASE_URL',
+    'SUPABASE_SERVICE_ROLE_KEY',
+    'SUPABASE_SERIVE_ROLE_KEY',
+    'NEXT_PUBLIC_SUPABASE_URL',
+  ]);
+  for (const name of candidates) {
+    const file = path.join(ROOT, name);
+    if (!fs.existsSync(file)) continue;
+    const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const eq = trimmed.indexOf('=');
+      if (eq < 1) continue;
+      const key = trimmed.slice(0, eq).trim();
+      let val = trimmed.slice(eq + 1).trim();
+      if (
+        (val.startsWith('"') && val.endsWith('"')) ||
+        (val.startsWith("'") && val.endsWith("'"))
+      ) {
+        val = val.slice(1, -1);
+      }
+      val = val.trim();
+      if (FORCE_KEYS.has(key) || process.env[key] === undefined) {
+        process.env[key] = val;
+      }
+    }
+  }
+}
+
+loadLocalEnv();
+
 const MIME = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
@@ -51,6 +90,7 @@ const REWRITE = {
   '/resources': 'resources.html',
   '/privacy': 'privacy.html',
   '/terms': 'terms.html',
+  '/waitlist': 'waitlist.html',
   '/compare': 'compare/index.html',
   '/agencies': 'agencies.html',
 };
@@ -212,6 +252,20 @@ http
     }
     if (pathname.length > 1 && pathname.endsWith('/')) pathname = pathname.slice(0, -1);
 
+    if (pathname === '/api/waitlist') {
+      try {
+        loadLocalEnv();
+        delete require.cache[path.resolve(ROOT, 'api', 'waitlist.js')];
+        const handler = require('./api/waitlist.js');
+        return handler(req, res);
+      } catch (err) {
+        console.error('Waitlist API error', err);
+        res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ ok: false, error: 'Waitlist API failed to load.' }));
+        return;
+      }
+    }
+
     if (pathname === '/__dev-reload') {
       res.writeHead(200, {
         'Content-Type': 'text/event-stream',
@@ -258,6 +312,11 @@ http
     }
     if (pathname === '/terms.html') {
       res.writeHead(302, { Location: '/terms' });
+      res.end();
+      return;
+    }
+    if (pathname === '/waitlist.html') {
+      res.writeHead(302, { Location: '/waitlist' });
       res.end();
       return;
     }
@@ -411,6 +470,7 @@ http
     console.log('Standen dev server (routes + live reload)');
     console.log('  ' + url);
     console.log('  /work /about /contact /services/:slug /compare/:slug /case-studies/:slug /blog/:slug /guides/:slug');
+    console.log('  /api/waitlist  POST waitlist signups (Supabase)');
     console.log('  Save a file → browser refreshes automatically.');
     console.log('  Stop the Cursor Live Server extension if port 5500 is in use.');
     watchProject();

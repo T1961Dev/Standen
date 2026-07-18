@@ -2,6 +2,11 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
   "outputDirectory": "public",
+  "functions": {
+    "api/waitlist.js": {
+      "maxDuration": 10
+    }
+  },
   "headers": [
     {
       "source": "/assets/fonts/(.*)",
@@ -94,6 +99,7 @@
     { "source": "/resources.html", "destination": "/resources", "permanent": true },
     { "source": "/privacy.html", "destination": "/privacy", "permanent": true },
     { "source": "/terms.html", "destination": "/terms", "permanent": true },
+    { "source": "/waitlist.html", "destination": "/waitlist", "permanent": true },
     { "source": "/contact.html", "destination": "/#contact", "permanent": true },
     { "source": "/contact", "destination": "/#contact", "permanent": true },
     { "source": "/contact-thank-you.html", "destination": "/#contact", "permanent": true },
@@ -141,6 +147,7 @@
     { "source": "/resources", "destination": "/resources.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/waitlist", "destination": "/waitlist.html" },
     { "source": "/process", "destination": "/index.html" },
     { "source": "/pricing", "destination": "/index.html" },
     { "source": "/agencies", "destination": "/index.html" }

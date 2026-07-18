@@ -16,6 +16,11 @@ export function accentCtaButton(extraClass = "nav-cta", { active = false } = {})
     const classes = `btn btn--accent${activeMod}${extraClass ? ` ${extraClass.trim()}` : ""}`;
     return `<a href="${CALENDLY}" class="${classes}" target="_blank" rel="noopener"><span class="btn__text">${CTA_LABEL}</span>${CTA_ARROW}</a>`;
 }
+
+export function webinarsNavButton(extraClass = "") {
+    const classes = `btn btn--outline nav-webinars${extraClass ? ` ${extraClass.trim()}` : ""}`;
+    return `<a href="/waitlist.html" class="${classes}"><span class="nav-webinars__dot" aria-hidden="true"></span><span class="btn__text">Free Webinars</span></a>`;
+}
 const LINKEDIN_URL = "https://www.linkedin.com/in/tomas-jones1/";
 
 export const ROBOTS_INDEX = "index, follow";
@@ -68,7 +73,10 @@ export function navBlock(active = "") {
                 <a href="/#process">Process</a>
                 <a href="/#pricing">Pricing</a>
             </nav>
-            ${accentCtaButton("nav-cta")}
+            <div class="nav-actions">
+                ${webinarsNavButton("nav-cta")}
+                ${accentCtaButton("nav-cta")}
+            </div>
             <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
         </div>
         <nav id="mobile-menu" class="mobile-menu" data-open="false" aria-label="Mobile">
@@ -77,6 +85,7 @@ export function navBlock(active = "") {
             <a href="/blog.html">Blog</a>
             <a href="/#process">Process</a>
             <a href="/#pricing">Pricing</a>
+            ${webinarsNavButton()}
             ${accentCtaButton("nav-cta")}
         </nav>
     </header>`;
@@ -110,6 +119,7 @@ export function footerBlock() {
                 <h2>Company</h2>
                 <a href="/work.html">Work</a>
                 <a href="/blog.html">Blog</a>
+                <a href="/waitlist.html">Free Webinars</a>
                 <a href="/compare/index.html">Compare</a>
                 <a href="/#process">Process</a>
                 <a href="/#pricing">Pricing</a>
@@ -178,18 +188,18 @@ export function finalCta(
     return `<section class="final-cta" aria-labelledby="page-cta"><div class="wrap"><h2 id="page-cta">${heading}</h2><p>${text}</p>${accentCtaButton()}</div></section>`;
 }
 
-export function pageShell({ title, description, canonical, body, activeNav, schema, ogType, robots = ROBOTS_INDEX, extraScripts = "" }) {
+export function pageShell({ title, description, canonical, body, activeNav, schema, ogType, robots = ROBOTS_INDEX, extraScripts = "", bodyClass = "page-home", hideFooter = false }) {
     return `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 ${headBlock({ title, description, canonical, ogType, schema, robots })}
 </head>
-<body class="page-home">
+<body class="${bodyClass}">
 ${navBlock(activeNav)}
 <main>
 ${body}
 </main>
-${footerBlock()}${extraScripts}
+${hideFooter ? "" : footerBlock()}${extraScripts}
 </body>
 </html>
 `;
@@ -225,7 +235,7 @@ function clickableHref(href) {
     if (href.startsWith("/case-studies/")) return `${href}.html`;
     if (href.startsWith("/blog/")) return `${href}.html`;
     if (href.startsWith("/guides/")) return `${href}.html`;
-    const topLevel = new Set(["/work", "/about", "/audit", "/guides", "/blog", "/resources", "/privacy", "/terms"]);
+    const topLevel = new Set(["/work", "/about", "/audit", "/guides", "/blog", "/resources", "/privacy", "/terms", "/waitlist"]);
     if (topLevel.has(href)) return `${href}.html`;
     return href;
 }
