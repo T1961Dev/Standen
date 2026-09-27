@@ -69,6 +69,13 @@
     window.addEventListener("hashchange", openFaqFromHash);
     openFaqFromHash();
 
+    if (document.body.classList.contains("page-landing")) {
+        document.querySelectorAll(".work-row, .offer, .steps li, .founder, .faq-item, .final-cta .wrap").forEach(function (el, index) {
+            el.classList.add("reveal");
+            el.style.setProperty("--reveal-delay", String((index % 4) * 70) + "ms");
+        });
+    }
+
     var revealNodes = document.querySelectorAll(".page-home .reveal");
     if (revealNodes.length && "IntersectionObserver" in window) {
         var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
