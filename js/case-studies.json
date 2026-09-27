@@ -1,0 +1,152 @@
+[
+  {
+    "slug": "rethink-demand",
+    "title": "Rethink Demand",
+    "meta": "Internal delivery tool · B2B demand-gen agency",
+    "lead": "A B2B demand generation agency was running part of its client delivery manually, repeating the same process for every account. We turned it into an internal tool the team owns and runs themselves, removing the manual step from their workflow.",
+    "image": "/pics/rethink.png",
+    "imageAlt": "Rethink Demand logo",
+    "logo": true
+  },
+  {
+    "slug": "ohmypod",
+    "title": "OhMyPod",
+    "meta": "Custom SaaS MVP · 21 days",
+    "lead": "A podcast SaaS went from an idea in Tom's notes app to a live, owned product in 21 days.",
+    "image": "/assets/ohmypod-icon.svg",
+    "imageAlt": "OhMyPod logo",
+    "logo": true,
+    "client": "Tom Sargent",
+    "timeline": "21 days",
+    "services": "SaaS MVP / Product strategy",
+    "challenge": "Tom had a clear idea for a custom SaaS, but it needed to become a buildable product without drifting into unnecessary complexity. The important work was deciding what the software actually needed to do, what counted as MVP, and what could wait until the next phase.",
+    "delivered": "We built the core journey from creating a host or guest profile through to finding a match and arranging a podcast appearance. The product included availability and scheduling, requests and confirmations, onboarding and a dashboard for tracking the pipeline. Tom could review the product on a private live link while it was being built. Once complete, hosting, database and source code were transferred so he owned the software.",
+    "results": [
+      "Live SaaS product in 21 days",
+      "Fixed quote and clear feature list before build",
+      "Private live link available from day one",
+      "Hosting, database, and source code fully transferred"
+    ],
+    "stack": [
+      "Product scoping",
+      "Full-stack web app",
+      "Authentication",
+      "Database",
+      "Deployment",
+      "Source-code handover"
+    ],
+    "quote": "Huge credit to Tomas Jones for moving fast, keeping scope tight, and building properly from day one. No fluff. Just execution.",
+    "quoteBy": "Tom Sargent · Founder, OhMyPod"
+  },
+  {
+    "slug": "shelfexact",
+    "title": "ShelfExact",
+    "meta": "Client SaaS product",
+    "lead": "Inventory SaaS across web, iOS and Android. Built with Gabor to give growing businesses one place to scan, receive, move, track and audit inventory across multiple locations.",
+    "image": "/assets/shelfexact.jpg",
+    "imageAlt": "ShelfExact inventory dashboard"
+  },
+  {
+    "slug": "fx-quant-research-platform",
+    "title": "FX Quant Research Platform",
+    "meta": "Financial research platform · 12 days",
+    "lead": "A complete forex research platform for exploring price data, testing strategies, and turning market information into usable insight.",
+    "image": "/assets/quant.png",
+    "imageAlt": "FX Quant Research Platform dashboard",
+    "client": "Custom project",
+    "timeline": "12 days",
+    "services": "Financial tech / Research dashboard",
+    "challenge": "The client needed a unified research environment for forex analysis. Market data, backtesting, and predictive signals were scattered, making it difficult to move from raw information to confident decisions.",
+    "delivered": "We built a full-stack platform with market data views, automated backtesting, predictive analytics, and clean dashboard interfaces. The system made complex financial datasets easier to inspect, compare, and act on.",
+    "results": [
+      "Delivered in 12 days",
+      "Real-time data feeds centralised",
+      "Backtesting and analytics in one interface",
+      "Designed for fast research workflows"
+    ],
+    "stack": [
+      "Dashboard UI",
+      "Data visualisation",
+      "Backtesting logic",
+      "Predictive analytics",
+      "Market data pipeline"
+    ]
+  },
+  {
+    "slug": "real-estate-property-prediction",
+    "title": "Real Estate Property Prediction App",
+    "meta": "AI property platform · 14 days",
+    "lead": "A full-stack property platform combining predictions, portfolio management, staff coordination, and mapping.",
+    "image": "/assets/realestatedash.png",
+    "imageAlt": "Real Estate Property Prediction App dashboard",
+    "client": "Custom project",
+    "timeline": "14 days",
+    "services": "AI predictions / Interactive mapping",
+    "challenge": "The client needed to manage property opportunities, portfolio data, staff activity, and AI-assisted investment decisions without relying on disconnected spreadsheets and tools.",
+    "delivered": "We delivered a single dashboard for property tracking, AI predictions, portfolio performance, staff management, and map-based exploration. The interface made the system usable for both operational and strategic decisions.",
+    "results": [
+      "Delivered in 14 days",
+      "AI-powered property predictions",
+      "Portfolio and staff management in one platform",
+      "Interactive map workflow"
+    ],
+    "stack": [
+      "Full-stack web app",
+      "AI prediction workflow",
+      "Mapping UI",
+      "Portfolio dashboard",
+      "Role-based operations"
+    ]
+  },
+  {
+    "slug": "scrapr-io",
+    "title": "Scrapr.io",
+    "meta": "Owned SaaS product · Ongoing product",
+    "lead": "A lead-generation platform bringing lead collection, enrichment and export into one workflow.",
+    "image": "/assets/scrapr.png",
+    "imageAlt": "Scrapr.io dashboard",
+    "client": "Internal SaaS",
+    "timeline": "Ongoing product",
+    "services": "Lead generation / SaaS",
+    "challenge": "Sales teams need qualified lead data quickly, but manual prospecting is slow and generic databases are often stale or incomplete.",
+    "delivered": "Scrapr.io packages lead scraping, enrichment, storage, and export workflows into a fast SaaS dashboard. It gives users real email addresses and phone numbers for decision-makers without forcing them through manual research.",
+    "results": [
+      "Lead collection, enrichment and export in one workflow",
+      "Decision-maker contact data",
+      "Built and developed as Standen's own SaaS product"
+    ],
+    "stack": [
+      "SaaS dashboard",
+      "Lead scraping",
+      "Data enrichment",
+      "Background jobs",
+      "Exports"
+    ]
+  },
+  {
+    "slug": "instagram-lead-scraper",
+    "title": "Instagram Lead Scraper",
+    "meta": "Automation tool · 8 days",
+    "lead": "An automated Instagram prospecting system that processes profiles, identifies high-value leads, and moves them into a CRM.",
+    "image": "/assets/ig.png",
+    "imageAlt": "Instagram Lead Scraper dashboard",
+    "client": "Custom project",
+    "timeline": "8 days",
+    "services": "Automation / Lead generation",
+    "challenge": "The client needed to turn Instagram research into a repeatable prospecting workflow without manually checking profiles, collecting details, and copying leads into their CRM.",
+    "delivered": "We built a dashboard and scraping workflow for importing, filtering, and managing leads. The system could process large profile lists, surface useful prospects, and support manual lead entry where needed.",
+    "results": [
+      "Built in 8 days",
+      "Processes thousands of profiles",
+      "Lead dashboard for review and upload",
+      "CRM-ready prospect workflow"
+    ],
+    "stack": [
+      "Scraping workflow",
+      "Dashboard UI",
+      "CSV upload",
+      "Lead filtering",
+      "CRM handoff"
+    ]
+  }
+]

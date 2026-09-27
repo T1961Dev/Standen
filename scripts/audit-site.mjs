@@ -30,6 +30,12 @@ function stripUrl(raw) {
     return value.split("#")[0].split("?")[0] || "/";
 }
 
+function isPrettyPath(urlPath) {
+    if (!urlPath) return false;
+    if (urlPath === "/work" || urlPath === "/build" || urlPath === "/process" || urlPath === "/faqs") return true;
+    return /^\/case-studies\/[a-z0-9-]+$/.test(urlPath);
+}
+
 function localTargetExists(urlPath) {
     if (!urlPath || !urlPath.startsWith("/")) return true;
     if (urlPath === "/") return fs.existsSync(path.join(ROOT, "index.html"));
@@ -75,10 +81,10 @@ for (const file of files) {
     for (const match of html.matchAll(/\s(?:href|src|action)=["']([^"']+)["']/gi)) {
         const target = stripUrl(match[1]);
         if (!target || !target.startsWith("/")) continue;
-        if (target !== "/" && !path.posix.extname(target)) {
+        if (target !== "/" && !path.posix.extname(target) && !isPrettyPath(target)) {
             errors.push(`${r} links to rewrite-only path ${target}; use the concrete .html file for clickable links`);
         }
-        if (!localTargetExists(target)) {
+        if (!isPrettyPath(target) && !localTargetExists(target)) {
             errors.push(`${r} links to missing local target ${target}`);
         }
     }

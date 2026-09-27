@@ -4,9 +4,9 @@ import { metaDescription } from "./seo-meta.mjs";
 const SITE = "https://www.standen.io";
 const BRAND_NAME = "standen";
 const CALENDLY = "https://calendly.com/standen/discovery-call";
-const CTA_LABEL = "Book a call";
+const CTA_LABEL = "Book a Call";
 const FOOTER_TAGLINE =
-    "SaaS and custom software. Fixed-scope builds from 14 to 30 days. You own everything.";
+    "SaaS products for founders. Live from 2 weeks.";
 const CONTACT_EMAIL = "tomas@standen.io";
 const CTA_ARROW =
     '<span class="btn__arrow" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6.5 3.5 9 6 6.5 8.5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
@@ -17,9 +17,8 @@ export function accentCtaButton(extraClass = "nav-cta", { active = false } = {})
     return `<a href="${CALENDLY}" class="${classes}" target="_blank" rel="noopener"><span class="btn__text">${CTA_LABEL}</span>${CTA_ARROW}</a>`;
 }
 
-export function webinarsNavButton(extraClass = "") {
-    const classes = `btn btn--outline nav-webinars${extraClass ? ` ${extraClass.trim()}` : ""}`;
-    return `<a href="/waitlist.html" class="${classes}"><span class="nav-webinars__dot" aria-hidden="true"></span><span class="btn__text">Free Webinars</span></a>`;
+export function webinarsNavButton() {
+    return "";
 }
 const LINKEDIN_URL = "https://www.linkedin.com/in/tomas-jones1/";
 
@@ -58,34 +57,30 @@ export function headBlock({ title, description, canonical, ogType = "website", s
 }
 
 export function navBlock(active = "") {
-    const servicesActive = active === "services" ? ' aria-current="page"' : "";
     const workActive = active === "work" ? ' aria-current="page"' : "";
-    const blogActive = active === "blog" ? ' aria-current="page"' : "";
     return `    <header class="site-nav" id="top">
         <div class="nav-inner">
-            <a class="brand" href="/" aria-label="Standen home">
+            <a class="brand" href="#top" aria-label="Standen home">
                 <span class="brand-name">${BRAND_NAME}</span>
             </a>
             <nav class="nav-links" aria-label="Primary">
-                <a href="/#services"${servicesActive}>Services</a>
-                <a href="/work.html"${workActive}>Work</a>
-                <a href="/blog.html"${blogActive}>Blog</a>
-                <a href="/#process">Process</a>
-                <a href="/#pricing">Pricing</a>
+                <a href="#work"${workActive}>Work</a>
+                <a href="#included">What&rsquo;s included</a>
+                <a href="#process">Process</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
             </nav>
             <div class="nav-actions">
-                ${webinarsNavButton("nav-cta")}
                 ${accentCtaButton("nav-cta")}
             </div>
             <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
         </div>
         <nav id="mobile-menu" class="mobile-menu" data-open="false" aria-label="Mobile">
-            <a href="/#services">Services</a>
-            <a href="/work.html">Work</a>
-            <a href="/blog.html">Blog</a>
-            <a href="/#process">Process</a>
-            <a href="/#pricing">Pricing</a>
-            ${webinarsNavButton()}
+            <a href="#work">Work</a>
+            <a href="#included">What&rsquo;s included</a>
+            <a href="#process">Process</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
             ${accentCtaButton("nav-cta")}
         </nav>
     </header>`;
@@ -93,44 +88,19 @@ export function navBlock(active = "") {
 
 export function footerBlock() {
     return `    <footer class="site-footer">
-        <div class="wrap footer-grid footer-grid--enterprise">
-            <div class="footer-brand">
-                <a class="brand" href="/">
-                    <span class="brand-name">${BRAND_NAME}</span>
-                </a>
-                <p class="footer-tagline">${FOOTER_TAGLINE}</p>
-                <div class="footer-contact">
-                    <a href="mailto:${CONTACT_EMAIL}" class="footer-contact__email">${CONTACT_EMAIL}</a>
-                    <a href="${LINKEDIN_URL}" class="footer-contact__linkedin" target="_blank" rel="noopener noreferrer" aria-label="Tomas Jones on LinkedIn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    </a>
-                </div>
+        <div class="wrap footer-slim">
+            <a class="brand" href="#top" aria-label="Standen home">
+                <span class="brand-name">${BRAND_NAME}</span>
+            </a>
+            <p class="footer-tagline">${FOOTER_TAGLINE}</p>
+            <p class="footer-email">${CONTACT_EMAIL}</p>
+            <div class="footer-bottom footer-bottom--slim">
+                <p>&copy; Standen</p>
+                <nav aria-label="Legal">
+                    <button type="button" class="footer-legal-btn" data-open-dialog="privacy-dialog">Privacy</button>
+                    <button type="button" class="footer-legal-btn" data-open-dialog="terms-dialog">Terms</button>
+                </nav>
             </div>
-            <nav aria-label="Services">
-                <h2>Services</h2>
-                <a href="/#services">All services</a>
-                <a href="/#service-saas">SaaS MVPs</a>
-                <a href="/#service-internal">Custom software</a>
-                <a href="/#service-reporting">Dashboards</a>
-                <a href="/#service-portals">Customer portals</a>
-                <a href="/#service-crm">Admin dashboards</a>
-            </nav>
-            <nav aria-label="Company">
-                <h2>Company</h2>
-                <a href="/work.html">Work</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/waitlist.html">Free Webinars</a>
-                <a href="/compare/index.html">Compare</a>
-                <a href="/#process">Process</a>
-                <a href="/#pricing">Pricing</a>
-            </nav>
-        </div>
-        <div class="wrap footer-bottom footer-bottom--enterprise">
-            <p>&copy; Standen</p>
-            <nav aria-label="Legal">
-                <a href="/privacy.html">Privacy</a>
-                <a href="/terms.html">Terms</a>
-            </nav>
         </div>
     </footer>
     <script src="/home.js"></script>`;

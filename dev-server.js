@@ -1,13 +1,10 @@
 'use strict';
 /**
- * Local static server with Vercel-style rewrites + live reload.
+ * Local static server with live reload.
+ * Unknown public HTML routes redirect to /.
+ * /api/waitlist is left intact.
  *
  * Usage: npm run dev
- * Open http://127.0.0.1:5500/ and leave the tab open.
- * Saving HTML, CSS, JS, or assets triggers an automatic browser refresh.
- *
- * Do not use the Cursor "Live Server" extension on this port, it has no rewrites
- * and no live reload wired to this project's routes.
  */
 const http = require('http');
 const fs = require('fs');
@@ -80,78 +77,11 @@ const RELOAD_EXT = new Set([
   '.png', '.jpg', '.jpeg', '.webp', '.svg', '.woff2',
 ]);
 
-const REWRITE = {
-  '/work': 'work.html',
-  '/about': 'about.html',
-  '/process': 'index.html',
-  '/pricing': 'index.html',
-  '/guides': 'guides.html',
-  '/blog': 'blog.html',
-  '/resources': 'resources.html',
-  '/privacy': 'privacy.html',
-  '/terms': 'terms.html',
-  '/waitlist': 'waitlist.html',
-  '/compare': 'compare/index.html',
-  '/agencies': 'agencies.html',
-};
-
-const SERVICE_REDIRECTS = {
-  'agency-proposal-systems': 'service-proposals',
-  'agency-reporting-dashboard': 'service-reporting',
-  'agency-client-portal': 'service-portals',
-  'agency-internal-crm': 'service-crm',
-  'saas-mvp-development': 'services',
-  'internal-tools-for-agencies': 'service-internal',
-};
-
-function serviceRedirect(pathname) {
-  if (pathname === '/services' || pathname === '/services/index.html') return '/#services';
-  const match = pathname.match(/^\/services\/([^/]+)(\.html)?$/);
-  if (!match) return null;
-  const slug = match[1];
-  if (slug === 'index') return '/#services';
-  const anchor = SERVICE_REDIRECTS[slug];
-  return anchor ? '/#' + anchor : '/#services';
-}
-
-function rewriteTarget(pathname) {
-  if (REWRITE[pathname]) return path.join(ROOT, REWRITE[pathname]);
-  const compareMatch = pathname.match(/^\/compare\/([^/]+)$/);
-  if (compareMatch) return path.join(ROOT, 'compare', compareMatch[1] + '.html');
-  const caseStudyMatch = pathname.match(/^\/case-studies\/([^/]+)$/);
-  if (caseStudyMatch) return path.join(ROOT, 'case-studies', caseStudyMatch[1] + '.html');
-  const blogMatch = pathname.match(/^\/blog\/([^/]+)$/);
-  if (blogMatch) return path.join(ROOT, 'blog', blogMatch[1] + '.html');
-  return null;
-}
-
-const CASE_STUDY_REDIRECTS = {
-  ohmypod: '/case-studies/ohmypod',
-  'fx-quant-research-platform': '/case-studies/fx-quant-research-platform',
-  'real-estate-property-prediction': '/case-studies/real-estate-property-prediction',
-  'scrapr-io': '/case-studies/scrapr-io',
-  'instagram-lead-scraper': '/case-studies/instagram-lead-scraper',
-  'crypto-news-scraper': '/case-studies/crypto-news-scraper',
-  'lead-magnet-generator': '/case-studies/lead-magnet-generator',
-};
-
-const BLOG_REDIRECTS = {
-  'how-to-scope-a-saas-mvp': '/blog/how-to-scope-a-saas-mvp',
-  'web-development-hampshire-what-to-expect': '/blog/web-development-hampshire-what-to-expect',
-  'when-to-build-custom-software-vs-saas': '/blog/when-to-build-custom-software-vs-saas',
-  'rapid-delivery-without-cutting-corners': '/blog/rapid-delivery-without-cutting-corners',
-};
-
 const LIVE_RELOAD_SNIPPET =
   '<script>(function(){if(location.protocol==="file:")return;var es=new EventSource("/__dev-reload");es.onmessage=function(e){if(e.data==="reload")location.reload()};es.onerror=function(){es.close()}})();</script>';
 
 const reloadClients = new Set();
 let reloadTimer = null;
-
-function guideSlugPath(slug) {
-  if (!slug || slug.includes('..') || slug.includes('/') || slug.includes('\\')) return null;
-  return path.join(ROOT, 'guides', slug + '.html');
-}
 
 function underRoot(absPath) {
   const r = path.resolve(ROOT);
@@ -219,13 +149,9 @@ function sendFile(res, absPath) {
   });
 }
 
-function tryGuideSlug(res, slug, onMiss) {
-  const abs = guideSlugPath(slug);
-  if (!abs || !underRoot(abs)) return onMiss();
-  fs.stat(abs, function (err, st) {
-    if (!err && st.isFile()) return sendHtml(res, abs);
-    onMiss();
-  });
+function redirectHome(res) {
+  res.writeHead(301, { Location: '/' });
+  res.end();
 }
 
 function openBrowser(url) {
@@ -280,174 +206,39 @@ http
       return;
     }
 
-    if (pathname === '/index.html') {
-      res.writeHead(302, { Location: '/' });
-      res.end();
-      return;
-    }
-    if (pathname === '/audit.html') {
-      res.writeHead(302, { Location: '/audit' });
-      res.end();
-      return;
-    }
-    if (pathname === '/guides.html') {
-      res.writeHead(302, { Location: '/guides' });
-      res.end();
-      return;
-    }
-    if (pathname === '/blog.html') {
-      res.writeHead(302, { Location: '/blog' });
-      res.end();
-      return;
-    }
-    if (pathname === '/resources.html') {
-      res.writeHead(302, { Location: '/resources' });
-      res.end();
-      return;
-    }
-    if (pathname === '/privacy.html') {
-      res.writeHead(302, { Location: '/privacy' });
-      res.end();
-      return;
-    }
-    if (pathname === '/terms.html') {
-      res.writeHead(302, { Location: '/terms' });
-      res.end();
-      return;
-    }
-    if (pathname === '/waitlist.html') {
-      res.writeHead(302, { Location: '/waitlist' });
-      res.end();
-      return;
-    }
-    if (pathname === '/contact.html' || pathname === '/contact') {
-      res.writeHead(302, { Location: '/#contact' });
-      res.end();
-      return;
-    }
-    if (pathname === '/contact-thank-you.html' || pathname === '/contact-thank-you') {
-      res.writeHead(302, { Location: '/#contact' });
-      res.end();
-      return;
-    }
-    if (pathname === '/case-studies.html' || pathname === '/case-studies') {
-      res.writeHead(302, { Location: '/work' });
-      res.end();
-      return;
-    }
-    if (pathname === '/saas-development-uk.html' || pathname === '/saas-development-uk') {
-      res.writeHead(302, { Location: '/#service-saas' });
-      res.end();
-      return;
-    }
-    if (pathname === '/custom-software-development-uk.html' || pathname === '/custom-software-development-uk') {
-      res.writeHead(302, { Location: '/#service-internal' });
-      res.end();
-      return;
-    }
-    if (pathname === '/custom-build-vs-off-the-shelf.html' || pathname === '/custom-build-vs-off-the-shelf') {
-      res.writeHead(302, { Location: '/compare/custom-build-vs-off-the-shelf' });
-      res.end();
-      return;
-    }
-    if (pathname === '/guide.html') {
-      res.writeHead(302, { Location: '/guides' });
-      res.end();
-      return;
-    }
-
-    if (pathname === '/case-study.html') {
-      const q = new URL(req.url || '/', 'http://127.0.0.1').searchParams;
-      const studyId = q.get('id');
-      const dest = studyId && CASE_STUDY_REDIRECTS[studyId];
-      res.writeHead(302, { Location: dest || '/work' });
-      res.end();
-      return;
-    }
-
-    if (pathname === '/blog-post.html') {
-      const q = new URL(req.url || '/', 'http://127.0.0.1').searchParams;
-      const slug = q.get('slug');
-      const dest = slug && BLOG_REDIRECTS[slug];
-      res.writeHead(302, { Location: dest || '/blog' });
-      res.end();
-      return;
-    }
-
-    const caseStudyHtmlMatch = pathname.match(/^\/case-studies\/([^/]+)\.html$/);
-    if (caseStudyHtmlMatch) {
-      res.writeHead(302, { Location: '/case-studies/' + caseStudyHtmlMatch[1] });
-      res.end();
-      return;
-    }
-
-    const blogHtmlMatch = pathname.match(/^\/blog\/([^/]+)\.html$/);
-    if (blogHtmlMatch) {
-      res.writeHead(302, { Location: '/blog/' + blogHtmlMatch[1] });
-      res.end();
-      return;
-    }
-
-    const cleanGuideHtmlMatch = pathname.match(/^\/guides\/([^/]+)\.html$/);
-    if (cleanGuideHtmlMatch) {
-      res.writeHead(302, { Location: '/guides/' + cleanGuideHtmlMatch[1] });
-      res.end();
-      return;
-    }
-
-    const serviceDest = serviceRedirect(pathname);
-    if (serviceDest) {
-      res.writeHead(302, { Location: serviceDest });
-      res.end();
-      return;
-    }
-
-    const rewrittenAbs = rewriteTarget(pathname);
-    if (rewrittenAbs) {
-      if (!underRoot(rewrittenAbs)) {
-        res.writeHead(403);
-        res.end();
-        return;
-      }
-      return sendFile(res, rewrittenAbs);
-    }
-
-    const guideHtmlMatch = pathname.match(/^\/guides\/([^/]+)\.html$/);
-    const guideCleanMatch = !guideHtmlMatch && pathname.match(/^\/guides\/([^/]+)$/);
-    const guideSlug = guideHtmlMatch ? guideHtmlMatch[1] : guideCleanMatch ? guideCleanMatch[1] : null;
-
-    if (guideSlug) {
-      return tryGuideSlug(res, guideSlug, function () {
-        res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-        res.end('Cannot GET ' + pathname);
-      });
-    }
-
     if (pathname === '/' || pathname === '') {
       return sendHtml(res, path.join(ROOT, 'index.html'));
     }
 
+    if (pathname === '/work' || pathname === '/build' || pathname === '/process' || pathname === '/faqs') {
+      return sendHtml(res, path.join(ROOT, 'index.html'));
+    }
+
+    if (/^\/case-studies\/[a-z0-9-]+$/.test(pathname)) {
+      return sendHtml(res, path.join(ROOT, 'case-study.html'));
+    }
+
     const rel = pathname.replace(/^\/+/, '');
-    const abs = path.join(ROOT, rel);
+    let abs = path.join(ROOT, rel);
+    if (!path.extname(pathname)) {
+      const asHtml = abs + '.html';
+      if (fs.existsSync(asHtml)) abs = asHtml;
+      else if (fs.existsSync(path.join(abs, 'index.html'))) abs = path.join(abs, 'index.html');
+    }
     if (!underRoot(abs)) {
       res.writeHead(403);
       res.end();
       return;
     }
+    if (fs.existsSync(abs) && fs.statSync(abs).isFile()) {
+      return sendFile(res, abs);
+    }
 
-    fs.stat(abs, function (err, st) {
-      if (!err && st.isFile()) return sendFile(res, abs);
-      if (!err && st.isDirectory()) {
-        const idx = path.join(abs, 'index.html');
-        return fs.stat(idx, function (e2, s2) {
-          if (!e2 && s2.isFile()) return sendHtml(res, idx);
-          res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-          res.end('Cannot GET ' + pathname);
-        });
-      }
-      res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-      res.end('Cannot GET ' + pathname);
-    });
+    if (!path.extname(pathname) || pathname.endsWith('.html')) {
+      return redirectHome(res);
+    }
+
+    sendFile(res, abs);
   })
   .on('error', function (err) {
     if (err.code === 'EADDRINUSE') {
@@ -467,12 +258,10 @@ http
   })
   .listen(PORT, HOST, function () {
     const url = 'http://' + HOST + ':' + PORT + '/';
-    console.log('Standen dev server (routes + live reload)');
+    console.log('Standen dev server (one-page + live reload)');
     console.log('  ' + url);
-    console.log('  /work /about /contact /services/:slug /compare/:slug /case-studies/:slug /blog/:slug /guides/:slug');
-    console.log('  /api/waitlist  POST waitlist signups (Supabase)');
-    console.log('  Save a file → browser refreshes automatically.');
-    console.log('  Stop the Cursor Live Server extension if port 5500 is in use.');
+    console.log('  Legacy HTML routes redirect to /');
+    console.log('  /api/waitlist remains available');
     watchProject();
     openBrowser(url);
   });

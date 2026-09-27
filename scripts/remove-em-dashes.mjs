@@ -3,7 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const SKIP_DIRS = new Set(["node_modules", ".git", ".cursor"]);
+const SKIP_DIRS = new Set(["node_modules", ".git", ".cursor", "public", "content"]);
 const EXT = new Set([".html", ".json", ".js", ".mjs", ".xml", ".txt"]);
 
 function fixEmDash(text) {
