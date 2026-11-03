@@ -9,7 +9,7 @@ const studies = [
     {
         slug: "rethink-demand",
         title: "Rethink Demand",
-        meta: "Internal delivery tool · B2B demand-gen agency",
+        meta: "Internal delivery tool � B2B demand-gen agency",
         lead: "A B2B demand generation agency was running part of its client delivery manually, repeating the same process for every account. We turned it into an internal tool the team owns and runs themselves, removing the manual step from their workflow.",
         image: "/pics/rethink.png",
         imageAlt: "Rethink Demand logo",
@@ -18,7 +18,7 @@ const studies = [
     {
         slug: "ohmypod",
         title: "OhMyPod",
-        meta: "Custom SaaS MVP · 21 days",
+        meta: "Custom SaaS MVP � 21 days",
         lead: "A podcast SaaS went from an idea in Tom's notes app to a live, owned product in 21 days.",
         image: "/assets/ohmypod-icon.svg",
         imageAlt: "OhMyPod logo",
@@ -36,7 +36,7 @@ const studies = [
         ],
         stack: ["Product scoping", "Full-stack web app", "Authentication", "Database", "Deployment", "Source-code handover"],
         quote: "Huge credit to Tomas Jones for moving fast, keeping scope tight, and building properly from day one. No fluff. Just execution.",
-        quoteBy: "Tom Sargent · Founder, OhMyPod",
+        quoteBy: "Tom Sargent � Founder, OhMyPod",
     },
     {
         slug: "shelfexact",
@@ -45,11 +45,16 @@ const studies = [
         lead: "Inventory SaaS across web, iOS and Android. Built with Gabor to give growing businesses one place to scan, receive, move, track and audit inventory across multiple locations.",
         image: "/assets/shelfexact.jpg",
         imageAlt: "ShelfExact inventory dashboard",
+        challenge: "Growing businesses need to keep track of inventory across multiple locations. ShelfExact brings those inventory workflows together across web, iOS and Android.",
+        delivered: "Built with Gabor, the product covers scanning, receiving, moving, tracking and auditing inventory. The same product spans web and mobile so inventory work can happen where stock is handled.",
+        resultsHeading: "Product scope",
+        results: ["Web, iOS and Android", "Scanning, receiving and stock movements", "Inventory tracking and audits across multiple locations"],
+        stack: ["Web app", "iOS", "Android", "Inventory workflows"],
     },
     {
         slug: "fx-quant-research-platform",
         title: "FX Quant Research Platform",
-        meta: "Financial research platform · 12 days",
+        meta: "Financial research platform � 12 days",
         lead: "A complete forex research platform for exploring price data, testing strategies, and turning market information into usable insight.",
         image: "/assets/quant.png",
         imageAlt: "FX Quant Research Platform dashboard",
@@ -69,7 +74,7 @@ const studies = [
     {
         slug: "real-estate-property-prediction",
         title: "Real Estate Property Prediction App",
-        meta: "AI property platform · 14 days",
+        meta: "AI property platform � 14 days",
         lead: "A full-stack property platform combining predictions, portfolio management, staff coordination, and mapping.",
         image: "/assets/realestatedash.png",
         imageAlt: "Real Estate Property Prediction App dashboard",
@@ -89,26 +94,26 @@ const studies = [
     {
         slug: "scrapr-io",
         title: "Scrapr.io",
-        meta: "Owned SaaS product · Ongoing product",
+        meta: "Founder-built SaaS � Sold in late 2025",
         lead: "A lead-generation platform bringing lead collection, enrichment and export into one workflow.",
         image: "/assets/scrapr.png",
         imageAlt: "Scrapr.io dashboard",
-        client: "Internal SaaS",
-        timeline: "Ongoing product",
+        client: "Built by Tomas",
+        timeline: "Sold in late 2025",
         services: "Lead generation / SaaS",
         challenge: "Sales teams need qualified lead data quickly, but manual prospecting is slow and generic databases are often stale or incomplete.",
         delivered: "Scrapr.io packages lead scraping, enrichment, storage, and export workflows into a fast SaaS dashboard. It gives users real email addresses and phone numbers for decision-makers without forcing them through manual research.",
         results: [
             "Lead collection, enrichment and export in one workflow",
             "Decision-maker contact data",
-            "Built and developed as Standen's own SaaS product",
+            "Built and launched by Tomas, then sold in late 2025",
         ],
         stack: ["SaaS dashboard", "Lead scraping", "Data enrichment", "Background jobs", "Exports"],
     },
     {
         slug: "instagram-lead-scraper",
         title: "Instagram Lead Scraper",
-        meta: "Automation tool · 8 days",
+        meta: "Automation tool � 8 days",
         lead: "An automated Instagram prospecting system that processes profiles, identifies high-value leads, and moves them into a CRM.",
         image: "/assets/ig.png",
         imageAlt: "Instagram Lead Scraper dashboard",
@@ -128,7 +133,7 @@ const studies = [
     {
         slug: "crypto-news-scraper",
         title: "Crypto News Scraper",
-        meta: "Real-time aggregation · 6 days",
+        meta: "Real-time aggregation � 6 days",
         lead: "A real-time crypto news system that monitors 50+ sources and filters market-moving updates.",
         image: "/assets/automation.png",
         imageAlt: "Crypto News Scraper automation workflow",
@@ -148,7 +153,7 @@ const studies = [
     {
         slug: "lead-magnet-generator",
         title: "Lead Magnet Generator",
-        meta: "AI content tool · 9 days",
+        meta: "AI content tool � 9 days",
         lead: "An AI-powered generator for creating LinkedIn lead magnets, saving them to Notion, and tracking performance from one dashboard.",
         image: "/assets/magnet.png",
         imageAlt: "Lead Magnet Generator interface",
@@ -193,12 +198,12 @@ function page(study) {
             </div>
             <div class="cs-split">
                 <section>
-                    <h2>Results</h2>
+                    <h2>${esc(study.resultsHeading || "Results")}</h2>
                     <ul>${study.results.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>
                 </section>
                 <section>
                     <h2>Stack and workflow</h2>
-                    <p class="cs-stack">${study.stack.map(esc).join(" · ")}</p>
+                    <p class="cs-stack">${study.stack.map(esc).join(" � ")}</p>
                 </section>
             </div>`
         : "";

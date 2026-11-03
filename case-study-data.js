@@ -58,17 +58,17 @@ window.CASE_STUDIES = {
   "scrapr-io": {
     slug: "scrapr-io",
     title: "Scrapr.io",
-    eyebrow: "Owned SaaS product",
-    client: "Internal SaaS",
+    eyebrow: "Founder-built SaaS",
+    client: "Built by Tomas",
     image: "assets/scrapr.png",
     imageAlt: "Scrapr.io dashboard",
     glow: "rgba(245, 164, 73, .34)",
     services: ["Lead generation", "SaaS", "Data enrichment"],
-    timeline: "Ongoing product",
+    timeline: "Sold in late 2025",
     summary: "A lead generation SaaS that returns 1,000+ verified leads in around 30 seconds.",
     problem: "Sales teams need qualified lead data quickly, but manual prospecting is slow and generic databases are often stale or incomplete.",
     solution: "Scrapr.io packages lead scraping, enrichment, storage, and export workflows into a fast SaaS dashboard. It gives users real email addresses and phone numbers for decision-makers without forcing them through manual research.",
-    results: ["1,000+ verified leads in around 30 seconds", "Lead database and export workflow", "Decision-maker contact data", "Built as an owned SaaS product"],
+    results: ["1,000+ verified leads in around 30 seconds", "Lead database and export workflow", "Decision-maker contact data", "Built and launched by Tomas, then sold in late 2025"],
     stack: ["SaaS dashboard", "Lead scraping", "Data enrichment", "Background jobs", "Exports"]
   },
   "instagram-lead-scraper": {

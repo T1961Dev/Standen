@@ -301,11 +301,28 @@ a {
 }
 
 .hero-caption {
+    max-width: 64em;
+    margin-inline: auto;
     margin: 14px 0 0;
     color: var(--muted);
     font-size: 13px;
     text-align: center;
 }
+
+.hero .hero-caption { margin-inline: auto; }
+.hero-lead strong { color: var(--text); font-weight: 500; }
+.hero-proof {
+    max-width: 720px;
+    margin: 28px auto 0;
+    padding: 20px 24px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    font-size: 16px;
+}
+.hero-proof p { margin: 0; }
+.hero-proof blockquote { margin: 12px 0; }
+.hero-proof__byline { color: var(--muted); font-size: 13px; }
 
 .offers-note {
     margin: 28px 0 0;
@@ -1119,12 +1136,15 @@ a {
 }
 
 @media (max-width: 640px) {
+    .hero { padding-top: 28px; }
+    .hero-proof { padding: 16px; }
     .hero h1 {
         font-size: clamp(44px, 12vw, 56px);
     }
 
     .hero-actions {
         flex-direction: column;
+        margin-top: 24px;
     }
 
     .hero-actions .btn {
