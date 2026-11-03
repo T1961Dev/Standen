@@ -45,6 +45,11 @@ const studies = [
         lead: "Inventory SaaS across web, iOS and Android. Built with Gabor to give growing businesses one place to scan, receive, move, track and audit inventory across multiple locations.",
         image: "/assets/shelfexact.jpg",
         imageAlt: "ShelfExact inventory dashboard",
+        challenge: "Growing businesses need to keep track of inventory across multiple locations. ShelfExact brings those inventory workflows together across web, iOS and Android.",
+        delivered: "Built with Gabor, the product covers scanning, receiving, moving, tracking and auditing inventory. The same product spans web and mobile so inventory work can happen where stock is handled.",
+        resultsHeading: "Product scope",
+        results: ["Web, iOS and Android", "Scanning, receiving and stock movements", "Inventory tracking and audits across multiple locations"],
+        stack: ["Web app", "iOS", "Android", "Inventory workflows"],
     },
     {
         slug: "fx-quant-research-platform",
@@ -89,19 +94,19 @@ const studies = [
     {
         slug: "scrapr-io",
         title: "Scrapr.io",
-        meta: "Owned SaaS product · Ongoing product",
+        meta: "Founder-built SaaS · Sold in late 2025",
         lead: "A lead-generation platform bringing lead collection, enrichment and export into one workflow.",
         image: "/assets/scrapr.png",
         imageAlt: "Scrapr.io dashboard",
-        client: "Internal SaaS",
-        timeline: "Ongoing product",
+        client: "Built by Tomas",
+        timeline: "Sold in late 2025",
         services: "Lead generation / SaaS",
         challenge: "Sales teams need qualified lead data quickly, but manual prospecting is slow and generic databases are often stale or incomplete.",
         delivered: "Scrapr.io packages lead scraping, enrichment, storage, and export workflows into a fast SaaS dashboard. It gives users real email addresses and phone numbers for decision-makers without forcing them through manual research.",
         results: [
             "Lead collection, enrichment and export in one workflow",
             "Decision-maker contact data",
-            "Built and developed as Standen's own SaaS product",
+            "Built and launched by Tomas, then sold in late 2025",
         ],
         stack: ["SaaS dashboard", "Lead scraping", "Data enrichment", "Background jobs", "Exports"],
     },
@@ -193,7 +198,7 @@ function page(study) {
             </div>
             <div class="cs-split">
                 <section>
-                    <h2>Results</h2>
+                    <h2>${esc(study.resultsHeading || "Results")}</h2>
                     <ul>${study.results.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>
                 </section>
                 <section>
