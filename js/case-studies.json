@@ -2,7 +2,7 @@
   {
     "slug": "rethink-demand",
     "title": "Rethink Demand",
-    "meta": "Internal delivery tool � B2B demand-gen agency",
+    "meta": "Internal delivery tool · B2B demand-gen agency",
     "lead": "A B2B demand generation agency was running part of its client delivery manually, repeating the same process for every account. We turned it into an internal tool the team owns and runs themselves, removing the manual step from their workflow.",
     "image": "/pics/rethink.png",
     "imageAlt": "Rethink Demand logo",
@@ -11,7 +11,7 @@
   {
     "slug": "ohmypod",
     "title": "OhMyPod",
-    "meta": "Custom SaaS MVP � 21 days",
+    "meta": "Custom SaaS MVP · 21 days",
     "lead": "A podcast SaaS went from an idea in Tom's notes app to a live, owned product in 21 days.",
     "image": "/assets/ohmypod-icon.svg",
     "imageAlt": "OhMyPod logo",
@@ -36,7 +36,7 @@
       "Source-code handover"
     ],
     "quote": "Huge credit to Tomas Jones for moving fast, keeping scope tight, and building properly from day one. No fluff. Just execution.",
-    "quoteBy": "Tom Sargent � Founder, OhMyPod"
+    "quoteBy": "Tom Sargent · Founder, OhMyPod"
   },
   {
     "slug": "shelfexact",
@@ -63,7 +63,7 @@
   {
     "slug": "fx-quant-research-platform",
     "title": "FX Quant Research Platform",
-    "meta": "Financial research platform � 12 days",
+    "meta": "Financial research platform · 12 days",
     "lead": "A complete forex research platform for exploring price data, testing strategies, and turning market information into usable insight.",
     "image": "/assets/quant.png",
     "imageAlt": "FX Quant Research Platform dashboard",
@@ -89,7 +89,7 @@
   {
     "slug": "real-estate-property-prediction",
     "title": "Real Estate Property Prediction App",
-    "meta": "AI property platform � 14 days",
+    "meta": "AI property platform · 14 days",
     "lead": "A full-stack property platform combining predictions, portfolio management, staff coordination, and mapping.",
     "image": "/assets/realestatedash.png",
     "imageAlt": "Real Estate Property Prediction App dashboard",
@@ -115,7 +115,7 @@
   {
     "slug": "scrapr-io",
     "title": "Scrapr.io",
-    "meta": "Founder-built SaaS � Sold in late 2025",
+    "meta": "Founder-built SaaS · Sold in late 2025",
     "lead": "A lead-generation platform bringing lead collection, enrichment and export into one workflow.",
     "image": "/assets/scrapr.png",
     "imageAlt": "Scrapr.io dashboard",
@@ -140,7 +140,7 @@
   {
     "slug": "instagram-lead-scraper",
     "title": "Instagram Lead Scraper",
-    "meta": "Automation tool � 8 days",
+    "meta": "Automation tool · 8 days",
     "lead": "An automated Instagram prospecting system that processes profiles, identifies high-value leads, and moves them into a CRM.",
     "image": "/assets/ig.png",
     "imageAlt": "Instagram Lead Scraper dashboard",

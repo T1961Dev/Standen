@@ -32,7 +32,7 @@
                 "<section><h2>" + esc(study.resultsHeading || "Results") + "</h2><ul>" + study.results.map(function (item) {
                     return "<li>" + esc(item) + "</li>";
                 }).join("") + "</ul></section>" +
-                "<section><h2>Stack and workflow</h2><p>" + study.stack.map(esc).join(" � ") + "</p></section>" +
+                "<section><h2>Stack and workflow</h2><p>" + study.stack.map(esc).join(" · ") + "</p></section>" +
                 "</div>";
         }
         var quote = study.quote
